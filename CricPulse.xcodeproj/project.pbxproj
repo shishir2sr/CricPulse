@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		384BBB6D2997CCF100F8C8EF /* ScoreCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384BBB6B2997CCF100F8C8EF /* ScoreCardCollectionViewCell.swift */; };
+		384BBB6E2997CCF100F8C8EF /* ScoreCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 384BBB6C2997CCF100F8C8EF /* ScoreCardCollectionViewCell.xib */; };
+		384BBB702997CD3A00F8C8EF /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384BBB6F2997CD3A00F8C8EF /* AppConstants.swift */; };
+		384BBB742997CEA700F8C8EF /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384BBB732997CEA700F8C8EF /* UIViewExtension.swift */; };
 		8901AB9729949D97000F8315 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8901AB9629949D97000F8315 /* AppDelegate.swift */; };
 		8901AB9929949D97000F8315 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8901AB9829949D97000F8315 /* SceneDelegate.swift */; };
 		8901AB9B29949D97000F8315 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8901AB9A29949D97000F8315 /* ViewController.swift */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		384BBB6B2997CCF100F8C8EF /* ScoreCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		384BBB6C2997CCF100F8C8EF /* ScoreCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreCardCollectionViewCell.xib; sourceTree = "<group>"; };
+		384BBB6F2997CD3A00F8C8EF /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		384BBB732997CEA700F8C8EF /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		8901AB9329949D97000F8315 /* CricPulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CricPulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8901AB9629949D97000F8315 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8901AB9829949D97000F8315 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +47,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		384BBB6A2997CCC300F8C8EF /* ScoreCard */ = {
+			isa = PBXGroup;
+			children = (
+				384BBB6B2997CCF100F8C8EF /* ScoreCardCollectionViewCell.swift */,
+				384BBB6C2997CCF100F8C8EF /* ScoreCardCollectionViewCell.xib */,
+			);
+			path = ScoreCard;
+			sourceTree = "<group>";
+		};
+		384BBB722997CE6C00F8C8EF /* AppExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				384BBB732997CEA700F8C8EF /* UIViewExtension.swift */,
+			);
+			path = AppExtensions;
+			sourceTree = "<group>";
+		};
+		384BBB752997D02200F8C8EF /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				384BBB6F2997CD3A00F8C8EF /* AppConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		8901AB8A29949D97000F8315 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +122,7 @@
 		8901ABAF2994A7DC000F8315 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				384BBB6A2997CCC300F8C8EF /* ScoreCard */,
 				8901ABA429949D98000F8315 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -119,8 +153,10 @@
 		8901ABB42994A8B4000F8315 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				8901AB9829949D97000F8315 /* SceneDelegate.swift */,
 				8901AB9629949D97000F8315 /* AppDelegate.swift */,
+				384BBB752997D02200F8C8EF /* Constants */,
+				384BBB722997CE6C00F8C8EF /* AppExtensions */,
+				8901AB9829949D97000F8315 /* SceneDelegate.swift */,
 				8901ABB52994A8D9000F8315 /* Extensions */,
 				8901ABB32994A8A1000F8315 /* Classes */,
 				8901ABB22994A899000F8315 /* Networking */,
@@ -209,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8901ABA629949D98000F8315 /* LaunchScreen.storyboard in Resources */,
+				384BBB6E2997CCF100F8C8EF /* ScoreCardCollectionViewCell.xib in Resources */,
 				8901ABA329949D98000F8315 /* Assets.xcassets in Resources */,
 				8901AB9E29949D97000F8315 /* Main.storyboard in Resources */,
 			);
@@ -222,9 +259,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8901ABA129949D97000F8315 /* CricPulse.xcdatamodeld in Sources */,
+				384BBB702997CD3A00F8C8EF /* AppConstants.swift in Sources */,
 				8901AB9B29949D97000F8315 /* ViewController.swift in Sources */,
 				8901AB9729949D97000F8315 /* AppDelegate.swift in Sources */,
+				384BBB742997CEA700F8C8EF /* UIViewExtension.swift in Sources */,
 				8901AB9929949D97000F8315 /* SceneDelegate.swift in Sources */,
+				384BBB6D2997CCF100F8C8EF /* ScoreCardCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
