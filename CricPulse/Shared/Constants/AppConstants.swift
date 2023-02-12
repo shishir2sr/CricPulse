@@ -6,4 +6,6 @@ class Constants{
     static let scoreCardXibName = "ScoreCardCollectionViewCell"
     static let scoreCaardIdentifire = "scorecardidentifier"
     
+    // Home CollectionViewCell
+    static let homeCollectionVC = "homecollectionvcri"
 }

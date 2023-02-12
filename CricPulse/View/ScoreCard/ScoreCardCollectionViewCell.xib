@@ -287,9 +287,11 @@
                 <outlet property="lTeamName" destination="a5R-f9-bNB" id="PPD-4G-bPx"/>
                 <outlet property="lTeamScoreOne" destination="WTz-iL-sIC" id="k4w-iS-PxT"/>
                 <outlet property="lTeamScoreTwo" destination="uUe-eq-lvs" id="0Kj-dE-CpY"/>
+                <outlet property="lteamWinPercentage" destination="c28-tz-5a1" id="cNL-SI-TMm"/>
                 <outlet property="matchNo" destination="Bdg-Ki-Gbs" id="PCR-eC-jjw"/>
                 <outlet property="matchStatusLabel" destination="tOj-c8-7TU" id="B6e-KK-6nQ"/>
                 <outlet property="notificationButtonOutlet" destination="X9w-OQ-dAc" id="OP2-12-f3P"/>
+                <outlet property="progressView" destination="bV5-0Z-9PI" id="gIl-48-dlr"/>
                 <outlet property="scoreOneStack" destination="EAw-Lg-nC4" id="xH4-EC-GKe"/>
                 <outlet property="scoreTwoStack" destination="HPD-Ec-g7o" id="s7p-Rk-aNK"/>
                 <outlet property="scoreView" destination="pfh-Vc-2Bx" id="TWd-dJ-5Cg"/>
@@ -301,6 +303,7 @@
                 <outlet property="vTeamName" destination="Wnc-7g-26A" id="vzf-vT-gSd"/>
                 <outlet property="vTeamScoreOne" destination="0ii-Yp-aFD" id="AXu-gW-lSr"/>
                 <outlet property="vTeamScoreTwo" destination="Yxs-qV-hCy" id="8TA-EN-47H"/>
+                <outlet property="vTeamWinPercentage" destination="1rj-8p-shE" id="9tX-2U-PGe"/>
             </connections>
             <point key="canvasLocation" x="210.40000000000001" y="80.059970014992516"/>
         </collectionViewCell>
