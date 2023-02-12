@@ -28,8 +28,11 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var lTeamScoreTwo: UILabel!
     @IBOutlet weak var vTeamScoreTwo: UILabel!
     @IBOutlet weak var textualScoreLabel: UILabel!
+    @IBOutlet weak var lteamWinPercentage: UILabel!
+    @IBOutlet weak var vTeamWinPercentage: UILabel!
     
-
+    // ProgressView
+    @IBOutlet weak var progressView: UIProgressView!
     
     //Image Outlets
     @IBOutlet weak var lTeamFlag: UIImageView!
