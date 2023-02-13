@@ -180,7 +180,7 @@
                                 <rect key="frame" x="10" y="169.5" width="337" height="25"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IND- W need 41 runs in 24 balls" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rl1-22-DNd">
-                                        <rect key="frame" x="0.0" y="0.0" width="337" height="15"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="337" height="25"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -188,12 +188,11 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="rl1-22-DNd" secondAttribute="bottom" id="9fJ-90-c0e"/>
                                     <constraint firstAttribute="height" constant="25" id="CAd-FH-g3S"/>
-                                    <constraint firstItem="rl1-22-DNd" firstAttribute="leading" secondItem="zxe-PL-HJj" secondAttribute="leading" id="PbX-Oa-rP3"/>
-                                    <constraint firstItem="rl1-22-DNd" firstAttribute="top" secondItem="zxe-PL-HJj" secondAttribute="top" id="XGg-iP-a3x"/>
-                                    <constraint firstAttribute="bottom" secondItem="rl1-22-DNd" secondAttribute="bottom" id="mtV-j2-rOd"/>
-                                    <constraint firstAttribute="bottom" secondItem="rl1-22-DNd" secondAttribute="bottom" constant="10" id="rrI-ZS-w6Y"/>
-                                    <constraint firstAttribute="trailing" secondItem="rl1-22-DNd" secondAttribute="trailing" id="vCQ-W3-AZr"/>
+                                    <constraint firstItem="rl1-22-DNd" firstAttribute="leading" secondItem="zxe-PL-HJj" secondAttribute="leading" id="D8K-0T-GqE"/>
+                                    <constraint firstAttribute="trailing" secondItem="rl1-22-DNd" secondAttribute="trailing" id="JqF-tE-vPf"/>
+                                    <constraint firstItem="rl1-22-DNd" firstAttribute="top" secondItem="zxe-PL-HJj" secondAttribute="top" id="dtP-t7-LR6"/>
                                 </constraints>
                             </view>
                         </subviews>
