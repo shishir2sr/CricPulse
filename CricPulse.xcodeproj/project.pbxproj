@@ -165,19 +165,11 @@
 				384BBB722997CE6C00F8C8EF /* AppExtensions */,
 				8901AB9629949D97000F8315 /* AppDelegate.swift */,
 				8901AB9829949D97000F8315 /* SceneDelegate.swift */,
-				8901ABB52994A8D9000F8315 /* Extensions */,
 				8901ABB32994A8A1000F8315 /* Classes */,
 				8901ABB22994A899000F8315 /* Networking */,
 				8901ABB12994A802000F8315 /* Resources */,
 			);
 			path = Shared;
-			sourceTree = "<group>";
-		};
-		8901ABB52994A8D9000F8315 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8901ABB62994A8F7000F8315 /* Model */ = {
