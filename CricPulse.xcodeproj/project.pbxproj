@@ -18,6 +18,9 @@
 		8901ABA129949D97000F8315 /* CricPulse.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8901AB9F29949D97000F8315 /* CricPulse.xcdatamodeld */; };
 		8901ABA329949D98000F8315 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8901ABA229949D98000F8315 /* Assets.xcassets */; };
 		8901ABA629949D98000F8315 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8901ABA429949D98000F8315 /* LaunchScreen.storyboard */; };
+		89DD46702999D6FD00F1E700 /* ViwController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DD466F2999D6FD00F1E700 /* ViwController+CollectionView.swift */; };
+		89DD46722999DA6900F1E700 /* MianViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DD46712999DA6900F1E700 /* MianViewModel.swift */; };
+		89DD46742999DACD00F1E700 /* ScoreBoardCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DD46732999DACD00F1E700 /* ScoreBoardCollectionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		8901ABA229949D98000F8315 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8901ABA529949D98000F8315 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8901ABA729949D98000F8315 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89DD466F2999D6FD00F1E700 /* ViwController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViwController+CollectionView.swift"; sourceTree = "<group>"; };
+		89DD46712999DA6900F1E700 /* MianViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MianViewModel.swift; sourceTree = "<group>"; };
+		89DD46732999DACD00F1E700 /* ScoreBoardCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoardCollectionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				8901AB9A29949D97000F8315 /* ViewController.swift */,
+				89DD466F2999D6FD00F1E700 /* ViwController+CollectionView.swift */,
 				8901AB9C29949D97000F8315 /* Main.storyboard */,
 			);
 			path = MainViewController;
@@ -153,9 +160,10 @@
 		8901ABB42994A8B4000F8315 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				8901AB9629949D97000F8315 /* AppDelegate.swift */,
+				89DD46752999EC5700F1E700 /* HelperClasses */,
 				384BBB752997D02200F8C8EF /* Constants */,
 				384BBB722997CE6C00F8C8EF /* AppExtensions */,
+				8901AB9629949D97000F8315 /* AppDelegate.swift */,
 				8901AB9829949D97000F8315 /* SceneDelegate.swift */,
 				8901ABB52994A8D9000F8315 /* Extensions */,
 				8901ABB32994A8A1000F8315 /* Classes */,
@@ -182,8 +190,17 @@
 		8901ABB72994A8FF000F8315 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				89DD46712999DA6900F1E700 /* MianViewModel.swift */,
+				89DD46732999DACD00F1E700 /* ScoreBoardCollectionViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		89DD46752999EC5700F1E700 /* HelperClasses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HelperClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,11 +275,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89DD46722999DA6900F1E700 /* MianViewModel.swift in Sources */,
 				8901ABA129949D97000F8315 /* CricPulse.xcdatamodeld in Sources */,
 				384BBB702997CD3A00F8C8EF /* AppConstants.swift in Sources */,
 				8901AB9B29949D97000F8315 /* ViewController.swift in Sources */,
+				89DD46742999DACD00F1E700 /* ScoreBoardCollectionViewModel.swift in Sources */,
 				8901AB9729949D97000F8315 /* AppDelegate.swift in Sources */,
 				384BBB742997CEA700F8C8EF /* UIViewExtension.swift in Sources */,
+				89DD46702999D6FD00F1E700 /* ViwController+CollectionView.swift in Sources */,
 				8901AB9929949D97000F8315 /* SceneDelegate.swift in Sources */,
 				384BBB6D2997CCF100F8C8EF /* ScoreCardCollectionViewCell.swift in Sources */,
 			);
