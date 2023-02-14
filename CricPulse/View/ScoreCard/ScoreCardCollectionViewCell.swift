@@ -55,7 +55,5 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
         textualScoreView.round(5)
         gameType.round(5)
         gameType.addBorder(color: .systemGreen, width: 1)
-        
     }
-
 }
