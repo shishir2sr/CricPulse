@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6kV-Ax-i2q">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -16,15 +16,15 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CricPulse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyU-GK-hvn">
-                                <rect key="frame" x="0.0" y="44" width="320" height="85.5"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="100"/>
                                 <color key="backgroundColor" name="SecondaryBackgroundColor"/>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AXn-XY-3o9">
-                                <rect key="frame" x="0.0" y="44" width="320" height="270"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="270"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="270" id="7yJ-SS-Gq0"/>
@@ -46,17 +46,34 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Matches" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1X-lb-ucW">
+                                <rect key="frame" x="10" y="324" width="355" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PCU-Ve-TBg">
+                                <rect key="frame" x="0.0" y="351" width="375" height="316"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="PrimaryBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AXn-XY-3o9" secondAttribute="trailing" id="927-mm-sHE"/>
                             <constraint firstItem="gyU-GK-hvn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="G4S-Mh-qv8"/>
+                            <constraint firstAttribute="bottom" secondItem="PCU-Ve-TBg" secondAttribute="bottom" id="Hfp-Bm-wkc"/>
+                            <constraint firstItem="A1X-lb-ucW" firstAttribute="top" secondItem="AXn-XY-3o9" secondAttribute="bottom" constant="10" id="RpY-7g-zvb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A1X-lb-ucW" secondAttribute="trailing" constant="10" id="VLc-Wy-PRT"/>
+                            <constraint firstItem="PCU-Ve-TBg" firstAttribute="top" secondItem="A1X-lb-ucW" secondAttribute="bottom" constant="10" id="Y9f-bG-pfJ"/>
                             <constraint firstItem="AXn-XY-3o9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="btn-mi-lAa"/>
                             <constraint firstItem="gyU-GK-hvn" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.15" constant="0.14999999999999999" id="lEx-WU-RxU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PCU-Ve-TBg" secondAttribute="trailing" id="lNv-RT-4Yx"/>
                             <constraint firstItem="gyU-GK-hvn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tFp-TQ-aS9"/>
                             <constraint firstItem="gyU-GK-hvn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tOt-3R-ExC"/>
                             <constraint firstItem="AXn-XY-3o9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="u2r-CT-mKc"/>
+                            <constraint firstItem="A1X-lb-ucW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="wtO-2e-WRM"/>
+                            <constraint firstItem="PCU-Ve-TBg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zbp-wW-GMD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="CricPulse" largeTitleDisplayMode="always" id="8Q9-1s-SKV"/>
@@ -66,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2053.125" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="2052" y="-28.335832083958024"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BQi-iZ-ErI">
@@ -104,7 +121,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HFP-xG-15T">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="SecondaryBackgroundColor"/>
                         <textAttributes key="titleTextAttributes">
