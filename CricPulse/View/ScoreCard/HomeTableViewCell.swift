@@ -26,7 +26,7 @@ class HomeTableViewCell: UITableViewCell {
         homeTVCBackView.round(10)
         scoreCardBackView.round(5)
         textResultBackView.round(5)
-        matchType.addBorder(color: .systemGreen, width: 0.5)
+        matchType.addBorder(color: .systemIndigo, width: 0.5)
         matchType.round(5)
     }
 }
