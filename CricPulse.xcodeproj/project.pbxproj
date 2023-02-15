@@ -196,11 +196,19 @@
 		8901ABB72994A8FF000F8315 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				89DD46712999DA6900F1E700 /* MianViewModel.swift */,
-				89DD46732999DACD00F1E700 /* ScoreBoardCollectionViewModel.swift */,
-				89D5D746299C771D00C87209 /* HomeTableCellViewModel.swift */,
+				89D5D74E299CA16F00C87209 /* Main */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		89D5D74E299CA16F00C87209 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				89D5D746299C771D00C87209 /* HomeTableCellViewModel.swift */,
+				89DD46732999DACD00F1E700 /* ScoreBoardCollectionViewModel.swift */,
+				89DD46712999DA6900F1E700 /* MianViewModel.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		89DD46752999EC5700F1E700 /* HelperClasses */ = {

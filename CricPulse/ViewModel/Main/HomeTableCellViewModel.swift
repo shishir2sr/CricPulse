@@ -11,4 +11,7 @@ class HomeTableCellViewModel{
     static func register() -> UINib {
         UINib(nibName: "HomeTVCell", bundle: nil)
     }
+    
+    // number of rows
+    
 }
