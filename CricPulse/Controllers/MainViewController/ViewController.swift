@@ -19,5 +19,10 @@ class ViewController: UIViewController {
     fileprivate func ConfigureViewDidLoad(){
         setupCollectionView()
         setupTableView()
+        
+        // TODO: Change according to use case
+        Task{
+           await mainViewModel.getFixture()
+        }
     }
 }
