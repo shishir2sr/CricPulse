@@ -9,6 +9,6 @@ class HomeTableCellViewModel{
 
     // nib register
     static func register() -> UINib {
-        UINib(nibName: Constants.homeTableCellXibName, bundle: nil)
+        UINib(nibName: "HomeTVCell", bundle: nil)
     }
 }
