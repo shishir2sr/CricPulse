@@ -69,7 +69,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     }
     
     fileprivate func downScrollAnimation() {
-        UIView.animate(withDuration: 0.8) { [weak self] in
+        UIView.animate(withDuration: 0.3) { [weak self] in
             self?.navigationBarView.isHidden = true
             self?.collectionViewHeightConstraint.constant = 0
             self?.collectionViewHeightConstraint.constant = 270

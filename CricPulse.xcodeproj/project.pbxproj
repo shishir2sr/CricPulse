@@ -23,6 +23,9 @@
 		89D5D749299C789100C87209 /* MainViewController+Tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D748299C789100C87209 /* MainViewController+Tableview.swift */; };
 		89D5D74D299C87EA00C87209 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D74C299C87EA00C87209 /* HomeTableViewCell.swift */; };
 		89D5D750299CAE6F00C87209 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D74F299CAE6F00C87209 /* NetworkConstants.swift */; };
+		89D5D752299CD63800C87209 /* FixtureDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D751299CD63800C87209 /* FixtureDataClass.swift */; };
+		89D5D754299CE10300C87209 /* TeamDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D753299CE10300C87209 /* TeamDataClass.swift */; };
+		89D5D756299CE28A00C87209 /* PlayerDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D755299CE28A00C87209 /* PlayerDataClass.swift */; };
 		89DD46702999D6FD00F1E700 /* ViwController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DD466F2999D6FD00F1E700 /* ViwController+CollectionView.swift */; };
 		89DD46722999DA6900F1E700 /* MianViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DD46712999DA6900F1E700 /* MianViewModel.swift */; };
 		89DD46742999DACD00F1E700 /* ScoreBoardCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DD46732999DACD00F1E700 /* ScoreBoardCollectionViewModel.swift */; };
@@ -47,6 +50,9 @@
 		89D5D748299C789100C87209 /* MainViewController+Tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Tableview.swift"; sourceTree = "<group>"; };
 		89D5D74C299C87EA00C87209 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		89D5D74F299CAE6F00C87209 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		89D5D751299CD63800C87209 /* FixtureDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureDataClass.swift; sourceTree = "<group>"; };
+		89D5D753299CE10300C87209 /* TeamDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDataClass.swift; sourceTree = "<group>"; };
+		89D5D755299CE28A00C87209 /* PlayerDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDataClass.swift; sourceTree = "<group>"; };
 		89DD466F2999D6FD00F1E700 /* ViwController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViwController+CollectionView.swift"; sourceTree = "<group>"; };
 		89DD46712999DA6900F1E700 /* MianViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MianViewModel.swift; sourceTree = "<group>"; };
 		89DD46732999DACD00F1E700 /* ScoreBoardCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoardCollectionViewModel.swift; sourceTree = "<group>"; };
@@ -188,6 +194,9 @@
 		8901ABB62994A8F7000F8315 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				89D5D753299CE10300C87209 /* TeamDataClass.swift */,
+				89D5D755299CE28A00C87209 /* PlayerDataClass.swift */,
+				89D5D751299CD63800C87209 /* FixtureDataClass.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -284,9 +293,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				89D5D750299CAE6F00C87209 /* NetworkConstants.swift in Sources */,
+				89D5D752299CD63800C87209 /* FixtureDataClass.swift in Sources */,
+				89D5D756299CE28A00C87209 /* PlayerDataClass.swift in Sources */,
 				89DD46722999DA6900F1E700 /* MianViewModel.swift in Sources */,
 				8901ABA129949D97000F8315 /* CricPulse.xcdatamodeld in Sources */,
 				89D5D74D299C87EA00C87209 /* HomeTableViewCell.swift in Sources */,
+				89D5D754299CE10300C87209 /* TeamDataClass.swift in Sources */,
 				384BBB702997CD3A00F8C8EF /* AppConstants.swift in Sources */,
 				8901AB9B29949D97000F8315 /* ViewController.swift in Sources */,
 				89D5D747299C771D00C87209 /* HomeTableCellViewModel.swift in Sources */,
