@@ -26,6 +26,8 @@
 		89D5D752299CD63800C87209 /* FixtureDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D751299CD63800C87209 /* FixtureDataClass.swift */; };
 		89D5D754299CE10300C87209 /* TeamDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D753299CE10300C87209 /* TeamDataClass.swift */; };
 		89D5D756299CE28A00C87209 /* PlayerDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D755299CE28A00C87209 /* PlayerDataClass.swift */; };
+		89D5D758299CE7DC00C87209 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D757299CE7DC00C87209 /* ApiClient.swift */; };
+		89D5D75A299CEBD600C87209 /* UrlGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D759299CEBD600C87209 /* UrlGenerator.swift */; };
 		89DD46702999D6FD00F1E700 /* ViwController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DD466F2999D6FD00F1E700 /* ViwController+CollectionView.swift */; };
 		89DD46722999DA6900F1E700 /* MianViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DD46712999DA6900F1E700 /* MianViewModel.swift */; };
 		89DD46742999DACD00F1E700 /* ScoreBoardCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DD46732999DACD00F1E700 /* ScoreBoardCollectionViewModel.swift */; };
@@ -53,6 +55,8 @@
 		89D5D751299CD63800C87209 /* FixtureDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureDataClass.swift; sourceTree = "<group>"; };
 		89D5D753299CE10300C87209 /* TeamDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDataClass.swift; sourceTree = "<group>"; };
 		89D5D755299CE28A00C87209 /* PlayerDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDataClass.swift; sourceTree = "<group>"; };
+		89D5D757299CE7DC00C87209 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		89D5D759299CEBD600C87209 /* UrlGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlGenerator.swift; sourceTree = "<group>"; };
 		89DD466F2999D6FD00F1E700 /* ViwController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViwController+CollectionView.swift"; sourceTree = "<group>"; };
 		89DD46712999DA6900F1E700 /* MianViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MianViewModel.swift; sourceTree = "<group>"; };
 		89DD46732999DACD00F1E700 /* ScoreBoardCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoardCollectionViewModel.swift; sourceTree = "<group>"; };
@@ -166,15 +170,10 @@
 		8901ABB22994A899000F8315 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				89D5D757299CE7DC00C87209 /* ApiClient.swift */,
+				89D5D759299CEBD600C87209 /* UrlGenerator.swift */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		8901ABB32994A8A1000F8315 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		8901ABB42994A8B4000F8315 /* Shared */ = {
@@ -184,7 +183,6 @@
 				8901AB9829949D97000F8315 /* SceneDelegate.swift */,
 				384BBB752997D02200F8C8EF /* Constants */,
 				384BBB722997CE6C00F8C8EF /* AppExtensions */,
-				8901ABB32994A8A1000F8315 /* Classes */,
 				8901ABB22994A899000F8315 /* Networking */,
 				8901ABB12994A802000F8315 /* Resources */,
 			);
@@ -303,6 +301,8 @@
 				8901AB9B29949D97000F8315 /* ViewController.swift in Sources */,
 				89D5D747299C771D00C87209 /* HomeTableCellViewModel.swift in Sources */,
 				89DD46742999DACD00F1E700 /* ScoreBoardCollectionViewModel.swift in Sources */,
+				89D5D758299CE7DC00C87209 /* ApiClient.swift in Sources */,
+				89D5D75A299CEBD600C87209 /* UrlGenerator.swift in Sources */,
 				8901AB9729949D97000F8315 /* AppDelegate.swift in Sources */,
 				384BBB742997CEA700F8C8EF /* UIViewExtension.swift in Sources */,
 				89DD46702999D6FD00F1E700 /* ViwController+CollectionView.swift in Sources */,
