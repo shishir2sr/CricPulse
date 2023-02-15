@@ -8,9 +8,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
         homeCollectionView.dataSource = self
         homeCollectionView.delegate = self
         homeCollectionView.backgroundColor = .clear
-        
+        homeCollectionView.addShadow(opecity: 0.8, size: 2, radius: 4, color: UIColor.darkGray)
         registerCells()
         collectionViewFlowLayoutSetup()
+        
     }
     // Flow Layout Stup
     fileprivate func collectionViewFlowLayoutSetup() {
@@ -59,7 +60,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     }
     
     fileprivate func upScrollAnimation() {
-        UIView.animate(withDuration: 0.5) { [weak self] in
+        UIView.animate(withDuration: 0.7) { [weak self] in
             self?.navigationBarView.isHidden = false
             self?.collectionViewHeightConstraint.constant = 270
             self?.collectionViewHeightConstraint.constant = 0
@@ -69,7 +70,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     }
     
     fileprivate func downScrollAnimation() {
-        UIView.animate(withDuration: 0.3) { [weak self] in
+        UIView.animate(withDuration: 0.7) { [weak self] in
             self?.navigationBarView.isHidden = true
             self?.collectionViewHeightConstraint.constant = 0
             self?.collectionViewHeightConstraint.constant = 270
