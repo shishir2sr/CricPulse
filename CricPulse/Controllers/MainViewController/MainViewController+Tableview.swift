@@ -17,18 +17,18 @@ extension ViewController{
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = homeTableView.dequeueReusableCell(withIdentifier: HomeTableCellViewModel.identifier, for: indexPath) as? HomeTVCell else{
+        guard let cell = homeTableView.dequeueReusableCell(withIdentifier: HomeTableCellViewModel.identifier, for: indexPath) as? HomeTableViewCell else{
             return UITableViewCell()
         }
-        print(cell.self)
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        200
+        150
     }
 }

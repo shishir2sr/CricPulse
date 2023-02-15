@@ -43,6 +43,29 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
         
                 return cell
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if let _ = scrollView as? UITableView{
+            if scrollView.contentOffset.y > 0 {
+                UIView.animate(withDuration: 0.5) { [weak self] in
+                    self?.navigationBarView.isHidden = true
+                    self?.collectionViewHeightConstraint.constant = 270
+                    self?.collectionViewHeightConstraint.constant = 0
+                    self?.view.layoutIfNeeded()
+                }
+            }
+
+            else {
+                UIView.animate(withDuration: 0.8) { [weak self] in
+                    self?.collectionViewHeightConstraint.constant = 0
+                    self?.collectionViewHeightConstraint.constant = 270
+                    self?.navigationBarView.isHidden = false
+                    self?.view.layoutIfNeeded()
+                }
+            }
+
+        }
+    }
 }
 
 
