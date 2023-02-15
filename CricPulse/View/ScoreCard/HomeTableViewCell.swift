@@ -1,5 +1,8 @@
+
+
 import UIKit
-class HomeTVCell: UITableViewCell {
+
+class HomeTableViewCell: UITableViewCell {
     // View Outlets
     @IBOutlet weak var homeTVCBackView: UIView!
     @IBOutlet weak var scoreCardBackView: UIView!
@@ -24,6 +27,6 @@ class HomeTVCell: UITableViewCell {
         scoreCardBackView.round(5)
         textResultBackView.round(5)
         matchType.addBorder(color: .systemGreen, width: 0.5)
+        matchType.round(5)
     }
-    
 }

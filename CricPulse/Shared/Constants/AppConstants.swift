@@ -4,8 +4,9 @@ import Foundation
 class Constants{
     // reuse identifiers for scorecard
     static let scoreCardXibName = "ScoreCardCollectionViewCell"
-    static let scoreCaardIdentifire = "scorecardidentifier"
-    
+    static let scoreCardIdentifier = "scorecardidentifier"
     // Home CollectionViewCell
-    static let homeCollectionVC = "homecollectionvcri"
+    static let homeTableCellXibName = "HomeTVCell"
+    static let homeTableCellReuseIdentifier = "hometableviewcell"
+    
 }

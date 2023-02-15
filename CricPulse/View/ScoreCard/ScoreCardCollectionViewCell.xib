@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="scorecardidentifier" id="gTV-IL-0wX" customClass="ScoreCardCollectionViewCell" customModule="CricPulse" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" reuseIdentifier="scorecardidentifier" id="gTV-IL-0wX" customClass="ScoreCardCollectionViewCell" customModule="CricPulse" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="467" height="333"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -22,14 +22,14 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iWC-AC-mNS">
                         <rect key="frame" x="10" y="10" width="447" height="210"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ICC Women's T20 World Cup, South Afrika" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fR8-CW-0vR">
-                                <rect key="frame" x="10" y="10" width="427" height="14.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ICC Women's T20 World Cup, South Afrika" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fR8-CW-0vR">
+                                <rect key="frame" x="10" y="10" width="427" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TYt-l3-brV" userLabel="MatchInfoStackView">
-                                <rect key="frame" x="10" y="39.5" width="427" height="40"/>
+                                <rect key="frame" x="10" y="42" width="427" height="40"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vDS-ig-ohD" userLabel="StackView Match+Stadium">
                                         <rect key="frame" x="0.0" y="0.0" width="369.5" height="40"/>
@@ -94,7 +94,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pfh-Vc-2Bx" userLabel="ScoreView">
-                                <rect key="frame" x="10" y="89.5" width="427" height="70"/>
+                                <rect key="frame" x="10" y="92" width="427" height="70"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bX8-rM-mwq">
                                         <rect key="frame" x="10" y="10" width="407" height="50"/>
@@ -177,7 +177,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zxe-PL-HJj" userLabel="texScoreView">
-                                <rect key="frame" x="10" y="169.5" width="427" height="25"/>
+                                <rect key="frame" x="10" y="172" width="427" height="25"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IND- W need 41 runs in 24 balls" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rl1-22-DNd">
                                         <rect key="frame" x="0.0" y="0.0" width="427" height="25"/>
@@ -224,7 +224,6 @@
             </constraints>
             <size key="customSize" width="467" height="333"/>
             <connections>
-                <outlet property="MatchStatusView" destination="83y-ky-90h" id="mPx-jZ-B25"/>
                 <outlet property="backView" destination="iWC-AC-mNS" id="dxz-Kv-Gfl"/>
                 <outlet property="gameType" destination="Nhp-7j-ghZ" id="7Zv-IV-43p"/>
                 <outlet property="lTeamFlag" destination="ncw-Lg-VzH" id="m0V-Ok-Ycn"/>
@@ -232,6 +231,7 @@
                 <outlet property="lTeamScoreOne" destination="WTz-iL-sIC" id="k4w-iS-PxT"/>
                 <outlet property="matchNo" destination="Bdg-Ki-Gbs" id="PCR-eC-jjw"/>
                 <outlet property="matchStatusLabel" destination="tOj-c8-7TU" id="B6e-KK-6nQ"/>
+                <outlet property="matchStatusView" destination="83y-ky-90h" id="mPx-jZ-B25"/>
                 <outlet property="notificationButtonOutlet" destination="X9w-OQ-dAc" id="OP2-12-f3P"/>
                 <outlet property="scoreOneStack" destination="EAw-Lg-nC4" id="xH4-EC-GKe"/>
                 <outlet property="scoreView" destination="pfh-Vc-2Bx" id="TWd-dJ-5Cg"/>

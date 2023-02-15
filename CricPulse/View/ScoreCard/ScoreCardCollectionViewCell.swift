@@ -10,7 +10,7 @@ import UIKit
 class ScoreCardCollectionViewCell: UICollectionViewCell {
     // View Outlets
     @IBOutlet weak var backView: UIView!
-    @IBOutlet weak var MatchStatusView: UIView!
+    @IBOutlet weak var matchStatusView: UIView!
     @IBOutlet weak var scoreView: UIView!
     @IBOutlet weak var textualScoreView: UIView!
     
@@ -25,14 +25,7 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var gameType: UILabel!
     @IBOutlet weak var lTeamScoreOne: UILabel!
     @IBOutlet weak var vTeamScoreOne: UILabel!
-    @IBOutlet weak var lTeamScoreTwo: UILabel!
-    @IBOutlet weak var vTeamScoreTwo: UILabel!
     @IBOutlet weak var textualScoreLabel: UILabel!
-    @IBOutlet weak var lteamWinPercentage: UILabel!
-    @IBOutlet weak var vTeamWinPercentage: UILabel!
-    
-    // ProgressView
-    @IBOutlet weak var progressView: UIProgressView!
     
     //Image Outlets
     @IBOutlet weak var lTeamFlag: UIImageView!
@@ -43,7 +36,6 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
     
     // Stack Outlets
     @IBOutlet weak var scoreOneStack: UIStackView!
-    @IBOutlet weak var scoreTwoStack: UIStackView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -51,7 +43,7 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
         backView.addBorder(color: UIColor.systemGray6, width: 1)
         notificationButtonOutlet.round(5)
         scoreView.round(5)
-        MatchStatusView.round(5)
+        matchStatusView.round(5)
         textualScoreView.round(5)
         gameType.round(5)
         gameType.addBorder(color: .systemGreen, width: 1)
