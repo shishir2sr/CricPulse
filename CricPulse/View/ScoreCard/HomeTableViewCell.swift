@@ -27,5 +27,6 @@ class HomeTableViewCell: UITableViewCell {
         scoreCardBackView.round(5)
         textResultBackView.round(5)
         matchType.addBorder(color: .systemGreen, width: 0.5)
+        matchType.round(5)
     }
 }

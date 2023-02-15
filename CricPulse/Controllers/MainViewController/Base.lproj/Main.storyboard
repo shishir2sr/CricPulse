@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyU-GK-hvn">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyU-GK-hvn" userLabel="navigationbarView">
                                 <rect key="frame" x="0.0" y="44" width="375" height="100"/>
                                 <color key="backgroundColor" name="SecondaryBackgroundColor"/>
                             </view>
@@ -46,16 +46,17 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Matches" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1X-lb-ucW">
-                                <rect key="frame" x="10" y="324" width="355" height="17"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PCU-Ve-TBg">
-                                <rect key="frame" x="0.0" y="351" width="375" height="316"/>
+                                <rect key="frame" x="0.0" y="353.5" width="375" height="313.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Matches" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1X-lb-ucW">
+                                <rect key="frame" x="10" y="324" width="355" height="19.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="PrimaryBackgroundColor"/>
@@ -78,8 +79,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="CricPulse" largeTitleDisplayMode="always" id="8Q9-1s-SKV"/>
                     <connections>
+                        <outlet property="collectionViewHeightConstraint" destination="7yJ-SS-Gq0" id="gHh-de-cyC"/>
                         <outlet property="homeCollectionView" destination="AXn-XY-3o9" id="ZRs-DZ-nXE"/>
                         <outlet property="homeTableView" destination="PCU-Ve-TBg" id="apE-s0-ob5"/>
+                        <outlet property="navigationBarView" destination="gyU-GK-hvn" id="Z9B-Ow-f52"/>
+                        <outlet property="navigationViewHeightConstraint" destination="lEx-WU-RxU" id="e0n-Hb-mCb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
