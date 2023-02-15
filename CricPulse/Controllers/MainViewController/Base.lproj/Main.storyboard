@@ -78,7 +78,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="CricPulse" largeTitleDisplayMode="always" id="8Q9-1s-SKV"/>
                     <connections>
-                        <outlet property="HomeCollectionView" destination="AXn-XY-3o9" id="ZRs-DZ-nXE"/>
+                        <outlet property="homeCollectionView" destination="AXn-XY-3o9" id="ZRs-DZ-nXE"/>
+                        <outlet property="homeTableView" destination="PCU-Ve-TBg" id="apE-s0-ob5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

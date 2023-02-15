@@ -224,7 +224,6 @@
             </constraints>
             <size key="customSize" width="467" height="333"/>
             <connections>
-                <outlet property="MatchStatusView" destination="83y-ky-90h" id="mPx-jZ-B25"/>
                 <outlet property="backView" destination="iWC-AC-mNS" id="dxz-Kv-Gfl"/>
                 <outlet property="gameType" destination="Nhp-7j-ghZ" id="7Zv-IV-43p"/>
                 <outlet property="lTeamFlag" destination="ncw-Lg-VzH" id="m0V-Ok-Ycn"/>
@@ -232,6 +231,7 @@
                 <outlet property="lTeamScoreOne" destination="WTz-iL-sIC" id="k4w-iS-PxT"/>
                 <outlet property="matchNo" destination="Bdg-Ki-Gbs" id="PCR-eC-jjw"/>
                 <outlet property="matchStatusLabel" destination="tOj-c8-7TU" id="B6e-KK-6nQ"/>
+                <outlet property="matchStatusView" destination="83y-ky-90h" id="mPx-jZ-B25"/>
                 <outlet property="notificationButtonOutlet" destination="X9w-OQ-dAc" id="OP2-12-f3P"/>
                 <outlet property="scoreOneStack" destination="EAw-Lg-nC4" id="xH4-EC-GKe"/>
                 <outlet property="scoreView" destination="pfh-Vc-2Bx" id="TWd-dJ-5Cg"/>

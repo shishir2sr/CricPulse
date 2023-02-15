@@ -10,7 +10,7 @@ import UIKit
 class ScoreCardCollectionViewCell: UICollectionViewCell {
     // View Outlets
     @IBOutlet weak var backView: UIView!
-    @IBOutlet weak var MatchStatusView: UIView!
+    @IBOutlet weak var matchStatusView: UIView!
     @IBOutlet weak var scoreView: UIView!
     @IBOutlet weak var textualScoreView: UIView!
     
@@ -51,7 +51,7 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
         backView.addBorder(color: UIColor.systemGray6, width: 1)
         notificationButtonOutlet.round(5)
         scoreView.round(5)
-        MatchStatusView.round(5)
+        matchStatusView.round(5)
         textualScoreView.round(5)
         gameType.round(5)
         gameType.addBorder(color: .systemGreen, width: 1)

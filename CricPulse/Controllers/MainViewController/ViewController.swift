@@ -4,7 +4,8 @@ class ViewController: UIViewController {
     // ViewModel
     let mainViewModel = MainViewModel()
     // Outlets
-    @IBOutlet weak var HomeCollectionView: UICollectionView!
+    @IBOutlet weak var homeCollectionView: UICollectionView!
+    @IBOutlet weak var homeTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -13,5 +14,6 @@ class ViewController: UIViewController {
     
     fileprivate func ConfigureViewDidLoad(){
         setupCollectionView()
+        setupTableView()
     }
 }

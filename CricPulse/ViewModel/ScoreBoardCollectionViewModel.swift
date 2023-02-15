@@ -4,7 +4,7 @@ import UIKit
 class ScoreBoardCollectionViewModel{
     // identifier
     static var identifier: String {
-        return Constants.scoreCaardIdentifire
+        return Constants.scoreCardIdentifier
     }
 
     // nib register

@@ -1,12 +1,13 @@
 import Foundation
 import UIKit
 
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+// // MARK: Collectionview  delegate and datasource
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     // collectionview setup
     func setupCollectionView(){
-        HomeCollectionView.dataSource = self
-        HomeCollectionView.delegate = self
-        HomeCollectionView.backgroundColor = .clear
+        homeCollectionView.dataSource = self
+        homeCollectionView.delegate = self
+        homeCollectionView.backgroundColor = .clear
         
         registerCells()
         collectionViewFlowLayoutSetup()
@@ -15,18 +16,18 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     fileprivate func collectionViewFlowLayoutSetup() {
         let collectionViewCellLayout = UICollectionViewFlowLayout()
         collectionViewCellLayout.scrollDirection = .horizontal
-        HomeCollectionView.collectionViewLayout = collectionViewCellLayout
+        homeCollectionView.collectionViewLayout = collectionViewCellLayout
     }
     
     // Cell Registration
     func registerCells(){
-        HomeCollectionView.register(ScoreBoardCollectionViewModel.register(), forCellWithReuseIdentifier: ScoreBoardCollectionViewModel.identifier)
+        homeCollectionView.register(ScoreBoardCollectionViewModel.register(), forCellWithReuseIdentifier: ScoreBoardCollectionViewModel.identifier)
         
     }
     // Collectionview Reload
     func reloadCollectionView(){
         DispatchQueue.main.async {
-            self.HomeCollectionView.reloadData()
+            self.homeCollectionView.reloadData()
         }
     }
     // Number of items
@@ -36,22 +37,27 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     //cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = HomeCollectionView.dequeueReusableCell(withReuseIdentifier: ScoreBoardCollectionViewModel.identifier, for: indexPath) as? ScoreCardCollectionViewCell else{
+        guard let cell = homeCollectionView.dequeueReusableCell(withReuseIdentifier: ScoreBoardCollectionViewModel.identifier, for: indexPath) as? ScoreCardCollectionViewCell else{
             return UICollectionViewCell()
         }
-        return cell
+        
+                return cell
     }
-    
+}
+
+
+// MARK: Collectionview Flow Layout
+extension ViewController: UICollectionViewDelegateFlowLayout{
+    // cell size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: view.frame.width-10, height:HomeCollectionView.bounds.height-50)
+        CGSize(width: view.frame.width-10, height:homeCollectionView.bounds.height-50)
     }
+    // Minimum linse spacing
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         2
     }
-    
+    // insets
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         UIEdgeInsets(top: 2, left: 1, bottom: 2, right: 1)
     }
-    
-    
 }

@@ -25,5 +25,4 @@ class HomeTVCell: UITableViewCell {
         textResultBackView.round(5)
         matchType.addBorder(color: .systemGreen, width: 0.5)
     }
-    
 }
