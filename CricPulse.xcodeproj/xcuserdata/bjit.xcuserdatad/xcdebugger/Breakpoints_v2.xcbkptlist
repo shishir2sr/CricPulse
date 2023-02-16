@@ -41,5 +41,180 @@
             landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9620266F-574E-4C2C-94F7-45877964DF3C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricPulse/ViewModel/Main/MianViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "numberOfItems(in:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8A4A2F54-598A-4183-89CF-BE4CB04F2322"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricPulse/Controllers/MainViewController/ViwController+CollectionView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1B7FE41D-9CCC-42E8-BE45-01EEEC0A3593"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricPulse/Controllers/MainViewController/ViwController+CollectionView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BD5E9D66-1AEF-4613-B3AC-05EF7737A2CF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricPulse/Controllers/MainViewController/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "ConfigureViewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BD5E9D66-1AEF-4613-B3AC-05EF7737A2CF - cd963c47d70c4fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in CricPulse.ViewController.ConfigureViewDidLoad() -&gt; ()"
+                  moduleName = "CricPulse"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bjit/Documents/SHaring%20test/Course%20contents/Final%20Project/Project/CricPulse/CricPulse/Controllers/MainViewController/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "BD5E9D66-1AEF-4613-B3AC-05EF7737A2CF - 6f65c566e59c62da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in CricPulse.ViewController.ConfigureViewDidLoad() -&gt; ()"
+                  moduleName = "CricPulse"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bjit/Documents/SHaring%20test/Course%20contents/Final%20Project/Project/CricPulse/CricPulse/Controllers/MainViewController/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "BD5E9D66-1AEF-4613-B3AC-05EF7737A2CF - b831a06d79e658de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in CricPulse.ViewController.ConfigureViewDidLoad() -&gt; ()"
+                  moduleName = "CricPulse"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bjit/Documents/SHaring%20test/Course%20contents/Final%20Project/Project/CricPulse/CricPulse/Controllers/MainViewController/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9C151421-EC38-41B5-B5A6-4C23D8378EBC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricPulse/Controllers/MainViewController/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "ConfigureViewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9C151421-EC38-41B5-B5A6-4C23D8378EBC - dbe61fbb2b934e38"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CricPulse.ViewController.ConfigureViewDidLoad() -&gt; ()"
+                  moduleName = "CricPulse"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bjit/Documents/SHaring%20test/Course%20contents/Final%20Project/Project/CricPulse/CricPulse/Controllers/MainViewController/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "9C151421-EC38-41B5-B5A6-4C23D8378EBC - 3fa7c14bf60b8500"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () async -&gt; () in CricPulse.ViewController.ConfigureViewDidLoad() -&gt; ()"
+                  moduleName = "CricPulse"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bjit/Documents/SHaring%20test/Course%20contents/Final%20Project/Project/CricPulse/CricPulse/Controllers/MainViewController/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "0">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E68A33CC-4CDE-44B4-8D89-AB14EA787D35"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CricPulse/Controllers/MainViewController/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "setupBinders()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
