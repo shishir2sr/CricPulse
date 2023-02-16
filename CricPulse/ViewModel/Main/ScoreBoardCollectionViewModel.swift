@@ -16,19 +16,19 @@ class ScoreBoardCollectionViewModel{
     let visitorTeamFlagUrl: String
     
     // TODO: Recieve Model Class Variable and assign those
-    init(tournamentName: String, matchNo: String, matchStatus: String, stadiumName: String, localTeamName: String, visitorTeamName: String, gameType: String, localTeamScore: String, visitorTeamScore: String, matchUpdateText: String, localTeamFlagUrl: String, visitorTeamFlagUrl: String) {
-        self.tournamentName = tournamentName
-        self.matchNo = matchNo
-        self.matchStatus = matchStatus
-        self.stadiumName = stadiumName
-        self.localTeamName = localTeamName
-        self.visitorTeamName = visitorTeamName
-        self.gameType = gameType
-        self.localTeamScore = localTeamScore
-        self.visitorTeamScore = visitorTeamScore
-        self.matchUpdateText = matchUpdateText
-        self.localTeamFlagUrl = localTeamFlagUrl
-        self.visitorTeamFlagUrl = visitorTeamFlagUrl
+    init(scorecard: FixtureDataClass) {
+        self.tournamentName = scorecard.league_id.codingKey.stringValue // TODO: Fix Model class
+        self.matchNo = scorecard.round ?? "--"
+        self.matchStatus = scorecard.status ?? "--"
+        self.stadiumName = scorecard.venue_id?.codingKey.stringValue ?? "__" // TODO: Fix Later
+        self.localTeamName = scorecard.localteam?.name ?? "Unknown"
+        self.visitorTeamName = scorecard.visitorteam?.name ?? "Unknown"
+        self.gameType = scorecard.type ?? "--"
+        self.localTeamScore = scorecard.localteam_dl_data?.score ?? "--"
+        self.visitorTeamScore = scorecard.visitorteam_dl_data?.score ?? "--"
+        self.matchUpdateText = scorecard.note ?? "Please wait..."
+        self.localTeamFlagUrl = scorecard.localteam?.image_path ?? ""
+        self.visitorTeamFlagUrl = scorecard.visitorteam?.image_path ?? ""
     }
     
     /// Identifier for cell

@@ -25,6 +25,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
         guard let cell = homeTableView.dequeueReusableCell(withIdentifier: HomeTableCellViewModel.identifier, for: indexPath) as? HomeTableViewCell else{
             return UITableViewCell()
         }
+        
         return cell
     }
     // Tableview Cell Height

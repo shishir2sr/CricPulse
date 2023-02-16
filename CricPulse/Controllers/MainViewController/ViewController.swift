@@ -1,14 +1,18 @@
 
 import UIKit
+import Combine
+
 class ViewController: UIViewController {
+    // Variables
+    var scores: [ScoreBoardCollectionViewModel] = []
+    private var cancellables = Set<AnyCancellable>()
     // ViewModel
     let mainViewModel = MainViewModel()
-    // View Outlets
-    @IBOutlet weak var navigationBarView: UIView!
+
     // Outlets
     @IBOutlet weak var homeCollectionView: UICollectionView!
     @IBOutlet weak var homeTableView: UITableView!
-    // Constraints outlet
+    @IBOutlet weak var navigationBarView: UIView!
     @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var navigationViewHeightConstraint: NSLayoutConstraint!
     
@@ -21,10 +25,17 @@ class ViewController: UIViewController {
     fileprivate func ConfigureViewDidLoad(){
         setupCollectionView()
         setupTableView()
-        
+        setupBinders()
         // TODO: Change according to use case
         Task{
            await mainViewModel.getFixture()
         }
+    }
+    
+    func setupBinders(){
+        mainViewModel.$fixtures.sink { scores in
+            self.scores = scores
+            self.reloadCollectionView()
+        }.store(in: &cancellables)
     }
 }
