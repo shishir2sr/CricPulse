@@ -42,22 +42,3 @@ class ScoreBoardCollectionViewModel{
 }
 
 
-/**
- 
- // Label Outlets
- tournamentTitle: UILabel!
- matchNo: UILabel!
- matchStatusLabel: UILabel!  // Live or Upcoming or Completed
- stadiumName: UILabel!
- lTeamName: UILabel!
- vTeamName: UILabel!
- gameType: UILabel!
-lTeamScoreOne: UILabel!
-vTeamScoreOne: UILabel!
- textualScoreLabel: UILabel!
- 
- //Image Outlets
- lTeamFlag: UIImageView!
- vTeamFlag: UIImageView!
- 
- */
