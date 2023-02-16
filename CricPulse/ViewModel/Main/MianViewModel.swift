@@ -1,6 +1,10 @@
 import Foundation
 
 class MainViewModel{
+    // Variables
+    @Published var isLoading: Bool = false
+    var dataSource: [FixtureDataClass] = []
+    @Published var fixtures:[HomeTableCellViewModel] = []
     // CollectionView Number of items
     func numberOfItems(in _: Int) -> Int {
         return 10
