@@ -2,6 +2,7 @@ import Foundation
 import UIKit
 
 // MARK: - Collectionview  delegate and datasource
+
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     // collectionview setup
     func setupCollectionView(){
@@ -12,34 +13,40 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
         registerCells()
         collectionViewFlowLayoutSetup()
     }
+    
     // Flow Layout Stup
     fileprivate func collectionViewFlowLayoutSetup() {
         let collectionViewCellLayout = UICollectionViewFlowLayout()
         collectionViewCellLayout.scrollDirection = .horizontal
         homeCollectionView.collectionViewLayout = collectionViewCellLayout
     }
+    
     // Cell Registration
     func registerCells(){
         homeCollectionView.register(ScoreBoardCollectionViewModel.register(), forCellWithReuseIdentifier: ScoreBoardCollectionViewModel.identifier)
-        
     }
+    
     // Collectionview Reload
     func reloadCollectionView(){
         DispatchQueue.main.async {
             self.homeCollectionView.reloadData()
         }
     }
+    
     // Number of items
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        mainViewModel.numberOfItems(in: section)
+        return mainViewModel.numberOfItems(in: section)
     }
+    
     //cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = homeCollectionView.dequeueReusableCell(withReuseIdentifier: ScoreBoardCollectionViewModel.identifier, for: indexPath) as? ScoreCardCollectionViewCell else{
             return UICollectionViewCell()
         }
+        cell.setupCell(viewModel: scores[indexPath.row])
         return cell
     }
+    
     // If user scroll tableview the collectionview will animated
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if let _ = scrollView as? UITableView{
@@ -52,6 +59,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
         }
     }
     
+    // MARK: Animations
     fileprivate func upScrollAnimation() {
         UIView.animate(withDuration: 0.7) { [weak self] in
             self?.navigationBarView.isHidden = false
@@ -75,6 +83,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
 }
 
 // MARK: - Collectionview Flow Layout
+
 extension ViewController: UICollectionViewDelegateFlowLayout{
     // cell size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

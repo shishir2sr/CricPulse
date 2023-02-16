@@ -1,10 +1,3 @@
-//
-//  ScoreCardCollectionViewCell.swift
-//  CricPulse
-//
-//  Created by Yeasir Arefin Tusher on 11/2/23.
-//
-
 import UIKit
 
 class ScoreCardCollectionViewCell: UICollectionViewCell {
@@ -13,7 +6,6 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var matchStatusView: UIView!
     @IBOutlet weak var scoreView: UIView!
     @IBOutlet weak var textualScoreView: UIView!
-    
     
     // Label Outlets
     @IBOutlet weak var tournamentTitle: UILabel!
@@ -37,8 +29,13 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
     // Stack Outlets
     @IBOutlet weak var scoreOneStack: UIStackView!
     
+    // MARK: Awake From Xib
     override func awakeFromNib() {
         super.awakeFromNib()
+        uiConfig()
+    }
+    // UI configuration
+     func uiConfig() {
         backView.round(10)
         backView.addBorder(color: UIColor.systemGray6, width: 1)
         notificationButtonOutlet.round(5)
@@ -47,5 +44,26 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
         textualScoreView.round(5)
         gameType.round(5)
         gameType.addBorder(color: .systemGreen, width: 1)
+    }
+    
+    func setupCell(viewModel: ScoreBoardCollectionViewModel){
+        tournamentTitle.text = viewModel.tournamentName
+        matchNo.text = viewModel.matchNo
+        matchStatusLabel.text = viewModel.matchStatus
+        stadiumName.text = viewModel.stadiumName
+        lTeamName.text = viewModel.localTeamName
+        vTeamName.text = viewModel.visitorTeamName
+        gameType.text = viewModel.gameType
+        lTeamScoreOne.text = viewModel.localTeamScore
+        vTeamScoreOne.text = viewModel.visitorTeamScore
+        textualScoreLabel.text = viewModel.matchUpdateText
+        
+        // TODO: Flag show using sdwebimage
+        /**
+        
+         Image Outlets
+         @IBOutlet weak var lTeamFlag: UIImageView!
+         @IBOutlet weak var vTeamFlag: UIImageView!
+         */
     }
 }

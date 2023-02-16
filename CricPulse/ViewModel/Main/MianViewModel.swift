@@ -1,13 +1,16 @@
 import Foundation
 
 class MainViewModel{
-    // Variables
+    // Combined variables
     @Published var isLoading: Bool = false
+    @Published var fixtures:[ScoreBoardCollectionViewModel] = []
+    
+    // Variables
     var dataSource: [FixtureDataClass] = []
-    @Published var fixtures:[HomeTableCellViewModel] = []
+    
     // CollectionView Number of items
     func numberOfItems(in _: Int) -> Int {
-        return 10
+        return fixtures.count
     }
     // TableViewNumber of rows
     func numberOfRows(in _: Int) -> Int {
@@ -16,9 +19,26 @@ class MainViewModel{
     
     // Get Data
     func getFixture()async {
-        let url = UrlGenerator.shared.getFixturesURL()
+//        let url = UrlGenerator.shared.createFixturesUrl()
+        let url = UrlGenerator2.shared.createFixturesUrl(queryParameters: [.include("localteam,visitorteam"),])
         
-        let data: Result<Fixtures,Error> = await ApiClient.shared.fetchData(url: url)
-        print(data)
+        let data: Result<Fixtures,CustomError> = await ApiClient.shared.fetchData(url: url)
+//        print(data)
+        handleResponse(data: data)
+    }
+    // Handle Data
+    func handleResponse(data: Result<Fixtures,CustomError>){
+        switch data{
+        case .success(let score):
+            self.dataSource = score.data
+            mapData()
+            debugPrint(score.data[0].note!)
+        case .failure(let err):
+            debugPrint(err.localizedDescription) // TODO: Do something to the UI
+        }
+    }
+    // Map Fetched data into viewmodel
+    func mapData(){
+        fixtures = dataSource.compactMap{ScoreBoardCollectionViewModel(scorecard: $0)}
     }
 }
