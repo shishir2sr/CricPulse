@@ -16,9 +16,8 @@ class MainViewModel{
     
     // Get Data
     func getFixture()async {
-        let url = UrlGenerator.shared.getFixturesURL()
-        
-        let data: Result<Fixtures,Error> = await ApiClient.shared.fetchData(url: url)
+        let url = UrlGenerator.shared.createFixturesUrl()
+        let data: Result<Fixtures,CustomError> = await ApiClient.shared.fetchData(url: url)
         print(data)
     }
 }
