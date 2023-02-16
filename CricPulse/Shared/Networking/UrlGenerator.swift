@@ -8,14 +8,19 @@ class UrlGenerator{
         static let shared = UrlGenerator()
 
         private init() {}
-
-        func getPlayerURL(playerID: Int) -> URL? {
+    
+    /// Create Single Player URL
+    /// - Parameter playerID: Recieves player_id
+    /// - Returns: URL String
+        func createPlayerUrl(playerID: Int) -> URL? {
             let endpoint = "/players/\(playerID)"
             let queryItems = [URLQueryItem(name: "api_token", value: apiToken)]
             return createURL(endpoint: endpoint, queryItems: queryItems)
         }
-
-        func getPlayersURL() -> URL? {
+    
+    /// Create all players endpoint URL
+    /// - Returns: URL String
+        func createPlayersUrl() -> URL? {
             let endpoint = "/players"
             let queryItems = [
                 URLQueryItem(name: "fields[players]", value: "fullname,image_path"),
@@ -23,8 +28,10 @@ class UrlGenerator{
             ]
             return createURL(endpoint: endpoint, queryItems: queryItems)
         }
-
-        func getFixturesURL() -> URL? {
+    
+    /// Create Fixtures endpoints URL
+    /// - Returns: URL String
+        func createFixturesUrl() -> URL? {
             let endpoint = "/fixtures"
             let queryItems = [
                 URLQueryItem(name: "include", value: "localteam,visitorteam"),
