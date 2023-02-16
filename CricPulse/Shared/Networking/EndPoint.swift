@@ -1,9 +1,9 @@
 import Foundation
 
-class UrlGenerator2 {
+class EndPoint {
     let baseURL = "https://cricket.sportmonks.com/api/v2.0"
     let apiToken: String = NetworkConstants.shared.apiKey
-    static let shared = UrlGenerator2()
+    static let shared = EndPoint()
 
     private init() {}
 
@@ -36,19 +36,19 @@ class UrlGenerator2 {
     }
 
     // Create Single Player URL
-    func createPlayerUrl(playerID: Int, queryParameters: [QueryParameter] = []) -> URL? {
+    func getPlayer(ID playerID: Int, with queryParameters: [QueryParameter] = []) -> URL? {
         let endpoint = "/players/\(playerID)"
         return createURL(endpoint: endpoint, queryParameters: queryParameters)
     }
 
     // Create all players endpoint URL
-    func createPlayersUrl(queryParameters: [QueryParameter] = []) -> URL? {
+    func getPlayers(with queryParameters: [QueryParameter] = []) -> URL? {
         let endpoint = "/players"
         return createURL(endpoint: endpoint, queryParameters: queryParameters)
     }
 
     // Create Fixtures endpoints URL
-    func createFixturesUrl(queryParameters: [QueryParameter] = []) -> URL? {
+    func getFixtures(with queryParameters: [QueryParameter] = []) -> URL? {
         let endpoint = "/fixtures"
         return createURL(endpoint: endpoint, queryParameters: queryParameters)
     }
