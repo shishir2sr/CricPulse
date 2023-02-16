@@ -37,6 +37,7 @@ struct FixtureDataClass: Codable {
        let rpc_overs, rpc_target: String?
        let localteam, visitorteam: Team?
        let league: LeagueDataClass?
+    let venue: VenueDataClass?
 }
 
 enum Status: String, Codable {

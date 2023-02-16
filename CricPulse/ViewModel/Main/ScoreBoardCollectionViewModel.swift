@@ -17,10 +17,10 @@ class ScoreBoardCollectionViewModel{
     
     // TODO: Recieve Model Class Variable and assign those
     init(scorecard: FixtureDataClass) {
-        self.tournamentName = scorecard.league?.name ?? "Unknown" // TODO: Fix Model class
+        self.tournamentName = scorecard.league?.name ?? "Unknown"
         self.matchNo = scorecard.round ?? "--"
         self.matchStatus = scorecard.status
-        self.stadiumName = scorecard.venue_id?.codingKey.stringValue ?? "__" // TODO: Fix Later
+        self.stadiumName = (scorecard.venue?.name ?? "__") + ", " + (scorecard.venue?.city  ?? "__")
         self.localTeamName = scorecard.localteam?.code ?? "Unknown"
         self.visitorTeamName = scorecard.visitorteam?.code ?? "Unknown"
         self.gameType = scorecard.type ?? "--"
