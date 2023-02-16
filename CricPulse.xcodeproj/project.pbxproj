@@ -11,6 +11,8 @@
 		384BBB6E2997CCF100F8C8EF /* ScoreCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 384BBB6C2997CCF100F8C8EF /* ScoreCardCollectionViewCell.xib */; };
 		384BBB702997CD3A00F8C8EF /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384BBB6F2997CD3A00F8C8EF /* AppConstants.swift */; };
 		384BBB742997CEA700F8C8EF /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384BBB732997CEA700F8C8EF /* UIViewExtension.swift */; };
+		388007F4299D31A900FA9C7B /* UITableViewEstension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388007F3299D31A900FA9C7B /* UITableViewEstension.swift */; };
+		388007F6299D34F000FA9C7B /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388007F5299D34F000FA9C7B /* UICollectionViewExtension.swift */; };
 		38DED9A3299BE51500E865F4 /* HomeTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DED9A1299BE51500E865F4 /* HomeTVCell.xib */; };
 		8901AB9729949D97000F8315 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8901AB9629949D97000F8315 /* AppDelegate.swift */; };
 		8901AB9929949D97000F8315 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8901AB9829949D97000F8315 /* SceneDelegate.swift */; };
@@ -38,6 +40,8 @@
 		384BBB6C2997CCF100F8C8EF /* ScoreCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreCardCollectionViewCell.xib; sourceTree = "<group>"; };
 		384BBB6F2997CD3A00F8C8EF /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		384BBB732997CEA700F8C8EF /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		388007F3299D31A900FA9C7B /* UITableViewEstension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewEstension.swift; sourceTree = "<group>"; };
+		388007F5299D34F000FA9C7B /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
 		38DED9A1299BE51500E865F4 /* HomeTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTVCell.xib; sourceTree = "<group>"; };
 		8901AB9329949D97000F8315 /* CricPulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CricPulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8901AB9629949D97000F8315 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				384BBB732997CEA700F8C8EF /* UIViewExtension.swift */,
+				388007F3299D31A900FA9C7B /* UITableViewEstension.swift */,
+				388007F5299D34F000FA9C7B /* UICollectionViewExtension.swift */,
 			);
 			path = AppExtensions;
 			sourceTree = "<group>";
@@ -292,6 +298,7 @@
 			files = (
 				89D5D750299CAE6F00C87209 /* NetworkConstants.swift in Sources */,
 				89D5D752299CD63800C87209 /* FixtureDataClass.swift in Sources */,
+				388007F4299D31A900FA9C7B /* UITableViewEstension.swift in Sources */,
 				89D5D756299CE28A00C87209 /* PlayerDataClass.swift in Sources */,
 				89DD46722999DA6900F1E700 /* MianViewModel.swift in Sources */,
 				8901ABA129949D97000F8315 /* CricPulse.xcdatamodeld in Sources */,
@@ -305,6 +312,7 @@
 				89D5D75A299CEBD600C87209 /* UrlGenerator.swift in Sources */,
 				8901AB9729949D97000F8315 /* AppDelegate.swift in Sources */,
 				384BBB742997CEA700F8C8EF /* UIViewExtension.swift in Sources */,
+				388007F6299D34F000FA9C7B /* UICollectionViewExtension.swift in Sources */,
 				89DD46702999D6FD00F1E700 /* ViwController+CollectionView.swift in Sources */,
 				89D5D749299C789100C87209 /* MainViewController+Tableview.swift in Sources */,
 				8901AB9929949D97000F8315 /* SceneDelegate.swift in Sources */,

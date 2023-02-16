@@ -11,6 +11,8 @@ class ViewController: UIViewController {
     // Constraints outlet
     @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var navigationViewHeightConstraint: NSLayoutConstraint!
+    
+    // MARK: ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         ConfigureViewDidLoad()
