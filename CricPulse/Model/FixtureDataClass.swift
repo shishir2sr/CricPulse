@@ -12,13 +12,14 @@ struct Fixture:Codable {
 
 struct FixtureDataClass: Codable {
     let resource: String?
-       let id, league_id, season_id, stage_id: Int
+       let id, league_id, season_id, stage_id: Int?
        let round: String?
-       let localteam_id, visitorteam_id: Int
+       let localteam_id, visitorteam_id: Int?
        let starting_at: String?
        let type: String?
        let live: Bool?
-       let status: String?
+//       let status: String?
+       let status: Status?
        let last_period: String?
        let note: String?
        let venue_id: Int?
@@ -35,6 +36,31 @@ struct FixtureDataClass: Codable {
        let localteam_dl_data, visitorteam_dl_data: TeamDLData?
        let rpc_overs, rpc_target: String?
        let localteam, visitorteam: Team?
+       let league: LeagueDataClass?
+    let venue: VenueDataClass?
+}
+
+enum Status: String, Codable {
+    case aban = "Aban."
+    case finished = "Finished"
+    case ns = "NS"
+    case the1StInnings = "1st Innings"
+    case the2NdInnings = "2nd Innings"
+    
+    var statusText: String{
+        switch self{
+        case .finished:
+            return "Finished"
+        case .ns:
+            return "Upcoming"
+        case .aban:
+            return "Postponded"
+        case .the1StInnings:
+            return "Live"
+        case .the2NdInnings:
+            return "live"
+        }
+    }
 }
 
 struct TeamDLData: Codable {

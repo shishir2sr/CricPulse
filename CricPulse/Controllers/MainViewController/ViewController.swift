@@ -20,8 +20,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ConfigureViewDidLoad()
-        let url = UrlGenerator2.shared.createFixturesUrl(queryParameters: [.include("localteam,visitorteam"), .sort("updated_at")])
-        print(url!)
+       
     }
     
     fileprivate func ConfigureViewDidLoad(){

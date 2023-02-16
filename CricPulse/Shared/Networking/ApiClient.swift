@@ -14,8 +14,9 @@ class ApiClient{
                 response.statusCode == 200 else {
                 return .failure(.invalidResponse)
             }
-            
-            let resource = try JSONDecoder().decode(T.self, from: data)
+            let jsonDecoder = JSONDecoder()
+            jsonDecoder.dateDecodingStrategy = .iso8601 // set the date decoding strategy to ISO 8601 format
+            let resource = try jsonDecoder.decode(T.self, from: data)
             print("Decode Successful")
             return .success(resource)
         } catch {
