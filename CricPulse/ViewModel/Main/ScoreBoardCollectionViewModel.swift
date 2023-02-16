@@ -4,7 +4,7 @@ import UIKit
 class ScoreBoardCollectionViewModel{
     let tournamentName: String
     let matchNo: String
-    let matchStatus: String // Live, Upcoming, Finished etc
+    let matchStatus: Status? // Live, Upcoming, Finished etc
     let stadiumName: String
     let localTeamName: String
     let visitorTeamName: String
@@ -17,12 +17,12 @@ class ScoreBoardCollectionViewModel{
     
     // TODO: Recieve Model Class Variable and assign those
     init(scorecard: FixtureDataClass) {
-        self.tournamentName = scorecard.league_id.codingKey.stringValue // TODO: Fix Model class
+        self.tournamentName = scorecard.league?.name ?? "Unknown" // TODO: Fix Model class
         self.matchNo = scorecard.round ?? "--"
-        self.matchStatus = scorecard.status ?? "--"
+        self.matchStatus = scorecard.status
         self.stadiumName = scorecard.venue_id?.codingKey.stringValue ?? "__" // TODO: Fix Later
-        self.localTeamName = scorecard.localteam?.name ?? "Unknown"
-        self.visitorTeamName = scorecard.visitorteam?.name ?? "Unknown"
+        self.localTeamName = scorecard.localteam?.code ?? "Unknown"
+        self.visitorTeamName = scorecard.visitorteam?.code ?? "Unknown"
         self.gameType = scorecard.type ?? "--"
         self.localTeamScore = scorecard.localteam_dl_data?.score ?? "--"
         self.visitorTeamScore = scorecard.visitorteam_dl_data?.score ?? "--"
@@ -38,6 +38,26 @@ class ScoreBoardCollectionViewModel{
     /// Register the xib using the xib name
     static func register() -> UINib {
         UINib(nibName: Constants.scoreCardXibName, bundle: nil)
+    }
+    
+    func getMatchStatusColor() -> UIColor{
+        switch self.matchStatus{
+        case .aban:
+            return UIColor.gray.withAlphaComponent(0.5)
+        case .finished:
+            return UIColor.blue.withAlphaComponent(0.5)
+        case .ns:
+            return UIColor.systemGreen.withAlphaComponent(0.5)
+        case .the1StInnings:
+            return UIColor.red.withAlphaComponent(0.5)
+        case .the2NdInnings:
+            return UIColor.red.withAlphaComponent(0.5)
+        case .some(_):
+            return UIColor.red.withAlphaComponent(0.5)
+        case .none:
+            return UIColor.cyan
+        }
+        
     }
 }
 

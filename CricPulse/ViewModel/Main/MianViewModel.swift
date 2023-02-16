@@ -19,7 +19,7 @@ class MainViewModel{
     
     // Get Data
     func getFixture()async {
-        let url = EndPoint.shared.getFixtures(with: [.sort("-updated_at"),.include("localteam,visitorteam")])
+        let url = EndPoint.shared.getFixtures(with: [.sort("-updated_at"),.include("localteam,visitorteam,localteam,visitorteam,league")])
         let data: Result<Fixtures,CustomError> = await ApiClient.shared.fetchData(url: url)
         handleResponse(data: data)
     }
@@ -37,7 +37,7 @@ class MainViewModel{
     }
     // Map Fetched data into viewmodel
     func mapData(){
-        let upComingMatchData = dataSource.filter {$0.status != "Finished"}
+        let upComingMatchData = dataSource.filter {$0.status != .finished}
         fixtures = upComingMatchData.compactMap{ScoreBoardCollectionViewModel(scorecard: $0)}
     }
 }
