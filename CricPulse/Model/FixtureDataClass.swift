@@ -15,7 +15,7 @@ struct FixtureDataClass: Codable {
        let id, league_id, season_id, stage_id: Int?
        let round: String?
        let localteam_id, visitorteam_id: Int?
-       let starting_at: String?
+       let starting_at: Date?
        let type: String?
        let live: Bool?
 //       let status: String?
