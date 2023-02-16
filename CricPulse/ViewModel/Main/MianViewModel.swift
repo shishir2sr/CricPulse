@@ -37,7 +37,7 @@ class MainViewModel{
     }
     // Map Fetched data into viewmodel
     func mapData(){
-        let upComingMatchData = dataSource.filter {$0.status != .finished}
+        let upComingMatchData = dataSource.filter {$0.status != .finished && $0.status != .aban}
         fixtures = upComingMatchData.compactMap{ScoreBoardCollectionViewModel(scorecard: $0)}
     }
 }

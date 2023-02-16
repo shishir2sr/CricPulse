@@ -14,13 +14,16 @@ class ScoreBoardCollectionViewModel{
     let matchUpdateText: String // bd won by 29 runs, Need 105 runs to win, etc.
     let localTeamFlagUrl: String
     let visitorTeamFlagUrl: String
+//    let startingDate: String?
+    
+    @Published var countDownTime: String = ""
     
     // TODO: Recieve Model Class Variable and assign those
     init(scorecard: FixtureDataClass) {
         self.tournamentName = scorecard.league?.name ?? "Unknown"
         self.matchNo = scorecard.round ?? "--"
         self.matchStatus = scorecard.status
-        self.stadiumName = (scorecard.venue?.name ?? "__") + ", " + (scorecard.venue?.city  ?? "__")
+        self.stadiumName = (scorecard.venue?.name ?? "Not fixed") + ", " + (scorecard.venue?.city  ?? "")
         self.localTeamName = scorecard.localteam?.code ?? "Unknown"
         self.visitorTeamName = scorecard.visitorteam?.code ?? "Unknown"
         self.gameType = scorecard.type ?? "--"
@@ -29,6 +32,7 @@ class ScoreBoardCollectionViewModel{
         self.matchUpdateText = scorecard.note ?? "Please wait..."
         self.localTeamFlagUrl = scorecard.localteam?.image_path ?? ""
         self.visitorTeamFlagUrl = scorecard.visitorteam?.image_path ?? ""
+//        self.startingDate = scorecard.starting_at ?? Date().formatted()
     }
     
     /// Identifier for cell
@@ -59,6 +63,17 @@ class ScoreBoardCollectionViewModel{
         }
         
     }
+    
+//    func getUpcomingMatchCountDownTime(){
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy/MM/dd" // set the date format
+//        let endDate =  dateFormatter.date(from: startingDate ?? "2022-02-16 10:30:00") ?? Date()// set the end date
+//        let countdownCalendar = Calendar.current
+//        let countdownDate = countdownCalendar.dateComponents([.day, .hour, .minute, .second], from: Date(), to: endDate)
+//       
+//        self.countDownTime = "Countdown Time: \(countdownDate.day!) days, \(countdownDate.hour!) hours, \(countdownDate.minute!) minutes, \(countdownDate.second!) seconds"
+//        
+//    }
 }
 
 

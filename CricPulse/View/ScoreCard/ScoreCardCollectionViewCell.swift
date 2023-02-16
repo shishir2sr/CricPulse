@@ -1,7 +1,9 @@
 import UIKit
-
+import Combine
 class ScoreCardCollectionViewCell: UICollectionViewCell {
    
+    private var cancellables = Set<AnyCancellable>()
+    
     // View Outlets
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var matchStatusView: UIView!
@@ -45,7 +47,9 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
         textualScoreView.round(5)
         gameType.round(5)
         gameType.addBorder(color: .systemGreen, width: 1)
+        
     }
+    
     
     func setupCell(viewModel: ScoreBoardCollectionViewModel){
         tournamentTitle.text = viewModel.tournamentName
@@ -65,7 +69,9 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
         if viewModel.matchStatus == .ns{
             notificationButtonOutlet.isHidden = false
             notificationButtonOutlet.isUserInteractionEnabled = false
+            scoreOneStack.isHidden = true
         }
+        
         
         // TODO: Flag show using sdwebimage
         /**
