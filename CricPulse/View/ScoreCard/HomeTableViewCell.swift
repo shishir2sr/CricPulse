@@ -1,5 +1,3 @@
-
-
 import UIKit
 
 class HomeTableViewCell: UITableViewCell {
@@ -21,12 +19,29 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var teamOneFlag: UIImageView!
     @IBOutlet weak var teamTwoFlag: UIImageView!
     
+    // MARK: Awake from Xib
     override func awakeFromNib() {
         super.awakeFromNib()
         homeTVCBackView.round(10)
         scoreCardBackView.round(5)
         textResultBackView.round(5)
-        matchType.addBorder(color: .systemIndigo, width: 0.5)
+        matchType.addBorder(color: .systemOrange, width: 0.5)
         matchType.round(5)
     }
+    
+    // Setup cells
+    func setupCell(viewModel: FinishedMatchScoreCardTVModel){
+        tournamentName.text = viewModel.tournamentName
+        roundNumber.text = viewModel.matchNo
+        matchDate.text = viewModel.startingDate.formatted(date: .abbreviated, time: .shortened)
+        teamOneName.text = viewModel.localTeamName
+        teamTwoName.text = viewModel.visitorTeamName
+        matchType.text = viewModel.gameType
+        teamOneScore.text = viewModel.localTeamScore
+        teamTwoScore.text = viewModel.visitorTeamScore
+        matchResult.text = viewModel.matchUpdateText
+        teamOneFlag.sd_setImage(with: URL(string: viewModel.localTeamFlagUrl), placeholderImage: UIImage(systemName: "photo"))
+        teamTwoFlag.sd_setImage(with: URL(string: viewModel.visitorTeamFlagUrl), placeholderImage: UIImage(systemName: "photo"))
+    }
+    
 }

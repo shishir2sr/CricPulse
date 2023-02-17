@@ -23,7 +23,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     // Cell Registration
     func registerCells(){
-        homeCollectionView.register(ScoreBoardCollectionViewModel.register(), forCellWithReuseIdentifier: ScoreBoardCollectionViewModel.identifier)
+        homeCollectionView.register(ScoreCardCVModel.register(), forCellWithReuseIdentifier: ScoreCardCVModel.identifier)
     }
     
     // Collectionview Reload
@@ -40,10 +40,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     //cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = homeCollectionView.dequeueReusableCell(withReuseIdentifier: ScoreBoardCollectionViewModel.identifier, for: indexPath) as? ScoreCardCollectionViewCell else{
+        guard let cell = homeCollectionView.dequeueReusableCell(withReuseIdentifier: ScoreCardCVModel.identifier, for: indexPath) as? ScoreCardCollectionViewCell else{
             return UICollectionViewCell()
         }
-        cell.setupCell(viewModel: scores[indexPath.row])
+        cell.setupCell(viewModel: collectionViewData[indexPath.row])
         return cell
     }
     

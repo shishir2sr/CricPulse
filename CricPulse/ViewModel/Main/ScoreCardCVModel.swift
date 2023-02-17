@@ -1,7 +1,8 @@
 import Foundation
 import UIKit
 
-class ScoreBoardCollectionViewModel{
+class ScoreCardCVModel{
+    // Variables
     let tournamentName: String
     let matchNo: String
     let matchStatus: Status? // Live, Upcoming, Finished etc
@@ -14,11 +15,9 @@ class ScoreBoardCollectionViewModel{
     let matchUpdateText: String // bd won by 29 runs, Need 105 runs to win, etc.
     let localTeamFlagUrl: String
     let visitorTeamFlagUrl: String
-//    let startingDate: String?
+    let startingDate: Date
     
-    @Published var countDownTime: String = ""
-    
-    // TODO: Recieve Model Class Variable and assign those
+    // Initialise
     init(scorecard: FixtureDataClass) {
         self.tournamentName = scorecard.league?.name ?? "Unknown"
         self.matchNo = scorecard.round ?? "--"
@@ -32,7 +31,7 @@ class ScoreBoardCollectionViewModel{
         self.matchUpdateText = scorecard.note ?? "Please wait..."
         self.localTeamFlagUrl = scorecard.localteam?.image_path ?? ""
         self.visitorTeamFlagUrl = scorecard.visitorteam?.image_path ?? ""
-//        self.startingDate = scorecard.starting_at ?? Date().formatted()
+        self.startingDate = scorecard.starting_at ?? Date()
     }
     
     /// Identifier for cell
@@ -44,6 +43,7 @@ class ScoreBoardCollectionViewModel{
         UINib(nibName: Constants.scoreCardXibName, bundle: nil)
     }
     
+    // Change status color
     func getMatchStatusColor() -> UIColor{
         switch self.matchStatus{
         case .aban:
@@ -61,19 +61,18 @@ class ScoreBoardCollectionViewModel{
         case .none:
             return UIColor.cyan
         }
-        
     }
     
-//    func getUpcomingMatchCountDownTime(){
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "yyyy/MM/dd" // set the date format
-//        let endDate =  dateFormatter.date(from: startingDate ?? "2022-02-16 10:30:00") ?? Date()// set the end date
-//        let countdownCalendar = Calendar.current
-//        let countdownDate = countdownCalendar.dateComponents([.day, .hour, .minute, .second], from: Date(), to: endDate)
-//       
-//        self.countDownTime = "Countdown Time: \(countdownDate.day!) days, \(countdownDate.hour!) hours, \(countdownDate.minute!) minutes, \(countdownDate.second!) seconds"
-//        
-//    }
+    /// Calculate remaining time based on match date
+    func remainingTime() -> String {
+        let now = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.day, .hour, .minute, .second], from: now, to: startingDate)
+        guard let days = components.day, let hours = components.hour, let minutes = components.minute, let seconds = components.second else {
+            return ""
+        }
+        return String(format: "\(days) days, \(hours) hours, \(minutes), \(seconds) seconds to toss")
+    }
 }
 
 
