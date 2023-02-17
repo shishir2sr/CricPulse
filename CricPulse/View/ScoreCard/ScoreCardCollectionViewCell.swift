@@ -1,8 +1,10 @@
 import UIKit
 import Combine
 import SDWebImage
+
 class ScoreCardCollectionViewCell: UICollectionViewCell {
     private var cancellables = Set<AnyCancellable>()
+    var timer: Timer?
     // View Outlets
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var matchStatusView: UIView!
@@ -38,8 +40,16 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
         uiConfig()
     }
     
+    // MARK: Prepare for reuse
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    
     // UI configuration
-     func uiConfig() {
+    func uiConfig() {
         backView.round(10)
         backView.addBorder(color: UIColor.systemGray6, width: 1)
         notificationButtonOutlet.round(5)
@@ -48,9 +58,8 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
         textualScoreView.round(5)
         gameType.round(5)
         gameType.addBorder(color: .systemGreen, width: 1)
-        
     }
-
+    
     func setupCell(viewModel: ScoreBoardCollectionViewModel){
         tournamentTitle.text = viewModel.tournamentName
         matchNo.text = viewModel.matchNo
@@ -74,30 +83,25 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
             scoreOneStack.isHidden = true
             upcomingMatchDate.isHidden = false
             upcomingMatchDate.text = viewModel.startingDate.formatted(date: .complete, time: .shortened)
-//            startCountdownTimer(matchDate: viewModel.startingDate)
+            
+            textualScoreLabel.text = remainingTime(until: viewModel.startingDate)
+            
+            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+                guard let self = self  else {return}
+                self.textualScoreLabel.text = self.remainingTime(until: viewModel.startingDate)
+            }
         }
-        
     }
     
-//    func startCountdownTimer(matchDate: Date) {
-//        let countdownTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {[weak self] timer in
-//            guard let self = self else{return}
-//            let currentDate = Date()
-//            let calendar = Calendar.current
-//            let components = calendar.dateComponents([.day, .hour, .minute, .second], from: currentDate, to: matchDate)
-//
-//            guard let days = components.day, let hours = components.hour, let minutes = components.minute, let seconds = components.second else {
-//                return
-//            }
-//            let countDown = "\(days) days, \(hours) hours, \(minutes) minutes, \(seconds) seconds until the match"
-//            self.textualScoreLabel.text = countDown
-//            if currentDate >= matchDate {
-//                timer.invalidate()
-//                print("The match has started!")
-//            }
-//        }
-//
-//        countdownTimer.tolerance = 0
-//        countdownTimer.fire()
-//    }
-}
+    /// Calculate remaining time based on match date
+    func remainingTime(until date: Date) -> String {
+        let now = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.day, .hour, .minute, .second], from: now, to: date)
+        guard let days = components.day, let hours = components.hour, let minutes = components.minute, let seconds = components.second else {
+            return ""
+        }
+        return String(format: "\(days) days, \(hours) hours, \(minutes), \(seconds) seconds left until the match")
+    }
+ }
+
