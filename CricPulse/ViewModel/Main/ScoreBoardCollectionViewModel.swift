@@ -2,6 +2,9 @@ import Foundation
 import UIKit
 
 class ScoreBoardCollectionViewModel{
+    // Variables
+    @Published var coundownTimerText: String = ""
+    
     let tournamentName: String
     let matchNo: String
     let matchStatus: Status? // Live, Upcoming, Finished etc
@@ -64,16 +67,9 @@ class ScoreBoardCollectionViewModel{
         
     }
     
-//    func getUpcomingMatchCountDownTime(){
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "yyyy/MM/dd" // set the date format
-//        let endDate =  dateFormatter.date(from: startingDate ?? "2022-02-16 10:30:00") ?? Date()// set the end date
-//        let countdownCalendar = Calendar.current
-//        let countdownDate = countdownCalendar.dateComponents([.day, .hour, .minute, .second], from: Date(), to: endDate)
-//       
-//        self.countDownTime = "Countdown Time: \(countdownDate.day!) days, \(countdownDate.hour!) hours, \(countdownDate.minute!) minutes, \(countdownDate.second!) seconds"
-//        
-//    }
+    
+   
+
 }
 
 

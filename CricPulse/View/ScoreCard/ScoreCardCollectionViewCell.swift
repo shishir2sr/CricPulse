@@ -37,6 +37,7 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         uiConfig()
     }
+    
     // UI configuration
      func uiConfig() {
         backView.round(10)
@@ -73,14 +74,30 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
             scoreOneStack.isHidden = true
             upcomingMatchDate.isHidden = false
             upcomingMatchDate.text = viewModel.startingDate.formatted(date: .complete, time: .shortened)
+//            startCountdownTimer(matchDate: viewModel.startingDate)
         }
         
-        
-        // TODO: Flag show using sdwebimage
-        /**
-         Image Outlets
-         @IBOutlet weak var lTeamFlag: UIImageView!
-         @IBOutlet weak var vTeamFlag: UIImageView!
-         */
     }
+    
+//    func startCountdownTimer(matchDate: Date) {
+//        let countdownTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {[weak self] timer in
+//            guard let self = self else{return}
+//            let currentDate = Date()
+//            let calendar = Calendar.current
+//            let components = calendar.dateComponents([.day, .hour, .minute, .second], from: currentDate, to: matchDate)
+//
+//            guard let days = components.day, let hours = components.hour, let minutes = components.minute, let seconds = components.second else {
+//                return
+//            }
+//            let countDown = "\(days) days, \(hours) hours, \(minutes) minutes, \(seconds) seconds until the match"
+//            self.textualScoreLabel.text = countDown
+//            if currentDate >= matchDate {
+//                timer.invalidate()
+//                print("The match has started!")
+//            }
+//        }
+//
+//        countdownTimer.tolerance = 0
+//        countdownTimer.fire()
+//    }
 }

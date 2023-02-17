@@ -59,6 +59,8 @@ enum Status: String, Codable {
             return "Live"
         case .the2NdInnings:
             return "live"
+        default:
+            return "Unknown"
         }
     }
 }
