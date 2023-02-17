@@ -1,10 +1,8 @@
 import Foundation
 import UIKit
 
-class ScoreBoardCollectionViewModel{
+class ScoreCardCVModel{
     // Variables
-    @Published var coundownTimerText: String = ""
-    
     let tournamentName: String
     let matchNo: String
     let matchStatus: Status? // Live, Upcoming, Finished etc
@@ -19,9 +17,7 @@ class ScoreBoardCollectionViewModel{
     let visitorTeamFlagUrl: String
     let startingDate: Date
     
-    @Published var countDownTime: String = ""
-    
-    // TODO: Recieve Model Class Variable and assign those
+    // Initialise
     init(scorecard: FixtureDataClass) {
         self.tournamentName = scorecard.league?.name ?? "Unknown"
         self.matchNo = scorecard.round ?? "--"
@@ -47,6 +43,7 @@ class ScoreBoardCollectionViewModel{
         UINib(nibName: Constants.scoreCardXibName, bundle: nil)
     }
     
+    // Change status color
     func getMatchStatusColor() -> UIColor{
         switch self.matchStatus{
         case .aban:
@@ -64,12 +61,18 @@ class ScoreBoardCollectionViewModel{
         case .none:
             return UIColor.cyan
         }
-        
     }
     
-    
-   
-
+    /// Calculate remaining time based on match date
+    func remainingTime() -> String {
+        let now = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.day, .hour, .minute, .second], from: now, to: startingDate)
+        guard let days = components.day, let hours = components.hour, let minutes = components.minute, let seconds = components.second else {
+            return ""
+        }
+        return String(format: "\(days) days, \(hours) hours, \(minutes), \(seconds) seconds left until the match")
+    }
 }
 
 

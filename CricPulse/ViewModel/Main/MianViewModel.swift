@@ -3,18 +3,20 @@ import Foundation
 class MainViewModel{
     // Combined variables
     @Published var isLoading: Bool = false
-    @Published var fixtures:[ScoreBoardCollectionViewModel] = []
+    @Published var scoreCardForCV:[ScoreCardCVModel] = []
+    @Published var scoreCardForTV:[FinishedMatchScoreCardTVModel] = []
     
     // Variables
     var dataSource: [FixtureDataClass] = []
     
     // CollectionView Number of items
     func numberOfItems(in _: Int) -> Int {
-        return fixtures.count
+        return scoreCardForCV.count
     }
-    // TableViewNumber of rows
+    
+    // TableView Number of rows
     func numberOfRows(in _: Int) -> Int {
-        return 10
+        return scoreCardForTV.count
     }
     
     // Get Data
@@ -37,7 +39,14 @@ class MainViewModel{
     }
     // Map Fetched data into viewmodel
     func mapData(){
+        // Upcoming and Live Match data
         let upComingMatchData = dataSource.filter {$0.status != .finished && $0.status != .aban}
-        fixtures = upComingMatchData.compactMap{ScoreBoardCollectionViewModel(scorecard: $0)}
+        self.scoreCardForCV = upComingMatchData.compactMap{ScoreCardCVModel(scorecard: $0)}
+        
+        // Finished Match Data
+        let finishedMatchData = dataSource.filter {$0.status == .finished}
+        self.scoreCardForTV = finishedMatchData.compactMap { scorecard in
+            return FinishedMatchScoreCardTVModel(scorecard: scorecard)
+        }
     }
 }

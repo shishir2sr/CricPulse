@@ -60,7 +60,9 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
         gameType.addBorder(color: .systemGreen, width: 1)
     }
     
-    func setupCell(viewModel: ScoreBoardCollectionViewModel){
+    
+    
+    func setupCell(viewModel: ScoreCardCVModel){
         tournamentTitle.text = viewModel.tournamentName
         matchNo.text = viewModel.matchNo
         matchStatusLabel.text = viewModel.matchStatus?.statusText
@@ -77,31 +79,28 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
         vTeamFlag.sd_setImage(with: URL(string: viewModel.visitorTeamFlagUrl), placeholderImage: UIImage(systemName: "photo"))
         upcomingMatchDate.isHidden = true
         
+        upcomingMatchSetup(viewModel)
+    }
+    
+    // Upcoming match setup
+    fileprivate func upcomingMatchSetup(_ viewModel: ScoreCardCVModel) {
         if viewModel.matchStatus == .ns{
             notificationButtonOutlet.isHidden = false
             notificationButtonOutlet.isUserInteractionEnabled = false
             scoreOneStack.isHidden = true
             upcomingMatchDate.isHidden = false
             upcomingMatchDate.text = viewModel.startingDate.formatted(date: .complete, time: .shortened)
-            
-            textualScoreLabel.text = remainingTime(until: viewModel.startingDate)
+        
+            textualScoreLabel.text = viewModel.remainingTime()
             
             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
                 guard let self = self  else {return}
-                self.textualScoreLabel.text = self.remainingTime(until: viewModel.startingDate)
+                DispatchQueue.main.async {
+                    self.textualScoreLabel.text = viewModel.remainingTime()
+                }
             }
         }
     }
     
-    /// Calculate remaining time based on match date
-    func remainingTime(until date: Date) -> String {
-        let now = Date()
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.day, .hour, .minute, .second], from: now, to: date)
-        guard let days = components.day, let hours = components.hour, let minutes = components.minute, let seconds = components.second else {
-            return ""
-        }
-        return String(format: "\(days) days, \(hours) hours, \(minutes), \(seconds) seconds left until the match")
-    }
- }
+}
 

@@ -24,7 +24,7 @@
 		8901ABA329949D98000F8315 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8901ABA229949D98000F8315 /* Assets.xcassets */; };
 		8901ABA629949D98000F8315 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8901ABA429949D98000F8315 /* LaunchScreen.storyboard */; };
 		89C9A4A0299DC8CC0054F2CF /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C9A49F299DC8CC0054F2CF /* CustomError.swift */; };
-		89D5D747299C771D00C87209 /* HomeTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D746299C771D00C87209 /* HomeTableCellViewModel.swift */; };
+		89D5D747299C771D00C87209 /* FinishedMatchScoreCardTVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D746299C771D00C87209 /* FinishedMatchScoreCardTVModel.swift */; };
 		89D5D749299C789100C87209 /* MainViewController+Tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D748299C789100C87209 /* MainViewController+Tableview.swift */; };
 		89D5D74D299C87EA00C87209 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D74C299C87EA00C87209 /* HomeTableViewCell.swift */; };
 		89D5D750299CAE6F00C87209 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D74F299CAE6F00C87209 /* NetworkConstants.swift */; };
@@ -35,7 +35,7 @@
 		89D5D75A299CEBD600C87209 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D759299CEBD600C87209 /* EndPoint.swift */; };
 		89DD46702999D6FD00F1E700 /* ViwController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DD466F2999D6FD00F1E700 /* ViwController+CollectionView.swift */; };
 		89DD46722999DA6900F1E700 /* MianViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DD46712999DA6900F1E700 /* MianViewModel.swift */; };
-		89DD46742999DACD00F1E700 /* ScoreBoardCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DD46732999DACD00F1E700 /* ScoreBoardCollectionViewModel.swift */; };
+		89DD46742999DACD00F1E700 /* ScoreCardCVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DD46732999DACD00F1E700 /* ScoreCardCVModel.swift */; };
 		89E37EC0299F18900046D0F8 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 89E37EBF299F18900046D0F8 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +59,7 @@
 		8901ABA529949D98000F8315 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8901ABA729949D98000F8315 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89C9A49F299DC8CC0054F2CF /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
-		89D5D746299C771D00C87209 /* HomeTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableCellViewModel.swift; sourceTree = "<group>"; };
+		89D5D746299C771D00C87209 /* FinishedMatchScoreCardTVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedMatchScoreCardTVModel.swift; sourceTree = "<group>"; };
 		89D5D748299C789100C87209 /* MainViewController+Tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Tableview.swift"; sourceTree = "<group>"; };
 		89D5D74C299C87EA00C87209 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		89D5D74F299CAE6F00C87209 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 		89D5D759299CEBD600C87209 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		89DD466F2999D6FD00F1E700 /* ViwController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViwController+CollectionView.swift"; sourceTree = "<group>"; };
 		89DD46712999DA6900F1E700 /* MianViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MianViewModel.swift; sourceTree = "<group>"; };
-		89DD46732999DACD00F1E700 /* ScoreBoardCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoardCollectionViewModel.swift; sourceTree = "<group>"; };
+		89DD46732999DACD00F1E700 /* ScoreCardCVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCardCVModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,8 +227,8 @@
 		89D5D74E299CA16F00C87209 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				89DD46732999DACD00F1E700 /* ScoreBoardCollectionViewModel.swift */,
-				89D5D746299C771D00C87209 /* HomeTableCellViewModel.swift */,
+				89DD46732999DACD00F1E700 /* ScoreCardCVModel.swift */,
+				89D5D746299C771D00C87209 /* FinishedMatchScoreCardTVModel.swift */,
 				89DD46712999DA6900F1E700 /* MianViewModel.swift */,
 			);
 			path = Main;
@@ -324,8 +324,8 @@
 				89D5D754299CE10300C87209 /* TeamDataClass.swift in Sources */,
 				384BBB702997CD3A00F8C8EF /* AppConstants.swift in Sources */,
 				8901AB9B29949D97000F8315 /* ViewController.swift in Sources */,
-				89D5D747299C771D00C87209 /* HomeTableCellViewModel.swift in Sources */,
-				89DD46742999DACD00F1E700 /* ScoreBoardCollectionViewModel.swift in Sources */,
+				89D5D747299C771D00C87209 /* FinishedMatchScoreCardTVModel.swift in Sources */,
+				89DD46742999DACD00F1E700 /* ScoreCardCVModel.swift in Sources */,
 				89D5D758299CE7DC00C87209 /* ApiClient.swift in Sources */,
 				89D5D75A299CEBD600C87209 /* EndPoint.swift in Sources */,
 				8901AB9729949D97000F8315 /* AppDelegate.swift in Sources */,

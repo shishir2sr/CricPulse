@@ -4,8 +4,10 @@ import Combine
 
 class ViewController: UIViewController {
     // Variables
-    var scores: [ScoreBoardCollectionViewModel] = []
+    var collectionViewData: [ScoreCardCVModel] = []
+    var tableViewData: [FinishedMatchScoreCardTVModel] = []
     private var cancellables = Set<AnyCancellable>()
+    
     // ViewModel
     let mainViewModel = MainViewModel()
 
@@ -23,6 +25,7 @@ class ViewController: UIViewController {
        
     }
     
+    // View Did Load Configuration
     fileprivate func ConfigureViewDidLoad(){
         setupCollectionView()
         setupTableView()
@@ -33,10 +36,16 @@ class ViewController: UIViewController {
         }
     }
     
+    // Conmbine variables
     func setupBinders(){
-        mainViewModel.$fixtures.sink { scores in
-            self.scores = scores
+        mainViewModel.$scoreCardForCV.sink { scores in
+            self.collectionViewData = scores
             self.reloadCollectionView()
+        }.store(in: &cancellables)
+        
+        mainViewModel.$scoreCardForTV.sink { scores in
+            self.tableViewData = scores
+            self.reloadTableView()
         }.store(in: &cancellables)
     }
 }
