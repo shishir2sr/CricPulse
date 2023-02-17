@@ -21,7 +21,10 @@ class MainViewModel{
     
     // Get Data
     func getFixture()async {
-        let url = EndPoint.shared.getFixtures(with: [.sort("-updated_at"),.include("localteam,visitorteam,localteam,visitorteam,league,venue,runs.team")])
+        let sortString = "-updated_at"
+        let includeString = "localteam,visitorteam,localteam,visitorteam,league,venue,runs.team"
+        
+        let url = EndPoint.shared.getFixtures(with: [.sort(sortString),.include(includeString)])
         let data: Result<Fixtures,CustomError> = await ApiClient.shared.fetchData(url: url)
         handleResponse(data: data)
     }
