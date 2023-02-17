@@ -92,7 +92,7 @@ struct Link: Codable {
     let active: Bool?
 }
 
-
+// MARK: Run Data Class
 struct Runs: Codable {
     let resource: String?
     let id: Int?
@@ -106,5 +106,6 @@ struct Runs: Codable {
     let pp2: String?
     let pp3: String?
     let updated_at: String?
+    let team: Team?
 }
 

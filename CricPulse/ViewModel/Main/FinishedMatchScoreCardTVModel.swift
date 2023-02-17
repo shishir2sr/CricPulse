@@ -20,16 +20,32 @@ class FinishedMatchScoreCardTVModel{
     init(scorecard: FixtureDataClass) {
         self.tournamentName = scorecard.league?.name ?? "Unknown"
         self.matchNo = scorecard.round ?? "--"
-        self.localTeamName = scorecard.localteam?.code ?? "Unknown"
-        self.visitorTeamName = scorecard.visitorteam?.code ?? "Unknown"
+        self.localTeamName = scorecard.runs?[0].team?.code ?? "Unknown"
+        self.visitorTeamName = scorecard.runs?[1].team?.code ?? "Unknown"
         self.gameType = scorecard.type ?? "--"
-        self.localTeamScore = scorecard.localteam_dl_data?.score ?? "--"
-        self.visitorTeamScore = scorecard.visitorteam_dl_data?.score ?? "--"
+        
         self.matchUpdateText = scorecard.note ?? "Please wait..."
         self.localTeamFlagUrl = scorecard.localteam?.image_path ?? ""
         self.visitorTeamFlagUrl = scorecard.visitorteam?.image_path ?? ""
         self.startingDate = scorecard.starting_at ?? Date()
         self.manOfTheMatch = "" // TODO: Man of the match
+        
+        self.localTeamScore =  FinishedMatchScoreCardTVModel.getScore(for: 0, dataClass: scorecard)
+        self.visitorTeamScore = FinishedMatchScoreCardTVModel.getScore(for: 1, dataClass: scorecard)
+        
+    }
+    // Get Score
+    static func getScore(for team: Int, dataClass: FixtureDataClass) -> String{
+        let team = dataClass.runs?[team]
+        let score = team?.score
+        let wickets = team?.wickets
+        let overs = team?.overs
+        if let score = score, let wickets = wickets, let overs = overs {
+            return "\(score)/\(wickets) (\(overs))"
+        }else{
+            return "---"
+        }
+        
     }
     
     // identifier
