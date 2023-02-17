@@ -36,6 +36,7 @@
 		89DD46702999D6FD00F1E700 /* ViwController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DD466F2999D6FD00F1E700 /* ViwController+CollectionView.swift */; };
 		89DD46722999DA6900F1E700 /* MianViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DD46712999DA6900F1E700 /* MianViewModel.swift */; };
 		89DD46742999DACD00F1E700 /* ScoreBoardCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DD46732999DACD00F1E700 /* ScoreBoardCollectionViewModel.swift */; };
+		89E37EC0299F18900046D0F8 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 89E37EBF299F18900046D0F8 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89E37EC0299F18900046D0F8 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +250,9 @@
 			dependencies = (
 			);
 			name = CricPulse;
+			packageProductDependencies = (
+				89E37EBF299F18900046D0F8 /* SDWebImage */,
+			);
 			productName = CricPulse;
 			productReference = 8901AB9329949D97000F8315 /* CricPulse.app */;
 			productType = "com.apple.product-type.application";
@@ -276,6 +281,9 @@
 				Base,
 			);
 			mainGroup = 8901AB8A29949D97000F8315;
+			packageReferences = (
+				89E37EBE299F18900046D0F8 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 8901AB9429949D97000F8315 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -558,6 +566,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		89E37EBE299F18900046D0F8 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:SDWebImage/SDWebImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		89E37EBF299F18900046D0F8 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 89E37EBE299F18900046D0F8 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		8901AB9F29949D97000F8315 /* CricPulse.xcdatamodeld */ = {

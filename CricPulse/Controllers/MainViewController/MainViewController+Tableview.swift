@@ -7,7 +7,7 @@ extension ViewController{
         homeTableView.dataSource = self
         homeTableView.delegate = self
         registerTableViewCell()
-        homeTableView.addShadow(opecity: 0.7, size: 2, radius: 2, color: UIColor.gray)
+        homeTableView.addShadow(opecity: 0.6, size: 1, radius: 1, color: UIColor.gray)
     }
     
     func registerTableViewCell(){
