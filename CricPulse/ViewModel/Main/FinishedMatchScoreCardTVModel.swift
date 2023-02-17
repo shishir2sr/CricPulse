@@ -25,8 +25,8 @@ class FinishedMatchScoreCardTVModel{
         self.gameType = scorecard.type ?? "--"
         
         self.matchUpdateText = scorecard.note ?? "Please wait..."
-        self.localTeamFlagUrl = scorecard.localteam?.image_path ?? ""
-        self.visitorTeamFlagUrl = scorecard.visitorteam?.image_path ?? ""
+        self.localTeamFlagUrl = scorecard.runs?[0].team?.image_path ?? ""
+        self.visitorTeamFlagUrl = scorecard.runs?[1].team?.image_path ?? ""
         self.startingDate = scorecard.starting_at ?? Date()
         self.manOfTheMatch = "" // TODO: Man of the match
         

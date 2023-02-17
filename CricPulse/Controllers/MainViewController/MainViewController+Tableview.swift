@@ -8,6 +8,11 @@ extension ViewController{
         homeTableView.delegate = self
         registerTableViewCell()
         homeTableView.addShadow(opecity: 0.6, size: 1, radius: 1, color: UIColor.gray)
+//       
+//        let insets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//        homeTableView.contentInset = insets
+        
+
     }
     
     //cell Registration
@@ -42,4 +47,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         145
     }
+    
+    
 }
