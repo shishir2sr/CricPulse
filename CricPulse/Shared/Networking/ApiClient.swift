@@ -14,8 +14,11 @@ class ApiClient{
                 response.statusCode == 200 else {
                 return .failure(.invalidResponse)
             }
+            // Date Formatter
             let dateFormatter = DateFormatter()
+            dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+            // Decoder
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .formatted(dateFormatter)
             let resource = try decoder.decode(T.self, from: data)
