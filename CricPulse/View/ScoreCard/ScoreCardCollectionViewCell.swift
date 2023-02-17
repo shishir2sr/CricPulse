@@ -1,5 +1,6 @@
 import UIKit
 import Combine
+import SDWebImage
 class ScoreCardCollectionViewCell: UICollectionViewCell {
     private var cancellables = Set<AnyCancellable>()
     // View Outlets
@@ -19,6 +20,7 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var lTeamScoreOne: UILabel!
     @IBOutlet weak var vTeamScoreOne: UILabel!
     @IBOutlet weak var textualScoreLabel: UILabel!
+    @IBOutlet weak var upcomingMatchDate: UILabel!
     
     //Image Outlets
     @IBOutlet weak var lTeamFlag: UIImageView!
@@ -47,8 +49,7 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
         gameType.addBorder(color: .systemGreen, width: 1)
         
     }
-    
-    
+
     func setupCell(viewModel: ScoreBoardCollectionViewModel){
         tournamentTitle.text = viewModel.tournamentName
         matchNo.text = viewModel.matchNo
@@ -62,15 +63,21 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
         textualScoreLabel.text = viewModel.matchUpdateText
         matchStatusView.backgroundColor = viewModel.getMatchStatusColor()
         notificationButtonOutlet.isHidden = true
+        lTeamFlag.sd_setImage(with: URL(string: viewModel.localTeamFlagUrl), placeholderImage: UIImage(systemName: "photo"))
+        vTeamFlag.sd_setImage(with: URL(string: viewModel.visitorTeamFlagUrl), placeholderImage: UIImage(systemName: "photo"))
+        upcomingMatchDate.isHidden = true
+        
         if viewModel.matchStatus == .ns{
             notificationButtonOutlet.isHidden = false
             notificationButtonOutlet.isUserInteractionEnabled = false
             scoreOneStack.isHidden = true
+            upcomingMatchDate.isHidden = false
+            upcomingMatchDate.text = viewModel.startingDate.formatted(date: .complete, time: .shortened)
         }
+        
         
         // TODO: Flag show using sdwebimage
         /**
-        
          Image Outlets
          @IBOutlet weak var lTeamFlag: UIImageView!
          @IBOutlet weak var vTeamFlag: UIImageView!
