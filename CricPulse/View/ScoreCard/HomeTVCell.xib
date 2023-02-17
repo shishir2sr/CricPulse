@@ -3,7 +3,6 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -24,18 +23,18 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ICC T20 Woman's World Cup" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVj-lx-ReL">
                                 <rect key="frame" x="10" y="8" width="316" height="17"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round 4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ne3-xO-Ytu">
-                                <rect key="frame" x="10" y="29.999999999999996" width="44" height="13.333333333333332"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <rect key="frame" x="20.000000000000004" y="29.999999999999996" width="45.333333333333343" height="13.333333333333332"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="February 23, 2023" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fol-CH-dbZ">
-                                <rect key="frame" x="224.66666666666666" y="29.999999999999996" width="101.33333333333334" height="13.333333333333332"/>
+                                <rect key="frame" x="214.66666666666666" y="29.999999999999996" width="101.33333333333334" height="13.333333333333332"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -58,15 +57,15 @@
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BAN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VpY-Su-eTM">
                                                         <rect key="frame" x="33" y="3.0000000000000009" width="63.666666666666657" height="14.333333333333336"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHd-8v-Lqg">
                                                 <rect key="frame" x="104.66666666666666" y="0.0" width="96.666666666666657" height="20"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -75,8 +74,8 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IND" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Kl-xJ-bgb">
                                                         <rect key="frame" x="0.0" y="3.0000000000000009" width="62.666666666666664" height="14.333333333333336"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="india()" translatesAutoresizingMaskIntoConstraints="NO" id="uXc-vL-djU">
@@ -119,13 +118,13 @@
                                 <rect key="frame" x="10" y="106.33333333333333" width="316" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bangladesh Won By 105 runs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j25-sZ-Sif">
-                                        <rect key="frame" x="85.333333333333329" y="4" width="145.33333333333337" height="12"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
-                                        <color key="textColor" name="SecondaryBackgroundColor"/>
+                                        <rect key="frame" x="90.333333333333329" y="4.6666666666666714" width="135.33333333333337" height="11"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstItem="j25-sZ-Sif" firstAttribute="centerX" secondItem="Fp7-sa-wj9" secondAttribute="centerX" id="7ur-2U-5dD"/>
                                     <constraint firstAttribute="height" constant="20" id="PJs-cg-JlM"/>
@@ -141,11 +140,11 @@
                             <constraint firstAttribute="trailing" secondItem="Fp7-sa-wj9" secondAttribute="trailing" constant="10" id="VdZ-gc-70T"/>
                             <constraint firstAttribute="trailing" secondItem="db5-vg-8bN" secondAttribute="trailing" constant="10" id="YaT-sh-rnS"/>
                             <constraint firstItem="Fp7-sa-wj9" firstAttribute="leading" secondItem="uj1-FI-TaW" secondAttribute="leading" constant="10" id="eR6-E0-Jbt"/>
-                            <constraint firstItem="ne3-xO-Ytu" firstAttribute="leading" secondItem="uj1-FI-TaW" secondAttribute="leading" constant="10" id="eWa-AV-WTn"/>
+                            <constraint firstItem="ne3-xO-Ytu" firstAttribute="leading" secondItem="uj1-FI-TaW" secondAttribute="leading" constant="20" id="eWa-AV-WTn"/>
                             <constraint firstItem="db5-vg-8bN" firstAttribute="top" secondItem="Fol-CH-dbZ" secondAttribute="bottom" constant="8" id="ep9-iJ-Uv3"/>
                             <constraint firstItem="ne3-xO-Ytu" firstAttribute="top" secondItem="aVj-lx-ReL" secondAttribute="bottom" constant="5" id="fMB-Oq-xU5"/>
                             <constraint firstItem="aVj-lx-ReL" firstAttribute="leading" secondItem="uj1-FI-TaW" secondAttribute="leading" constant="10" id="jan-Ed-7f6"/>
-                            <constraint firstAttribute="trailing" secondItem="Fol-CH-dbZ" secondAttribute="trailing" constant="10" id="lcZ-Yv-itl"/>
+                            <constraint firstAttribute="trailing" secondItem="Fol-CH-dbZ" secondAttribute="trailing" constant="20" id="lcZ-Yv-itl"/>
                             <constraint firstItem="Fol-CH-dbZ" firstAttribute="top" secondItem="aVj-lx-ReL" secondAttribute="bottom" constant="5" id="mqm-aH-zSQ"/>
                             <constraint firstItem="db5-vg-8bN" firstAttribute="leading" secondItem="uj1-FI-TaW" secondAttribute="leading" constant="10" id="pWr-KW-RYQ"/>
                             <constraint firstAttribute="trailing" secondItem="aVj-lx-ReL" secondAttribute="trailing" constant="10" id="yqc-J6-b64"/>
@@ -184,11 +183,11 @@
     <resources>
         <image name="bangladesh()" width="48" height="48"/>
         <image name="india()" width="48" height="48"/>
-        <namedColor name="SecondaryBackgroundColor">
-            <color red="0.090196078431372548" green="0.12941176470588237" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

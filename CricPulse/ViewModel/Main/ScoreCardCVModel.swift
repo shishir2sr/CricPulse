@@ -71,7 +71,7 @@ class ScoreCardCVModel{
         guard let days = components.day, let hours = components.hour, let minutes = components.minute, let seconds = components.second else {
             return ""
         }
-        return String(format: "\(days) days, \(hours) hours, \(minutes), \(seconds) seconds left until the match")
+        return String(format: "\(days) days, \(hours) hours, \(minutes), \(seconds) seconds to toss")
     }
 }
 
