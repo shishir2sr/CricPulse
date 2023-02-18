@@ -50,9 +50,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     // If user scroll tableview the collectionview will animated
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if let _ = scrollView as? UITableView{
-            if scrollView.contentOffset.y > 50 {
+            if scrollView.contentOffset.y > 35 {
                 upScrollAnimation()
-            }else {
+            }else if scrollView.contentOffset.y < 0 {
                 downScrollAnimation()
             }
             

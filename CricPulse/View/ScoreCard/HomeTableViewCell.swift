@@ -42,6 +42,8 @@ class HomeTableViewCell: UITableViewCell {
         matchResult.text = viewModel.matchUpdateText
         teamOneFlag.sd_setImage(with: URL(string: viewModel.localTeamFlagUrl), placeholderImage: UIImage(systemName: "photo"))
         teamTwoFlag.sd_setImage(with: URL(string: viewModel.visitorTeamFlagUrl), placeholderImage: UIImage(systemName: "photo"))
+        
+    
     }
     
 }

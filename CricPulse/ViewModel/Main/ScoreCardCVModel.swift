@@ -23,15 +23,32 @@ class ScoreCardCVModel{
         self.matchNo = scorecard.round ?? "--"
         self.matchStatus = scorecard.status
         self.stadiumName = (scorecard.venue?.name ?? "Not fixed") + ", " + (scorecard.venue?.city  ?? "")
-        self.localTeamName = scorecard.localteam?.code ?? "Unknown"
-        self.visitorTeamName = scorecard.visitorteam?.code ?? "Unknown"
         self.gameType = scorecard.type ?? "--"
-        self.localTeamScore = scorecard.localteam_dl_data?.score ?? "--"
-        self.visitorTeamScore = scorecard.visitorteam_dl_data?.score ?? "--"
         self.matchUpdateText = scorecard.note ?? "Please wait..."
-        self.localTeamFlagUrl = scorecard.localteam?.image_path ?? ""
-        self.visitorTeamFlagUrl = scorecard.visitorteam?.image_path ?? ""
         self.startingDate = scorecard.starting_at ?? Date()
+        
+        if matchStatus != .ns {
+            let team1 = scorecard.runs?[0].team
+            let team2 = scorecard.runs?[1].team
+            
+            // team1
+            self.localTeamName = team1?.code ?? "Unknown"
+            self.localTeamFlagUrl = team1?.image_path ?? ""
+            self.localTeamScore = MainViewModel.getScore(for: 0, dataClass: scorecard)
+            
+            // team2
+            self.visitorTeamName = team2?.code ?? "Unknown"
+            self.visitorTeamFlagUrl = team2?.image_path ?? ""
+            self.visitorTeamScore = MainViewModel.getScore(for: 0, dataClass: scorecard)
+            
+        }else{
+            self.localTeamName = scorecard.localteam?.code ?? "Unknown"
+            self.visitorTeamName = scorecard.visitorteam?.code ?? "Unknown"
+            self.localTeamScore = scorecard.localteam_dl_data?.score ?? "--"
+            self.visitorTeamScore = scorecard.visitorteam_dl_data?.score ?? "--"
+            self.localTeamFlagUrl = scorecard.localteam?.image_path ?? ""
+            self.visitorTeamFlagUrl = scorecard.visitorteam?.image_path ?? ""
+        }
     }
     
     /// Identifier for cell
