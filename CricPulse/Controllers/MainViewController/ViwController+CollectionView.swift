@@ -52,7 +52,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
         if let _ = scrollView as? UITableView{
             if scrollView.contentOffset.y > 50 {
                 upScrollAnimation()
-            }else {
+            }else if scrollView.contentOffset.y < 0 {
                 downScrollAnimation()
             }
             
