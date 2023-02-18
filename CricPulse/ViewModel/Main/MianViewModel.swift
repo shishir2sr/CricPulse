@@ -21,10 +21,11 @@ class MainViewModel{
     
     // Get Data
     func getFixture()async {
+        // Generate URL
         let sortString = "-updated_at"
         let includeString = "localteam,visitorteam,localteam,visitorteam,league,venue,runs.team"
-        
         let url = EndPoint.shared.getFixtures(with: [.sort(sortString),.include(includeString)])
+        // get data
         let data: Result<Fixtures,CustomError> = await ApiClient.shared.fetchData(url: url)
         handleResponse(data: data)
     }
@@ -40,6 +41,20 @@ class MainViewModel{
             debugPrint(err.localizedDescription) // TODO: Do something to the UI
         }
     }
+    
+    // Match Result
+    static func getScore(for team: Int, dataClass: FixtureDataClass) -> String{
+        let team = dataClass.runs?[team]
+        let score = team?.score
+        let wickets = team?.wickets
+        let overs = team?.overs
+        if let score = score, let wickets = wickets, let overs = overs {
+            return "\(score)/\(wickets) (\(overs))"
+        }else{
+            return "---"
+        }
+    }
+    
     // Map Fetched data into viewmodel
     func mapData(){
         // Upcoming and Live Match data

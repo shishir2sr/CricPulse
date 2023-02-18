@@ -60,8 +60,6 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
         gameType.addBorder(color: .systemGreen, width: 1)
     }
     
-    
-    
     func setupCell(viewModel: ScoreCardCVModel){
         tournamentTitle.text = viewModel.tournamentName
         matchNo.text = viewModel.matchNo
@@ -74,9 +72,10 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
         vTeamScoreOne.text = viewModel.visitorTeamScore
         textualScoreLabel.text = viewModel.matchUpdateText
         matchStatusView.backgroundColor = viewModel.getMatchStatusColor()
-        notificationButtonOutlet.isHidden = true
         lTeamFlag.sd_setImage(with: URL(string: viewModel.localTeamFlagUrl), placeholderImage: UIImage(systemName: "photo"))
         vTeamFlag.sd_setImage(with: URL(string: viewModel.visitorTeamFlagUrl), placeholderImage: UIImage(systemName: "photo"))
+        
+        notificationButtonOutlet.isHidden = true
         upcomingMatchDate.isHidden = true
         
         upcomingMatchSetup(viewModel)
@@ -90,9 +89,7 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
             scoreOneStack.isHidden = true
             upcomingMatchDate.isHidden = false
             upcomingMatchDate.text = viewModel.startingDate.formatted(date: .complete, time: .shortened)
-        
             textualScoreLabel.text = viewModel.remainingTime()
-            
             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
                 guard let self = self  else {return}
                 DispatchQueue.main.async {
@@ -101,6 +98,5 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
             }
         }
     }
-    
 }
 
