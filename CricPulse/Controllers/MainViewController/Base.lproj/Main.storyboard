@@ -234,14 +234,14 @@
                                                         <rect key="frame" x="0.0" y="28" width="315" height="20"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="138 (141.3)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ns-dn-dcu" userLabel="totalScore1">
-                                                                <rect key="frame" x="0.0" y="1.5" width="74" height="17"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                                <rect key="frame" x="0.0" y="1.5" width="75.5" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="138 (141.3)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMK-GD-UDn" userLabel="totalScore2">
-                                                                <rect key="frame" x="241" y="1.5" width="74" height="17"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                                <rect key="frame" x="239.5" y="1.5" width="75.5" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -341,31 +341,71 @@
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="B3o-jP-djA">
                                 <rect key="frame" x="10" y="290" width="355" height="32"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                    <segment title="Info"/>
+                                    <segment title="Match Info"/>
+                                    <segment title="Scoreboard"/>
+                                    <segment title="Squad"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentControl:" destination="V21-tI-aVt" eventType="valueChanged" id="6WU-Vk-ZQz"/>
+                                </connections>
                             </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sxB-86-rW8">
+                                <rect key="frame" x="0.0" y="331" width="375" height="336"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <connections>
+                                    <segue destination="mh5-cP-7Vy" kind="embed" id="esD-ar-r4Y"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="haD-Ib-64a">
+                                <rect key="frame" x="0.0" y="331" width="375" height="336"/>
+                                <color key="backgroundColor" red="0.34970572300000002" green="0.19411131740000001" blue="0.19411131740000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="JGj-6o-JgF" kind="embed" id="vAD-By-4Ef"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gaG-f2-w4G">
+                                <rect key="frame" x="0.0" y="331" width="375" height="336"/>
+                                <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                <connections>
+                                    <segue destination="0zL-hH-dvY" kind="embed" id="ACf-M9-wZ6"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hgK-aI-9HW"/>
                         <color key="backgroundColor" name="PrimaryBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="hgK-aI-9HW" firstAttribute="trailing" secondItem="gaG-f2-w4G" secondAttribute="trailing" id="6gt-wf-qNz"/>
                             <constraint firstItem="zu9-2z-2Oi" firstAttribute="top" secondItem="hgK-aI-9HW" secondAttribute="top" constant="10" id="8Jg-Po-9ju"/>
                             <constraint firstItem="hgK-aI-9HW" firstAttribute="trailing" secondItem="zu9-2z-2Oi" secondAttribute="trailing" constant="10" id="9Fx-IM-huf"/>
                             <constraint firstItem="B3o-jP-djA" firstAttribute="leading" secondItem="hgK-aI-9HW" secondAttribute="leading" constant="10" id="Bhw-ex-ahA"/>
+                            <constraint firstAttribute="bottom" secondItem="haD-Ib-64a" secondAttribute="bottom" id="Cca-VH-ZRA"/>
                             <constraint firstItem="ut9-Jk-sND" firstAttribute="trailing" secondItem="hgK-aI-9HW" secondAttribute="trailing" id="Dlq-YN-ebM"/>
                             <constraint firstItem="ut9-Jk-sND" firstAttribute="top" secondItem="hgK-aI-9HW" secondAttribute="top" id="EOQ-Qv-Ghp"/>
                             <constraint firstItem="zu9-2z-2Oi" firstAttribute="leading" secondItem="hgK-aI-9HW" secondAttribute="leading" constant="10" id="FkW-J3-zhr"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="sxB-86-rW8" secondAttribute="bottom" id="Jxm-Wp-YTC"/>
                             <constraint firstItem="ut9-Jk-sND" firstAttribute="leading" secondItem="hgK-aI-9HW" secondAttribute="leading" id="OB0-8a-SV9"/>
                             <constraint firstItem="hgK-aI-9HW" firstAttribute="trailing" secondItem="B3o-jP-djA" secondAttribute="trailing" constant="10" id="S6O-gT-FkJ"/>
+                            <constraint firstItem="sxB-86-rW8" firstAttribute="leading" secondItem="hgK-aI-9HW" secondAttribute="leading" id="TAz-c2-Tha"/>
+                            <constraint firstItem="haD-Ib-64a" firstAttribute="top" secondItem="B3o-jP-djA" secondAttribute="bottom" constant="10" id="ZS9-t7-BuH"/>
+                            <constraint firstItem="hgK-aI-9HW" firstAttribute="trailing" secondItem="sxB-86-rW8" secondAttribute="trailing" id="bSh-pn-eyu"/>
+                            <constraint firstItem="haD-Ib-64a" firstAttribute="leading" secondItem="hgK-aI-9HW" secondAttribute="leading" id="fwn-bh-FGS"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="gaG-f2-w4G" secondAttribute="bottom" id="i5c-BN-GWm"/>
                             <constraint firstItem="ut9-Jk-sND" firstAttribute="height" secondItem="kwB-4V-mbH" secondAttribute="height" multiplier="0.15" id="j91-RT-FtK"/>
+                            <constraint firstItem="sxB-86-rW8" firstAttribute="top" secondItem="B3o-jP-djA" secondAttribute="bottom" constant="10" id="jqG-56-NbC"/>
+                            <constraint firstItem="gaG-f2-w4G" firstAttribute="top" secondItem="B3o-jP-djA" secondAttribute="bottom" constant="10" id="kSU-YV-w3K"/>
+                            <constraint firstItem="gaG-f2-w4G" firstAttribute="leading" secondItem="hgK-aI-9HW" secondAttribute="leading" id="lfc-GN-v3v"/>
+                            <constraint firstItem="hgK-aI-9HW" firstAttribute="trailing" secondItem="haD-Ib-64a" secondAttribute="trailing" id="qkR-JK-CGa"/>
                             <constraint firstItem="B3o-jP-djA" firstAttribute="top" secondItem="zu9-2z-2Oi" secondAttribute="bottom" constant="10" id="vlB-C9-aQ5"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="alertButtonOutlet" destination="ckZ-ZC-Jb5" id="456-W9-Tfa"/>
                         <outlet property="backView" destination="zu9-2z-2Oi" id="Cag-YO-PJ1"/>
+                        <outlet property="containerViewOne" destination="sxB-86-rW8" id="qQn-tQ-FA8"/>
+                        <outlet property="containerViewThree" destination="gaG-f2-w4G" id="wHY-FA-GRL"/>
+                        <outlet property="containerViewTwo" destination="haD-Ib-64a" id="en8-52-5fN"/>
                         <outlet property="matchDate" destination="oaM-N0-a5o" id="Hhd-iB-jV4"/>
                         <outlet property="matchNumber" destination="vfS-yr-6Ab" id="BSH-XJ-p8c"/>
                         <outlet property="matchStatus" destination="i7w-Uv-lt1" id="L7W-cd-O6I"/>
@@ -450,6 +490,48 @@
             </objects>
             <point key="canvasLocation" x="1055.625" y="-27.464788732394368"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="eCQ-VV-7qZ">
+            <objects>
+                <viewController id="mh5-cP-7Vy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RcJ-xs-f8z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="336"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemMintColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AIY-tg-wo6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3193" y="604"/>
+        </scene>
+        <!--ScoreBoard-->
+        <scene sceneID="xfg-Ci-Hku">
+            <objects>
+                <viewController title="ScoreBoard" id="JGj-6o-JgF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HNg-fa-oBk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="336"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="linkColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BZ6-au-MMW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2497" y="604"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="dCw-Rd-PVz">
+            <objects>
+                <viewController id="0zL-hH-dvY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="81K-cd-rIK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="336"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sYm-0i-0Jz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2846" y="972"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bangladesh()" width="48" height="48"/>
@@ -465,11 +547,20 @@
         <namedColor name="SecondaryBackgroundColor">
             <color red="0.090196078431372548" green="0.12941176470588237" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemCyanColor">
             <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -482,6 +573,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

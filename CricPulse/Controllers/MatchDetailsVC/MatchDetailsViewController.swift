@@ -35,15 +35,49 @@ class MatchDetailsViewController: UIViewController {
     @IBOutlet weak var winPercenTageStackView: UIStackView!
     // Segment Controller
     @IBOutlet weak var segmentController: UISegmentedControl!
+    // containerviews
+    @IBOutlet weak var containerViewOne: UIView!
+    @IBOutlet weak var containerViewTwo: UIView!
+    @IBOutlet weak var containerViewThree: UIView!
     
     // MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+    
+    // View Setup
+    fileprivate func setupView() {
         backView.round(10)
         matchType.addBorder(color: .systemGreen, width: 1)
         matchType.round(5)
         matchStatusView.round(5)
         noteView.round(5)
         scoreView.round(5)
+        
+        containerViewOne.isHidden = false
+        containerViewTwo.isHidden = true
+        containerViewThree.isHidden = true
     }
+    
+    @IBAction func segmentControl(_ sender: UISegmentedControl) {
+        let index = sender.selectedSegmentIndex
+        if index == 0{
+        debugPrint("Info Page")
+            containerViewOne.isHidden = false
+            containerViewTwo.isHidden = true
+            containerViewThree.isHidden = true
+        }else if index == 1{
+            containerViewOne.isHidden = true
+            containerViewTwo.isHidden = false
+            containerViewThree.isHidden = true
+        }else{
+           debugPrint("Squad Page")
+            containerViewOne.isHidden = true
+            containerViewTwo.isHidden = true
+            containerViewThree.isHidden = false
+        }
+    }
+    
+    
 }
