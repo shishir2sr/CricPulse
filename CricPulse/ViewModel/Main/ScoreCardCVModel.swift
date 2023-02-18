@@ -27,7 +27,7 @@ class ScoreCardCVModel{
         self.matchUpdateText = scorecard.note ?? "Please wait..."
         self.startingDate = scorecard.starting_at ?? Date()
         
-        if matchStatus != .ns {
+        if matchStatus != .ns  {
             let team1 = scorecard.runs?[0].team
             let team2 = scorecard.runs?[1].team
             

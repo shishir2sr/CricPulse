@@ -10,7 +10,9 @@ struct Fixture:Codable {
     let data: FixtureDataClass
 }
 
-struct FixtureDataClass: Codable {
+struct FixtureDataClass: Codable{
+   
+    
     let resource: String?
        let id, league_id, season_id, stage_id: Int?
        let round: String?
