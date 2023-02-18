@@ -47,6 +47,7 @@ enum Status: String, Codable {
     case aban = "Aban."
     case finished = "Finished"
     case ns = "NS"
+    case postp = "Postp."
     case the1StInnings = "1st Innings"
     case the2NdInnings = "2nd Innings"
     
@@ -62,8 +63,10 @@ enum Status: String, Codable {
             return "Live"
         case .the2NdInnings:
             return "live"
-        default:
-            return "Unknown"
+//        default:
+//            return "Unknown"
+        case .postp:
+            return "Postponded"
         }
     }
 }

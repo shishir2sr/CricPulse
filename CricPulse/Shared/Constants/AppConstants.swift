@@ -9,4 +9,6 @@ class Constants{
     static let homeTableCellXibName = "HomeTVCell"
     static let homeTableCellReuseIdentifier = "hometableviewcell"
     
+    // Match DetailsVC
+    static let matchDetailsVCStoryboardID = "matchdetailsvc"
 }
