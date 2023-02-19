@@ -382,7 +382,7 @@
                                     <constraint firstItem="cR9-0n-fhH" firstAttribute="centerX" secondItem="zu9-2z-2Oi" secondAttribute="centerX" id="ylz-Fn-mYj"/>
                                 </constraints>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" toolTip="h" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="B3o-jP-djA">
+                            <segmentedControl toolTip="h" opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="B3o-jP-djA">
                                 <rect key="frame" x="10" y="255" width="355" height="32"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <segments>
@@ -546,6 +546,7 @@
                     <view key="view" contentMode="scaleToFill" id="RcJ-xs-f8z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="371"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Wch-ZO-Zl2"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </viewController>
@@ -560,13 +561,28 @@
                     <view key="view" contentMode="scaleToFill" id="vgf-8A-24L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="W4R-1H-V5T">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="qiP-Tn-8Tl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qiP-Tn-8Tl" firstAttribute="bottom" secondItem="W4R-1H-V5T" secondAttribute="bottom" id="Pip-sD-j6e"/>
+                            <constraint firstItem="W4R-1H-V5T" firstAttribute="top" secondItem="qiP-Tn-8Tl" secondAttribute="top" id="SO4-9Z-q8i"/>
+                            <constraint firstItem="W4R-1H-V5T" firstAttribute="leading" secondItem="qiP-Tn-8Tl" secondAttribute="leading" id="ZyG-tE-5UW"/>
+                            <constraint firstItem="qiP-Tn-8Tl" firstAttribute="trailing" secondItem="W4R-1H-V5T" secondAttribute="trailing" id="bXR-Re-5LL"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="matchDetailsTableView" destination="W4R-1H-V5T" id="D0b-yY-jk5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5kk-2q-41V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1317" y="720"/>
+            <point key="canvasLocation" x="1316" y="719.19040479760122"/>
         </scene>
         <!--ScoreBoard-->
         <scene sceneID="xfg-Ci-Hku">
@@ -667,6 +683,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="bDp-Yu-Vop"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9Fr-8R-IIX" firstAttribute="top" secondItem="HNg-fa-oBk" secondAttribute="topMargin" constant="20" id="8QE-8E-14b"/>
@@ -699,6 +716,7 @@
                     <view key="view" contentMode="scaleToFill" id="81K-cd-rIK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="371"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="QaD-OT-vOt"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </viewController>

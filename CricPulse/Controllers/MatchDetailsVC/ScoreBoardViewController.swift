@@ -18,14 +18,14 @@ class ScoreBoardViewController: UIViewController {
     @IBOutlet weak var teamTwoFlag: UIImageView!
     
     
-    
-    // MARK: - View Did load
+    // MARK: - View Did load?
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         
     }
     
+    // view did load setup
      func setupView() {
         teamOneBackgroundVIew.addBorder(color: .systemGray4, width: 1)
         teamOneBackgroundVIew.round(10)
@@ -33,8 +33,6 @@ class ScoreBoardViewController: UIViewController {
         
         teamTwoBackgroundVIew.addBorder(color: .systemGray4, width: 1)
         teamTwoBackgroundVIew.round(10)
-        
-        
         
         let tapGestureTwo = UITapGestureRecognizer(target: self, action: #selector(viewTwoTapped))
         teamTwoBackgroundVIew.addGestureRecognizer(tapGestureTwo)
