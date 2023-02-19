@@ -13,6 +13,8 @@
 		384BBB742997CEA700F8C8EF /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384BBB732997CEA700F8C8EF /* UIViewExtension.swift */; };
 		388007F4299D31A900FA9C7B /* UITableViewEstension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388007F3299D31A900FA9C7B /* UITableViewEstension.swift */; };
 		388007F6299D34F000FA9C7B /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388007F5299D34F000FA9C7B /* UICollectionViewExtension.swift */; };
+		38C010A929A23117004AECAC /* DetailedScoreTViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C010A729A23117004AECAC /* DetailedScoreTViewCell.swift */; };
+		38C010AA29A23117004AECAC /* DetailedScoreTViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C010A829A23117004AECAC /* DetailedScoreTViewCell.xib */; };
 		38C5FBF229A1CF930066F9AB /* ScoreBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5FBF129A1CF930066F9AB /* ScoreBoardViewController.swift */; };
 		38C5FBF429A1CFDF0066F9AB /* MatchInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5FBF329A1CFDF0066F9AB /* MatchInfoViewController.swift */; };
 		38C5FBF629A1D0310066F9AB /* SquadListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5FBF529A1D0310066F9AB /* SquadListViewController.swift */; };
@@ -51,6 +53,8 @@
 		384BBB732997CEA700F8C8EF /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		388007F3299D31A900FA9C7B /* UITableViewEstension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewEstension.swift; sourceTree = "<group>"; };
 		388007F5299D34F000FA9C7B /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
+		38C010A729A23117004AECAC /* DetailedScoreTViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedScoreTViewCell.swift; sourceTree = "<group>"; };
+		38C010A829A23117004AECAC /* DetailedScoreTViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedScoreTViewCell.xib; sourceTree = "<group>"; };
 		38C5FBF129A1CF930066F9AB /* ScoreBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoardViewController.swift; sourceTree = "<group>"; };
 		38C5FBF329A1CFDF0066F9AB /* MatchInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfoViewController.swift; sourceTree = "<group>"; };
 		38C5FBF529A1D0310066F9AB /* SquadListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadListViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +129,22 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		38C010A429A22C40004AECAC /* MatchDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				38C010A729A23117004AECAC /* DetailedScoreTViewCell.swift */,
+				38C010A829A23117004AECAC /* DetailedScoreTViewCell.xib */,
+			);
+			path = MatchDetailsView;
+			sourceTree = "<group>";
+		};
+		38EC96FF29A2293800705D28 /* MatchDetailsViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MatchDetailsViewModels;
+			sourceTree = "<group>";
+		};
 		38F618C829A094F5005F04C7 /* MatchDetailsVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				8901ABA429949D98000F8315 /* LaunchScreen.storyboard */,
+				38C010A429A22C40004AECAC /* MatchDetailsView */,
 				384BBB6A2997CCC300F8C8EF /* ScoreCard */,
 			);
 			path = View;
@@ -242,6 +263,7 @@
 		8901ABB72994A8FF000F8315 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				38EC96FF29A2293800705D28 /* MatchDetailsViewModels */,
 				89D5D74E299CA16F00C87209 /* Main */,
 			);
 			path = ViewModel;
@@ -325,6 +347,7 @@
 				384BBB6E2997CCF100F8C8EF /* ScoreCardCollectionViewCell.xib in Resources */,
 				8901ABA329949D98000F8315 /* Assets.xcassets in Resources */,
 				38DED9A3299BE51500E865F4 /* HomeTVCell.xib in Resources */,
+				38C010AA29A23117004AECAC /* DetailedScoreTViewCell.xib in Resources */,
 				8901AB9E29949D97000F8315 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,6 +377,7 @@
 				89DD46742999DACD00F1E700 /* ScoreCardCVModel.swift in Sources */,
 				89D5D758299CE7DC00C87209 /* ApiClient.swift in Sources */,
 				89D5D75A299CEBD600C87209 /* EndPoint.swift in Sources */,
+				38C010A929A23117004AECAC /* DetailedScoreTViewCell.swift in Sources */,
 				8901AB9729949D97000F8315 /* AppDelegate.swift in Sources */,
 				384BBB742997CEA700F8C8EF /* UIViewExtension.swift in Sources */,
 				388007F6299D34F000FA9C7B /* UICollectionViewExtension.swift in Sources */,

@@ -2,7 +2,7 @@ import UIKit
 
 class MatchDetailsViewController: UIViewController {
     // MARK: ViewModel
-    let matchDetailsViewModel: MatchDetailsViewModel = MatchDetailsViewModel()
+    
     
     // MARK: - Outlets
     // View Outlets

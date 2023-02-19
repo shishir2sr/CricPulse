@@ -190,7 +190,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Khr-6Y-amz" userLabel="lTeam">
                                                                 <rect key="frame" x="0.0" y="0.0" width="99.5" height="11.5"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bangladesh()" translatesAutoresizingMaskIntoConstraints="NO" id="CwV-cg-j7s">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bangladesh()" translatesAutoresizingMaskIntoConstraints="NO" id="CwV-cg-j7s">
                                                                         <rect key="frame" x="0.0" y="0.0" width="30" height="11.5"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="30" id="che-dv-no9"/>
