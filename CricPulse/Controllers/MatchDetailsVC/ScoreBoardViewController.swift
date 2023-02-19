@@ -26,13 +26,15 @@ class ScoreBoardViewController: UIViewController {
         
     }
     
-    fileprivate func setupView() {
+     func setupView() {
         teamOneBackgroundVIew.addBorder(color: .systemGray4, width: 1)
         teamOneBackgroundVIew.round(10)
-        teamOneBackgroundVIew.addShadow(opacity: 1, offset: 6, radius: 4)
+        teamOneBackgroundVIew.addShadow(opecity: 0.8, size: 2, radius: 4, color: UIColor.darkGray)
         
         teamTwoBackgroundVIew.addBorder(color: .systemGray4, width: 1)
         teamTwoBackgroundVIew.round(10)
+        
+        
         
         let tapGestureTwo = UITapGestureRecognizer(target: self, action: #selector(viewTwoTapped))
         teamTwoBackgroundVIew.addGestureRecognizer(tapGestureTwo)

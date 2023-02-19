@@ -56,6 +56,7 @@ class MatchDetailsViewController: UIViewController {
     // View Setup
     fileprivate func setupView() {
         backView.round(10)
+        backView.addShadow(opecity: 0.8, size: 2, radius: 4, color: UIColor.darkGray)
         matchType.addBorder(color: .systemGreen, width: 1)
         matchType.round(5)
         matchStatusView.round(5)
