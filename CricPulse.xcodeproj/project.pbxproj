@@ -17,6 +17,7 @@
 		38C010AA29A23117004AECAC /* DetailedScoreTViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C010A829A23117004AECAC /* DetailedScoreTViewCell.xib */; };
 		38C010AC29A2420F004AECAC /* DetailedScoreVC+TBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C010AB29A2420F004AECAC /* DetailedScoreVC+TBView.swift */; };
 		38C010AE29A243D6004AECAC /* DetailedScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C010AD29A243D6004AECAC /* DetailedScoreViewModel.swift */; };
+		38C010B029A2463C004AECAC /* MatchDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C010AF29A2463C004AECAC /* MatchDetailsViewModel.swift */; };
 		38C5FBF229A1CF930066F9AB /* ScoreBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5FBF129A1CF930066F9AB /* ScoreBoardViewController.swift */; };
 		38C5FBF429A1CFDF0066F9AB /* MatchInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5FBF329A1CFDF0066F9AB /* MatchInfoViewController.swift */; };
 		38C5FBF629A1D0310066F9AB /* SquadListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C5FBF529A1D0310066F9AB /* SquadListViewController.swift */; };
@@ -59,6 +60,7 @@
 		38C010A829A23117004AECAC /* DetailedScoreTViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedScoreTViewCell.xib; sourceTree = "<group>"; };
 		38C010AB29A2420F004AECAC /* DetailedScoreVC+TBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailedScoreVC+TBView.swift"; sourceTree = "<group>"; };
 		38C010AD29A243D6004AECAC /* DetailedScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedScoreViewModel.swift; sourceTree = "<group>"; };
+		38C010AF29A2463C004AECAC /* MatchDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailsViewModel.swift; sourceTree = "<group>"; };
 		38C5FBF129A1CF930066F9AB /* ScoreBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoardViewController.swift; sourceTree = "<group>"; };
 		38C5FBF329A1CFDF0066F9AB /* MatchInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfoViewController.swift; sourceTree = "<group>"; };
 		38C5FBF529A1D0310066F9AB /* SquadListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadListViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				38C010AD29A243D6004AECAC /* DetailedScoreViewModel.swift */,
+				38C010AF29A2463C004AECAC /* MatchDetailsViewModel.swift */,
 			);
 			path = MatchDetailsViewModels;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				38C5FBF629A1D0310066F9AB /* SquadListViewController.swift in Sources */,
 				8901AB9929949D97000F8315 /* SceneDelegate.swift in Sources */,
 				384BBB6D2997CCF100F8C8EF /* ScoreCardCollectionViewCell.swift in Sources */,
+				38C010B029A2463C004AECAC /* MatchDetailsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

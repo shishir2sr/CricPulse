@@ -16,6 +16,6 @@ class Constants{
     static let detailedScoreBoardForTeamID = "detailedscoreboardforteam"
     
     // DetailedScoreTableView Cell Nib identifier
-    let detailedScoreViewXibID = "detailedscoretvcell"
-    let detailedScoreViewXibName = "DetailedScoreTViewCell"
+    static let detailedScoreViewXibID = "detailedscoretvcell"
+    static let detailedScoreViewXibName = "DetailedScoreTViewCell"
 }
