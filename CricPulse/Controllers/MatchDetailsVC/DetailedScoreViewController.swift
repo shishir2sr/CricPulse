@@ -6,7 +6,10 @@ class DetailedScoreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configViewDidLoad()
     }
-
+    // TableView Stup
+    func configViewDidLoad(){
+        setupTableView()
+    }
 }
