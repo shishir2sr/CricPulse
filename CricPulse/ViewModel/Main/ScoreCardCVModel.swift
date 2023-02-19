@@ -17,7 +17,7 @@ class ScoreCardCVModel{
     let visitorTeamFlagUrl: String
     let startingDate: Date
     
-    
+    // MARK: Fix live matchdata
     
     // Initialise
     init(scorecard: FixtureDataClass) {

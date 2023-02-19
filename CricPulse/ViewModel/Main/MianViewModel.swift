@@ -57,7 +57,7 @@ class MainViewModel{
     // Map Fetched data into viewmodel
     func mapData(){
         // Upcoming and Live Match data
-        let upComingMatchData = dataSource.filter {$0.status != .finished && $0.status != .aban}
+        let upComingMatchData = dataSource.filter {$0.status != .finished && $0.status != .aban && $0.runs?.count != 1}
         self.scoreCardForCV = upComingMatchData.compactMap{ScoreCardCVModel(scorecard: $0)}
         
         // Finished Match Data

@@ -58,6 +58,8 @@ class MatchDetailsViewController: UIViewController {
         containerViewOne.isHidden = false
         containerViewTwo.isHidden = true
         containerViewThree.isHidden = true
+        matchDate.isHidden = true
+        scoreStack.isHidden = true
     }
     
     @IBAction func segmentControl(_ sender: UISegmentedControl) {
