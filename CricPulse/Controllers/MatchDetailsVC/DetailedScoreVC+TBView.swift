@@ -18,7 +18,9 @@ extension DetailedScoreViewController{
     func registerTableViewCell(){
         matchDetailsTableView.register(DetailedScoreViewModel.registerCellsXib(), forCellReuseIdentifier: DetailedScoreViewModel.identifier)
         
-        matchDetailsTableView.register(DetailedScoreViewModel.registerHeaderXib(), forHeaderFooterViewReuseIdentifier: "HeaderForBattersCell")
+        matchDetailsTableView.register(DetailedScoreViewModel.registerBattersHeaderXib(), forHeaderFooterViewReuseIdentifier: "HeaderForBattersCell")
+        
+        matchDetailsTableView.register(DetailedScoreViewModel.registerBattersFooterXib(), forHeaderFooterViewReuseIdentifier: "FooterForBattersCell")
     }
     
     
@@ -47,9 +49,20 @@ extension DetailedScoreViewController: UITableViewDelegate, UITableViewDataSourc
         let header = matchDetailsTableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderForBattersCell") as! HeaderForBattersCell
         return header
     }
+    // height for header
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
       60
     }
+    
+    // footer
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footer = matchDetailsTableView.dequeueReusableHeaderFooterView(withIdentifier: "FooterForBattersCell") as? FooterForBattersCell
+        guard let footer = footer else{ return UIView()}
+        return footer
+    }
+    
+    
+    
 }
 
 

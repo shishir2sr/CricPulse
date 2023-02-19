@@ -29,7 +29,7 @@ class ScoreCardCVModel{
         self.matchUpdateText = scorecard.note ?? "Please wait..."
         self.startingDate = scorecard.starting_at ?? Date()
 
-        if matchStatus != .ns  {
+        if matchStatus != .ns && scorecard.runs?.count == 2{
             let team1 = scorecard.runs?[0].team
             let team2 = scorecard.runs?[1].team
 
@@ -41,7 +41,7 @@ class ScoreCardCVModel{
             // team2
             self.visitorTeamName = team2?.code ?? "Unknown"
             self.visitorTeamFlagUrl = team2?.image_path ?? ""
-            self.visitorTeamScore = MainViewModel.getScore(for: 0, dataClass: scorecard)
+            self.visitorTeamScore = MainViewModel.getScore(for: 1, dataClass: scorecard)
 
         }else{
             self.localTeamName = scorecard.localteam?.code ?? "Unknown"
