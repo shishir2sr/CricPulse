@@ -29,10 +29,17 @@ class MatchDetailsViewController: UIViewController {
     @IBOutlet weak var matchDate: UILabel!
     @IBOutlet weak var note: UILabel!
     @IBOutlet weak var winProgress: UIProgressView!
+    // Man of the match
+    @IBOutlet weak var manOfTheMatchImage: UIImageView!
+    @IBOutlet weak var manMatchName: UILabel!
+    @IBOutlet weak var manMatchTeamFlag: UIImageView!
+    
     
     // Stack Outlets
     @IBOutlet weak var scoreStack: UIStackView!
     @IBOutlet weak var winPercenTageStackView: UIStackView!
+    @IBOutlet weak var manOfTheMatchStackView: UIStackView!
+    
     // Segment Controller
     @IBOutlet weak var segmentController: UISegmentedControl!
     // containerviews
@@ -59,7 +66,9 @@ class MatchDetailsViewController: UIViewController {
         containerViewTwo.isHidden = true
         containerViewThree.isHidden = true
         matchDate.isHidden = true
-        scoreStack.isHidden = true
+        scoreStack.isHidden = false
+        
+       
     }
     
     @IBAction func segmentControl(_ sender: UISegmentedControl) {
