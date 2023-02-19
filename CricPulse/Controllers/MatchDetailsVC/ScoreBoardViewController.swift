@@ -46,7 +46,7 @@ class ScoreBoardViewController: UIViewController {
         buttonGuestureAnimation(for: teamOneBackgroundVIew)
         
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.detailedScoreBoardForTeamID)  as? DetailedScoreViewController
-        viewController?.title = "Not working?"
+        viewController?.title = ""
         navigationController?.pushViewController(viewController!, animated: true)
     }
     
@@ -56,6 +56,7 @@ class ScoreBoardViewController: UIViewController {
         buttonGuestureAnimation(for: teamTwoBackgroundVIew)
         
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.detailedScoreBoardForTeamID)  as? DetailedScoreViewController
+        viewController?.title = ""
         navigationController?.pushViewController(viewController!, animated: true)
         
     }

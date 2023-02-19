@@ -7,7 +7,11 @@ extension DetailedScoreViewController{
     func setupTableView(){
         matchDetailsTableView.dataSource = self
         matchDetailsTableView.delegate = self
+        
+        let insets = UIEdgeInsets(top: -35, left: 0, bottom: 0, right: 0)
+        matchDetailsTableView.contentInset = insets
         registerTableViewCell()
+       
         
     }
     // Register cells
@@ -44,9 +48,8 @@ extension DetailedScoreViewController: UITableViewDelegate, UITableViewDataSourc
         return header
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-       70
+      60
     }
-    
 }
 
 
