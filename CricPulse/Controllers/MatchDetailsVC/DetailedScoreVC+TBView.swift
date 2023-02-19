@@ -12,8 +12,9 @@ extension DetailedScoreViewController{
     }
     // Register cells
     func registerTableViewCell(){
-        matchDetailsTableView.register(FinishedMatchScoreCardTVModel.register(), forCellReuseIdentifier: FinishedMatchScoreCardTVModel.identifier)
-        matchDetailsTableView.register(DetailedScoreViewModel.register(), forCellReuseIdentifier: DetailedScoreViewModel.identifier)
+        matchDetailsTableView.register(DetailedScoreViewModel.registerCellsXib(), forCellReuseIdentifier: DetailedScoreViewModel.identifier)
+        
+        matchDetailsTableView.register(DetailedScoreViewModel.registerHeaderXib(), forHeaderFooterViewReuseIdentifier: "HeaderForBattersCell")
     }
     
     
@@ -21,6 +22,7 @@ extension DetailedScoreViewController{
 
 // MARK: - Tableview Delegate and datasource
 extension DetailedScoreViewController: UITableViewDelegate, UITableViewDataSource{
+    // number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         5
     }
@@ -31,4 +33,20 @@ extension DetailedScoreViewController: UITableViewDelegate, UITableViewDataSourc
         guard let cell  = cell else{return UITableViewCell()}
         return cell
     }
+    
+    // Row Height
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        65
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = matchDetailsTableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderForBattersCell") as! HeaderForBattersCell
+        return header
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+       70
+    }
+    
 }
+
+

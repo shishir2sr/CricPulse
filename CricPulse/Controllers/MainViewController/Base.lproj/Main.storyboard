@@ -305,13 +305,13 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="231" translatesAutoresizingMaskIntoConstraints="NO" id="e6k-xT-4uZ">
                                                         <rect key="frame" x="0.0" y="28.5" width="280" height="13.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="IND 50%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKo-Kr-m7c">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IND 50%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKo-Kr-m7c">
                                                                 <rect key="frame" x="0.0" y="0.0" width="49" height="13.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="IND 50%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Eq-M3-1wL">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="IND 50%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Eq-M3-1wL">
                                                                 <rect key="frame" x="280" y="0.0" width="0.0" height="13.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
                                                                 <nil key="textColor"/>
@@ -625,7 +625,7 @@
                                                 </subviews>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.up.right.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AF0-s0-gbE">
-                                                <rect key="frame" x="248.5" y="14.999999999999998" width="19.5" height="17.5"/>
+                                                <rect key="frame" x="248.5" y="15" width="19.5" height="17.5"/>
                                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                         </subviews>
@@ -670,7 +670,7 @@
                                                 </subviews>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.up.right.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Znf-82-n2Q">
-                                                <rect key="frame" x="248.5" y="14.999999999999998" width="19.5" height="17.5"/>
+                                                <rect key="frame" x="248.5" y="15" width="19.5" height="17.5"/>
                                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                         </subviews>

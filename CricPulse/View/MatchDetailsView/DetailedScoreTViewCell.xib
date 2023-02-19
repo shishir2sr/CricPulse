@@ -19,22 +19,22 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RJB-E9-JIi">
-                        <rect key="frame" x="10" y="5" width="345" height="60"/>
+                        <rect key="frame" x="10" y="5" width="345" height="70"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QR4-Iu-pIm" userLabel="ScoreStack">
-                                <rect key="frame" x="10" y="8.6666666666666679" width="325" height="42.666666666666657"/>
+                                <rect key="frame" x="10" y="20.333333333333329" width="325" height="29.666666666666671"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="gn9-hw-jwr" userLabel="PlayerStackView">
-                                        <rect key="frame" x="0.0" y="0.0" width="157.66666666666666" height="42.666666666666664"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="157.66666666666666" height="29.666666666666668"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shakib Al Hasan Bangladesh Dhaka" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ral-rl-6Bt">
-                                                <rect key="frame" x="0.0" y="0.0" width="106.66666666666667" height="26.333333333333332"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shakib Al Hasan" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ral-rl-6Bt">
+                                                <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="13.333333333333334"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="11"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Rounder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndo-GQ-af9">
-                                                <rect key="frame" x="0.0" y="29.333333333333332" width="63.333333333333336" height="13.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="16.333333333333332" width="63.333333333333336" height="13.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -42,7 +42,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PTe-8w-pAN" userLabel="RunStackVIew">
-                                        <rect key="frame" x="167.66666666666663" y="14.333333333333332" width="157.33333333333337" height="14.333333333333332"/>
+                                        <rect key="frame" x="167.66666666666663" y="7.6666666666666687" width="157.33333333333337" height="14.333333333333336"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="104" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X13-k2-OzF">
                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="14.333333333333334"/>
@@ -83,7 +83,7 @@
                         <constraints>
                             <constraint firstItem="QR4-Iu-pIm" firstAttribute="leading" secondItem="RJB-E9-JIi" secondAttribute="leading" constant="10" id="0Lj-KG-Wri"/>
                             <constraint firstItem="QR4-Iu-pIm" firstAttribute="centerX" secondItem="RJB-E9-JIi" secondAttribute="centerX" id="GiU-dG-XXq"/>
-                            <constraint firstAttribute="height" constant="60" id="MTX-eb-SaC"/>
+                            <constraint firstAttribute="height" constant="70" id="MTX-eb-SaC"/>
                             <constraint firstItem="QR4-Iu-pIm" firstAttribute="centerY" secondItem="RJB-E9-JIi" secondAttribute="centerY" id="VwJ-Ip-Dcc"/>
                         </constraints>
                     </view>
