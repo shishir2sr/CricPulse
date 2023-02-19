@@ -15,6 +15,7 @@ extension ViewController{
     //cell Registration
     func registerTableViewCell(){
         homeTableView.register(FinishedMatchScoreCardTVModel.register(), forCellReuseIdentifier: FinishedMatchScoreCardTVModel.identifier)
+       
     }
     
     // TableView Reload
@@ -29,6 +30,8 @@ extension ViewController{
 // MARK: - Tableview Data Source and Delegate
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate{
+    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         mainViewModel.numberOfRows(in: section)
     }

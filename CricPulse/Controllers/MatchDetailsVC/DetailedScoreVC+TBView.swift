@@ -7,13 +7,20 @@ extension DetailedScoreViewController{
     func setupTableView(){
         matchDetailsTableView.dataSource = self
         matchDetailsTableView.delegate = self
+        
+        let insets = UIEdgeInsets(top: -35, left: 0, bottom: 0, right: 0)
+        matchDetailsTableView.contentInset = insets
         registerTableViewCell()
+       
         
     }
     // Register cells
     func registerTableViewCell(){
-        matchDetailsTableView.register(FinishedMatchScoreCardTVModel.register(), forCellReuseIdentifier: FinishedMatchScoreCardTVModel.identifier)
-        matchDetailsTableView.register(DetailedScoreViewModel.register(), forCellReuseIdentifier: DetailedScoreViewModel.identifier)
+        matchDetailsTableView.register(DetailedScoreViewModel.registerCellsXib(), forCellReuseIdentifier: DetailedScoreViewModel.identifier)
+        
+        matchDetailsTableView.register(DetailedScoreViewModel.registerBattersHeaderXib(), forHeaderFooterViewReuseIdentifier: "HeaderForBattersCell")
+        
+        matchDetailsTableView.register(DetailedScoreViewModel.registerBattersFooterXib(), forHeaderFooterViewReuseIdentifier: "FooterForBattersCell")
     }
     
     
@@ -21,6 +28,7 @@ extension DetailedScoreViewController{
 
 // MARK: - Tableview Delegate and datasource
 extension DetailedScoreViewController: UITableViewDelegate, UITableViewDataSource{
+    // number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         5
     }
@@ -31,4 +39,30 @@ extension DetailedScoreViewController: UITableViewDelegate, UITableViewDataSourc
         guard let cell  = cell else{return UITableViewCell()}
         return cell
     }
+    
+    // Row Height
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        65
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = matchDetailsTableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderForBattersCell") as! HeaderForBattersCell
+        return header
+    }
+    // height for header
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+      60
+    }
+    
+    // footer
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footer = matchDetailsTableView.dequeueReusableHeaderFooterView(withIdentifier: "FooterForBattersCell") as? FooterForBattersCell
+        guard let footer = footer else{ return UIView()}
+        return footer
+    }
+    
+    
+    
 }
+
+

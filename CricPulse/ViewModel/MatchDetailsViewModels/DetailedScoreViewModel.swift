@@ -9,8 +9,15 @@ class DetailedScoreViewModel{
     }
     
     // Register Xib file
-    static func register() -> UINib {
+    static func registerCellsXib() -> UINib {
         UINib(nibName: Constants.detailedScoreViewXibName, bundle: nil)
     }
     
+    //
+    static func registerBattersHeaderXib() -> UINib {
+        UINib(nibName: "HeaderForBattersCell", bundle: nil)
+    }
+    static func registerBattersFooterXib()->UINib{
+        UINib(nibName: "FooterForBattersCell", bundle: nil)
+    }
 }
