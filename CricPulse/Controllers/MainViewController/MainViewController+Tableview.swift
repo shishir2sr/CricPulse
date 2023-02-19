@@ -50,4 +50,4 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.matchDetailsVCStoryboardID)  as? MatchDetailsViewController
         navigationController?.pushViewController(viewController!, animated: true)
     }
-}
+}// setup cell done
