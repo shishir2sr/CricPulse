@@ -18,8 +18,32 @@ class FinishedMatchScoreCardTVModel{
     
     
     init(scorecard: FixtureDataClass) {
-        let team1 = scorecard.runs?[0].team
-        let team2 = scorecard.runs?[1].team
+        
+        if scorecard.runs?.count ?? 0 < 2 {
+            // LocalTeam Data
+            self.localTeamName = scorecard.localteam?.code ?? "Unknown"
+            self.localTeamFlagUrl = scorecard.localteam?.image_path ?? ""
+            self.localTeamScore =  "..."
+            
+            // Visitor Team Data
+            self.visitorTeamName = scorecard.visitorteam?.code ?? "Unknown"
+            self.visitorTeamFlagUrl = scorecard.visitorteam?.image_path ?? "Unknown"
+            self.visitorTeamScore = "..."
+            
+        }else{
+            let team1 = scorecard.runs?[0].team
+            let team2 = scorecard.runs?[1].team
+            
+            // LocalTeam Data
+            self.localTeamName = team1?.code ?? "Unknown"
+            self.localTeamFlagUrl = team1?.image_path ?? ""
+            self.localTeamScore =  MainViewModel.getScore(for: 0, dataClass: scorecard)
+            
+            // Visitor Team Data
+            self.visitorTeamName = team2?.code ?? "Unknown"
+            self.visitorTeamFlagUrl = team2?.image_path ?? ""
+            self.visitorTeamScore = MainViewModel.getScore(for: 1, dataClass: scorecard)
+        }
         
         self.tournamentName = scorecard.league?.name ?? "Unknown"
         self.matchNo = scorecard.round ?? "--"
@@ -28,15 +52,6 @@ class FinishedMatchScoreCardTVModel{
         self.manOfTheMatch = "" // TODO: Man of the match
         self.gameType = scorecard.type ?? "--"
         
-        // LocalTeam Data
-        self.localTeamName = team1?.code ?? "Unknown"
-        self.localTeamFlagUrl = team1?.image_path ?? ""
-        self.localTeamScore =  MainViewModel.getScore(for: 0, dataClass: scorecard)
-        
-        // Visitor Team Data
-        self.visitorTeamName = team2?.code ?? "Unknown"
-        self.visitorTeamFlagUrl = team2?.image_path ?? ""
-        self.visitorTeamScore = MainViewModel.getScore(for: 1, dataClass: scorecard)
     }
     
     // identifier
