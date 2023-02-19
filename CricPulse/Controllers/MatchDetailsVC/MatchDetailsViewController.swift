@@ -68,7 +68,8 @@ class MatchDetailsViewController: UIViewController {
         matchDate.isHidden = true
         scoreStack.isHidden = false
         
-       
+        winPercenTageStackView.isHidden = true
+        manOfTheMatchStackView.isHidden = false
     }
     
     @IBAction func segmentControl(_ sender: UISegmentedControl) {
