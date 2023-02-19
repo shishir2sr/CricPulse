@@ -61,6 +61,7 @@ class FinishedMatchScoreCardTVModel{
     
     // Register Xib file
     static func register() -> UINib {
-        UINib(nibName: "HomeTVCell", bundle: nil)
+//        UINib(nibName: "HomeTVCell", bundle: nil)
+        UINib(nibName: Constants.homeTableCellXibName, bundle: nil)
     }
 }

@@ -1,6 +1,9 @@
 import UIKit
 
 class MatchDetailsViewController: UIViewController {
+    // MARK: ViewModel
+    
+    
     // MARK: - Outlets
     // View Outlets
     @IBOutlet weak var navigationView: UIView!
@@ -47,15 +50,24 @@ class MatchDetailsViewController: UIViewController {
     @IBOutlet weak var containerViewTwo: UIView!
     @IBOutlet weak var containerViewThree: UIView!
     
+    
+    
     // MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
     
+}
+
+
+
+// MARK: - MatchDetailsView Extension
+extension MatchDetailsViewController{
     // View Setup
     fileprivate func setupView() {
         backView.round(10)
+        backView.addShadow(opecity: 0.8, size: 2, radius: 4, color: UIColor.darkGray)
         matchType.addBorder(color: .systemGreen, width: 1)
         matchType.round(5)
         matchStatusView.round(5)
@@ -72,6 +84,7 @@ class MatchDetailsViewController: UIViewController {
         manOfTheMatchStackView.isHidden = false
     }
     
+    // MARK: Segment control
     @IBAction func segmentControl(_ sender: UISegmentedControl) {
         let index = sender.selectedSegmentIndex
         if index == 0{
@@ -90,6 +103,5 @@ class MatchDetailsViewController: UIViewController {
             containerViewThree.isHidden = false
         }
     }
-    
     
 }

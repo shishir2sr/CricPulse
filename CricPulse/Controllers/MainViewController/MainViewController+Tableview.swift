@@ -38,6 +38,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
             return UITableViewCell()
         }
         cell.selectionStyle = .none
+        
         cell.setupCell(viewModel: self.tableViewData[indexPath.row])
         return cell
     }

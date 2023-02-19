@@ -14,11 +14,12 @@ extension UIView {
         layer.borderWidth = width
     }
     /// Add shadows to uiviews
-    func addShadow(opacity: Float, offset: Double, radius: Double) {
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = opacity
-        layer.shadowOffset = CGSize(width: 0, height: offset)
-        layer.shadowRadius = CGFloat(radius)
+    func addShadow(opecity: Float, size: Double, radius: Double, color: UIColor ) {
+        layer.shadowColor = color.cgColor
+        layer.shadowOpacity = opecity
+        layer.shadowOffset = CGSize(width: size, height: size)
+        layer.shadowRadius = radius
+        layer.masksToBounds = true
     }
     
     

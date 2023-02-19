@@ -18,18 +18,18 @@ class ScoreBoardViewController: UIViewController {
     @IBOutlet weak var teamTwoFlag: UIImageView!
     
     
-    
-    // MARK: - View Did load
+    // MARK: - View Did load?
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         
     }
     
-    fileprivate func setupView() {
+    // view did load setup
+     func setupView() {
         teamOneBackgroundVIew.addBorder(color: .systemGray4, width: 1)
         teamOneBackgroundVIew.round(10)
-        teamOneBackgroundVIew.addShadow(opacity: 1, offset: 6, radius: 4)
+        teamOneBackgroundVIew.addShadow(opecity: 0.8, size: 2, radius: 4, color: UIColor.darkGray)
         
         teamTwoBackgroundVIew.addBorder(color: .systemGray4, width: 1)
         teamTwoBackgroundVIew.round(10)
