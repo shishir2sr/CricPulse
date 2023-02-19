@@ -11,4 +11,7 @@ class Constants{
     
     // Match DetailsVC
     static let matchDetailsVCStoryboardID = "matchdetailsvc"
+    
+    // details scoreboard for each team
+    static let detailedScoreBoardForTeamID = "detailedscoreboardforteam"
 }
