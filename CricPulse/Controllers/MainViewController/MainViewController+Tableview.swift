@@ -37,6 +37,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
         guard let cell = homeTableView.dequeueReusableCell(withIdentifier: FinishedMatchScoreCardTVModel.identifier, for: indexPath) as? HomeTableViewCell else{
             return UITableViewCell()
         }
+        cell.selectionStyle = .none
         cell.setupCell(viewModel: self.tableViewData[indexPath.row])
         return cell
     }
