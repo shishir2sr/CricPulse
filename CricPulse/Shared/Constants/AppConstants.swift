@@ -22,4 +22,7 @@ class Constants{
     // squadlist tableview cell
     
     static let squadListTableViewIdentifier = "SquadListTableViewCell"
+    
+    // header for header xib
+    static let HeaderForSquadList = "HeaderForSquadList"
 }
