@@ -9,5 +9,4 @@ class HeaderForBattersCell: UITableViewHeaderFooterView {
     @IBOutlet weak var thirdScore: UILabel!
     @IBOutlet weak var fourthScore: UILabel!
     @IBOutlet weak var fifthScore: UILabel!
-
 }

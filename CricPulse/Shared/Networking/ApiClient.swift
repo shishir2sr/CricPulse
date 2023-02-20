@@ -25,6 +25,7 @@ class ApiClient{
             print("Decode Successful")
             return .success(resource)
         } catch {
+            debugPrint(error)
             return .failure(.unableToComplete)
         }
     }

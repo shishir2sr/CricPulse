@@ -12,9 +12,6 @@ class DetailedScoreTViewCell: UITableViewCell {
     @IBOutlet weak var strikeRate: UILabel!
     
     
-    
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
