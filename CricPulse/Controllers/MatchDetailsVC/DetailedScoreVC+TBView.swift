@@ -16,7 +16,7 @@ extension DetailedScoreViewController{
     }
     // Register cells
     func registerTableViewCell(){
-        matchDetailsTableView.register(DetailedScoreViewModel.registerCellsXib(), forCellReuseIdentifier: DetailedScoreViewModel.identifier)
+        matchDetailsTableView.register(DetailedScoreViewModel.registerCellsXib(), forCellReuseIdentifier: DetailedScoreViewModel.cellIdentifier)
         
         matchDetailsTableView.register(DetailedScoreViewModel.registerBattersHeaderXib(), forHeaderFooterViewReuseIdentifier: "HeaderForBattersCell")
         
@@ -28,14 +28,24 @@ extension DetailedScoreViewController{
 
 // MARK: - Tableview Delegate and datasource
 extension DetailedScoreViewController: UITableViewDelegate, UITableViewDataSource{
+    // Number of sections
+    func numberOfSections(in tableView: UITableView) -> Int {
+        2
+    }
+    
+    
     // number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        if section == 0{
+            return viewmodel.numberOfRows(in: section)
+        }else{
+            return viewmodel.numberOfRows(in: section)
+        }
     }
     
     // MARK: Cell for row at
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = matchDetailsTableView.dequeueReusableCell(withIdentifier: DetailedScoreViewModel.identifier, for: indexPath) as? DetailedScoreTViewCell
+        let cell = matchDetailsTableView.dequeueReusableCell(withIdentifier: DetailedScoreViewModel.cellIdentifier, for: indexPath) as? DetailedScoreTViewCell
         guard let cell  = cell else{return UITableViewCell()}
         return cell
     }
@@ -45,20 +55,53 @@ extension DetailedScoreViewController: UITableViewDelegate, UITableViewDataSourc
         65
     }
     
+    // MARK: Header
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = matchDetailsTableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderForBattersCell") as! HeaderForBattersCell
-        return header
+        if section == 0{
+            let header = matchDetailsTableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderForBattersCell") as? HeaderForBattersCell
+            guard let header = header else{ return nil}
+            
+            header.role.text = "Batter"
+            header.firstScore.text = "R"
+            header.secondScore.text = "B"
+            header.thirdScore.text = "4s"
+            header.fourthScore.text = "6s"
+            header.fifthScore.text = "S/R"
+            
+            return header
+        }else{
+            let header = matchDetailsTableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderForBattersCell") as? HeaderForBattersCell
+            guard let header = header else{ return nil}
+            
+            header.role.text = "Bowler"
+            header.firstScore.text = "O"
+            header.secondScore.text = "M"
+            header.thirdScore.text = "R"
+            header.fourthScore.text = "W"
+            header.fifthScore.text = "Eco"
+            return header
+        }
+        
+       
     }
     // height for header
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
       60
     }
     
-    // footer
+    // MARK: Footer
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footer = matchDetailsTableView.dequeueReusableHeaderFooterView(withIdentifier: "FooterForBattersCell") as? FooterForBattersCell
-        guard let footer = footer else{ return UIView()}
-        return footer
+        if section == 0 {
+            let footer = matchDetailsTableView.dequeueReusableHeaderFooterView(withIdentifier: "FooterForBattersCell") as? FooterForBattersCell
+            guard let footer = footer else{ return nil}
+            return footer
+        }else {
+            return nil
+        }
+        
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        70
     }
     
     

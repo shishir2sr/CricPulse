@@ -97,6 +97,15 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="ball" destination="1LX-VP-wfI" id="fjb-lO-Zz5"/>
+                <outlet property="batterName" destination="ral-rl-6Bt" id="jMQ-7o-mG8"/>
+                <outlet property="batterPosition" destination="Ndo-GQ-af9" id="OVF-sK-zex"/>
+                <outlet property="fours" destination="koS-Ew-fhf" id="R0G-Xn-4jv"/>
+                <outlet property="run" destination="X13-k2-OzF" id="CLS-pk-uOB"/>
+                <outlet property="sixes" destination="BZ4-V3-qul" id="t5c-J7-M0Z"/>
+                <outlet property="strikeRate" destination="WHp-2e-prv" id="XYS-DZ-Mc4"/>
+            </connections>
             <point key="canvasLocation" x="332.06106870229007" y="30.281690140845072"/>
         </tableViewCell>
     </objects>

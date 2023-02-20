@@ -18,4 +18,8 @@ class Constants{
     // DetailedScoreTableView Cell Nib identifier
     static let detailedScoreViewXibID = "detailedscoretvcell"
     static let detailedScoreViewXibName = "DetailedScoreTViewCell"
+    
+    // squadlist tableview cell
+    
+    static let squadListTableViewIdentifier = "SquadListTableViewCell"
 }
