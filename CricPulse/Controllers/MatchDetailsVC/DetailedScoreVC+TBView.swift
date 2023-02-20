@@ -57,7 +57,7 @@ extension DetailedScoreViewController: UITableViewDelegate, UITableViewDataSourc
     
     // MARK: Header
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = matchDetailsTableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderForBattersCell") as! HeaderForBattersCell
+        let header = matchDetailsTableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderForBattersCell") as! HeaderForBatterBowlersCell
         return header
     }
     // height for header
