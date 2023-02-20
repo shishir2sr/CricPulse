@@ -50,9 +50,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     // If user scroll tableview the collectionview will animated
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if let _ = scrollView as? UITableView{
-            if scrollView.contentOffset.y > 50 {
+            if scrollView.contentOffset.y > 35 {
                 upScrollAnimation()
-            }else {
+            }else if scrollView.contentOffset.y < 0 {
                 downScrollAnimation()
             }
             
@@ -62,17 +62,18 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     // MARK: Animations
     fileprivate func upScrollAnimation() {
         UIView.animate(withDuration: 0.7) { [weak self] in
-            self?.navigationBarView.isHidden = false
+            self?.navigationBarView.alpha = 0
+//            self?.navigationBarView.isHidden = false
             self?.collectionViewHeightConstraint.constant = 270
             self?.collectionViewHeightConstraint.constant = 0
-            self?.navigationBarView.isHidden = true
             self?.view.layoutIfNeeded()
         }
     }
     
     fileprivate func downScrollAnimation() {
         UIView.animate(withDuration: 0.7) { [weak self] in
-            self?.navigationBarView.isHidden = true
+//            self?.navigationBarView.isHidden = true
+            self?.navigationBarView.alpha = 1
             self?.collectionViewHeightConstraint.constant = 0
             self?.collectionViewHeightConstraint.constant = 270
             self?.navigationBarView.isHidden = false

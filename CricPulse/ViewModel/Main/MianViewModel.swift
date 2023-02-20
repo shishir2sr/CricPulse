@@ -21,10 +21,10 @@ class MainViewModel{
     
     // Get Data
     func getFixture()async {
-        let sortString = "-updated_at"
-        let includeString = "localteam,visitorteam,localteam,visitorteam,league,venue,runs.team"
-        
-        let url = EndPoint.shared.getFixtures(with: [.sort(sortString),.include(includeString)])
+        // Generate URL
+        let includeString = "localteam,visitorteam,league,venue,runs.team"
+        let url = EndPoint.shared.getFixtures(with: [.include(includeString),.sort("-updated_at")])
+        // get data
         let data: Result<Fixtures,CustomError> = await ApiClient.shared.fetchData(url: url)
         handleResponse(data: data)
     }
@@ -40,10 +40,24 @@ class MainViewModel{
             debugPrint(err.localizedDescription) // TODO: Do something to the UI
         }
     }
+    
+    // Match Result
+    static func getScore(for team: Int, dataClass: FixtureDataClass) -> String{
+        let team = dataClass.runs?[team]
+        let score = team?.score
+        let wickets = team?.wickets
+        let overs = team?.overs
+        if let score = score, let wickets = wickets, let overs = overs {
+            return "\(score)/\(wickets) (\(overs))"
+        }else{
+            return "---"
+        }
+    }
+    
     // Map Fetched data into viewmodel
     func mapData(){
         // Upcoming and Live Match data
-        let upComingMatchData = dataSource.filter {$0.status != .finished && $0.status != .aban}
+        let upComingMatchData = dataSource.filter {$0.status != .finished && $0.status != .aban && $0.runs?.count != 1}
         self.scoreCardForCV = upComingMatchData.compactMap{ScoreCardCVModel(scorecard: $0)}
         
         // Finished Match Data

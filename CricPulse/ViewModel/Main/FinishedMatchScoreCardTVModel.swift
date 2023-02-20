@@ -18,33 +18,39 @@ class FinishedMatchScoreCardTVModel{
     
     
     init(scorecard: FixtureDataClass) {
+        
+        if scorecard.runs?.count ?? 0 < 2 {
+            // LocalTeam Data
+            self.localTeamName = scorecard.localteam?.code ?? "Unknown"
+            self.localTeamFlagUrl = scorecard.localteam?.image_path ?? ""
+            self.localTeamScore =  "..."
+            
+            // Visitor Team Data
+            self.visitorTeamName = scorecard.visitorteam?.code ?? "Unknown"
+            self.visitorTeamFlagUrl = scorecard.visitorteam?.image_path ?? "Unknown"
+            self.visitorTeamScore = "..."
+            
+        }else{
+            let team1 = scorecard.runs?[0].team
+            let team2 = scorecard.runs?[1].team
+            
+            // LocalTeam Data
+            self.localTeamName = team1?.code ?? "Unknown"
+            self.localTeamFlagUrl = team1?.image_path ?? ""
+            self.localTeamScore =  MainViewModel.getScore(for: 0, dataClass: scorecard)
+            
+            // Visitor Team Data
+            self.visitorTeamName = team2?.code ?? "Unknown"
+            self.visitorTeamFlagUrl = team2?.image_path ?? ""
+            self.visitorTeamScore = MainViewModel.getScore(for: 1, dataClass: scorecard)
+        }
+        
         self.tournamentName = scorecard.league?.name ?? "Unknown"
         self.matchNo = scorecard.round ?? "--"
-        self.localTeamName = scorecard.runs?[0].team?.code ?? "Unknown"
-        self.visitorTeamName = scorecard.runs?[1].team?.code ?? "Unknown"
-        self.gameType = scorecard.type ?? "--"
-        
         self.matchUpdateText = scorecard.note ?? "Please wait..."
-        self.localTeamFlagUrl = scorecard.runs?[0].team?.image_path ?? ""
-        self.visitorTeamFlagUrl = scorecard.runs?[1].team?.image_path ?? ""
         self.startingDate = scorecard.starting_at ?? Date()
         self.manOfTheMatch = "" // TODO: Man of the match
-        
-        self.localTeamScore =  FinishedMatchScoreCardTVModel.getScore(for: 0, dataClass: scorecard)
-        self.visitorTeamScore = FinishedMatchScoreCardTVModel.getScore(for: 1, dataClass: scorecard)
-        
-    }
-    // Get Score
-    static func getScore(for team: Int, dataClass: FixtureDataClass) -> String{
-        let team = dataClass.runs?[team]
-        let score = team?.score
-        let wickets = team?.wickets
-        let overs = team?.overs
-        if let score = score, let wickets = wickets, let overs = overs {
-            return "\(score)/\(wickets) (\(overs))"
-        }else{
-            return "---"
-        }
+        self.gameType = scorecard.type ?? "--"
         
     }
     
@@ -55,6 +61,7 @@ class FinishedMatchScoreCardTVModel{
     
     // Register Xib file
     static func register() -> UINib {
-        UINib(nibName: "HomeTVCell", bundle: nil)
+//        UINib(nibName: "HomeTVCell", bundle: nil)
+        UINib(nibName: Constants.homeTableCellXibName, bundle: nil)
     }
 }

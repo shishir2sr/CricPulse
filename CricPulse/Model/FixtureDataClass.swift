@@ -10,7 +10,9 @@ struct Fixture:Codable {
     let data: FixtureDataClass
 }
 
-struct FixtureDataClass: Codable {
+struct FixtureDataClass: Codable{
+   
+    
     let resource: String?
        let id, league_id, season_id, stage_id: Int?
        let round: String?
@@ -45,6 +47,7 @@ enum Status: String, Codable {
     case aban = "Aban."
     case finished = "Finished"
     case ns = "NS"
+    case postp = "Postp."
     case the1StInnings = "1st Innings"
     case the2NdInnings = "2nd Innings"
     
@@ -60,8 +63,10 @@ enum Status: String, Codable {
             return "Live"
         case .the2NdInnings:
             return "live"
-        default:
-            return "Unknown"
+//        default:
+//            return "Unknown"
+        case .postp:
+            return "Postponded"
         }
     }
 }
