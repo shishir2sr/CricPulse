@@ -519,7 +519,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HFP-xG-15T">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="SecondaryBackgroundColor"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -548,13 +548,28 @@
                     <view key="view" contentMode="scaleToFill" id="RcJ-xs-f8z">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="272"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5dw-Ze-T5V">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="272"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Wch-ZO-Zl2"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5dw-Ze-T5V" firstAttribute="bottom" secondItem="Wch-ZO-Zl2" secondAttribute="bottom" id="5EN-N7-VTf"/>
+                            <constraint firstItem="5dw-Ze-T5V" firstAttribute="trailing" secondItem="Wch-ZO-Zl2" secondAttribute="trailing" id="Hvg-T6-8Hf"/>
+                            <constraint firstItem="5dw-Ze-T5V" firstAttribute="top" secondItem="Wch-ZO-Zl2" secondAttribute="top" id="atz-xE-Xbc"/>
+                            <constraint firstItem="5dw-Ze-T5V" firstAttribute="leading" secondItem="Wch-ZO-Zl2" secondAttribute="leading" id="y0L-3y-ty9"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="matchInfoTableView" destination="5dw-Ze-T5V" id="V8V-qW-bik"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AIY-tg-wo6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2844" y="956"/>
+            <point key="canvasLocation" x="2842.5" y="955.9859154929577"/>
         </scene>
         <!--ScoreBoard-->
         <scene sceneID="DU8-gq-NCY">
