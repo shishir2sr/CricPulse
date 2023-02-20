@@ -96,6 +96,13 @@
                 <constraint firstItem="2Xx-tt-Vco" firstAttribute="top" secondItem="Qkc-v8-TRF" secondAttribute="top" id="XVh-R9-au8"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="extraRuns" destination="Jfj-T1-pgH" id="WaM-5j-dVT"/>
+                <outlet property="oversPlayed" destination="Enu-50-Ydg" id="iJY-0U-gOY"/>
+                <outlet property="runRate" destination="4b2-NO-AaH" id="5WG-am-1Fs"/>
+                <outlet property="totalExtraRuns" destination="b6A-a8-mQh" id="Hnn-q6-3e9"/>
+                <outlet property="totalRun" destination="UZo-AE-nJw" id="fpy-5y-jB6"/>
+            </connections>
             <point key="canvasLocation" x="-588.54961832061065" y="72.183098591549296"/>
         </view>
     </objects>
