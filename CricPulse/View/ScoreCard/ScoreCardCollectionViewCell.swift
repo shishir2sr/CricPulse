@@ -75,6 +75,7 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
         lTeamFlag.sd_setImage(with: URL(string: viewModel.localTeamFlagUrl), placeholderImage: UIImage(systemName: "photo"))
         vTeamFlag.sd_setImage(with: URL(string: viewModel.visitorTeamFlagUrl), placeholderImage: UIImage(systemName: "photo"))
         
+        // Live matches data
         notificationButtonOutlet.isHidden = true
         upcomingMatchDate.isHidden = true
         
