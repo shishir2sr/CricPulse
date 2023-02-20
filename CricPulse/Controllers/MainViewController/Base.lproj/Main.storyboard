@@ -554,7 +554,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AIY-tg-wo6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3513" y="604"/>
+            <point key="canvasLocation" x="2844" y="956"/>
         </scene>
         <!--ScoreBoard-->
         <scene sceneID="DU8-gq-NCY">
@@ -709,7 +709,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BZ6-au-MMW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2136.8000000000002" y="603.14842578710648"/>
+            <point key="canvasLocation" x="3484" y="622"/>
         </scene>
         <!--Squad List View Controller-->
         <scene sceneID="dCw-Rd-PVz">
@@ -718,13 +718,28 @@
                     <view key="view" contentMode="scaleToFill" id="81K-cd-rIK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="272"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xZ0-Wv-J5j">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="272"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="QaD-OT-vOt"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QaD-OT-vOt" firstAttribute="bottom" secondItem="xZ0-Wv-J5j" secondAttribute="bottom" id="MRH-ef-ePz"/>
+                            <constraint firstItem="QaD-OT-vOt" firstAttribute="trailing" secondItem="xZ0-Wv-J5j" secondAttribute="trailing" id="dPC-Mn-U9o"/>
+                            <constraint firstItem="xZ0-Wv-J5j" firstAttribute="top" secondItem="QaD-OT-vOt" secondAttribute="top" id="fWb-iN-KB9"/>
+                            <constraint firstItem="xZ0-Wv-J5j" firstAttribute="leading" secondItem="QaD-OT-vOt" secondAttribute="leading" id="flf-Jk-UDN"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="squadListTableView" destination="xZ0-Wv-J5j" id="F5c-8K-gUu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sYm-0i-0Jz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2846" y="972"/>
+            <point key="canvasLocation" x="2205" y="622.18309859154931"/>
         </scene>
     </scenes>
     <resources>

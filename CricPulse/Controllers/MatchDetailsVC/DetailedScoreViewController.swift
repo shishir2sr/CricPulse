@@ -1,7 +1,11 @@
 import UIKit
 
 class DetailedScoreViewController: UIViewController {
+    // Viewmodels
+    var viewmodel: DetailedScoreViewModel = DetailedScoreViewModel()
     
+    
+    // Outlets
     @IBOutlet weak var matchDetailsTableView: UITableView!
     
     override func viewDidLoad() {

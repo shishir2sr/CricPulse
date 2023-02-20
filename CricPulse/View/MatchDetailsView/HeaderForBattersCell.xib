@@ -88,6 +88,14 @@
                 <constraint firstItem="cPc-z4-awq" firstAttribute="top" secondItem="2XO-2v-Njg" secondAttribute="top" constant="10" id="tZE-jq-ghs"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="fifthScore" destination="Y7Y-aS-YLa" id="kmj-jR-CYN"/>
+                <outlet property="firstScore" destination="J56-k5-G9u" id="Fap-vb-f9J"/>
+                <outlet property="fourthScore" destination="qCk-g2-myZ" id="LeG-dB-mOc"/>
+                <outlet property="role" destination="ICu-gw-KON" id="I9M-HF-XhU"/>
+                <outlet property="secondScore" destination="hez-mG-Is3" id="LLy-B3-nbl"/>
+                <outlet property="thirdScore" destination="ysw-5E-dkR" id="3ih-T7-StB"/>
+            </connections>
             <point key="canvasLocation" x="90.07633587786259" y="-151.05633802816902"/>
         </view>
     </objects>
