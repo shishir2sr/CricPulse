@@ -57,8 +57,32 @@ extension DetailedScoreViewController: UITableViewDelegate, UITableViewDataSourc
     
     // MARK: Header
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = matchDetailsTableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderForBattersCell") as! HeaderForBatterBowlersCell
-        return header
+        if section == 0{
+            let header = matchDetailsTableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderForBattersCell") as? HeaderForBattersCell
+            guard let header = header else{ return nil}
+            
+            header.role.text = "Batter"
+            header.firstScore.text = "R"
+            header.secondScore.text = "B"
+            header.thirdScore.text = "4s"
+            header.fourthScore.text = "6s"
+            header.fifthScore.text = "S/R"
+            
+            return header
+        }else{
+            let header = matchDetailsTableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderForBattersCell") as? HeaderForBattersCell
+            guard let header = header else{ return nil}
+            
+            header.role.text = "Bowler"
+            header.firstScore.text = "O"
+            header.secondScore.text = "M"
+            header.thirdScore.text = "R"
+            header.fourthScore.text = "W"
+            header.fifthScore.text = "Eco"
+            return header
+        }
+        
+       
     }
     // height for header
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -69,7 +93,7 @@ extension DetailedScoreViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if section == 0 {
             let footer = matchDetailsTableView.dequeueReusableHeaderFooterView(withIdentifier: "FooterForBattersCell") as? FooterForBattersCell
-            guard let footer = footer else{ return UIView()}
+            guard let footer = footer else{ return nil}
             return footer
         }else {
             return nil
