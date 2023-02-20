@@ -13,6 +13,9 @@
 		384BBB742997CEA700F8C8EF /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384BBB732997CEA700F8C8EF /* UIViewExtension.swift */; };
 		388007F4299D31A900FA9C7B /* UITableViewEstension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388007F3299D31A900FA9C7B /* UITableViewEstension.swift */; };
 		388007F6299D34F000FA9C7B /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388007F5299D34F000FA9C7B /* UICollectionViewExtension.swift */; };
+		38A65B8129A3E35F0048D9D9 /* MatchInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B7F29A3E35F0048D9D9 /* MatchInfoTableViewCell.swift */; };
+		38A65B8229A3E35F0048D9D9 /* MatchInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A65B8029A3E35F0048D9D9 /* MatchInfoTableViewCell.xib */; };
+		38A65B8429A3E88B0048D9D9 /* MatchInfoViewController+TV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B8329A3E88B0048D9D9 /* MatchInfoViewController+TV.swift */; };
 		38C010A929A23117004AECAC /* DetailedScoreTViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C010A729A23117004AECAC /* DetailedScoreTViewCell.swift */; };
 		38C010AA29A23117004AECAC /* DetailedScoreTViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C010A829A23117004AECAC /* DetailedScoreTViewCell.xib */; };
 		38C010AC29A2420F004AECAC /* DetailedScoreVC+TBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C010AB29A2420F004AECAC /* DetailedScoreVC+TBView.swift */; };
@@ -65,6 +68,9 @@
 		384BBB732997CEA700F8C8EF /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		388007F3299D31A900FA9C7B /* UITableViewEstension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewEstension.swift; sourceTree = "<group>"; };
 		388007F5299D34F000FA9C7B /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
+		38A65B7F29A3E35F0048D9D9 /* MatchInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfoTableViewCell.swift; sourceTree = "<group>"; };
+		38A65B8029A3E35F0048D9D9 /* MatchInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchInfoTableViewCell.xib; sourceTree = "<group>"; };
+		38A65B8329A3E88B0048D9D9 /* MatchInfoViewController+TV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchInfoViewController+TV.swift"; sourceTree = "<group>"; };
 		38C010A729A23117004AECAC /* DetailedScoreTViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedScoreTViewCell.swift; sourceTree = "<group>"; };
 		38C010A829A23117004AECAC /* DetailedScoreTViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedScoreTViewCell.xib; sourceTree = "<group>"; };
 		38C010AB29A2420F004AECAC /* DetailedScoreVC+TBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailedScoreVC+TBView.swift"; sourceTree = "<group>"; };
@@ -153,9 +159,19 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		38A65B7E29A3E3270048D9D9 /* MatchInfo */ = {
+			isa = PBXGroup;
+			children = (
+				38A65B7F29A3E35F0048D9D9 /* MatchInfoTableViewCell.swift */,
+				38A65B8029A3E35F0048D9D9 /* MatchInfoTableViewCell.xib */,
+			);
+			path = MatchInfo;
+			sourceTree = "<group>";
+		};
 		38C010A429A22C40004AECAC /* MatchDetailsView */ = {
 			isa = PBXGroup;
 			children = (
+				38A65B7E29A3E3270048D9D9 /* MatchInfo */,
 				8992C89C29A3449D0071B9EB /* SquadList */,
 				38C010A829A23117004AECAC /* DetailedScoreTViewCell.xib */,
 				38C010A729A23117004AECAC /* DetailedScoreTViewCell.swift */,
@@ -182,6 +198,7 @@
 				38F618C929A09535005F04C7 /* MatchDetailsViewController.swift */,
 				38C5FBF129A1CF930066F9AB /* ScoreBoardViewController.swift */,
 				38C5FBF329A1CFDF0066F9AB /* MatchInfoViewController.swift */,
+				38A65B8329A3E88B0048D9D9 /* MatchInfoViewController+TV.swift */,
 				38C5FBF529A1D0310066F9AB /* SquadListViewController.swift */,
 				8992C8A929A378F60071B9EB /* SquadListVC+TV.swift */,
 				38C5FBF729A1F53C0066F9AB /* DetailedScoreViewController.swift */,
@@ -394,6 +411,7 @@
 				38DED9A3299BE51500E865F4 /* HomeTVCell.xib in Resources */,
 				38C010BE29A2825F004AECAC /* FooterForBattersCell.xib in Resources */,
 				38C010BA29A26C08004AECAC /* HeaderForBattersCell.xib in Resources */,
+				38A65B8229A3E35F0048D9D9 /* MatchInfoTableViewCell.xib in Resources */,
 				8992C8AC29A383170071B9EB /* HeaderForSquadList.xib in Resources */,
 				38C010AA29A23117004AECAC /* DetailedScoreTViewCell.xib in Resources */,
 				8901AB9E29949D97000F8315 /* Main.storyboard in Resources */,
@@ -431,7 +449,9 @@
 				38C010A929A23117004AECAC /* DetailedScoreTViewCell.swift in Sources */,
 				8901AB9729949D97000F8315 /* AppDelegate.swift in Sources */,
 				384BBB742997CEA700F8C8EF /* UIViewExtension.swift in Sources */,
+				38A65B8429A3E88B0048D9D9 /* MatchInfoViewController+TV.swift in Sources */,
 				388007F6299D34F000FA9C7B /* UICollectionViewExtension.swift in Sources */,
+				38A65B8129A3E35F0048D9D9 /* MatchInfoTableViewCell.swift in Sources */,
 				8992C8AE29A384320071B9EB /* HeaderForSquadList.swift in Sources */,
 				8992C8A729A370160071B9EB /* SquadListTableViewCell.swift in Sources */,
 				38F618C7299E92B1005F04C7 /* VenueDataClass.swift in Sources */,
