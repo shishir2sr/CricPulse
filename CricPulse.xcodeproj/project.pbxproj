@@ -40,6 +40,8 @@
 		8992C8A729A370160071B9EB /* SquadListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8992C8A529A370160071B9EB /* SquadListTableViewCell.swift */; };
 		8992C8A829A370160071B9EB /* SquadListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8992C8A629A370160071B9EB /* SquadListTableViewCell.xib */; };
 		8992C8AA29A378F60071B9EB /* SquadListVC+TV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8992C8A929A378F60071B9EB /* SquadListVC+TV.swift */; };
+		8992C8AC29A383170071B9EB /* HeaderForSquadList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8992C8AB29A383170071B9EB /* HeaderForSquadList.xib */; };
+		8992C8AE29A384320071B9EB /* HeaderForSquadList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8992C8AD29A384320071B9EB /* HeaderForSquadList.swift */; };
 		89C9A4A0299DC8CC0054F2CF /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C9A49F299DC8CC0054F2CF /* CustomError.swift */; };
 		89D5D747299C771D00C87209 /* FinishedMatchScoreCardTVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D746299C771D00C87209 /* FinishedMatchScoreCardTVModel.swift */; };
 		89D5D749299C789100C87209 /* MainViewController+Tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D748299C789100C87209 /* MainViewController+Tableview.swift */; };
@@ -92,6 +94,8 @@
 		8992C8A529A370160071B9EB /* SquadListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadListTableViewCell.swift; sourceTree = "<group>"; };
 		8992C8A629A370160071B9EB /* SquadListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SquadListTableViewCell.xib; sourceTree = "<group>"; };
 		8992C8A929A378F60071B9EB /* SquadListVC+TV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SquadListVC+TV.swift"; sourceTree = "<group>"; };
+		8992C8AB29A383170071B9EB /* HeaderForSquadList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderForSquadList.xib; sourceTree = "<group>"; };
+		8992C8AD29A384320071B9EB /* HeaderForSquadList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderForSquadList.swift; sourceTree = "<group>"; };
 		89C9A49F299DC8CC0054F2CF /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		89D5D746299C771D00C87209 /* FinishedMatchScoreCardTVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedMatchScoreCardTVModel.swift; sourceTree = "<group>"; };
 		89D5D748299C789100C87209 /* MainViewController+Tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Tableview.swift"; sourceTree = "<group>"; };
@@ -303,6 +307,8 @@
 			children = (
 				8992C8A529A370160071B9EB /* SquadListTableViewCell.swift */,
 				8992C8A629A370160071B9EB /* SquadListTableViewCell.xib */,
+				8992C8AB29A383170071B9EB /* HeaderForSquadList.xib */,
+				8992C8AD29A384320071B9EB /* HeaderForSquadList.swift */,
 			);
 			path = SquadList;
 			sourceTree = "<group>";
@@ -388,6 +394,7 @@
 				38DED9A3299BE51500E865F4 /* HomeTVCell.xib in Resources */,
 				38C010BE29A2825F004AECAC /* FooterForBattersCell.xib in Resources */,
 				38C010BA29A26C08004AECAC /* HeaderForBattersCell.xib in Resources */,
+				8992C8AC29A383170071B9EB /* HeaderForSquadList.xib in Resources */,
 				38C010AA29A23117004AECAC /* DetailedScoreTViewCell.xib in Resources */,
 				8901AB9E29949D97000F8315 /* Main.storyboard in Resources */,
 			);
@@ -425,6 +432,7 @@
 				8901AB9729949D97000F8315 /* AppDelegate.swift in Sources */,
 				384BBB742997CEA700F8C8EF /* UIViewExtension.swift in Sources */,
 				388007F6299D34F000FA9C7B /* UICollectionViewExtension.swift in Sources */,
+				8992C8AE29A384320071B9EB /* HeaderForSquadList.swift in Sources */,
 				8992C8A729A370160071B9EB /* SquadListTableViewCell.swift in Sources */,
 				38F618C7299E92B1005F04C7 /* VenueDataClass.swift in Sources */,
 				89DD46702999D6FD00F1E700 /* ViwController+CollectionView.swift in Sources */,
