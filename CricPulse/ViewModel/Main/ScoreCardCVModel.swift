@@ -28,7 +28,7 @@ class ScoreCardCVModel{
         self.gameType = scorecard.type ?? "--"
         self.matchUpdateText = scorecard.note ?? "Please wait..."
         self.startingDate = scorecard.starting_at ?? Date()
-
+        
         if matchStatus != .ns && scorecard.runs?.count == 2{
             let team1 = scorecard.runs?[0].team
             let team2 = scorecard.runs?[1].team
@@ -75,6 +75,10 @@ class ScoreCardCVModel{
             return UIColor.red.withAlphaComponent(0.4)
         case .the2NdInnings:
             return UIColor.red.withAlphaComponent(0.4)
+        case .innigsBreak:
+            return UIColor.red.withAlphaComponent(0.4)
+        case .int:
+            return UIColor.gray.withAlphaComponent(0.4)
         case .some(_):
             return UIColor.red.withAlphaComponent(0.4)
         case .none:
