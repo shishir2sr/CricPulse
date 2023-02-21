@@ -19,6 +19,9 @@
 		38A65B8729A458410048D9D9 /* UrlBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B8629A458410048D9D9 /* UrlBuilder.swift */; };
 		38A65B8A29A45E950048D9D9 /* FixtureRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B8929A45E950048D9D9 /* FixtureRepository.swift */; };
 		38A65B8C29A45F9A0048D9D9 /* RemoteFixtureRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B8B29A45F990048D9D9 /* RemoteFixtureRepository.swift */; };
+		38A65B8F29A4719F0048D9D9 /* PlayersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B8E29A4719F0048D9D9 /* PlayersRepository.swift */; };
+		38A65B9129A472C20048D9D9 /* RemotePlayerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B9029A472C20048D9D9 /* RemotePlayerRepository.swift */; };
+		38A65B9329A4741F0048D9D9 /* LocaPlayerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B9229A4741F0048D9D9 /* LocaPlayerRepository.swift */; };
 		38C010A929A23117004AECAC /* DetailedScoreTViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C010A729A23117004AECAC /* DetailedScoreTViewCell.swift */; };
 		38C010AA29A23117004AECAC /* DetailedScoreTViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C010A829A23117004AECAC /* DetailedScoreTViewCell.xib */; };
 		38C010AC29A2420F004AECAC /* DetailedScoreVC+TBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C010AB29A2420F004AECAC /* DetailedScoreVC+TBView.swift */; };
@@ -77,6 +80,9 @@
 		38A65B8629A458410048D9D9 /* UrlBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlBuilder.swift; sourceTree = "<group>"; };
 		38A65B8929A45E950048D9D9 /* FixtureRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureRepository.swift; sourceTree = "<group>"; };
 		38A65B8B29A45F990048D9D9 /* RemoteFixtureRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFixtureRepository.swift; sourceTree = "<group>"; };
+		38A65B8E29A4719F0048D9D9 /* PlayersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersRepository.swift; sourceTree = "<group>"; };
+		38A65B9029A472C20048D9D9 /* RemotePlayerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePlayerRepository.swift; sourceTree = "<group>"; };
+		38A65B9229A4741F0048D9D9 /* LocaPlayerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaPlayerRepository.swift; sourceTree = "<group>"; };
 		38C010A729A23117004AECAC /* DetailedScoreTViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedScoreTViewCell.swift; sourceTree = "<group>"; };
 		38C010A829A23117004AECAC /* DetailedScoreTViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedScoreTViewCell.xib; sourceTree = "<group>"; };
 		38C010AB29A2420F004AECAC /* DetailedScoreVC+TBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailedScoreVC+TBView.swift"; sourceTree = "<group>"; };
@@ -174,14 +180,25 @@
 			path = MatchInfo;
 			sourceTree = "<group>";
 		};
-		38A65B8829A45E5D0048D9D9 /* Fixtures */ = {
+		38A65B8829A45E5D0048D9D9 /* Fixtures Repository */ = {
 			isa = PBXGroup;
 			children = (
 				89D5D751299CD63800C87209 /* FixtureDataClass.swift */,
 				38A65B8929A45E950048D9D9 /* FixtureRepository.swift */,
 				38A65B8B29A45F990048D9D9 /* RemoteFixtureRepository.swift */,
 			);
-			path = Fixtures;
+			path = "Fixtures Repository";
+			sourceTree = "<group>";
+		};
+		38A65B8D29A471730048D9D9 /* Players Repository */ = {
+			isa = PBXGroup;
+			children = (
+				89D5D755299CE28A00C87209 /* PlayerDataClass.swift */,
+				38A65B8E29A4719F0048D9D9 /* PlayersRepository.swift */,
+				38A65B9029A472C20048D9D9 /* RemotePlayerRepository.swift */,
+				38A65B9229A4741F0048D9D9 /* LocaPlayerRepository.swift */,
+			);
+			path = "Players Repository";
 			sourceTree = "<group>";
 		};
 		38C010A429A22C40004AECAC /* MatchDetailsView */ = {
@@ -318,9 +335,9 @@
 		8901ABB62994A8F7000F8315 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				38A65B8829A45E5D0048D9D9 /* Fixtures Repository */,
+				38A65B8D29A471730048D9D9 /* Players Repository */,
 				89D5D753299CE10300C87209 /* TeamDataClass.swift */,
-				89D5D755299CE28A00C87209 /* PlayerDataClass.swift */,
-				38A65B8829A45E5D0048D9D9 /* Fixtures */,
 				38F618C4299E84C8005F04C7 /* LeagueDataClass.swift */,
 				38F618C6299E92B1005F04C7 /* VenueDataClass.swift */,
 			);
@@ -460,15 +477,18 @@
 				89D5D747299C771D00C87209 /* FinishedMatchScoreCardTVModel.swift in Sources */,
 				38C5FBF429A1CFDF0066F9AB /* MatchInfoViewController.swift in Sources */,
 				89DD46742999DACD00F1E700 /* ScoreCardCVModel.swift in Sources */,
+				38A65B8F29A4719F0048D9D9 /* PlayersRepository.swift in Sources */,
 				8992C89B29A3343A0071B9EB /* HeaderForBattersCell.swift in Sources */,
 				89D5D758299CE7DC00C87209 /* ApiClient.swift in Sources */,
 				89D5D75A299CEBD600C87209 /* EndPoint.swift in Sources */,
 				38C010A929A23117004AECAC /* DetailedScoreTViewCell.swift in Sources */,
 				8901AB9729949D97000F8315 /* AppDelegate.swift in Sources */,
+				38A65B9129A472C20048D9D9 /* RemotePlayerRepository.swift in Sources */,
 				38A65B8A29A45E950048D9D9 /* FixtureRepository.swift in Sources */,
 				384BBB742997CEA700F8C8EF /* UIViewExtension.swift in Sources */,
 				38A65B8429A3E88B0048D9D9 /* MatchInfoViewController+TV.swift in Sources */,
 				388007F6299D34F000FA9C7B /* UICollectionViewExtension.swift in Sources */,
+				38A65B9329A4741F0048D9D9 /* LocaPlayerRepository.swift in Sources */,
 				38A65B8129A3E35F0048D9D9 /* MatchInfoTableViewCell.swift in Sources */,
 				8992C8AE29A384320071B9EB /* HeaderForSquadList.swift in Sources */,
 				8992C8A729A370160071B9EB /* SquadListTableViewCell.swift in Sources */,
