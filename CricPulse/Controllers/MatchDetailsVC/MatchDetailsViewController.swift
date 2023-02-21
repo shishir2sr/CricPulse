@@ -59,14 +59,22 @@ class MatchDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configViewDidLoad()
+    }
+    
+    // View Did load configuration
+    func configViewDidLoad(){
+        
+        // Ui changer
+        setupView()
+        
+        // Get data
         guard let fixtureId = fixtureId else{
             print("Error: fixtureID is nil")
             return
         }
         Task{await viewModel.getFixture(id: fixtureId)}
         
-        
-        setupView()
     }
     
 }
