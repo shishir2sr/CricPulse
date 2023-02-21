@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 class MatchDetailsViewModel{
     
@@ -39,6 +40,37 @@ class MatchDetailsViewModel{
         let wickets = matchDetailsData?.teamTwoScore?.wickets ?? 0
         let overs = matchDetailsData?.teamTwoScore?.overs ?? 0
         return "\(matchScore)/\(wickets)(\(overs))"
+    }
+    
+    //  StadiumInfo
+    func getStadiumInfo()-> String{
+        let name = matchDetailsData?.stadiumInfo?.name
+        let city = matchDetailsData?.stadiumInfo?.city
+        return "\(name ?? ""), \(city ?? "")"
+    }
+    
+    // statusColor
+    func getMatchStatusColor() -> UIColor{
+        switch matchDetailsData?.matchStatus{
+        case .aban:
+            return UIColor.gray.withAlphaComponent(0.4)
+        case .finished:
+            return UIColor.blue.withAlphaComponent(0.4)
+        case .ns:
+            return UIColor.systemGreen.withAlphaComponent(0.4)
+        case .the1StInnings:
+            return UIColor.red.withAlphaComponent(0.4)
+        case .the2NdInnings:
+            return UIColor.red.withAlphaComponent(0.4)
+        case .innigsBreak:
+            return UIColor.red.withAlphaComponent(0.4)
+        case .int:
+            return UIColor.gray.withAlphaComponent(0.4)
+        case .some(_):
+            return UIColor.red.withAlphaComponent(0.4)
+        case .none:
+            return UIColor.cyan
+        }
     }
 }
 
