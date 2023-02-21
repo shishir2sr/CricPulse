@@ -9,7 +9,7 @@ class ViewController: UIViewController {
     private var cancellables = Set<AnyCancellable>()
     
     // ViewModel
-    let mainViewModel = MainViewModel()
+    let mainViewModel = MainViewModel(fixtureRepository: RemoteFixtureRepository())
 
     // Outlets
     @IBOutlet weak var homeCollectionView: UICollectionView!
