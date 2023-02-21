@@ -16,6 +16,7 @@
 		38A65B8129A3E35F0048D9D9 /* MatchInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B7F29A3E35F0048D9D9 /* MatchInfoTableViewCell.swift */; };
 		38A65B8229A3E35F0048D9D9 /* MatchInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A65B8029A3E35F0048D9D9 /* MatchInfoTableViewCell.xib */; };
 		38A65B8429A3E88B0048D9D9 /* MatchInfoViewController+TV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B8329A3E88B0048D9D9 /* MatchInfoViewController+TV.swift */; };
+		38A65B8729A458410048D9D9 /* UrlBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B8629A458410048D9D9 /* UrlBuilder.swift */; };
 		38C010A929A23117004AECAC /* DetailedScoreTViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C010A729A23117004AECAC /* DetailedScoreTViewCell.swift */; };
 		38C010AA29A23117004AECAC /* DetailedScoreTViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C010A829A23117004AECAC /* DetailedScoreTViewCell.xib */; };
 		38C010AC29A2420F004AECAC /* DetailedScoreVC+TBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C010AB29A2420F004AECAC /* DetailedScoreVC+TBView.swift */; };
@@ -71,6 +72,7 @@
 		38A65B7F29A3E35F0048D9D9 /* MatchInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfoTableViewCell.swift; sourceTree = "<group>"; };
 		38A65B8029A3E35F0048D9D9 /* MatchInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchInfoTableViewCell.xib; sourceTree = "<group>"; };
 		38A65B8329A3E88B0048D9D9 /* MatchInfoViewController+TV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchInfoViewController+TV.swift"; sourceTree = "<group>"; };
+		38A65B8629A458410048D9D9 /* UrlBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlBuilder.swift; sourceTree = "<group>"; };
 		38C010A729A23117004AECAC /* DetailedScoreTViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedScoreTViewCell.swift; sourceTree = "<group>"; };
 		38C010A829A23117004AECAC /* DetailedScoreTViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedScoreTViewCell.xib; sourceTree = "<group>"; };
 		38C010AB29A2420F004AECAC /* DetailedScoreVC+TBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailedScoreVC+TBView.swift"; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				89D5D757299CE7DC00C87209 /* ApiClient.swift */,
 				89D5D759299CEBD600C87209 /* EndPoint.swift */,
 				89C9A49F299DC8CC0054F2CF /* CustomError.swift */,
+				38A65B8629A458410048D9D9 /* UrlBuilder.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				38C010C029A282D5004AECAC /* FooterForBattersCell.swift in Sources */,
 				38C5FBF629A1D0310066F9AB /* SquadListViewController.swift in Sources */,
 				8901AB9929949D97000F8315 /* SceneDelegate.swift in Sources */,
+				38A65B8729A458410048D9D9 /* UrlBuilder.swift in Sources */,
 				384BBB6D2997CCF100F8C8EF /* ScoreCardCollectionViewCell.swift in Sources */,
 				38C010B029A2463C004AECAC /* MatchDetailsViewModel.swift in Sources */,
 			);
