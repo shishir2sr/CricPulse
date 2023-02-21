@@ -22,7 +22,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ConfigureViewDidLoad()
-       
     }
     
     // View Did Load Configuration

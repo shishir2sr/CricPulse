@@ -519,7 +519,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HFP-xG-15T">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="SecondaryBackgroundColor"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -546,11 +546,11 @@
             <objects>
                 <viewController id="mh5-cP-7Vy" customClass="MatchInfoViewController" customModule="CricPulse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RcJ-xs-f8z">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="272"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="304"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5dw-Ze-T5V">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="272"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="304"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -606,14 +606,14 @@
             <objects>
                 <viewController title="ScoreBoard" id="JGj-6o-JgF" customClass="ScoreBoardViewController" customModule="CricPulse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HNg-fa-oBk">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="272"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="304"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Fr-8R-IIX" userLabel="TeamOne">
-                                <rect key="frame" x="16" y="20" width="288" height="68"/>
+                                <rect key="frame" x="20" y="20" width="560" height="68"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6tF-Pt-hpa">
-                                        <rect key="frame" x="10" y="10" width="268" height="48"/>
+                                        <rect key="frame" x="10" y="10" width="540" height="48"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bangladesh()" translatesAutoresizingMaskIntoConstraints="NO" id="cFZ-La-KcY">
                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
@@ -623,7 +623,7 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="L8F-bd-vLB">
-                                                <rect key="frame" x="56" y="6.5" width="184.5" height="35"/>
+                                                <rect key="frame" x="56" y="6.5" width="456.5" height="35"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bangladesh National Team " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVU-Ub-6Qp">
                                                         <rect key="frame" x="0.0" y="0.0" width="155.5" height="13.5"/>
@@ -640,7 +640,7 @@
                                                 </subviews>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.up.right.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AF0-s0-gbE">
-                                                <rect key="frame" x="248.5" y="15" width="19.5" height="17.5"/>
+                                                <rect key="frame" x="520.5" y="14.999999999999998" width="19.5" height="17.5"/>
                                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                         </subviews>
@@ -655,10 +655,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iwn-da-4s6" userLabel="TeamTwo">
-                                <rect key="frame" x="16" y="108" width="288" height="68"/>
+                                <rect key="frame" x="20" y="108" width="560" height="68"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uf4-Nn-Fbr">
-                                        <rect key="frame" x="10" y="10" width="268" height="48"/>
+                                        <rect key="frame" x="10" y="10" width="540" height="48"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="india()" translatesAutoresizingMaskIntoConstraints="NO" id="9Ic-xw-NgX">
                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
@@ -668,7 +668,7 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="snZ-LE-92y">
-                                                <rect key="frame" x="56" y="6.5" width="184.5" height="35"/>
+                                                <rect key="frame" x="56" y="6.5" width="456.5" height="35"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="India" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xni-Kq-Pxq">
                                                         <rect key="frame" x="0.0" y="0.0" width="29" height="13.5"/>
@@ -685,7 +685,7 @@
                                                 </subviews>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.up.right.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Znf-82-n2Q">
-                                                <rect key="frame" x="248.5" y="15" width="19.5" height="17.5"/>
+                                                <rect key="frame" x="520.5" y="14.999999999999998" width="19.5" height="17.5"/>
                                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                         </subviews>
@@ -731,11 +731,11 @@
             <objects>
                 <viewController id="0zL-hH-dvY" customClass="SquadListViewController" customModule="CricPulse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="81K-cd-rIK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="272"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="304"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xZ0-Wv-J5j">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="272"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="304"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
