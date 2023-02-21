@@ -25,6 +25,21 @@ class MatchDetailsViewModel{
             print(error.localizedDescription)
         }
     }
+    
+    // get Score
+    func getTeamOneScore() -> String{
+        let matchScore = matchDetailsData?.teamOneScore?.score ?? 00
+        let wickets = matchDetailsData?.teamOneScore?.wickets ?? 0
+        let overs = matchDetailsData?.teamOneScore?.overs ?? 0
+        return "\(matchScore)/\(wickets)(\(overs))"
+    }
+    // get Score
+    func getTeamTwoScore() -> String{
+        let matchScore = matchDetailsData?.teamTwoScore?.score ?? 00
+        let wickets = matchDetailsData?.teamTwoScore?.wickets ?? 0
+        let overs = matchDetailsData?.teamTwoScore?.overs ?? 0
+        return "\(matchScore)/\(wickets)(\(overs))"
+    }
 }
 
 
