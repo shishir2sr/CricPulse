@@ -1,4 +1,5 @@
 import UIKit
+import Combine
 
 class MatchDetailsViewController: UIViewController {
     var fixtureId : Int?
@@ -6,6 +7,9 @@ class MatchDetailsViewController: UIViewController {
     
     // MARK: ViewModel
     private let viewModel = MatchDetailsViewModel(remoteFixtureRepository: RemoteFixtureRepository())
+    
+    var matchDetailsData: MatchDetailsData?
+    private var cancellables = Set<AnyCancellable>()
     
     // MARK: - Outlets
     // View Outlets
@@ -58,23 +62,36 @@ class MatchDetailsViewController: UIViewController {
     // MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configViewDidLoad()
     }
     
     // View Did load configuration
     func configViewDidLoad(){
-        
         // Ui changer
         setupView()
         
         // Get data
-        guard let fixtureId = fixtureId else{
-            print("Error: fixtureID is nil")
-            return
+        guard let fixtureId = fixtureId else{ return }
+        Task{
+            await viewModel.getFixture(id: fixtureId)
         }
-        Task{await viewModel.getFixture(id: fixtureId)}
-        
+        // Binder Setup
+        setupBinders()
+    }
+    
+    // binder
+    func setupBinders(){
+        viewModel.$matchDetailsData.sink {[weak self] matchDetailsData in
+            guard let self = self else{return}
+            DispatchQueue.main.async {
+                self.matchDetailsData = matchDetailsData
+                self.dataSetup()
+            }
+        }.store(in: &cancellables)
+    }
+    
+    func dataSetup(){
+        tournamentName.text = matchDetailsData?.tournamentName
     }
     
 }
