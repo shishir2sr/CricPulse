@@ -11,9 +11,11 @@ class RemoteFixtureRepository: FixtureRepository{
         return data 
     }
     
+    // MARK: Get fixture by id
     func getFixtureById(id: Int) async -> Result<Fixture,CustomError>{
-        let includeString = "localteam,visitorteam,league,venue,runs.team,batting.batsman"
-        let url = EndPoint.shared.getFixture(Id: id, with: [.include("localteam,visitorteam,league,venue,runs.team, batting.batsman")])
+        let includeString = "localteam,visitorteam,league,venue,runs.team,batting.batsman,bowling.bowler"
+        
+        let url = EndPoint.shared.getFixture(Id: id, with: [.include(includeString)])
         
         print("Fixture WIth ID URL: ", url!)
         

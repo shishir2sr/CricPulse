@@ -1,13 +1,13 @@
 import Foundation
 
 // MARK: - Balling
-struct Balling: Codable {
+struct BowlingDataClass: Codable {
     let id: Int?
     let sort: Int?
     let fixture_id: Int?
     let team_id: Int?
     let player_id: Int?
-    let overs: Int?
+    let overs: Double?
     let medians: Int?
     let runs: Int?
     let wickets: Int?

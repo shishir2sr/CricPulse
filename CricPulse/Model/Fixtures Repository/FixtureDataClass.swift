@@ -42,6 +42,7 @@ struct FixtureDataClass: Codable{
        let venue: VenueDataClass?
        let runs: [Runs]?
        let batting: [BattingsDataClass]?
+       let bowling: [BowlingDataClass]?
 }
 
 // MARK: Status
