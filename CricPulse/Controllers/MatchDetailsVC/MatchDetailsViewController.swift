@@ -23,6 +23,7 @@ class MatchDetailsViewController: UIViewController {
     @IBOutlet weak var scoreView: UIView!
     
     // Label outlets
+    @IBOutlet weak var stadiumName: UILabel!
     @IBOutlet weak var tournamentName: UILabel!
     @IBOutlet weak var matchNumber: UILabel!
     @IBOutlet weak var matchStatus: UILabel!
@@ -45,7 +46,7 @@ class MatchDetailsViewController: UIViewController {
     // Man of the match
     @IBOutlet weak var manOfTheMatchImage: UIImageView!
     @IBOutlet weak var manMatchName: UILabel!
-    @IBOutlet weak var manMatchTeamFlag: UIImageView!
+    
     
     
     // Stack Outlets
@@ -80,8 +81,27 @@ class MatchDetailsViewController: UIViewController {
         
         matchType.text = matchDetailsData?.matchType
         matchDate.text = matchDetailsData?.matchDate?.formatted(date: .abbreviated, time: .shortened)
+        manOfTheMatchImage.sd_setImage(with: URL(string: matchDetailsData?.mOMImageUrl ?? ""), placeholderImage: UIImage(systemName: "photo"))
+        manMatchName.text = matchDetailsData?.mOMName
         
+        stadiumName.text = viewModel.getStadiumInfo()
+        matchStatusView.backgroundColor = viewModel.getMatchStatusColor()
+        note.text = matchDetailsData?.matchNote
+        setupScoreViews()
         
+    }
+    
+    func setupScoreViews(){
+        switch matchDetailsData?.matchStatus{
+        case .finished:
+            alertButtonOutlet.isHidden = true
+            winPercenTageStackView.isHidden = true
+            
+        case .none:
+            print("Non")
+        case .some(_):
+            print("some")
+        }
     }
     
     
@@ -134,11 +154,6 @@ extension MatchDetailsViewController{
         containerViewOne.isHidden = false
         containerViewTwo.isHidden = true
         containerViewThree.isHidden = true
-        matchDate.isHidden = true
-        scoreStack.isHidden = false
-        
-        winPercenTageStackView.isHidden = true
-        manOfTheMatchStackView.isHidden = false
     }
     
     // MARK: Segment control

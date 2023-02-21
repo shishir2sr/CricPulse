@@ -14,6 +14,9 @@ class MatchDetailsDataGenerator{
         var localTeamBattingScore : [BattingsDataClass] = []
         var visitorTeamBattingScore : [BattingsDataClass] = []
         
+        // setStadiumName
+        
+        
         
         // get squadlist
         if let lineup = fixture.lineup {
@@ -58,6 +61,7 @@ class MatchDetailsDataGenerator{
                                 matchType: fixture.type,
                                 matchDate: fixture.starting_at,
                                 matchNote: fixture.note,
+                                stadiumInfo: fixture.venue,
                                 mOMImageUrl: fixture.manofmatch?.image_path,
                                 mOMName: fixture.manofmatch?.fullname,
                                 mOMTeamFlag: fixture.manofmatch?.image_path,
@@ -90,6 +94,7 @@ struct MatchDetailsData{
     let matchType: String?
     let matchDate: Date?
     let matchNote: String?
+    let stadiumInfo: VenueDataClass?
     
     // Man of the match informations
     let mOMImageUrl: String?
