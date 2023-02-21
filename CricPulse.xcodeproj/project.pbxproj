@@ -25,6 +25,7 @@
 		38A65B9529A47C520048D9D9 /* BattingsDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B9429A47C520048D9D9 /* BattingsDataClass.swift */; };
 		38A65B9729A47C920048D9D9 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B9629A47C920048D9D9 /* Dummy.swift */; };
 		38A65B9929A4C8670048D9D9 /* BowlingDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B9829A4C8670048D9D9 /* BowlingDataClass.swift */; };
+		38A65B9B29A4E6010048D9D9 /* DetailedMatchAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B9A29A4E6010048D9D9 /* DetailedMatchAdapter.swift */; };
 		38C010A929A23117004AECAC /* DetailedScoreTViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C010A729A23117004AECAC /* DetailedScoreTViewCell.swift */; };
 		38C010AA29A23117004AECAC /* DetailedScoreTViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C010A829A23117004AECAC /* DetailedScoreTViewCell.xib */; };
 		38C010AC29A2420F004AECAC /* DetailedScoreVC+TBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C010AB29A2420F004AECAC /* DetailedScoreVC+TBView.swift */; };
@@ -89,6 +90,7 @@
 		38A65B9429A47C520048D9D9 /* BattingsDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattingsDataClass.swift; sourceTree = "<group>"; };
 		38A65B9629A47C920048D9D9 /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
 		38A65B9829A4C8670048D9D9 /* BowlingDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingDataClass.swift; sourceTree = "<group>"; };
+		38A65B9A29A4E6010048D9D9 /* DetailedMatchAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedMatchAdapter.swift; sourceTree = "<group>"; };
 		38C010A729A23117004AECAC /* DetailedScoreTViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedScoreTViewCell.swift; sourceTree = "<group>"; };
 		38C010A829A23117004AECAC /* DetailedScoreTViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedScoreTViewCell.xib; sourceTree = "<group>"; };
 		38C010AB29A2420F004AECAC /* DetailedScoreVC+TBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailedScoreVC+TBView.swift"; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				89D5D751299CD63800C87209 /* FixtureDataClass.swift */,
 				38A65B8929A45E950048D9D9 /* FixtureRepository.swift */,
 				38A65B8B29A45F990048D9D9 /* RemoteFixtureRepository.swift */,
+				38A65B9A29A4E6010048D9D9 /* DetailedMatchAdapter.swift */,
 			);
 			path = "Fixtures Repository";
 			sourceTree = "<group>";
@@ -199,9 +202,9 @@
 		38A65B8D29A471730048D9D9 /* Players Repository */ = {
 			isa = PBXGroup;
 			children = (
+				89D5D755299CE28A00C87209 /* PlayerDataClass.swift */,
 				38A65B9429A47C520048D9D9 /* BattingsDataClass.swift */,
 				38A65B9829A4C8670048D9D9 /* BowlingDataClass.swift */,
-				89D5D755299CE28A00C87209 /* PlayerDataClass.swift */,
 				38A65B8E29A4719F0048D9D9 /* PlayersRepository.swift */,
 				38A65B9029A472C20048D9D9 /* RemotePlayerRepository.swift */,
 				38A65B9229A4741F0048D9D9 /* LocaPlayerRepository.swift */,
@@ -501,6 +504,7 @@
 				388007F6299D34F000FA9C7B /* UICollectionViewExtension.swift in Sources */,
 				38A65B9329A4741F0048D9D9 /* LocaPlayerRepository.swift in Sources */,
 				38A65B8129A3E35F0048D9D9 /* MatchInfoTableViewCell.swift in Sources */,
+				38A65B9B29A4E6010048D9D9 /* DetailedMatchAdapter.swift in Sources */,
 				8992C8AE29A384320071B9EB /* HeaderForSquadList.swift in Sources */,
 				8992C8A729A370160071B9EB /* SquadListTableViewCell.swift in Sources */,
 				38A65B9729A47C920048D9D9 /* Dummy.swift in Sources */,

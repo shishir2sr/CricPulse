@@ -25,6 +25,7 @@ struct PlayerDataClass: Codable{
     let bowlingstyle: String?
     let position: Position?
     let updated_at: Date?
+    let lineup: LineupLineup?
 }
 
 
@@ -33,5 +34,9 @@ struct Position: Codable {
     let resource: String?
     let id: Int?
     let name: String?
+}
+
+struct LineupLineup: Codable {
+    let team_id: Int?
 }
 

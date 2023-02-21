@@ -1,11 +1,17 @@
 import UIKit
+import Combine
+import SDWebImage
 
 class MatchDetailsViewController: UIViewController {
     var fixtureId : Int?
-    
+    var timer: Timer?
     
     // MARK: ViewModel
     private let viewModel = MatchDetailsViewModel(remoteFixtureRepository: RemoteFixtureRepository())
+    var matchDetailsData: MatchDetailsData?
+    private var cancellables = Set<AnyCancellable>()
+    
+   
     
     // MARK: - Outlets
     // View Outlets
@@ -16,6 +22,7 @@ class MatchDetailsViewController: UIViewController {
     @IBOutlet weak var scoreView: UIView!
     
     // Label outlets
+    @IBOutlet weak var stadiumName: UILabel!
     @IBOutlet weak var tournamentName: UILabel!
     @IBOutlet weak var matchNumber: UILabel!
     @IBOutlet weak var matchStatus: UILabel!
@@ -38,7 +45,7 @@ class MatchDetailsViewController: UIViewController {
     // Man of the match
     @IBOutlet weak var manOfTheMatchImage: UIImageView!
     @IBOutlet weak var manMatchName: UILabel!
-    @IBOutlet weak var manMatchTeamFlag: UIImageView!
+    
     
     
     // Stack Outlets
@@ -53,24 +60,98 @@ class MatchDetailsViewController: UIViewController {
     @IBOutlet weak var containerViewTwo: UIView!
     @IBOutlet weak var containerViewThree: UIView!
     
+    func dataSetup(){
+        tournamentName.text = matchDetailsData?.tournamentName
+        matchNumber.text = matchDetailsData?.matchNo
+        matchStatus.text = matchDetailsData?.matchStatus?.statusText
+        
+        teamOneFlag.sd_setImage(with: URL(string: matchDetailsData?.teamOneFlagUrl ?? ""), placeholderImage: UIImage(systemName: "photo"))
+       
+        teamOneCode.text = matchDetailsData?.teamOneCode
+        teamOneScore.text = viewModel.getTeamOneScore()
+        teamOneWInPercentage.text = matchDetailsData?.teamOneWinPercentage
+        
+        
+        teamTwoFlag.sd_setImage(with: URL(string: matchDetailsData?.teamTwoFlagUrl ?? ""), placeholderImage: UIImage(systemName: "photo"))
+       
+        teamTwoCode.text = matchDetailsData?.teamTwoCode
+        teamTwoScore.text = viewModel.getTeamTwoScore()
+        teamTwoWinPercentage.text = matchDetailsData?.teamTwoWinPercentage
+        
+        matchType.text = matchDetailsData?.matchType
+        matchDate.text = matchDetailsData?.matchDate?.formatted(date: .abbreviated, time: .shortened)
+        manOfTheMatchImage.sd_setImage(with: URL(string: matchDetailsData?.mOMImageUrl ?? ""), placeholderImage: UIImage(systemName: "photo"))
+        manMatchName.text = matchDetailsData?.mOMName
+        
+        stadiumName.text = viewModel.getStadiumInfo()
+        matchStatusView.backgroundColor = viewModel.getMatchStatusColor()
+        note.text = matchDetailsData?.matchNote
+        setupScoreViews()
+        
+    }
+    
+    func setupScoreViews(){
+        switch matchDetailsData?.matchStatus{
+        case .finished:
+            alertButtonOutlet.isHidden = true
+            winPercenTageStackView.isHidden = true
+            scoreStack.isHidden = false
+        case .ns:
+            alertButtonOutlet.isHidden = false
+            alertButtonOutlet.isUserInteractionEnabled = true
+            scoreStack.isHidden = true
+            matchDate.isHidden = false
+            matchDate.text = matchDetailsData?.matchDate?.formatted(date: .complete, time: .shortened)
+            note.text = viewModel.remainingTime()
+            manOfTheMatchStackView.isHidden = true
+            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+                guard let self = self  else {return}
+                DispatchQueue.main.async {
+                    self.note.text = self.viewModel.remainingTime()
+                }
+            }
+            
+        case .none:
+            print("Non")
+        case .some(_):
+            print("some")
+        }
+    }
     
     
     // MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        guard let fixtureId = fixtureId else{
-            print("Error: fixtureID is nil")
-            return
-        }
-        Task{await viewModel.getFixture(id: fixtureId)}
-        
-        
+        configViewDidLoad()
+    }
+    
+    
+    // View Did load configuration
+    func configViewDidLoad(){
+        // Ui changer
         setupView()
+        
+        // Get data
+        guard let fixtureId = fixtureId else{ return }
+        Task{
+            await viewModel.getFixture(id: fixtureId)
+        }
+        // Binder Setup
+        setupBinders()
+    }
+    
+    // binder
+    func setupBinders(){
+        viewModel.$matchDetailsData.sink {[weak self] matchDetailsData in
+            guard let self = self else{return}
+            DispatchQueue.main.async {
+                self.matchDetailsData = matchDetailsData
+                self.dataSetup()
+            }
+        }.store(in: &cancellables)
     }
     
 }
-
 
 
 // MARK: - MatchDetailsView Extension
@@ -88,11 +169,6 @@ extension MatchDetailsViewController{
         containerViewOne.isHidden = false
         containerViewTwo.isHidden = true
         containerViewThree.isHidden = true
-        matchDate.isHidden = true
-        scoreStack.isHidden = false
-        
-        winPercenTageStackView.isHidden = true
-        manOfTheMatchStackView.isHidden = false
     }
     
     // MARK: Segment control

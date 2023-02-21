@@ -3,6 +3,7 @@ import UIKit
 
 class ScoreCardCVModel{
     // Variables
+    let id: Int
     let tournamentName: String
     let matchNo: String
     let matchStatus: Status? // Live, Upcoming, Finished etc
@@ -21,6 +22,7 @@ class ScoreCardCVModel{
     
     // Initialise
     init(scorecard: FixtureDataClass) {
+        self.id = scorecard.id!
         self.tournamentName = scorecard.league?.name ?? "Unknown"
         self.matchNo = scorecard.round ?? "--"
         self.matchStatus = scorecard.status
