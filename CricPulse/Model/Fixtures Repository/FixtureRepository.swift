@@ -5,5 +5,5 @@ protocol FixtureRepository {
     /// - Returns: Result with success at left or Failure at right
   func getFixtures() async -> Result<Fixtures,CustomError>
     
-  func getFixtureById(id: Int) async
+  func getFixtureById(id: Int) async -> Result<Fixture,CustomError>
 }

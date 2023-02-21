@@ -96,6 +96,7 @@ extension DetailedScoreViewController: UITableViewDelegate, UITableViewDataSourc
         }
         
     }
+    // Footer height
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         70
     }

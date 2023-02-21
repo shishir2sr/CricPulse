@@ -1,8 +1,11 @@
 import UIKit
 
 class MatchDetailsViewController: UIViewController {
-    // MARK: ViewModel
+    var fixtureId : Int?
     
+    
+    // MARK: ViewModel
+    private let viewModel = MatchDetailsViewModel(remoteFixtureRepository: RemoteFixtureRepository())
     
     // MARK: - Outlets
     // View Outlets
@@ -55,6 +58,14 @@ class MatchDetailsViewController: UIViewController {
     // MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let fixtureId = fixtureId else{
+            print("Error: fixtureID is nil")
+            return
+        }
+        Task{await viewModel.getFixture(id: fixtureId)}
+        
+        
         setupView()
     }
     

@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         setupBinders()
         // TODO: Change according to use case
         Task{
-           await mainViewModel.getFixture()
+           await mainViewModel.getFixtures()
         }
     }
     
