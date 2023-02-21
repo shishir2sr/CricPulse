@@ -18,7 +18,7 @@ class MatchDetailsViewModel{
         let data: Result<Fixture,CustomError> = await remoteFixtureRepository.getFixtureById(id: id)
         switch data{
         case .success(let data):
-            print("Data parsed", data.data.lineup![0].fullname as Any) // TODO: Do
+             
             matchDetailsData = MatchDetailsDataGenerator.matchDetailsGenerator(data.data)
             
         case .failure(let error):
@@ -71,6 +71,16 @@ class MatchDetailsViewModel{
         case .none:
             return UIColor.cyan
         }
+    }
+    
+    func remainingTime() -> String {
+        let now = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.day, .hour, .minute, .second], from: now, to: matchDetailsData?.matchDate ?? Date())
+        guard let days = components.day, let hours = components.hour, let minutes = components.minute, let seconds = components.second else {
+            return ""
+        }
+        return String(format: "\(days) days, \(hours) hours, \(minutes), \(seconds) seconds to toss")
     }
 }
 
