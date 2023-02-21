@@ -19,12 +19,12 @@ struct PlayerDataClass: Codable{
     let id, country_id: Int?
     let fullname: String?
     let image_path: String?
-    let dateofbirth: Date?
+    let dateofbirth: String?
     let gender: String?
     let battingstyle: String?
     let bowlingstyle: String?
     let position: Position?
-    let updated_at: String?
+    let updated_at: Date?
 }
 
 

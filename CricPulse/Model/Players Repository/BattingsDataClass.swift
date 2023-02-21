@@ -13,5 +13,5 @@ struct BattingsDataClass: Codable {
     let six_x: Int?
     let rate: Double?
     let updated_at: Date?
-    let batsman: Player?
+    let batsman: PlayerDataClass?
 }

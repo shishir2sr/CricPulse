@@ -19,7 +19,7 @@ class MatchDetailsViewModel{
         switch data{
             
         case .success(let data):
-            print("Data parsed", data.data.batting) // TODO: Do something
+            print("Data parsed", data.data.batting![0].batsman?.fullname) // TODO: Do something
         case .failure(let error):
             print(error)
         }
