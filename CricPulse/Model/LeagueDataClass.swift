@@ -12,7 +12,7 @@ struct LeagueDataClass:Codable {
     let code: String?
     let image_path: String?
     let type: String?
-    let updated_at: String?
+    let updated_at: Date?
 }
 /**
  data": {

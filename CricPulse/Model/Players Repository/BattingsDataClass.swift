@@ -1,6 +1,6 @@
 import Foundation
 
-struct BatsManDataClass: Decodable {
+struct BattingsDataClass: Codable {
     let id: Int?
     let sort: Int?
     let fixture_id: Int?

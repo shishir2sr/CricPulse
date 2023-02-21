@@ -1,15 +1,18 @@
 import Foundation
 
+// MARK: Fixtures
 struct Fixtures: Codable {
     let data: [FixtureDataClass]
     let links: Links?
     let meta: Meta?
 }
 
+// MARK: Fixture
 struct Fixture:Codable {
     let data: FixtureDataClass
 }
 
+// MARK: Fixtures dataclass
 struct FixtureDataClass: Codable{
     let resource: String?
        let id, league_id, season_id, stage_id: Int?
@@ -18,7 +21,6 @@ struct FixtureDataClass: Codable{
        let starting_at: Date?
        let type: String?
        let live: Bool?
-//       let status: String?
        let status: Status?
        let last_period: String?
        let note: String?
@@ -39,8 +41,10 @@ struct FixtureDataClass: Codable{
        let league: LeagueDataClass?
        let venue: VenueDataClass?
        let runs: [Runs]?
+       let batting: [BattingsDataClass]?
 }
 
+// MARK: Status
 enum Status: String, Codable {
     case aban = "Aban."
     case finished = "Finished"
