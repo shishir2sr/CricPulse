@@ -3,6 +3,7 @@ import Foundation
 import UIKit
 class FinishedMatchScoreCardTVModel{
     // variables
+    let tournamentId : Int?
     let tournamentName: String
     let matchNo: String
     let localTeamName: String
@@ -51,6 +52,7 @@ class FinishedMatchScoreCardTVModel{
         self.startingDate = scorecard.starting_at ?? Date()
         self.manOfTheMatch = "" // TODO: Man of the match
         self.gameType = scorecard.type ?? "--"
+        self.tournamentId = scorecard.id
         
     }
     

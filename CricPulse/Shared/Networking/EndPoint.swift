@@ -52,6 +52,11 @@ class EndPoint {
         let endpoint = "/fixtures"
         return createURL(endpoint: endpoint, queryParameters: queryParameters)
     }
+    // Create Fixtures With Id
+    func getFixture(Id fixtureId : Int, with queryParameters: [QueryParameter] = []) -> URL? {
+        let endpoint = "/fixtures/\(fixtureId)"
+        return createURL(endpoint: endpoint, queryParameters: queryParameters)
+    }
 }
 
 

@@ -1,6 +1,9 @@
 import Foundation
 
 class MainViewModel{
+    
+    private let remoteFixtureRepository : RemoteFixtureRepository
+    
     // Combined variables
     @Published var isLoading: Bool = false
     @Published var scoreCardForCV:[ScoreCardCVModel] = []
@@ -8,6 +11,10 @@ class MainViewModel{
     
     // Variables
     var dataSource: [FixtureDataClass] = []
+    
+    init(fixtureRepository: RemoteFixtureRepository){
+        self.remoteFixtureRepository = fixtureRepository
+    }
     
     // CollectionView Number of items
     func numberOfItems(in _: Int) -> Int {
@@ -20,12 +27,8 @@ class MainViewModel{
     }
     
     // Get Data
-    func getFixture()async {
-        // Generate URL
-        let includeString = "localteam,visitorteam,league,venue,runs.team"
-        let url = EndPoint.shared.getFixtures(with: [.include(includeString),.sort("-updated_at"), .fileter(name: "type", values: "T20"),])
-        // get data
-        let data: Result<Fixtures,CustomError> = await ApiClient.shared.fetchData(url: url)
+    func getFixtures()async {
+        let data: Result<Fixtures,CustomError> = await remoteFixtureRepository.getFixtures()
         handleResponse(data: data)
     }
     

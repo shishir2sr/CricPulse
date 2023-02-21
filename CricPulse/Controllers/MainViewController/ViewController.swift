@@ -9,7 +9,7 @@ class ViewController: UIViewController {
     private var cancellables = Set<AnyCancellable>()
     
     // ViewModel
-    let mainViewModel = MainViewModel()
+    let mainViewModel = MainViewModel(fixtureRepository: RemoteFixtureRepository())
 
     // Outlets
     @IBOutlet weak var homeCollectionView: UICollectionView!
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         setupBinders()
         // TODO: Change according to use case
         Task{
-           await mainViewModel.getFixture()
+           await mainViewModel.getFixtures()
         }
     }
     
