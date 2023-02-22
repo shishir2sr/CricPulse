@@ -36,11 +36,9 @@ class ScoreBoardViewController: UIViewController {
                     self.matchDetailsVM = matchDetails
                     self.setupData()
                 }
-               
             }
         }.store(in: &cancellables)
     }
-    
     
     func setupData(){
         self.teamOneName.text = matchDetailsVM?.teamOneName
@@ -54,17 +52,7 @@ class ScoreBoardViewController: UIViewController {
         self.teamTwoScore.text = tTwoScore
     }
     
-    /**
-     self.teamOneName.text = matchDetails?.teamOneName
-     self.teamOneFlag.sd_setImage(with: URL(string: matchDetails?.teamOneFlagUrl ?? ""), placeholderImage: UIImage(systemName: "photo"))
-     let tOneScore = "\(matchDetails?.teamOneScore?.score ?? 0)"
-     self.teamOneScore.text = tOneScore
-     
-     self.teamTwoName.text = matchDetails?.teamTwoName
-     self.teamTwoFlag.sd_setImage(with: URL(string: matchDetails?.teamTwoFlagUrl ?? ""), placeholderImage: UIImage(systemName: "photo"))
-     let tTwoScore = "\(matchDetails?.teamTwoScore?.score ?? 0)"
-     self.teamTwoScore.text = tTwoScore
-     */
+    
     
     // MARK:
      func setupView() {
@@ -84,10 +72,12 @@ class ScoreBoardViewController: UIViewController {
     
     // View One tapped
     @objc func viewOneTapped(){
+        
         buttonGuestureAnimation(for: teamOneBackgroundVIew)
         
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.detailedScoreBoardForTeamID)  as? DetailedScoreViewController
-        viewController?.title = ""
+        viewController?.title = matchDetailsVM?.teamOneName
+        
         navigationController?.pushViewController(viewController!, animated: true)
     }
     
@@ -96,7 +86,11 @@ class ScoreBoardViewController: UIViewController {
         print("button 2 pressed")
         buttonGuestureAnimation(for: teamTwoBackgroundVIew)
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.detailedScoreBoardForTeamID)  as? DetailedScoreViewController
-        viewController?.title = ""
+        if let matchDetailsVM = matchDetailsVM {
+            viewController?.battingScore = matchDetailsVM.teamTwoBatting ?? []
+            viewController?.bowlingScore = matchDetailsVM.teamTwoBowling ?? []
+            viewController?.viewTitle = matchDetailsVM.teamTwoCode ?? "not found"
+        }
         navigationController?.pushViewController(viewController!, animated: true)
     }
 

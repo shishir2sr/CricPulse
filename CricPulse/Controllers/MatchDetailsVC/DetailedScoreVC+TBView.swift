@@ -11,8 +11,6 @@ extension DetailedScoreViewController{
         let insets = UIEdgeInsets(top: -35, left: 0, bottom: 0, right: 0)
         matchDetailsTableView.contentInset = insets
         registerTableViewCell()
-       
-        
     }
     // Register cells
     func registerTableViewCell(){
@@ -36,13 +34,26 @@ extension DetailedScoreViewController: UITableViewDelegate, UITableViewDataSourc
     
     // number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewmodel.numberOfRows(in: section)
+        
+        if let battingScore = battingScore, let bowlingScore = bowlingScore{
+            switch section{
+            case 0:
+                return battingScore.count
+            case 1:
+                return bowlingScore.count
+            default:
+                return 5
+            }
+        }
+        return 5
     }
     
     // MARK: Cell for row at
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = matchDetailsTableView.dequeueReusableCell(withIdentifier: DetailedScoreViewModel.cellIdentifier, for: indexPath) as? DetailedScoreTViewCell
         guard let cell  = cell else{return UITableViewCell()}
+        
+        
         return cell
     }
     
