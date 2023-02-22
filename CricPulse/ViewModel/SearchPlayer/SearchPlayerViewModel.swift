@@ -1,5 +1,6 @@
 
 import Foundation
+import UIKit
 
 class SearchPlayerViewModel{
     // Decides tableviews number of rows
@@ -10,5 +11,10 @@ class SearchPlayerViewModel{
     // Decides number of sections in tableview
     func numberOfSection()-> Int{
         return 0
+    }
+    
+    // xib registration
+    func registerNib()-> UINib{
+        return UINib(nibName: Constants.searchPlayerTVCell, bundle: nil)
     }
 }

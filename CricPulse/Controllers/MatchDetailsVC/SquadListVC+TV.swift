@@ -21,12 +21,12 @@ extension SquadListViewController: UITableViewDataSource, UITableViewDelegate{
     func registerSquadTV(){
         squadListTableView.register(UINib(nibName: Constants.squadListTableViewIdentifier, bundle: nil), forCellReuseIdentifier: Constants.squadListTableViewIdentifier)
         
-        squadListTableView.register(UINib(nibName: Constants.HeaderForSquadList, bundle: nil), forHeaderFooterViewReuseIdentifier: Constants.HeaderForSquadList)
+        squadListTableView.register(UINib(nibName: Constants.headerForSquadList, bundle: nil), forHeaderFooterViewReuseIdentifier: Constants.headerForSquadList)
     }
     
     // Header for section
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = squadListTableView.dequeueReusableHeaderFooterView(withIdentifier: Constants.HeaderForSquadList) as? HeaderForSquadList
+        let header = squadListTableView.dequeueReusableHeaderFooterView(withIdentifier: Constants.headerForSquadList) as? HeaderForSquadList
         guard let header = header else {return UIView()}
         
         if section == 0{
