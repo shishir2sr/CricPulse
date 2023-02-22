@@ -9,21 +9,44 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search Player-->
+        <!--Players-->
         <scene sceneID="42i-sM-0nj">
             <objects>
-                <viewController id="1SQ-Sd-Npd" sceneMemberID="viewController">
+                <viewController id="1SQ-Sd-Npd" customClass="SearchPlayerViewController" customModule="CricPulse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mJP-Dp-3KM">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Player" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nu0-g1-f0w">
+                                <rect key="frame" x="10" y="113" width="373" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="acD-gS-quh">
+                                <rect key="frame" x="0.0" y="157" width="393" height="661"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Ixe-72-jfT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ixe-72-jfT" firstAttribute="trailing" secondItem="acD-gS-quh" secondAttribute="trailing" id="54i-mg-rGU"/>
+                            <constraint firstItem="acD-gS-quh" firstAttribute="leading" secondItem="Ixe-72-jfT" secondAttribute="leading" id="5Yh-o8-NeO"/>
+                            <constraint firstItem="Nu0-g1-f0w" firstAttribute="leading" secondItem="Ixe-72-jfT" secondAttribute="leading" constant="10" id="B3n-2K-o4F"/>
+                            <constraint firstItem="Ixe-72-jfT" firstAttribute="bottom" secondItem="acD-gS-quh" secondAttribute="bottom" id="WGh-ao-9e3"/>
+                            <constraint firstItem="Nu0-g1-f0w" firstAttribute="top" secondItem="Ixe-72-jfT" secondAttribute="top" constant="10" id="fpK-XM-NF9"/>
+                            <constraint firstItem="acD-gS-quh" firstAttribute="top" secondItem="Nu0-g1-f0w" secondAttribute="bottom" constant="10" id="lqe-d9-Ilh"/>
+                            <constraint firstItem="Ixe-72-jfT" firstAttribute="trailing" secondItem="Nu0-g1-f0w" secondAttribute="trailing" constant="10" id="vS0-bV-Pqd"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Search Player" id="hPH-nV-rZd"/>
+                    <navigationItem key="navigationItem" title="Players" id="hPH-nV-rZd"/>
+                    <connections>
+                        <outlet property="playersTableView" destination="acD-gS-quh" id="MR0-G8-v8y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9jg-Da-1eP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1054.1984732824426" y="851.4084507042254"/>
+            <point key="canvasLocation" x="1052.6717557251909" y="851.4084507042254"/>
         </scene>
         <!--Players-->
         <scene sceneID="8nK-tc-0kF">
