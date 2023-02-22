@@ -8,11 +8,9 @@ extension DetailedScoreViewController{
         matchDetailsTableView.dataSource = self
         matchDetailsTableView.delegate = self
         
-        let insets = UIEdgeInsets(top: -35, left: 0, bottom: 0, right: 0)
+        let insets = UIEdgeInsets(top: -20, left: 0, bottom: 0, right: 0)
         matchDetailsTableView.contentInset = insets
         registerTableViewCell()
-       
-        
     }
     // Register cells
     func registerTableViewCell(){
@@ -36,13 +34,49 @@ extension DetailedScoreViewController: UITableViewDelegate, UITableViewDataSourc
     
     // number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewmodel.numberOfRows(in: section)
+        
+        if let battingScore = battingScore, let bowlingScore = bowlingScore{
+            switch section{
+            case 0:
+                return battingScore.count
+            case 1:
+                return bowlingScore.count
+            default:
+                return 5
+            }
+        }
+        return 5
     }
     
     // MARK: Cell for row at
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = matchDetailsTableView.dequeueReusableCell(withIdentifier: DetailedScoreViewModel.cellIdentifier, for: indexPath) as? DetailedScoreTViewCell
+        
         guard let cell  = cell else{return UITableViewCell()}
+        guard let battingScore = battingScore else{return UITableViewCell()}
+        guard let bowlingScore = bowlingScore else {return UITableViewCell()}
+        
+        if indexPath.section == 0{
+            let battingScore = battingScore[indexPath.row]
+            cell.playerName.text = battingScore.batsman?.fullname
+            cell.playersPosition.text = battingScore.batsman?.position?.name
+            cell.ball.text = "\(battingScore.ball ?? 5)"
+            cell.fours.text = "\(battingScore.four_x ?? 0)"
+            cell.run.text = "\(battingScore.score ?? 0)"
+            cell.sixes.text = "\(battingScore.six_x ?? 0)"
+            cell.strikeRate.text = "\(battingScore.rate ?? 0)"
+        }else if indexPath.section == 1{
+            let bowlingScore = bowlingScore[indexPath.row]
+            cell.playerName.text = bowlingScore.bowler?.fullname
+            cell.playersPosition.text = bowlingScore.bowler?.position?.name
+            cell.run.text = "\(bowlingScore.overs ?? 0)"
+            cell.ball.text = "\(bowlingScore.medians ?? 0)"
+            cell.fours.text = "\(bowlingScore.runs ?? 0)"
+            cell.sixes.text = "\(bowlingScore.wide ?? 0)"
+            cell.strikeRate.text = "\(bowlingScore.rate ?? 0)"
+        }
+        
+        
         return cell
     }
     
@@ -86,20 +120,20 @@ extension DetailedScoreViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     // MARK: Footer
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        if section == 0 {
-            let footer = matchDetailsTableView.dequeueReusableHeaderFooterView(withIdentifier: "FooterForBattersCell") as? FooterForBattersCell
-            guard let footer = footer else{ return nil}
-            return footer
-        }else {
-            return nil
-        }
-        
-    }
-    // Footer height
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        70
-    }
+//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        if section == 0 {
+//            let footer = matchDetailsTableView.dequeueReusableHeaderFooterView(withIdentifier: "FooterForBattersCell") as? FooterForBattersCell
+//            guard let footer = footer else{ return nil}
+//            return footer
+//        }else {
+//            return nil
+//        }
+//
+//    }
+//    // Footer height
+//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        70
+//    }
     
     
     

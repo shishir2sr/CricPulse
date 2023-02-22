@@ -246,6 +246,16 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="capacity" destination="VPb-Qc-XkO" id="bO6-tb-qbH"/>
+                <outlet property="city" destination="ZFw-gv-Y3p" id="o6m-W0-rgj"/>
+                <outlet property="matchDate" destination="ZWw-Hi-UmN" id="Qnp-Nw-FFZ"/>
+                <outlet property="matchNo" destination="eT3-3e-P8g" id="DPe-JQ-xXC"/>
+                <outlet property="matchTime" destination="BGj-4I-Dl2" id="Pxm-Dp-gaw"/>
+                <outlet property="matchType" destination="K52-e2-qjf" id="dZv-3N-w7u"/>
+                <outlet property="seriesName" destination="bwN-pg-1Mk" id="MSt-87-3Zo"/>
+                <outlet property="venueName" destination="aea-wp-YBZ" id="Zlb-up-zUB"/>
+            </connections>
             <point key="canvasLocation" x="-199.23664122137404" y="80.633802816901408"/>
         </tableViewCell>
     </objects>

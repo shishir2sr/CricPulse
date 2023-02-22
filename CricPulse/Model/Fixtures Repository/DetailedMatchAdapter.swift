@@ -3,7 +3,7 @@ import Foundation
 class MatchDetailsDataGenerator{
     
     static func matchDetailsGenerator(_ fixture: FixtureDataClass) -> MatchDetailsData  {
-    
+        
         // MARK: Components
         var localTeamRuns: Runs?
         var visitorTeamRuns: Runs?
@@ -13,10 +13,6 @@ class MatchDetailsDataGenerator{
         var visitorTeamBowlingScore : [BowlingDataClass] = []
         var localTeamBattingScore : [BattingsDataClass] = []
         var visitorTeamBattingScore : [BattingsDataClass] = []
-        
-        // setStadiumName
-        
-        
         
         // get squadlist
         if let lineup = fixture.lineup {
@@ -29,7 +25,7 @@ class MatchDetailsDataGenerator{
             localTeamBowlingScore = bowlingLineUp.filter { $0.team_id == fixture.localteam_id }
             visitorTeamBowlingScore = bowlingLineUp.filter { $0.team_id != fixture.visitorteam_id }
         }
-    
+        
         // batting Score
         if let batting = fixture.batting {
             localTeamBattingScore = batting.filter { $0.team_id == fixture.localteam_id }
@@ -62,24 +58,29 @@ class MatchDetailsDataGenerator{
                                 matchDate: fixture.starting_at,
                                 matchNote: fixture.note,
                                 stadiumInfo: fixture.venue,
+                                
                                 mOMImageUrl: fixture.manofmatch?.image_path,
                                 mOMName: fixture.manofmatch?.fullname,
                                 mOMTeamFlag: fixture.manofmatch?.image_path,
+                                
                                 teamOneFlagUrl: fixture.localteam?.image_path,
                                 teamOneCode: fixture.localteam?.code,
                                 teamOneScore: localTeamRuns,
-                               teamOneWinPercentage: "50%", //TODO: Later
-                               teamOneSquad: localTeamSquadList,
-                               teamOneBowling: localTeamBowlingScore,
-                               teamOneBatting: localTeamBattingScore,
+                                teamOneWinPercentage: "50%", //TODO: Later
+                                teamOneSquad: localTeamSquadList,
+                                teamOneBowling: localTeamBowlingScore,
+                                teamOneBatting: localTeamBattingScore,
+                                teamOneName: fixture.localteam?.name,
+                                
                                 teamTwoFlagUrl: fixture.visitorteam?.image_path,
                                 teamTwoCode: fixture.visitorteam?.code,
-                               teamTwoScore: visitorTeamRuns,
-                               teamTwoWinPercentage: "50%", // TODO: later
-                               teamTwoSquad: visitorTeamSquadList,
-                               teamTwoBowling: visitorTeamBowlingScore,
-                               teamTwoBatting: visitorTeamBattingScore
-       )
+                                teamTwoScore: visitorTeamRuns,
+                                teamTwoWinPercentage: "50%", // TODO: later
+                                teamTwoSquad: visitorTeamSquadList,
+                                teamTwoBowling: visitorTeamBowlingScore,
+                                teamTwoBatting: visitorTeamBattingScore,
+                                teamTwoName: fixture.visitorteam?.name
+        )
         
     }
     
@@ -109,6 +110,7 @@ struct MatchDetailsData{
     let teamOneSquad: [PlayerDataClass]?
     let teamOneBowling: [BowlingDataClass]?
     let teamOneBatting: [BattingsDataClass]?
+    let teamOneName: String?
     
     // Team Two Informations
     let teamTwoFlagUrl: String?
@@ -118,6 +120,7 @@ struct MatchDetailsData{
     let teamTwoSquad: [PlayerDataClass]?
     let teamTwoBowling: [BowlingDataClass]?
     let teamTwoBatting: [BattingsDataClass]?
+    let teamTwoName: String?
     
 }
 
