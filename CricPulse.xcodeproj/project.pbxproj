@@ -22,8 +22,6 @@
 		38A65B8A29A45E950048D9D9 /* FixtureRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B8929A45E950048D9D9 /* FixtureRepository.swift */; };
 		38A65B8C29A45F9A0048D9D9 /* RemoteFixtureRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B8B29A45F990048D9D9 /* RemoteFixtureRepository.swift */; };
 		38A65B8F29A4719F0048D9D9 /* PlayersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B8E29A4719F0048D9D9 /* PlayersRepository.swift */; };
-		38A65B9129A472C20048D9D9 /* RemotePlayerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B9029A472C20048D9D9 /* RemotePlayerRepository.swift */; };
-		38A65B9329A4741F0048D9D9 /* LocaPlayerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B9229A4741F0048D9D9 /* LocaPlayerRepository.swift */; };
 		38A65B9529A47C520048D9D9 /* BattingsDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B9429A47C520048D9D9 /* BattingsDataClass.swift */; };
 		38A65B9729A47C920048D9D9 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B9629A47C920048D9D9 /* Dummy.swift */; };
 		38A65B9929A4C8670048D9D9 /* BowlingDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B9829A4C8670048D9D9 /* BowlingDataClass.swift */; };
@@ -94,8 +92,6 @@
 		38A65B8929A45E950048D9D9 /* FixtureRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureRepository.swift; sourceTree = "<group>"; };
 		38A65B8B29A45F990048D9D9 /* RemoteFixtureRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFixtureRepository.swift; sourceTree = "<group>"; };
 		38A65B8E29A4719F0048D9D9 /* PlayersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersRepository.swift; sourceTree = "<group>"; };
-		38A65B9029A472C20048D9D9 /* RemotePlayerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePlayerRepository.swift; sourceTree = "<group>"; };
-		38A65B9229A4741F0048D9D9 /* LocaPlayerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaPlayerRepository.swift; sourceTree = "<group>"; };
 		38A65B9429A47C520048D9D9 /* BattingsDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattingsDataClass.swift; sourceTree = "<group>"; };
 		38A65B9629A47C920048D9D9 /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
 		38A65B9829A4C8670048D9D9 /* BowlingDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingDataClass.swift; sourceTree = "<group>"; };
@@ -229,8 +225,6 @@
 				38A65B9429A47C520048D9D9 /* BattingsDataClass.swift */,
 				38A65B9829A4C8670048D9D9 /* BowlingDataClass.swift */,
 				38A65B8E29A4719F0048D9D9 /* PlayersRepository.swift */,
-				38A65B9029A472C20048D9D9 /* RemotePlayerRepository.swift */,
-				38A65B9229A4741F0048D9D9 /* LocaPlayerRepository.swift */,
 			);
 			path = "Players Repository";
 			sourceTree = "<group>";
@@ -548,12 +542,10 @@
 				38C010A929A23117004AECAC /* DetailedScoreTViewCell.swift in Sources */,
 				89E3734229A625F700F9AFFE /* SearchPlayerViewController.swift in Sources */,
 				8901AB9729949D97000F8315 /* AppDelegate.swift in Sources */,
-				38A65B9129A472C20048D9D9 /* RemotePlayerRepository.swift in Sources */,
 				38A65B8A29A45E950048D9D9 /* FixtureRepository.swift in Sources */,
 				384BBB742997CEA700F8C8EF /* UIViewExtension.swift in Sources */,
 				38A65B8429A3E88B0048D9D9 /* MatchInfoViewController+TV.swift in Sources */,
 				388007F6299D34F000FA9C7B /* UICollectionViewExtension.swift in Sources */,
-				38A65B9329A4741F0048D9D9 /* LocaPlayerRepository.swift in Sources */,
 				38A65B8129A3E35F0048D9D9 /* MatchInfoTableViewCell.swift in Sources */,
 				38A65B9B29A4E6010048D9D9 /* DetailedMatchAdapter.swift in Sources */,
 				8992C8AE29A384320071B9EB /* HeaderForSquadList.swift in Sources */,
