@@ -11,20 +11,16 @@ extension MatchDetailsViewController{
             upcomingMatchCases()
         case .aban:
             abanMatchCases()
-            
         case .postp:
             postPondedMatchCases()
         case .the1StInnings:
           liveMatchCases()
-
         case .the2NdInnings:
             liveMatchCases()
-            
         case .innigsBreak:
             liveMatchCases()
         case .int:
             intMatchCases()
-            
         case .none:
             print("Non")
         case .some(_):
@@ -46,7 +42,6 @@ extension MatchDetailsViewController{
         matchDate.isHidden = false
         note.text = viewModel.remainingTime()
         manOfTheMatchStackView.isHidden = true
-        
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
             guard let self = self  else {return}
             DispatchQueue.main.async {
