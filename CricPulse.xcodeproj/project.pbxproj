@@ -68,6 +68,7 @@
 		89DD46702999D6FD00F1E700 /* ViwController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DD466F2999D6FD00F1E700 /* ViwController+CollectionView.swift */; };
 		89DD46722999DA6900F1E700 /* MianViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DD46712999DA6900F1E700 /* MianViewModel.swift */; };
 		89DD46742999DACD00F1E700 /* ScoreCardCVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DD46732999DACD00F1E700 /* ScoreCardCVModel.swift */; };
+		89E3733C29A5B8AE00F9AFFE /* MatchDetailsViewController+MatchStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E3733B29A5B8AE00F9AFFE /* MatchDetailsViewController+MatchStatus.swift */; };
 		89E37EC0299F18900046D0F8 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 89E37EBF299F18900046D0F8 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
@@ -135,6 +136,7 @@
 		89DD466F2999D6FD00F1E700 /* ViwController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViwController+CollectionView.swift"; sourceTree = "<group>"; };
 		89DD46712999DA6900F1E700 /* MianViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MianViewModel.swift; sourceTree = "<group>"; };
 		89DD46732999DACD00F1E700 /* ScoreCardCVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCardCVModel.swift; sourceTree = "<group>"; };
+		89E3733B29A5B8AE00F9AFFE /* MatchDetailsViewController+MatchStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchDetailsViewController+MatchStatus.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				38F618C929A09535005F04C7 /* MatchDetailsViewController.swift */,
+				89E3733B29A5B8AE00F9AFFE /* MatchDetailsViewController+MatchStatus.swift */,
 				38C5FBF129A1CF930066F9AB /* ScoreBoardViewController.swift */,
 				38C5FBF329A1CFDF0066F9AB /* MatchInfoViewController.swift */,
 				38A65B8329A3E88B0048D9D9 /* MatchInfoViewController+TV.swift */,
@@ -485,6 +488,7 @@
 				89D5D74D299C87EA00C87209 /* HomeTableViewCell.swift in Sources */,
 				89C9A4A0299DC8CC0054F2CF /* CustomError.swift in Sources */,
 				89D5D754299CE10300C87209 /* TeamDataClass.swift in Sources */,
+				89E3733C29A5B8AE00F9AFFE /* MatchDetailsViewController+MatchStatus.swift in Sources */,
 				384BBB702997CD3A00F8C8EF /* AppConstants.swift in Sources */,
 				8901AB9B29949D97000F8315 /* ViewController.swift in Sources */,
 				8992C8AA29A378F60071B9EB /* SquadListVC+TV.swift in Sources */,

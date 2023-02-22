@@ -1,9 +1,12 @@
 import UIKit
 
 class DetailedScoreTViewCell: UITableViewCell {
+    
+    
+    
     // Outlets
-    @IBOutlet weak var batterName: UILabel!
-    @IBOutlet weak var batterPosition: UILabel!
+    @IBOutlet weak var playerName: UILabel!
+    @IBOutlet weak var playersPosition: UILabel!
     
     @IBOutlet weak var run: UILabel!
     @IBOutlet weak var ball: UILabel!
@@ -14,9 +17,7 @@ class DetailedScoreTViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
+    
 }

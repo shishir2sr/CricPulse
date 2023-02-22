@@ -105,7 +105,7 @@
                                 <color key="backgroundColor" name="SecondaryBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zu9-2z-2Oi" userLabel="BackView">
-                                <rect key="frame" x="10" y="10" width="300" height="245"/>
+                                <rect key="frame" x="10" y="10" width="300" height="240"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ICC Women's T20 World Cup, South Afrika" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aV-zu-rKY">
                                         <rect key="frame" x="10" y="8" width="280" height="17"/>
@@ -357,7 +357,7 @@
                                     <constraint firstItem="age-eC-iPP" firstAttribute="top" secondItem="cB4-U8-FFz" secondAttribute="bottom" constant="8" id="FXh-06-BLi"/>
                                     <constraint firstItem="cB4-U8-FFz" firstAttribute="centerX" secondItem="zu9-2z-2Oi" secondAttribute="centerX" id="L9O-Uv-8bk"/>
                                     <constraint firstItem="v9r-3U-frg" firstAttribute="top" secondItem="age-eC-iPP" secondAttribute="bottom" constant="10" id="b1J-Y3-Kdb"/>
-                                    <constraint firstAttribute="height" constant="245" id="c6q-xh-LGJ"/>
+                                    <constraint firstAttribute="height" constant="240" id="c6q-xh-LGJ"/>
                                     <constraint firstItem="cB4-U8-FFz" firstAttribute="top" secondItem="cR9-0n-fhH" secondAttribute="bottom" constant="8" id="ef8-3d-e7i"/>
                                     <constraint firstItem="3aV-zu-rKY" firstAttribute="leading" secondItem="zu9-2z-2Oi" secondAttribute="leading" constant="10" id="fOp-LH-FKT"/>
                                     <constraint firstItem="age-eC-iPP" firstAttribute="leading" secondItem="zu9-2z-2Oi" secondAttribute="leading" constant="10" id="hJv-Ku-2e4"/>
@@ -370,7 +370,7 @@
                                 </constraints>
                             </view>
                             <segmentedControl toolTip="h" opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="B3o-jP-djA">
-                                <rect key="frame" x="10" y="265" width="300" height="32"/>
+                                <rect key="frame" x="10" y="260" width="300" height="32"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <segments>
                                     <segment title="Match Info"/>
@@ -384,21 +384,21 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sxB-86-rW8">
-                                <rect key="frame" x="0.0" y="306" width="320" height="262"/>
+                                <rect key="frame" x="0.0" y="301" width="320" height="267"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="mh5-cP-7Vy" kind="embed" id="esD-ar-r4Y"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="haD-Ib-64a">
-                                <rect key="frame" x="0.0" y="306" width="320" height="262"/>
+                                <rect key="frame" x="0.0" y="301" width="320" height="267"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="JGj-6o-JgF" kind="embed" id="vAD-By-4Ef"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gaG-f2-w4G">
-                                <rect key="frame" x="0.0" y="306" width="320" height="262"/>
+                                <rect key="frame" x="0.0" y="301" width="320" height="267"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="0zL-hH-dvY" kind="embed" id="ACf-M9-wZ6"/>
@@ -506,7 +506,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HFP-xG-15T">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="SecondaryBackgroundColor"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

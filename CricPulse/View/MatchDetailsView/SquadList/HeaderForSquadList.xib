@@ -18,7 +18,7 @@
                     <rect key="frame" x="10" y="10" width="318" height="55"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bangladesh National Team Squad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="we7-rE-IW8">
-                            <rect key="frame" x="55.333333333333329" y="20.333333333333329" width="207.33333333333337" height="14.333333333333336"/>
+                            <rect key="frame" x="55.333333333333329" y="20.333333333333332" width="207.33333333333337" height="14.333333333333332"/>
                             <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="12"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -42,6 +42,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="backView" destination="Hi7-WI-51b" id="Itk-pi-gHL"/>
+                <outlet property="teamName" destination="we7-rE-IW8" id="fIF-rs-ccH"/>
             </connections>
             <point key="canvasLocation" x="-262.59541984732823" y="263.73239436619718"/>
         </view>
