@@ -7,6 +7,8 @@ class SquadListViewController: UIViewController {
     private var cancellables = Set<AnyCancellable>()
     var teamOneSquadList: [PlayerDataClass] = []
     var teamTwoSquadList: [PlayerDataClass] = []
+    var teamOneName: String?
+    var teamTwoName: String?
     
 // Outlets
     @IBOutlet weak var squadListTableView: UITableView!
@@ -25,9 +27,11 @@ class SquadListViewController: UIViewController {
             guard let matchData = matchData else {return}
             self.teamOneSquadList = matchData.teamOneSquad ?? []
             self.teamTwoSquadList = matchData.teamTwoSquad ?? []
+            self.teamOneName = matchData.teamOneName
+            self.teamTwoName = matchData.teamTwoName
             self.realoadTableView()
             
-        }
+        }.store(in: &cancellables)
     }
 
 }

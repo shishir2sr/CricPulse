@@ -31,6 +31,13 @@ extension SquadListViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = squadListTableView.dequeueReusableHeaderFooterView(withIdentifier: Constants.HeaderForSquadList) as? HeaderForSquadList
         guard let header = header else {return UIView()}
+        
+        if section == 0{
+            header.teamName.text = self.teamOneName
+        }else if section == 1{
+            header.teamName.text = self.teamTwoName
+        }
+       
         return header
     }
     

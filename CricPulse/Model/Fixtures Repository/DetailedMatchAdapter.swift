@@ -13,11 +13,7 @@ class MatchDetailsDataGenerator{
         var visitorTeamBowlingScore : [BowlingDataClass] = []
         var localTeamBattingScore : [BattingsDataClass] = []
         var visitorTeamBattingScore : [BattingsDataClass] = []
-        
-        // setStadiumName
-        
-        
-        
+
         // get squadlist
         if let lineup = fixture.lineup {
             localTeamSquadList = lineup.filter { $0.lineup?.team_id == fixture.localteam_id }
