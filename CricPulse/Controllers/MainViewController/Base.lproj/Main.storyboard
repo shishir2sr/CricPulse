@@ -490,6 +490,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="YXq-ff-bwV" kind="relationship" relationship="viewControllers" id="Cr3-q3-u6B"/>
+                        <segue destination="Q0I-69-RLE" kind="relationship" relationship="viewControllers" id="bwM-76-1EM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKw-YN-CcG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -506,7 +507,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HFP-xG-15T">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="SecondaryBackgroundColor"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -586,7 +587,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5kk-2q-41V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1316" y="719.19040479760122"/>
+            <point key="canvasLocation" x="3512" y="1140"/>
         </scene>
         <!--ScoreBoard-->
         <scene sceneID="xfg-Ci-Hku">
@@ -742,6 +743,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sYm-0i-0Jz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2205" y="622.18309859154931"/>
+        </scene>
+        <!--SearchPlayer-->
+        <scene sceneID="23j-tz-sXW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SearchPlayer" id="Q0I-69-RLE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="MdC-RE-839"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="59z-t7-jSn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="129" y="852"/>
         </scene>
     </scenes>
     <resources>

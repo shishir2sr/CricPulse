@@ -69,6 +69,7 @@
 		89DD46722999DA6900F1E700 /* MianViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DD46712999DA6900F1E700 /* MianViewModel.swift */; };
 		89DD46742999DACD00F1E700 /* ScoreCardCVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DD46732999DACD00F1E700 /* ScoreCardCVModel.swift */; };
 		89E3733C29A5B8AE00F9AFFE /* MatchDetailsViewController+MatchStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E3733B29A5B8AE00F9AFFE /* MatchDetailsViewController+MatchStatus.swift */; };
+		89E3734029A6231900F9AFFE /* SearchPlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E3733E29A6231900F9AFFE /* SearchPlayer.storyboard */; };
 		89E37EC0299F18900046D0F8 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 89E37EBF299F18900046D0F8 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +138,7 @@
 		89DD46712999DA6900F1E700 /* MianViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MianViewModel.swift; sourceTree = "<group>"; };
 		89DD46732999DACD00F1E700 /* ScoreCardCVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCardCVModel.swift; sourceTree = "<group>"; };
 		89E3733B29A5B8AE00F9AFFE /* MatchDetailsViewController+MatchStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchDetailsViewController+MatchStatus.swift"; sourceTree = "<group>"; };
+		89E3733F29A6231900F9AFFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CricPulse/Controllers/MainViewController/Base.lproj/SearchPlayer.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +300,7 @@
 		8901ABAE2994A7A2000F8315 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				89E3733D29A622FE00F9AFFE /* SearchPlayer */,
 				38F618C829A094F5005F04C7 /* MatchDetailsVC */,
 				8901ABAD2994A779000F8315 /* MainViewController */,
 			);
@@ -389,6 +392,14 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		89E3733D29A622FE00F9AFFE /* SearchPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				89E3733E29A6231900F9AFFE /* SearchPlayer.storyboard */,
+			);
+			path = SearchPlayer;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -462,6 +473,7 @@
 				38C010BA29A26C08004AECAC /* HeaderForBattersCell.xib in Resources */,
 				38A65B8229A3E35F0048D9D9 /* MatchInfoTableViewCell.xib in Resources */,
 				8992C8AC29A383170071B9EB /* HeaderForSquadList.xib in Resources */,
+				89E3734029A6231900F9AFFE /* SearchPlayer.storyboard in Resources */,
 				38C010AA29A23117004AECAC /* DetailedScoreTViewCell.xib in Resources */,
 				8901AB9E29949D97000F8315 /* Main.storyboard in Resources */,
 			);
@@ -545,6 +557,14 @@
 				8901ABA529949D98000F8315 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		89E3733E29A6231900F9AFFE /* SearchPlayer.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89E3733F29A6231900F9AFFE /* Base */,
+			);
+			name = SearchPlayer.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
