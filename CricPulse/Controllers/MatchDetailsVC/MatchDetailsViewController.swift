@@ -7,7 +7,7 @@ class MatchDetailsViewController: UIViewController {
     var timer: Timer?
     
     // MARK: ViewModel
-    private let viewModel = MatchDetailsViewModel(remoteFixtureRepository: RemoteFixtureRepository())
+    let viewModel = MatchDetailsViewModel(remoteFixtureRepository: RemoteFixtureRepository())
     var matchDetailsData: MatchDetailsData?
     private var cancellables = Set<AnyCancellable>()
     
@@ -90,33 +90,7 @@ class MatchDetailsViewController: UIViewController {
         
     }
     
-    func setupScoreViews(){
-        switch matchDetailsData?.matchStatus{
-        case .finished:
-            alertButtonOutlet.isHidden = true
-            winPercenTageStackView.isHidden = true
-            scoreStack.isHidden = false
-        case .ns:
-            alertButtonOutlet.isHidden = false
-            alertButtonOutlet.isUserInteractionEnabled = true
-            scoreStack.isHidden = true
-            matchDate.isHidden = false
-            matchDate.text = matchDetailsData?.matchDate?.formatted(date: .complete, time: .shortened)
-            note.text = viewModel.remainingTime()
-            manOfTheMatchStackView.isHidden = true
-            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
-                guard let self = self  else {return}
-                DispatchQueue.main.async {
-                    self.note.text = self.viewModel.remainingTime()
-                }
-            }
-            
-        case .none:
-            print("Non")
-        case .some(_):
-            print("some")
-        }
-    }
+    
     
     
     // MARK: - View Did Load
