@@ -53,6 +53,21 @@ extension DetailedScoreViewController: UITableViewDelegate, UITableViewDataSourc
         let cell = matchDetailsTableView.dequeueReusableCell(withIdentifier: DetailedScoreViewModel.cellIdentifier, for: indexPath) as? DetailedScoreTViewCell
         guard let cell  = cell else{return UITableViewCell()}
         
+        guard let battingScore = battingScore else{return UITableViewCell()}
+        
+        if indexPath.section == 0{
+            let battingScore = battingScore[indexPath.row]
+            cell.batterName.text = battingScore.batsman?.fullname
+            cell.batterPosition.text = battingScore.batsman?.position?.name
+            cell.ball.text = "\(battingScore.ball ?? 5)"
+            cell.fours.text = "\(battingScore.four_x ?? 0)"
+            cell.run.text = "\(battingScore.score ?? 0)"
+            cell.sixes.text = "\(battingScore.six_x ?? 0)"
+            cell.strikeRate.text = "\(battingScore.rate ?? 0)"
+        }else if indexPath.section == 1{
+            
+        }
+        
         
         return cell
     }

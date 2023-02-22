@@ -2,9 +2,6 @@ import Foundation
 import UIKit
 
 extension SquadListViewController: UITableViewDataSource, UITableViewDelegate{
-    
-   
-    
     //
     func setupSquadTableVIew(){
         squadListTableView.dataSource = self

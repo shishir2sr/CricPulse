@@ -29,6 +29,7 @@ class ScoreBoardViewController: UIViewController {
         setupBinder()
     }
     
+    // Binder setup
     func setupBinder(){
         matchDetailsViewModel.$matchDetailsData.sink { matchDetails in
             DispatchQueue.main.async {
@@ -52,9 +53,7 @@ class ScoreBoardViewController: UIViewController {
         self.teamTwoScore.text = tTwoScore
     }
     
-    
-    
-    // MARK:
+    // MARK: Stup view
      func setupView() {
         teamOneBackgroundVIew.addBorder(color: .systemGray4, width: 1)
         teamOneBackgroundVIew.round(10)

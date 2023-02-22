@@ -3,7 +3,7 @@ import Foundation
 class MatchDetailsDataGenerator{
     
     static func matchDetailsGenerator(_ fixture: FixtureDataClass) -> MatchDetailsData  {
-    
+        
         // MARK: Components
         var localTeamRuns: Runs?
         var visitorTeamRuns: Runs?
@@ -13,7 +13,7 @@ class MatchDetailsDataGenerator{
         var visitorTeamBowlingScore : [BowlingDataClass] = []
         var localTeamBattingScore : [BattingsDataClass] = []
         var visitorTeamBattingScore : [BattingsDataClass] = []
-
+        
         // get squadlist
         if let lineup = fixture.lineup {
             localTeamSquadList = lineup.filter { $0.lineup?.team_id == fixture.localteam_id }
@@ -25,7 +25,7 @@ class MatchDetailsDataGenerator{
             localTeamBowlingScore = bowlingLineUp.filter { $0.team_id == fixture.localteam_id }
             visitorTeamBowlingScore = bowlingLineUp.filter { $0.team_id != fixture.visitorteam_id }
         }
-    
+        
         // batting Score
         if let batting = fixture.batting {
             localTeamBattingScore = batting.filter { $0.team_id == fixture.localteam_id }
@@ -66,21 +66,21 @@ class MatchDetailsDataGenerator{
                                 teamOneFlagUrl: fixture.localteam?.image_path,
                                 teamOneCode: fixture.localteam?.code,
                                 teamOneScore: localTeamRuns,
-                               teamOneWinPercentage: "50%", //TODO: Later
-                               teamOneSquad: localTeamSquadList,
-                               teamOneBowling: localTeamBowlingScore,
-                               teamOneBatting: localTeamBattingScore,
+                                teamOneWinPercentage: "50%", //TODO: Later
+                                teamOneSquad: localTeamSquadList,
+                                teamOneBowling: localTeamBowlingScore,
+                                teamOneBatting: localTeamBattingScore,
                                 teamOneName: fixture.localteam?.name,
                                 
                                 teamTwoFlagUrl: fixture.visitorteam?.image_path,
                                 teamTwoCode: fixture.visitorteam?.code,
-                               teamTwoScore: visitorTeamRuns,
-                               teamTwoWinPercentage: "50%", // TODO: later
-                               teamTwoSquad: visitorTeamSquadList,
-                               teamTwoBowling: visitorTeamBowlingScore,
-                               teamTwoBatting: visitorTeamBattingScore,
+                                teamTwoScore: visitorTeamRuns,
+                                teamTwoWinPercentage: "50%", // TODO: later
+                                teamTwoSquad: visitorTeamSquadList,
+                                teamTwoBowling: visitorTeamBowlingScore,
+                                teamTwoBatting: visitorTeamBattingScore,
                                 teamTwoName: fixture.visitorteam?.name
-       )
+        )
         
     }
     
