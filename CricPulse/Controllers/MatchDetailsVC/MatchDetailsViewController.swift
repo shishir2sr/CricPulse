@@ -7,7 +7,7 @@ class MatchDetailsViewController: UIViewController {
     var timer: Timer?
     
     // MARK: ViewModel
-    let viewModel = MatchDetailsViewModel(remoteFixtureRepository: RemoteFixtureRepository())
+    let viewModel = MatchDetailsViewModel.shared
     var matchDetailsData: MatchDetailsData?
     private var cancellables = Set<AnyCancellable>()
     
