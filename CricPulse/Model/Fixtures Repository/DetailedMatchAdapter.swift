@@ -62,9 +62,11 @@ class MatchDetailsDataGenerator{
                                 matchDate: fixture.starting_at,
                                 matchNote: fixture.note,
                                 stadiumInfo: fixture.venue,
+                                
                                 mOMImageUrl: fixture.manofmatch?.image_path,
                                 mOMName: fixture.manofmatch?.fullname,
                                 mOMTeamFlag: fixture.manofmatch?.image_path,
+                                
                                 teamOneFlagUrl: fixture.localteam?.image_path,
                                 teamOneCode: fixture.localteam?.code,
                                 teamOneScore: localTeamRuns,
@@ -72,13 +74,16 @@ class MatchDetailsDataGenerator{
                                teamOneSquad: localTeamSquadList,
                                teamOneBowling: localTeamBowlingScore,
                                teamOneBatting: localTeamBattingScore,
+                                teamOneName: fixture.localteam?.name,
+                                
                                 teamTwoFlagUrl: fixture.visitorteam?.image_path,
                                 teamTwoCode: fixture.visitorteam?.code,
                                teamTwoScore: visitorTeamRuns,
                                teamTwoWinPercentage: "50%", // TODO: later
                                teamTwoSquad: visitorTeamSquadList,
                                teamTwoBowling: visitorTeamBowlingScore,
-                               teamTwoBatting: visitorTeamBattingScore
+                               teamTwoBatting: visitorTeamBattingScore,
+                                teamTwoName: fixture.visitorteam?.name
        )
         
     }
@@ -109,6 +114,7 @@ struct MatchDetailsData{
     let teamOneSquad: [PlayerDataClass]?
     let teamOneBowling: [BowlingDataClass]?
     let teamOneBatting: [BattingsDataClass]?
+    let teamOneName: String?
     
     // Team Two Informations
     let teamTwoFlagUrl: String?
@@ -118,6 +124,7 @@ struct MatchDetailsData{
     let teamTwoSquad: [PlayerDataClass]?
     let teamTwoBowling: [BowlingDataClass]?
     let teamTwoBatting: [BattingsDataClass]?
+    let teamTwoName: String?
     
 }
 

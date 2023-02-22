@@ -6,10 +6,12 @@ class MatchDetailsViewModel{
     // Repository
     private let remoteFixtureRepository : RemoteFixtureRepository
     
+    static var shared = MatchDetailsViewModel()
+    
     @Published var matchDetailsData: MatchDetailsData?
     
     // MARK: Init ViewModel
-    init(remoteFixtureRepository: RemoteFixtureRepository) {
+    init(remoteFixtureRepository: RemoteFixtureRepository = RemoteFixtureRepository()) {
         self.remoteFixtureRepository = remoteFixtureRepository
     }
     
@@ -18,9 +20,7 @@ class MatchDetailsViewModel{
         let data: Result<Fixture,CustomError> = await remoteFixtureRepository.getFixtureById(id: id)
         switch data{
         case .success(let data):
-             
             matchDetailsData = MatchDetailsDataGenerator.matchDetailsGenerator(data.data)
-            
         case .failure(let error):
             print(error)
             print(error.localizedDescription)

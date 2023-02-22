@@ -533,11 +533,11 @@
             <objects>
                 <viewController id="mh5-cP-7Vy" customClass="MatchInfoViewController" customModule="CricPulse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RcJ-xs-f8z">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="267"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="262"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5dw-Ze-T5V">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="267"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="262"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -593,7 +593,7 @@
             <objects>
                 <viewController title="ScoreBoard" id="JGj-6o-JgF" customClass="ScoreBoardViewController" customModule="CricPulse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HNg-fa-oBk">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="267"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="262"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Fr-8R-IIX" userLabel="TeamOne">
@@ -718,11 +718,11 @@
             <objects>
                 <viewController id="0zL-hH-dvY" customClass="SquadListViewController" customModule="CricPulse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="81K-cd-rIK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="267"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="262"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xZ0-Wv-J5j">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="267"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="262"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>

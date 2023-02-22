@@ -36,7 +36,7 @@ extension MatchDetailsViewController{
         alertButtonOutlet.isHidden = true
         winPercenTageStackView.isHidden = true
         scoreStack.isHidden = false
-        matchDate.isHidden = false
+        matchDate.isHidden = true
     }
     
     fileprivate func upcomingMatchCases() {
