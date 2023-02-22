@@ -12,6 +12,7 @@ class HeaderForSquadList: UITableViewHeaderFooterView {
 //
 //
         backView.round(15)
+        
         }
     
 }

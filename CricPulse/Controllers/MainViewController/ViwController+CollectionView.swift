@@ -47,6 +47,16 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
         return cell
     }
     
+    // did select
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.matchDetailsVCStoryboardID)  as? MatchDetailsViewController
+        
+        viewController?.fixtureId = self.collectionViewData[indexPath.row].id
+        
+        navigationController?.pushViewController(viewController!, animated: true)
+    }
+    
     // If user scroll tableview the collectionview will animated
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if let _ = scrollView as? UITableView{

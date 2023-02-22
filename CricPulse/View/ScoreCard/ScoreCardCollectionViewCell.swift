@@ -75,6 +75,7 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
         lTeamFlag.sd_setImage(with: URL(string: viewModel.localTeamFlagUrl), placeholderImage: UIImage(systemName: "photo"))
         vTeamFlag.sd_setImage(with: URL(string: viewModel.visitorTeamFlagUrl), placeholderImage: UIImage(systemName: "photo"))
         
+        // Live matches data
         notificationButtonOutlet.isHidden = true
         upcomingMatchDate.isHidden = true
         
@@ -85,7 +86,7 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
     fileprivate func upcomingMatchSetup(_ viewModel: ScoreCardCVModel) {
         if viewModel.matchStatus == .ns{
             notificationButtonOutlet.isHidden = false
-            notificationButtonOutlet.isUserInteractionEnabled = false
+            notificationButtonOutlet.isUserInteractionEnabled = true
             scoreOneStack.isHidden = true
             upcomingMatchDate.isHidden = false
             upcomingMatchDate.text = viewModel.startingDate.formatted(date: .complete, time: .shortened)

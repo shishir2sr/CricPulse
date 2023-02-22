@@ -3,6 +3,7 @@ import UIKit
 
 class ScoreCardCVModel{
     // Variables
+    let id: Int
     let tournamentName: String
     let matchNo: String
     let matchStatus: Status? // Live, Upcoming, Finished etc
@@ -21,6 +22,7 @@ class ScoreCardCVModel{
     
     // Initialise
     init(scorecard: FixtureDataClass) {
+        self.id = scorecard.id!
         self.tournamentName = scorecard.league?.name ?? "Unknown"
         self.matchNo = scorecard.round ?? "--"
         self.matchStatus = scorecard.status
@@ -28,7 +30,7 @@ class ScoreCardCVModel{
         self.gameType = scorecard.type ?? "--"
         self.matchUpdateText = scorecard.note ?? "Please wait..."
         self.startingDate = scorecard.starting_at ?? Date()
-
+        
         if matchStatus != .ns && scorecard.runs?.count == 2{
             let team1 = scorecard.runs?[0].team
             let team2 = scorecard.runs?[1].team
@@ -75,6 +77,10 @@ class ScoreCardCVModel{
             return UIColor.red.withAlphaComponent(0.4)
         case .the2NdInnings:
             return UIColor.red.withAlphaComponent(0.4)
+        case .innigsBreak:
+            return UIColor.red.withAlphaComponent(0.4)
+        case .int:
+            return UIColor.gray.withAlphaComponent(0.4)
         case .some(_):
             return UIColor.red.withAlphaComponent(0.4)
         case .none:

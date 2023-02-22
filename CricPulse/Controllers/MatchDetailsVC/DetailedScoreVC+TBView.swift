@@ -36,11 +36,7 @@ extension DetailedScoreViewController: UITableViewDelegate, UITableViewDataSourc
     
     // number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0{
-            return viewmodel.numberOfRows(in: section)
-        }else{
-            return viewmodel.numberOfRows(in: section)
-        }
+        viewmodel.numberOfRows(in: section)
     }
     
     // MARK: Cell for row at
@@ -100,6 +96,7 @@ extension DetailedScoreViewController: UITableViewDelegate, UITableViewDataSourc
         }
         
     }
+    // Footer height
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         70
     }

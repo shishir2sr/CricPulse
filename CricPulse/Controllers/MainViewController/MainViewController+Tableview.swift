@@ -51,7 +51,11 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
     }
     // Did select row at
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.matchDetailsVCStoryboardID)  as? MatchDetailsViewController
+        
+        viewController?.fixtureId = self.tableViewData[indexPath.row].tournamentId
+        
         navigationController?.pushViewController(viewController!, animated: true)
     }
 }// setup cell done
