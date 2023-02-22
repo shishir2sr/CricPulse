@@ -3,10 +3,7 @@ import UIKit
 
 extension SquadListViewController: UITableViewDataSource, UITableViewDelegate{
     
-    // Number of sections
-    func numberOfSections(in tableView: UITableView) -> Int {
-        2
-    }
+   
     
     //
     func setupSquadTableVIew(){
@@ -14,6 +11,13 @@ extension SquadListViewController: UITableViewDataSource, UITableViewDelegate{
         squadListTableView.delegate = self
         squadListTableView.addShadow(opecity: 0.6, size: 1, radius: 1, color: UIColor.gray)
         registerSquadTV()
+    }
+    
+    // ReloadTableView
+    func realoadTableView(){
+        DispatchQueue.main.async {
+            self.squadListTableView.reloadData()
+        }
     }
     
     //
@@ -30,25 +34,45 @@ extension SquadListViewController: UITableViewDataSource, UITableViewDelegate{
         return header
     }
     
-     
+     // Height for header
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         60
     }
     
+    // Number of sections
+    func numberOfSections(in tableView: UITableView) -> Int {
+        2
+    }
+    
     // Number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        if section == 0 {
+                return teamOneSquadList.count
+            } else if section == 1 {
+                return teamTwoSquadList.count
+            }
+            return 0
     }
     
     // Cell for row at
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = squadListTableView.dequeueReusableCell(withIdentifier: "SquadListTableViewCell") as? SquadListTableViewCell
-        guard let cell = cell else {
-            return UITableViewCell()
-        }
+        guard let cell = cell else {return UITableViewCell()}
         cell.selectionStyle = .none
-        return cell
+        
+        if indexPath.section == 0 {
+                let player = teamOneSquadList[indexPath.row]
+            cell.playerImage.sd_setImage(with: URL(string: player.image_path ?? ""), placeholderImage: UIImage(systemName: "photo"))
+            cell.playersName.text = player.fullname
+            } else if indexPath.section == 1 {
+                let player = teamTwoSquadList[indexPath.row]
+                cell.playerImage.sd_setImage(with: URL(string: player.image_path ?? ""), placeholderImage: UIImage(systemName: "photo"))
+                cell.playersName.text = player.fullname
+            }
+            
+            return cell
     }
+    
     // height for row at
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         80

@@ -1,9 +1,4 @@
-//
-//  MatchInfoTableViewCell.swift
-//  CricPulse
-//
-//  Created by Yeasir Arefin Tusher on 20/2/23.
-//
+
 
 import UIKit
 
