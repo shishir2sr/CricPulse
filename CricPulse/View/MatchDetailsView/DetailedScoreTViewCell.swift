@@ -5,8 +5,8 @@ class DetailedScoreTViewCell: UITableViewCell {
     
     
     // Outlets
-    @IBOutlet weak var batterName: UILabel!
-    @IBOutlet weak var batterPosition: UILabel!
+    @IBOutlet weak var playerName: UILabel!
+    @IBOutlet weak var playersPosition: UILabel!
     
     @IBOutlet weak var run: UILabel!
     @IBOutlet weak var ball: UILabel!

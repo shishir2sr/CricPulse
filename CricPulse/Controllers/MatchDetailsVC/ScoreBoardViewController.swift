@@ -75,8 +75,13 @@ class ScoreBoardViewController: UIViewController {
         buttonGuestureAnimation(for: teamOneBackgroundVIew)
         
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.detailedScoreBoardForTeamID)  as? DetailedScoreViewController
-        viewController?.title = matchDetailsVM?.teamOneName
+        if let matchDetailsVM = matchDetailsVM {
+            viewController?.battingScore = matchDetailsVM.teamOneBatting ?? []
+            viewController?.bowlingScore = matchDetailsVM.teamOneBowling ?? []
+            viewController?.viewTitle = matchDetailsVM.teamOneCode ?? "not found"
+        }
         
+        viewController?.title = matchDetailsVM?.teamOneName
         navigationController?.pushViewController(viewController!, animated: true)
     }
     
@@ -85,6 +90,7 @@ class ScoreBoardViewController: UIViewController {
         print("button 2 pressed")
         buttonGuestureAnimation(for: teamTwoBackgroundVIew)
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.detailedScoreBoardForTeamID)  as? DetailedScoreViewController
+        
         if let matchDetailsVM = matchDetailsVM {
             viewController?.battingScore = matchDetailsVM.teamTwoBatting ?? []
             viewController?.bowlingScore = matchDetailsVM.teamTwoBowling ?? []
