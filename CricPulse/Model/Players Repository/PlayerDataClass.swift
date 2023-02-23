@@ -9,7 +9,7 @@ struct Player: Codable {
 
 // MARK: Players
 struct Players: Codable {
-    let data: [PlayerDataClass]?
+    let data: [PlayerDataClass]
 }
 
 

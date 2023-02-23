@@ -26,7 +26,7 @@ class MainViewModel{
         return scoreCardForTV.count
     }
     
-    // Get Data
+    // Get Fixtures
     func getFixtures()async {
         let data: Result<Fixtures,CustomError> = await remoteFixtureRepository.getFixtures()
         handleResponse(data: data)
