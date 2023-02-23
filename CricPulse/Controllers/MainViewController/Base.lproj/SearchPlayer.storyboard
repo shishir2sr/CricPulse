@@ -33,10 +33,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ZYh-km-ySd">
+                                <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                                <color key="color" name="SecondaryBackgroundColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ixe-72-jfT"/>
                         <color key="backgroundColor" name="PrimaryBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ZYh-km-ySd" firstAttribute="centerY" secondItem="mJP-Dp-3KM" secondAttribute="centerY" id="5Yl-Kr-5ZR"/>
                             <constraint firstItem="Ixe-72-jfT" firstAttribute="trailing" secondItem="c6k-9M-hOJ" secondAttribute="trailing" constant="10" id="5bR-mB-Wem"/>
                             <constraint firstItem="acD-gS-quh" firstAttribute="trailing" secondItem="Ixe-72-jfT" secondAttribute="trailing" id="7ZD-wV-NQN"/>
                             <constraint firstItem="acD-gS-quh" firstAttribute="top" secondItem="Nu0-g1-f0w" secondAttribute="bottom" constant="10" id="7hx-sr-UqM"/>
@@ -46,11 +51,13 @@
                             <constraint firstItem="Ixe-72-jfT" firstAttribute="trailing" secondItem="Nu0-g1-f0w" secondAttribute="trailing" constant="20" id="TX7-eP-WOW"/>
                             <constraint firstItem="c6k-9M-hOJ" firstAttribute="leading" secondItem="Ixe-72-jfT" secondAttribute="leading" constant="10" id="ut5-uf-4qS"/>
                             <constraint firstItem="Nu0-g1-f0w" firstAttribute="top" secondItem="c6k-9M-hOJ" secondAttribute="bottom" constant="10" id="xPT-48-W3m"/>
+                            <constraint firstItem="ZYh-km-ySd" firstAttribute="centerX" secondItem="mJP-Dp-3KM" secondAttribute="centerX" id="yBR-7Z-3od"/>
                             <constraint firstItem="acD-gS-quh" firstAttribute="bottom" secondItem="Ixe-72-jfT" secondAttribute="bottom" id="zOr-B9-JWk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Players" id="hPH-nV-rZd"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="ZYh-km-ySd" id="oJr-Tq-bD4"/>
                         <outlet property="playersTableView" destination="acD-gS-quh" id="MR0-G8-v8y"/>
                         <outlet property="searchBar" destination="Nu0-g1-f0w" id="OZm-BE-Ere"/>
                     </connections>

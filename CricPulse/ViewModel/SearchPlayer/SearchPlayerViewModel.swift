@@ -3,27 +3,30 @@ import Foundation
 import UIKit
 
 class SearchPlayerViewModel{
+    
+    
     // Repository
     private let remotePlayerRepository : RemotePlayersRepository
     // variables
-    var dataSource: [PlayerDataClass] = []
+    @Published var isLoading: Bool = false
+    @Published var playersData:[CDPlayer] = []
+    
     init(remotePlyerRepository: RemotePlayersRepository = RemotePlayersRepository()){
         self.remotePlayerRepository = remotePlyerRepository
     }
     
     // Get Players
     func getPlayers()async {
+        isLoading = true
         let data: Result<[CDPlayer],CustomError> = await remotePlayerRepository.getPlayers()
+        isLoading = false
         switch data{
         case .success(let data):
-            print("Coredata: ",data[0].name)
+            playersData = data
         case .failure(let error):
             print(error)
         }
     }
-        
-        
-        
         // MARK: - TableView Logics
         // Decides tableviews number of rows
         func numberOfRows(in section: Int )-> Int{
