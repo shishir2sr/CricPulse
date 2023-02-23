@@ -58,6 +58,8 @@
 		89B56F3529A71731008FDDAD /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B56F3429A71731008FDDAD /* CoreDataStack.swift */; };
 		89B56F3D29A71FA8008FDDAD /* CDPlayer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B56F3B29A71FA8008FDDAD /* CDPlayer+CoreDataClass.swift */; };
 		89B56F3E29A71FA8008FDDAD /* CDPlayer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B56F3C29A71FA8008FDDAD /* CDPlayer+CoreDataProperties.swift */; };
+		89B56F4029A721FF008FDDAD /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B56F3F29A721FF008FDDAD /* CoreDataHelper.swift */; };
+		89B56F4229A75594008FDDAD /* SearchPlayerVC+Textfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B56F4129A75594008FDDAD /* SearchPlayerVC+Textfield.swift */; };
 		89C9A4A0299DC8CC0054F2CF /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C9A49F299DC8CC0054F2CF /* CustomError.swift */; };
 		89D5D747299C771D00C87209 /* FinishedMatchScoreCardTVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D746299C771D00C87209 /* FinishedMatchScoreCardTVModel.swift */; };
 		89D5D749299C789100C87209 /* MainViewController+Tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D748299C789100C87209 /* MainViewController+Tableview.swift */; };
@@ -133,6 +135,8 @@
 		89B56F3429A71731008FDDAD /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		89B56F3B29A71FA8008FDDAD /* CDPlayer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDPlayer+CoreDataClass.swift"; sourceTree = "<group>"; };
 		89B56F3C29A71FA8008FDDAD /* CDPlayer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDPlayer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		89B56F3F29A721FF008FDDAD /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		89B56F4129A75594008FDDAD /* SearchPlayerVC+Textfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchPlayerVC+Textfield.swift"; sourceTree = "<group>"; };
 		89C9A49F299DC8CC0054F2CF /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		89D5D746299C771D00C87209 /* FinishedMatchScoreCardTVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedMatchScoreCardTVModel.swift; sourceTree = "<group>"; };
 		89D5D748299C789100C87209 /* MainViewController+Tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Tableview.swift"; sourceTree = "<group>"; };
@@ -409,6 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				89B56F3429A71731008FDDAD /* CoreDataStack.swift */,
+				89B56F3F29A721FF008FDDAD /* CoreDataHelper.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -437,6 +442,7 @@
 			children = (
 				89E3733E29A6231900F9AFFE /* SearchPlayer.storyboard */,
 				89E3734129A625F700F9AFFE /* SearchPlayerViewController.swift */,
+				89B56F4129A75594008FDDAD /* SearchPlayerVC+Textfield.swift */,
 				89E3734329A626BF00F9AFFE /* SearchPlayerVC+TV.swift */,
 			);
 			path = SearchPlayer;
@@ -574,6 +580,7 @@
 				384BBB742997CEA700F8C8EF /* UIViewExtension.swift in Sources */,
 				38A65B8429A3E88B0048D9D9 /* MatchInfoViewController+TV.swift in Sources */,
 				388007F6299D34F000FA9C7B /* UICollectionViewExtension.swift in Sources */,
+				89B56F4229A75594008FDDAD /* SearchPlayerVC+Textfield.swift in Sources */,
 				38A65B8129A3E35F0048D9D9 /* MatchInfoTableViewCell.swift in Sources */,
 				38A65B9B29A4E6010048D9D9 /* DetailedMatchAdapter.swift in Sources */,
 				8992C8AE29A384320071B9EB /* HeaderForSquadList.swift in Sources */,
@@ -588,6 +595,7 @@
 				38F618CA29A09535005F04C7 /* MatchDetailsViewController.swift in Sources */,
 				38A65B8C29A45F9A0048D9D9 /* RemoteFixtureRepository.swift in Sources */,
 				38C010C029A282D5004AECAC /* FooterForBattersCell.swift in Sources */,
+				89B56F4029A721FF008FDDAD /* CoreDataHelper.swift in Sources */,
 				38C5FBF629A1D0310066F9AB /* SquadListViewController.swift in Sources */,
 				8901AB9929949D97000F8315 /* SceneDelegate.swift in Sources */,
 				38A65B8729A458410048D9D9 /* UrlBuilder.swift in Sources */,

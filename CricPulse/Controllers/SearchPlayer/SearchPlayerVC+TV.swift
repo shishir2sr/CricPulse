@@ -10,9 +10,15 @@ extension SearchPlayerViewController: UITableViewDelegate, UITableViewDataSource
         playersTableView.backgroundColor = .clear
     }
     
-    // register cells
+    /// register cells
     func registerCell(){
         playersTableView.register(searchPlayerViewModel.registerNib(), forCellReuseIdentifier: Constants.searchPlayerTVCell)
+    }
+    /// Reaload Tableview
+    func reloadTableView(){
+        DispatchQueue.main.async {
+            self.playersTableView.reloadData()
+        }
     }
     
     // MARK: Ddelegate and data source functions
@@ -23,6 +29,8 @@ extension SearchPlayerViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = playersTableView.dequeueReusableCell(withIdentifier: Constants.searchPlayerTVCell, for: indexPath) as? SearchPlayerTVCell
         guard let cell = cell else {return UITableViewCell()}
+        let player = players[indexPath.row]
+        cell.setupCell(player: player)
         cell.selectionStyle = .none
         return cell
     }
