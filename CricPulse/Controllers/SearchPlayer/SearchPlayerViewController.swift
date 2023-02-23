@@ -11,6 +11,9 @@ class SearchPlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        Task{
+            await searchPlayerViewModel.getPlayers()
+        }
     }
     
     // View Did load setup

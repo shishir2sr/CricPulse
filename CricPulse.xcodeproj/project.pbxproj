@@ -55,6 +55,9 @@
 		8992C8AA29A378F60071B9EB /* SquadListVC+TV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8992C8A929A378F60071B9EB /* SquadListVC+TV.swift */; };
 		8992C8AC29A383170071B9EB /* HeaderForSquadList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8992C8AB29A383170071B9EB /* HeaderForSquadList.xib */; };
 		8992C8AE29A384320071B9EB /* HeaderForSquadList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8992C8AD29A384320071B9EB /* HeaderForSquadList.swift */; };
+		89B56F3529A71731008FDDAD /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B56F3429A71731008FDDAD /* CoreDataStack.swift */; };
+		89B56F3D29A71FA8008FDDAD /* CDPlayer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B56F3B29A71FA8008FDDAD /* CDPlayer+CoreDataClass.swift */; };
+		89B56F3E29A71FA8008FDDAD /* CDPlayer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B56F3C29A71FA8008FDDAD /* CDPlayer+CoreDataProperties.swift */; };
 		89C9A4A0299DC8CC0054F2CF /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C9A49F299DC8CC0054F2CF /* CustomError.swift */; };
 		89D5D747299C771D00C87209 /* FinishedMatchScoreCardTVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D746299C771D00C87209 /* FinishedMatchScoreCardTVModel.swift */; };
 		89D5D749299C789100C87209 /* MainViewController+Tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D748299C789100C87209 /* MainViewController+Tableview.swift */; };
@@ -127,6 +130,9 @@
 		8992C8A929A378F60071B9EB /* SquadListVC+TV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SquadListVC+TV.swift"; sourceTree = "<group>"; };
 		8992C8AB29A383170071B9EB /* HeaderForSquadList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderForSquadList.xib; sourceTree = "<group>"; };
 		8992C8AD29A384320071B9EB /* HeaderForSquadList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderForSquadList.swift; sourceTree = "<group>"; };
+		89B56F3429A71731008FDDAD /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		89B56F3B29A71FA8008FDDAD /* CDPlayer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDPlayer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		89B56F3C29A71FA8008FDDAD /* CDPlayer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDPlayer+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		89C9A49F299DC8CC0054F2CF /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		89D5D746299C771D00C87209 /* FinishedMatchScoreCardTVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedMatchScoreCardTVModel.swift; sourceTree = "<group>"; };
 		89D5D748299C789100C87209 /* MainViewController+Tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Tableview.swift"; sourceTree = "<group>"; };
@@ -221,6 +227,7 @@
 		38A65B8D29A471730048D9D9 /* Players Repository */ = {
 			isa = PBXGroup;
 			children = (
+				89B56F3629A71F1A008FDDAD /* CoreDataModels */,
 				89D5D755299CE28A00C87209 /* PlayerDataClass.swift */,
 				38A65B9429A47C520048D9D9 /* BattingsDataClass.swift */,
 				38A65B9829A4C8670048D9D9 /* BowlingDataClass.swift */,
@@ -353,6 +360,7 @@
 		8901ABB42994A8B4000F8315 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				89B56F3329A7171B008FDDAD /* CoreData */,
 				8901AB9629949D97000F8315 /* AppDelegate.swift */,
 				8901AB9829949D97000F8315 /* SceneDelegate.swift */,
 				384BBB752997D02200F8C8EF /* Constants */,
@@ -395,6 +403,23 @@
 				8992C8AD29A384320071B9EB /* HeaderForSquadList.swift */,
 			);
 			path = SquadList;
+			sourceTree = "<group>";
+		};
+		89B56F3329A7171B008FDDAD /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				89B56F3429A71731008FDDAD /* CoreDataStack.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		89B56F3629A71F1A008FDDAD /* CoreDataModels */ = {
+			isa = PBXGroup;
+			children = (
+				89B56F3B29A71FA8008FDDAD /* CDPlayer+CoreDataClass.swift */,
+				89B56F3C29A71FA8008FDDAD /* CDPlayer+CoreDataProperties.swift */,
+			);
+			path = CoreDataModels;
 			sourceTree = "<group>";
 		};
 		89D5D74E299CA16F00C87209 /* Main */ = {
@@ -512,9 +537,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89B56F3D29A71FA8008FDDAD /* CDPlayer+CoreDataClass.swift in Sources */,
 				89D5D750299CAE6F00C87209 /* NetworkConstants.swift in Sources */,
 				89D5D752299CD63800C87209 /* FixtureDataClass.swift in Sources */,
 				38A65B9529A47C520048D9D9 /* BattingsDataClass.swift in Sources */,
+				89B56F3529A71731008FDDAD /* CoreDataStack.swift in Sources */,
 				38C5FBF229A1CF930066F9AB /* ScoreBoardViewController.swift in Sources */,
 				38A65B9929A4C8670048D9D9 /* BowlingDataClass.swift in Sources */,
 				38C5FBF829A1F53C0066F9AB /* DetailedScoreViewController.swift in Sources */,
@@ -543,6 +570,7 @@
 				89E3734229A625F700F9AFFE /* SearchPlayerViewController.swift in Sources */,
 				8901AB9729949D97000F8315 /* AppDelegate.swift in Sources */,
 				38A65B8A29A45E950048D9D9 /* FixtureRepository.swift in Sources */,
+				89B56F3E29A71FA8008FDDAD /* CDPlayer+CoreDataProperties.swift in Sources */,
 				384BBB742997CEA700F8C8EF /* UIViewExtension.swift in Sources */,
 				38A65B8429A3E88B0048D9D9 /* MatchInfoViewController+TV.swift in Sources */,
 				388007F6299D34F000FA9C7B /* UICollectionViewExtension.swift in Sources */,
