@@ -66,16 +66,31 @@
             </objects>
             <point key="canvasLocation" x="1052.6717557251909" y="851.4084507042254"/>
         </scene>
-        <!--View Controller-->
+        <!--Player Details View Controller-->
         <scene sceneID="RC0-DB-tcs">
             <objects>
-                <viewController id="0rI-Dq-brd" sceneMemberID="viewController">
+                <viewController id="0rI-Dq-brd" customClass="PlayerDetailsViewController" customModule="CricPulse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YpA-3H-kEK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7cX-AA-Shh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="WHD-X4-btB"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="PrimaryBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7cX-AA-Shh" firstAttribute="top" secondItem="WHD-X4-btB" secondAttribute="top" id="4yg-HH-Fax"/>
+                            <constraint firstItem="7cX-AA-Shh" firstAttribute="leading" secondItem="WHD-X4-btB" secondAttribute="leading" id="H7u-BX-hEE"/>
+                            <constraint firstItem="WHD-X4-btB" firstAttribute="bottom" secondItem="7cX-AA-Shh" secondAttribute="bottom" id="JEZ-P3-6sU"/>
+                            <constraint firstItem="WHD-X4-btB" firstAttribute="trailing" secondItem="7cX-AA-Shh" secondAttribute="trailing" id="h15-uK-iNb"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="playerDetailsTableView" destination="7cX-AA-Shh" id="nCg-PU-7V5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hqj-5Q-0Yo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
