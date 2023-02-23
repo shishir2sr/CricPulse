@@ -28,4 +28,8 @@ class Constants{
     
     // searchPlayer Cell
     static let searchPlayerTVCell = "SearchPlayerTVCell"
+    
+    // player details tv cell
+    static let playerDetailsTVCell = "playerInfotvcell"
+    static let HeaderForPlayerDetails = "HeaderForPlayerDetails"
 }
