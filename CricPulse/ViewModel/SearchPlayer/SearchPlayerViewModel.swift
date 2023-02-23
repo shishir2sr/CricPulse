@@ -2,9 +2,8 @@
 import Foundation
 import UIKit
 
+
 class SearchPlayerViewModel{
-    
-    
     // Repository
     private let remotePlayerRepository : RemotePlayersRepository
     // variables
@@ -15,7 +14,7 @@ class SearchPlayerViewModel{
         self.remotePlayerRepository = remotePlyerRepository
     }
     
-    // Get Players
+    /// Get Players
     func getPlayers()async {
         isLoading = true
         let data: Result<[CDPlayer],CustomError> = await remotePlayerRepository.getPlayers()
@@ -27,18 +26,24 @@ class SearchPlayerViewModel{
             print(error)
         }
     }
+    
+    /// Search Player
+    func searchPlayer(text: String){
+        
+    }
+    
         // MARK: - TableView Logics
-        // Decides tableviews number of rows
+        /// Decides tableviews number of rows
         func numberOfRows(in section: Int )-> Int{
             playersData.count
         }
         
-        // Decides number of sections in tableview
+        /// Decides number of sections in tableview
         func numberOfSection()-> Int{
             return 0
         }
         
-        // xib registration
+        /// xib registration
         func registerNib()-> UINib{
             return UINib(nibName: Constants.searchPlayerTVCell, bundle: nil)
         }

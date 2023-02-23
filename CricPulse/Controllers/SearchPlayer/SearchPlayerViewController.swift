@@ -17,6 +17,8 @@ class SearchPlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        
+        // Fetch Player data
         Task{
             await searchPlayerViewModel.getPlayers()
         }
@@ -29,6 +31,7 @@ class SearchPlayerViewController: UIViewController {
         searchBar.addShadow(opecity: 0.8, size: 5, radius: 2, color: UIColor.darkGray)
         searchBar.addBorder(color: UIColor.systemGray6, width: 1)
         setupBinder()
+        setupTextField()
     }
     
     // Binder

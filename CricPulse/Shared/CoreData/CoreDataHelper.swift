@@ -25,7 +25,6 @@ class CoreDataHelper{
             }
             return ["id": Int32(id), "name": name, "image_path": image]
         }
-        
         let batchInsert = NSBatchInsertRequest(entity: CDPlayer.entity(), objects: playersArray)
         do {
             let result = try context.execute(batchInsert) as? NSBatchInsertResult
@@ -35,17 +34,22 @@ class CoreDataHelper{
         
     }
     
+    ///  Search Players
+    func searchPlayerbyName(with searchText: String) -> [CDPlayer] {
+        let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<CDPlayer> = CDPlayer.fetchRequest()
+        if !searchText.isEmpty {
+            fetchRequest.predicate = NSPredicate(format: "name CONTAINS[cd] %@", searchText)
+        }
+
+        do {
+            let players = try context.fetch(fetchRequest)
+            return players
+        } catch let error {
+            print("Error fetching players: \(error)")
+            return []
+        }
+    }
+
     
-    /**
-     //        var playersArray = [[String: Any]]()
-     //        for player in players {
-     //            if let id = player.id,
-     //               let name = player.fullname,
-     //               let image = player.image_path {
-     //                let playersDictionary: [String: Any] = ["id": Int32(id), "name": name, "image_path": image]
-     //                playersArray.append(playersDictionary)
-     //            }
-     //        }
-     //    }
-     */
 }
