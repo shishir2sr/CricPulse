@@ -7,26 +7,22 @@ class SearchPlayerViewModel{
     private let remotePlayerRepository : RemotePlayersRepository
     // variables
     var dataSource: [PlayerDataClass] = []
-    
     init(remotePlyerRepository: RemotePlayersRepository = RemotePlayersRepository()){
         self.remotePlayerRepository = remotePlyerRepository
     }
     
     // Get Players
     func getPlayers()async {
-        let data: Result<Players,CustomError> = await remotePlayerRepository.getPlayers()
-        handleResponse(data: data)
-    }
-    // Handle parsed data
-    func handleResponse(data: Result<Players,CustomError>){
+        let data: Result<[CDPlayer],CustomError> = await remotePlayerRepository.getPlayers()
         switch data{
-        case .success(let players):
-            self.dataSource = players.data
-            
-        case .failure(let err):
-            debugPrint(err.localizedDescription) // TODO: Do something to the UI
+        case .success(let data):
+            print("Coredata: ",data[0].name)
+        case .failure(let error):
+            print(error)
         }
     }
+        
+        
         
         // MARK: - TableView Logics
         // Decides tableviews number of rows
@@ -40,8 +36,9 @@ class SearchPlayerViewModel{
         }
         
         // xib registration
-         func registerNib()-> UINib{
+        func registerNib()-> UINib{
             return UINib(nibName: Constants.searchPlayerTVCell, bundle: nil)
         }
-}
+    }
+    
 
