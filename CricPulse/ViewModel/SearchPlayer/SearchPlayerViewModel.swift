@@ -30,7 +30,7 @@ class SearchPlayerViewModel{
         // MARK: - TableView Logics
         // Decides tableviews number of rows
         func numberOfRows(in section: Int )-> Int{
-            return 5
+            playersData.count
         }
         
         // Decides number of sections in tableview

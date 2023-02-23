@@ -3,13 +3,15 @@ import Combine
 class SearchPlayerViewController: UIViewController {
     // Variables
     var searchPlayerViewModel = SearchPlayerViewModel()
+    private var cancellables = Set<AnyCancellable>()
+    var players: [CDPlayer] = []
     
     // Outlets
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var playersTableView: UITableView!
     @IBOutlet weak var searchBar: UITextField!
     
-    private var cancellables = Set<AnyCancellable>()
+    
     
     
     override func viewDidLoad() {
@@ -39,6 +41,11 @@ class SearchPlayerViewController: UIViewController {
                     self.activityIndicator.stopAnimating()
                 }
             }
+        }.store(in: &cancellables)
+        
+        searchPlayerViewModel.$playersData.sink { playersData in
+            self.players = playersData
+            self.reloadTableView()
         }.store(in: &cancellables)
     }
 }
