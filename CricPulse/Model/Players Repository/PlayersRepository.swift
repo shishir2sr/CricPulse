@@ -6,15 +6,20 @@ protocol PlayerRepository {
     
 }
 
+
+// MARK: - Player Repository
 class RemotePlayersRepository: PlayerRepository{
     
     func getPlayers() async -> Result<[CDPlayer], CustomError> {
-        // Check ifn coredata has data
+        // Check if coredata has data
         let  playersFromCoreData = await CoreDataHelper.shared.fetchPlayers()
         guard let playersFromCoreData = playersFromCoreData else {return .failure(.unableToComplete)}
+        
         if playersFromCoreData.count > 0 {
             return .success(playersFromCoreData)
         } else {
+            
+            
             let url = EndPoint.shared.getPlayers(with: [.fields(object: "players", parameters: "fullname,id,image_path")])
             let result: Result<Players, CustomError> = await ApiClient.shared.fetchData(url: url)
             
@@ -31,6 +36,7 @@ class RemotePlayersRepository: PlayerRepository{
         }
     }
     
+    /// Get player by id
     func getPlayerById(id: Int) async -> Result<PlayerDataClass, CustomError> {
         // get playerBy id using async await function
         let url = EndPoint.shared.getPlayer(ID: id)
