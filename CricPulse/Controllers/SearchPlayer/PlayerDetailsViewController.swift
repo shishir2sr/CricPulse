@@ -59,7 +59,7 @@ class PlayerDetailsViewController: UIViewController {
         let playerImage = URL(string: playersStat?.playerImage ?? "")
         self.playerImage.sd_setImage(with: playerImage, placeholderImage: UIImage(systemName: "photo"))
         guard let playersStat = playersStat else {return}
-        self.playerName.text = playersStat.name
+        self.playerName.text = (playersStat.name ?? "Unknown") + " " + "(\(playersStat.position?.name ?? ""))"
         self.countryName.text = playersStat.country?.name
         self.battingStyle.text = playersStat.battingStyle
         self.birthDate.text = playersStat.birthDate
