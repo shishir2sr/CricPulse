@@ -5,7 +5,6 @@ class CoreDataHelper{
     static let shared = CoreDataHelper()
     private init(){}
     let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
-    
     func fetchPlayers() async -> [CDPlayer]?{
         do {
             let request = NSFetchRequest<CDPlayer>(entityName: "CDPlayer")
@@ -50,6 +49,4 @@ class CoreDataHelper{
             return []
         }
     }
-
-    
 }

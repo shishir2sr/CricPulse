@@ -12,9 +12,14 @@ class PlayerDetailsViewModel{
     func numberOfSection()-> Int{
         return 2
     }
+
+    /// xib registration
+    func registerCellXib()-> UINib{
+        return UINib(nibName: Constants.playerDetailsTVCell, bundle: nil)
+    }
     
     /// xib registration
-    func registerNib()-> UINib{
-        return UINib(nibName: Constants.playerDetailsTVCell, bundle: nil)
+    func registerHeaderXib()-> UINib{
+        return UINib(nibName: Constants.headerForPlayerDetails, bundle: nil)
     }
 }
