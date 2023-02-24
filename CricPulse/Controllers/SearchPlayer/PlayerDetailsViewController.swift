@@ -9,7 +9,8 @@ class PlayerDetailsViewController: UIViewController {
     
     // views
     @IBOutlet weak var backView: UIView!
-    
+    @IBOutlet weak var backViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var playerImageHeight: NSLayoutConstraint!
     // tableview
     @IBOutlet weak var playerDetailsTableView: UITableView!
     // Outlets

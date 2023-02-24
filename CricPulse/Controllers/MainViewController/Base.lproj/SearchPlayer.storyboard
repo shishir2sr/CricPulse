@@ -186,12 +186,14 @@
                     </view>
                     <connections>
                         <outlet property="backView" destination="Nbi-Db-A4B" id="1vr-3E-Bjj"/>
+                        <outlet property="backViewHeight" destination="pOd-qX-V8n" id="pAz-wc-DTM"/>
                         <outlet property="battingStyle" destination="osO-P1-Gqk" id="hrz-IA-hbk"/>
                         <outlet property="birthDate" destination="fec-SD-6eq" id="QyJ-Pz-cik"/>
                         <outlet property="bowlingStyle" destination="Dof-7o-5B3" id="r9K-sA-71u"/>
                         <outlet property="countryName" destination="06J-mt-fan" id="YfX-0N-V6O"/>
                         <outlet property="playerDetailsTableView" destination="7cX-AA-Shh" id="nCg-PU-7V5"/>
                         <outlet property="playerImage" destination="fg0-8c-kri" id="175-vy-1me"/>
+                        <outlet property="playerImageHeight" destination="lIB-IM-UTX" id="Eel-av-7v3"/>
                         <outlet property="playerName" destination="u3l-Xq-wdN" id="h0f-G5-nrw"/>
                     </connections>
                 </viewController>

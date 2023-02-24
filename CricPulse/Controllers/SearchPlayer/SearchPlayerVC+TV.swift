@@ -50,4 +50,6 @@ extension SearchPlayerViewController: UITableViewDelegate, UITableViewDataSource
         navigationController?.pushViewController(viewController, animated: true)
     }
     
+    
+    
 }

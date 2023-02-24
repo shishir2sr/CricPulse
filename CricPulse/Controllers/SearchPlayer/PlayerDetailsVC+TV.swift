@@ -56,4 +56,36 @@ extension PlayerDetailsViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         60
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if let _ = scrollView as? UITableView{
+            if scrollView.contentOffset.y > 35 {
+                upScrollAnimation()
+            }else if scrollView.contentOffset.y < 0 {
+                downScrollAnimation()
+            }
+            
+        }
+    }
+    
+    // MARK: Animations
+    fileprivate func upScrollAnimation() {
+        UIView.animate(withDuration: 0.7) { [weak self] in
+            self?.backViewHeight.constant = 0
+            self?.playerImageHeight.constant = 0
+            self?.playerName.isHidden = true
+            self?.countryName.isHidden = true
+            self?.view.layoutIfNeeded()
+        }
+    }
+    
+    fileprivate func downScrollAnimation() {
+        UIView.animate(withDuration: 0.7) { [weak self] in
+            self?.backViewHeight.constant = 180
+            self?.playerImageHeight.constant = 80
+            self?.playerName.isHidden = false
+            self?.countryName.isHidden = false
+            self?.view.layoutIfNeeded()
+        }
+    }
 }
