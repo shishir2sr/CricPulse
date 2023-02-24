@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0rI-Dq-brd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P3X-K7-e9K">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -69,17 +69,17 @@
         <!--Player Details View Controller-->
         <scene sceneID="RC0-DB-tcs">
             <objects>
-                <viewController id="0rI-Dq-brd" customClass="PlayerDetailsViewController" customModule="CricPulse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayerDetailsViewControllerID" id="0rI-Dq-brd" customClass="PlayerDetailsViewController" customModule="CricPulse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YpA-3H-kEK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7cX-AA-Shh">
-                                <rect key="frame" x="0.0" y="210" width="375" height="457"/>
+                                <rect key="frame" x="0.0" y="190" width="375" height="477"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nbi-Db-A4B">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shakib" translatesAutoresizingMaskIntoConstraints="NO" id="fg0-8c-kri">
                                         <rect key="frame" x="147.5" y="5" width="80" height="80"/>
@@ -101,7 +101,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7uJ-83-hRY">
-                                        <rect key="frame" x="10" y="163" width="355" height="27"/>
+                                        <rect key="frame" x="10" y="143" width="355" height="27"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9ZB-7h-CcW">
                                                 <rect key="frame" x="0.0" y="0.0" width="113" height="27"/>
@@ -167,7 +167,7 @@
                                     <constraint firstAttribute="trailing" secondItem="7uJ-83-hRY" secondAttribute="trailing" constant="10" id="fmA-uO-Y3o"/>
                                     <constraint firstItem="06J-mt-fan" firstAttribute="centerX" secondItem="Nbi-Db-A4B" secondAttribute="centerX" id="gRB-if-fMr"/>
                                     <constraint firstAttribute="bottom" secondItem="7uJ-83-hRY" secondAttribute="bottom" constant="10" id="ijM-ke-vhg"/>
-                                    <constraint firstAttribute="height" constant="200" id="pOd-qX-V8n"/>
+                                    <constraint firstAttribute="height" constant="180" id="pOd-qX-V8n"/>
                                     <constraint firstItem="06J-mt-fan" firstAttribute="top" secondItem="u3l-Xq-wdN" secondAttribute="bottom" constant="5" id="tW2-VE-QuE"/>
                                 </constraints>
                             </view>

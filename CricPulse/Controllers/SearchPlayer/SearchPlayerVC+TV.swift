@@ -41,4 +41,12 @@ extension SearchPlayerViewController: UITableViewDelegate, UITableViewDataSource
         85
     }
     
+    // did select row at
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.playerDetailsViewControllerID)  as? PlayerDetailsViewController
+        
+        guard let viewController = viewController else {return}
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
 }

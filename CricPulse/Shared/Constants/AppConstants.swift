@@ -32,4 +32,5 @@ class Constants{
     // player details tv cell
     static let playerDetailsTVCell = "PlayerDetailsTVCell"
     static let headerForPlayerDetails = "HeaderForPlayerDetails"
+    static let playerDetailsViewControllerID = "PlayerDetailsViewControllerID"
 }
