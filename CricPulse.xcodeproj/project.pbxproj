@@ -69,6 +69,7 @@
 		89D108AB29A873D000BB5793 /* HeaderForPlayerDetails.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89D108AA29A873D000BB5793 /* HeaderForPlayerDetails.xib */; };
 		89D108AD29A8741D00BB5793 /* HeaderForPlayerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D108AC29A8741D00BB5793 /* HeaderForPlayerDetails.swift */; };
 		89D108B129A885F400BB5793 /* Career.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D108B029A885F400BB5793 /* Career.swift */; };
+		89D108B329A8ADF100BB5793 /* PlayerStatGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D108B229A8ADF100BB5793 /* PlayerStatGenerator.swift */; };
 		89D5D747299C771D00C87209 /* FinishedMatchScoreCardTVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D746299C771D00C87209 /* FinishedMatchScoreCardTVModel.swift */; };
 		89D5D749299C789100C87209 /* MainViewController+Tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D748299C789100C87209 /* MainViewController+Tableview.swift */; };
 		89D5D74D299C87EA00C87209 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D5D74C299C87EA00C87209 /* HomeTableViewCell.swift */; };
@@ -154,6 +155,7 @@
 		89D108AA29A873D000BB5793 /* HeaderForPlayerDetails.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderForPlayerDetails.xib; sourceTree = "<group>"; };
 		89D108AC29A8741D00BB5793 /* HeaderForPlayerDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderForPlayerDetails.swift; sourceTree = "<group>"; };
 		89D108B029A885F400BB5793 /* Career.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Career.swift; sourceTree = "<group>"; };
+		89D108B229A8ADF100BB5793 /* PlayerStatGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatGenerator.swift; sourceTree = "<group>"; };
 		89D5D746299C771D00C87209 /* FinishedMatchScoreCardTVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedMatchScoreCardTVModel.swift; sourceTree = "<group>"; };
 		89D5D748299C789100C87209 /* MainViewController+Tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Tableview.swift"; sourceTree = "<group>"; };
 		89D5D74C299C87EA00C87209 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				38A65B9829A4C8670048D9D9 /* BowlingDataClass.swift */,
 				89D108B029A885F400BB5793 /* Career.swift */,
 				38A65B8E29A4719F0048D9D9 /* PlayersRepository.swift */,
+				89D108B229A8ADF100BB5793 /* PlayerStatGenerator.swift */,
 			);
 			path = "Players Repository";
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				89B56F3E29A71FA8008FDDAD /* CDPlayer+CoreDataProperties.swift in Sources */,
 				384BBB742997CEA700F8C8EF /* UIViewExtension.swift in Sources */,
 				38A65B8429A3E88B0048D9D9 /* MatchInfoViewController+TV.swift in Sources */,
+				89D108B329A8ADF100BB5793 /* PlayerStatGenerator.swift in Sources */,
 				388007F6299D34F000FA9C7B /* UICollectionViewExtension.swift in Sources */,
 				89B56F4229A75594008FDDAD /* SearchPlayerVC+Textfield.swift in Sources */,
 				38A65B8129A3E35F0048D9D9 /* MatchInfoTableViewCell.swift in Sources */,

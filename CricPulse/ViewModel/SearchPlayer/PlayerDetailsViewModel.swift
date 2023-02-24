@@ -28,7 +28,11 @@ class PlayerDetailsViewModel{
     // MARK: - TableView Logics
     /// Decides tableviews number of rows
     func numberOfRows(in section: Int )-> Int{
-        5
+        if section == 0{
+            return 5
+        }else{
+            return 5
+        }
     }
     
     /// Decides number of sections in tableview

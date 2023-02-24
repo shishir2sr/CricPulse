@@ -8,7 +8,6 @@ extension SearchPlayerViewController: UITextFieldDelegate{
         searchBar.delegate = self
         searchBar.round(5)
         searchBar.addShadow(opecity: 0.8, size: 5, radius: 2, color: UIColor.darkGray)
-        searchBar.addBorder(color: UIColor.systemGray6, width: 1)
     }
     
     // Return

@@ -36,6 +36,8 @@ extension PlayerDetailsViewController: UITableViewDelegate, UITableViewDataSourc
         let header = playerDetailsTableView.dequeueReusableHeaderFooterView(withIdentifier: Constants.headerForPlayerDetails) as? HeaderForPlayerDetails
         guard let header = header else {return UIView()}
         
+        header.round(5)
+        header.addShadow(opecity: 0.8, size: 1, radius: 1, color: .gray)
         return header
     }
     // heaig for header
@@ -49,6 +51,8 @@ extension PlayerDetailsViewController: UITableViewDelegate, UITableViewDataSourc
         guard let cell = cell else {return UITableViewCell()}
         cell.format.text = "Nothing"
         cell.selectionStyle = .none
+        
+        
         return cell
     }
     
@@ -57,6 +61,8 @@ extension PlayerDetailsViewController: UITableViewDelegate, UITableViewDataSourc
         60
     }
     
+    
+    // MARK: - Scroll animation
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if let _ = scrollView as? UITableView{
             if scrollView.contentOffset.y > 35 {
@@ -68,10 +74,12 @@ extension PlayerDetailsViewController: UITableViewDelegate, UITableViewDataSourc
         }
     }
     
-    // MARK: Animations
+    // upscroll
     fileprivate func upScrollAnimation() {
-        UIView.animate(withDuration: 0.7) { [weak self] in
+        UIView.animate(withDuration: 0.5) { [weak self] in
             self?.backViewHeight.constant = 0
+            
+            self?.playerImage.alpha = 0
             self?.playerImageHeight.constant = 0
             self?.playerName.isHidden = true
             self?.countryName.isHidden = true
@@ -79,9 +87,12 @@ extension PlayerDetailsViewController: UITableViewDelegate, UITableViewDataSourc
         }
     }
     
+    // Downscroll
     fileprivate func downScrollAnimation() {
-        UIView.animate(withDuration: 0.7) { [weak self] in
+        UIView.animate(withDuration: 0.5) { [weak self] in
             self?.backViewHeight.constant = 180
+            
+            self?.playerImage.alpha = 1
             self?.playerImageHeight.constant = 80
             self?.playerName.isHidden = false
             self?.countryName.isHidden = false

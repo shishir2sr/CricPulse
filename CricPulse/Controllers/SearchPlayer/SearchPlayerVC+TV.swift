@@ -34,11 +34,12 @@ extension SearchPlayerViewController: UITableViewDelegate, UITableViewDataSource
         let player = players[indexPath.row]
         cell.setupCell(player: player)
         cell.selectionStyle = .none
+        cell.addShadow(opecity: 0.8, size: 1, radius: 1, color: .gray)
         return cell
     }
     // tableview height
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        85
+        90
     }
     
     // did select row at
