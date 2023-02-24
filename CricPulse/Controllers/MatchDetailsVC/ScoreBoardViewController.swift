@@ -40,7 +40,7 @@ class ScoreBoardViewController: UIViewController {
             }
         }.store(in: &cancellables)
     }
-    
+    // Data population
     func setupData(){
         self.teamOneName.text = matchDetailsVM?.teamOneName
         self.teamOneFlag.sd_setImage(with: URL(string: matchDetailsVM?.teamOneFlagUrl ?? ""), placeholderImage: UIImage(systemName: "photo"))
@@ -69,7 +69,7 @@ class ScoreBoardViewController: UIViewController {
         teamOneBackgroundVIew.addGestureRecognizer(tapGestureOne)
     }
     
-    // View One tapped
+    // Tam Two Navigation
     @objc func viewOneTapped(){
         
         buttonGuestureAnimation(for: teamOneBackgroundVIew)
@@ -85,7 +85,7 @@ class ScoreBoardViewController: UIViewController {
         navigationController?.pushViewController(viewController!, animated: true)
     }
     
-    // Team two button tap
+    // Team One navigation
     @objc func viewTwoTapped(){
         print("button 2 pressed")
         buttonGuestureAnimation(for: teamTwoBackgroundVIew)
@@ -96,6 +96,7 @@ class ScoreBoardViewController: UIViewController {
             viewController?.bowlingScore = matchDetailsVM.teamTwoBowling ?? []
             viewController?.viewTitle = matchDetailsVM.teamTwoCode ?? "not found"
         }
+        viewController?.title = matchDetailsVM?.teamTwoName
         navigationController?.pushViewController(viewController!, animated: true)
     }
 

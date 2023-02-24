@@ -11,9 +11,7 @@ class SearchPlayerViewController: UIViewController {
     @IBOutlet weak var playersTableView: UITableView!
     @IBOutlet weak var searchBar: UITextField!
     
-    
-    
-    
+    // MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -27,9 +25,6 @@ class SearchPlayerViewController: UIViewController {
     // View Did load setup
     func setupView(){
         setupTableView()
-        searchBar.round(5)
-        searchBar.addShadow(opecity: 0.8, size: 5, radius: 2, color: UIColor.darkGray)
-        searchBar.addBorder(color: UIColor.systemGray6, width: 1)
         setupBinder()
         setupTextField()
     }

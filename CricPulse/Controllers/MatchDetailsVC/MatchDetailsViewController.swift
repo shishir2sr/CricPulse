@@ -60,37 +60,6 @@ class MatchDetailsViewController: UIViewController {
     @IBOutlet weak var containerViewTwo: UIView!
     @IBOutlet weak var containerViewThree: UIView!
     
-    func dataSetup(){
-        tournamentName.text = matchDetailsData?.tournamentName
-        matchNumber.text = matchDetailsData?.matchNo
-        matchStatus.text = matchDetailsData?.matchStatus?.statusText
-        
-        teamOneFlag.sd_setImage(with: URL(string: matchDetailsData?.teamOneFlagUrl ?? ""), placeholderImage: UIImage(systemName: "photo"))
-       
-        teamOneCode.text = matchDetailsData?.teamOneCode
-        teamOneScore.text = viewModel.getTeamOneScore()
-        teamOneWInPercentage.text = matchDetailsData?.teamOneWinPercentage
-        
-        
-        teamTwoFlag.sd_setImage(with: URL(string: matchDetailsData?.teamTwoFlagUrl ?? ""), placeholderImage: UIImage(systemName: "photo"))
-       
-        teamTwoCode.text = matchDetailsData?.teamTwoCode
-        teamTwoScore.text = viewModel.getTeamTwoScore()
-        teamTwoWinPercentage.text = matchDetailsData?.teamTwoWinPercentage
-        
-        matchType.text = matchDetailsData?.matchType
-        matchDate.text = matchDetailsData?.matchDate?.formatted(date: .abbreviated, time: .shortened)
-        manOfTheMatchImage.sd_setImage(with: URL(string: matchDetailsData?.mOMImageUrl ?? ""), placeholderImage: UIImage(systemName: "photo"))
-        manMatchName.text = matchDetailsData?.mOMName
-        
-        stadiumName.text = viewModel.getStadiumInfo()
-        matchStatusView.backgroundColor = viewModel.getMatchStatusColor()
-        note.text = matchDetailsData?.matchNote
-        setupScoreViews()
-        
-    }
-    
-    
     
     
     // MARK: - View Did Load
@@ -125,7 +94,39 @@ class MatchDetailsViewController: UIViewController {
         }.store(in: &cancellables)
     }
     
+    // MARK: - Match Details Data Setup
+    func dataSetup(){
+        tournamentName.text = matchDetailsData?.tournamentName
+        matchNumber.text = matchDetailsData?.matchNo
+        matchStatus.text = matchDetailsData?.matchStatus?.statusText
+        
+        teamOneFlag.sd_setImage(with: URL(string: matchDetailsData?.teamOneFlagUrl ?? ""), placeholderImage: UIImage(systemName: "photo"))
+       
+        teamOneCode.text = matchDetailsData?.teamOneCode
+        teamOneScore.text = viewModel.getTeamOneScore()
+        teamOneWInPercentage.text = matchDetailsData?.teamOneWinPercentage
+        
+        
+        teamTwoFlag.sd_setImage(with: URL(string: matchDetailsData?.teamTwoFlagUrl ?? ""), placeholderImage: UIImage(systemName: "photo"))
+       
+        teamTwoCode.text = matchDetailsData?.teamTwoCode
+        teamTwoScore.text = viewModel.getTeamTwoScore()
+        teamTwoWinPercentage.text = matchDetailsData?.teamTwoWinPercentage
+        
+        matchType.text = matchDetailsData?.matchType
+        matchDate.text = matchDetailsData?.matchDate?.formatted(date: .abbreviated, time: .shortened)
+        manOfTheMatchImage.sd_setImage(with: URL(string: matchDetailsData?.mOMImageUrl ?? ""), placeholderImage: UIImage(systemName: "photo"))
+        manMatchName.text = matchDetailsData?.mOMName
+        
+        stadiumName.text = viewModel.getStadiumInfo()
+        matchStatusView.backgroundColor = viewModel.getMatchStatusColor()
+        note.text = matchDetailsData?.matchNote
+        setupScoreViews()
+        
+    }
+    
 }
+
 
 
 // MARK: - MatchDetailsView Extension
