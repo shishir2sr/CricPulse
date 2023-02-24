@@ -35,6 +35,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         mainViewModel.numberOfRows(in: section)
     }
+    
     // TableView Cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = homeTableView.dequeueReusableCell(withIdentifier: FinishedMatchScoreCardTVModel.identifier, for: indexPath) as? HomeTableViewCell else{
@@ -45,17 +46,17 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
         cell.setupCell(viewModel: self.tableViewData[indexPath.row])
         return cell
     }
+    
     // Tableview Cell Height
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         145
     }
+    
     // Did select row at
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.matchDetailsVCStoryboardID)  as? MatchDetailsViewController
         
         viewController?.fixtureId = self.tableViewData[indexPath.row].tournamentId
-        
         navigationController?.pushViewController(viewController!, animated: true)
     }
 }// setup cell done

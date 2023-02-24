@@ -3,7 +3,6 @@ import Foundation
 import UIKit
 
 extension DetailedScoreViewController{
-    
     func setupTableView(){
         matchDetailsTableView.dataSource = self
         matchDetailsTableView.delegate = self
@@ -20,8 +19,6 @@ extension DetailedScoreViewController{
         
         matchDetailsTableView.register(DetailedScoreViewModel.registerBattersFooterXib(), forHeaderFooterViewReuseIdentifier: "FooterForBattersCell")
     }
-    
-    
 }
 
 // MARK: - Tableview Delegate and datasource

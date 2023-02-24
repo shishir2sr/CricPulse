@@ -1,5 +1,6 @@
 import Foundation
 
+// MARK: - Team
 struct Team :Codable{
     let resource: String?
     let id: Int?

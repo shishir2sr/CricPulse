@@ -34,11 +34,23 @@ extension SearchPlayerViewController: UITableViewDelegate, UITableViewDataSource
         let player = players[indexPath.row]
         cell.setupCell(player: player)
         cell.selectionStyle = .none
+        cell.addShadow(opecity: 0.8, size: 1, radius: 1, color: .gray)
         return cell
     }
     // tableview height
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         90
     }
+    
+    // did select row at
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.playerDetailsViewControllerID)  as? PlayerDetailsViewController
+        let player = players[indexPath.row]
+        guard let viewController = viewController else {return}
+        viewController.playerId = Int(player.id)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    
     
 }
