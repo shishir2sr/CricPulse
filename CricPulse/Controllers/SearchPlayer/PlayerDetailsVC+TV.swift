@@ -8,7 +8,6 @@ extension PlayerDetailsViewController: UITableViewDelegate, UITableViewDataSourc
         self.playerDetailsTableView.delegate = self
         self.playerDetailsTableView.dataSource = self
         xibRegistration()
-        
     }
     
     // xib registration
@@ -16,6 +15,13 @@ extension PlayerDetailsViewController: UITableViewDelegate, UITableViewDataSourc
         playerDetailsTableView.register(viewModel.registerCellXib(), forCellReuseIdentifier: Constants.playerDetailsTVCell)
         
         playerDetailsTableView.register(viewModel.registerHeaderXib(), forHeaderFooterViewReuseIdentifier: Constants.headerForPlayerDetails)
+    }
+    
+    // Reload TableData
+    func realoadTableData(){
+        DispatchQueue.main.async {
+            self.playerDetailsTableView.reloadData()
+        }
     }
     
     // MARK: - Data source and delegate methods

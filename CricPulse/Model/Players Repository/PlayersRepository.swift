@@ -36,10 +36,9 @@ class ConcreatePlayerRepository: PlayerRepository{
     
     // MARK: - Get player by id
     func getPlayerById(id: Int) async -> Result<PlayerStats, CustomError> {
-        let url = EndPoint.shared.getPlayer(ID: id,queryParameters: [.include("career")])
+        let url = EndPoint.shared.getPlayer(ID: id,queryParameters: [.include("career, country")])
         print("Playerbyid URL: ", url!)
         let data: Result<Player,CustomError> = await ApiClient.shared.fetchData(url: url)
-
         switch data{
         case .success(let result):
             guard let player = result.data else{return .failure(.invalidData)}

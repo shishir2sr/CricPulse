@@ -19,27 +19,11 @@ class PlayerDetailsViewModel{
         switch data{
         case .success(let data):
             playerStats = data
-            print(playerStats)
         case .failure(let error):
             print(error)
         }
     }
     
-//    func getPlayerById(id: Int) async {
-//        let url = EndPoint.shared.getPlayer(ID: id)
-//        print("Playerbyid URL: ", url!)
-//        
-//        let data: Result<Player,CustomError> = await ApiClient.shared.fetchData(url: url)
-//         
-//        switch data{
-//        case .success(let result):
-//            print(result.data?.fullname)
-//        
-//        case .failure(let err):
-//            print(err.localizedDescription)
-//        }
-//        
-//    }
     
     // MARK: - TableView Logics
     /// Decides tableviews number of rows
