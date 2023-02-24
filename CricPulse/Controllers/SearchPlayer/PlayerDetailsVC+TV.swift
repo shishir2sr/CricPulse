@@ -30,8 +30,6 @@ extension PlayerDetailsViewController: UITableViewDelegate, UITableViewDataSourc
     func numberOfSections(in tableView: UITableView) -> Int {
         viewModel.numberOfSection()
     }
-    
-    
     // Number of cells
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.numberOfRows(in: section)
@@ -55,10 +53,8 @@ extension PlayerDetailsViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = playerDetailsTableView.dequeueReusableCell(withIdentifier: Constants.playerDetailsTVCell, for: indexPath) as? PlayerDetailsTVCell
         guard let cell = cell else {return UITableViewCell()}
-        cell.format.text = "Nothing"
+        cell.format.text = "\(playersStat?.t20Stats?.batting?.average)"
         cell.selectionStyle = .none
-        
-        
         return cell
     }
     

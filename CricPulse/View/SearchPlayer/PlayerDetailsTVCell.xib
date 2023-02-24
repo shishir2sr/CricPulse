@@ -37,25 +37,25 @@
                                         <rect key="frame" x="108" y="0.0" width="254" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3h-YM-Wig">
-                                                <rect key="frame" x="0.0" y="0.0" width="57.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="57.666666666666664" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94E-5F-jk7">
-                                                <rect key="frame" x="65.5" y="0.0" width="57.5" height="30"/>
+                                                <rect key="frame" x="65.666666666666657" y="0.0" width="57.333333333333343" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="150" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LiT-gi-DLm">
-                                                <rect key="frame" x="131" y="0.0" width="57.5" height="30"/>
+                                                <rect key="frame" x="131" y="0.0" width="57.666666666666657" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiS-KD-1M1">
-                                                <rect key="frame" x="196.5" y="0.0" width="57.5" height="30"/>
+                                                <rect key="frame" x="196.66666666666669" y="0.0" width="57.333333333333343" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -86,6 +86,10 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="format" destination="kAq-V0-LHZ" id="OBS-2R-ZdA"/>
+                <outlet property="odi" destination="YiS-KD-1M1" id="VBv-a7-oug"/>
+                <outlet property="t20" destination="w3h-YM-Wig" id="knk-N6-q9e"/>
+                <outlet property="t20i" destination="94E-5F-jk7" id="CDG-Gf-LdK"/>
+                <outlet property="test" destination="LiT-gi-DLm" id="rY7-bQ-BU4"/>
             </connections>
             <point key="canvasLocation" x="118.40000000000001" y="-315.74212893553226"/>
         </tableViewCell>
