@@ -26,6 +26,7 @@ struct PlayerDataClass: Codable{
     let position: Position?
     let updated_at: Date?
     let lineup: LineupLineup?
+    let career: [Career]?
 }
 
 

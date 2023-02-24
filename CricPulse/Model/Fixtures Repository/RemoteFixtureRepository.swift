@@ -15,7 +15,7 @@ class RemoteFixtureRepository: FixtureRepository{
     func getFixtureById(id: Int) async -> Result<Fixture,CustomError>{
         let includeString = "localteam,visitorteam,league,venue,runs.team,batting.batsman,bowling.bowler,lineup,manofmatch"
         
-        let url = EndPoint.shared.getFixture(Id: id, with: [.include(includeString)])
+        let url = EndPoint.shared.getFixture(Id: id, queryParameters:  [.include(includeString)])
         
         print("Fixture WIth ID URL: ", url!)
         

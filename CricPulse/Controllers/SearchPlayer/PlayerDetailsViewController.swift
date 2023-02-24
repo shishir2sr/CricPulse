@@ -1,8 +1,9 @@
-
-
 import UIKit
 
 class PlayerDetailsViewController: UIViewController {
+    // Variables
+    var playerId:Int? = nil
+    
     // ViewModel
     let viewModel = PlayerDetailsViewModel()
     
@@ -30,6 +31,10 @@ class PlayerDetailsViewController: UIViewController {
         playerImage.addBorder(color: UIColor.white, width: 1)
         playerImage.round(40)
         setupTableView()
+        Task{
+            guard let playerId = self.playerId else {return}
+            await viewModel.getPlayer(id: playerId)
+        }
     }
 
 }

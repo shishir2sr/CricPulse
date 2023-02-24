@@ -38,8 +38,8 @@ class RemotePlayersRepository: PlayerRepository{
     
     /// Get player by id
     func getPlayerById(id: Int) async -> Result<PlayerDataClass, CustomError> {
-        // get playerBy id using async await function
         let url = EndPoint.shared.getPlayer(ID: id)
+        print("Playerbyid URL: ", url!)
         let data: Result<PlayerDataClass,CustomError> = await ApiClient.shared.fetchData(url: url)
         return data
     }

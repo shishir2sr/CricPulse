@@ -1,7 +1,5 @@
-
 import Foundation
 import UIKit
-
 
 class SearchPlayerViewModel{
     // Repository
@@ -27,10 +25,6 @@ class SearchPlayerViewModel{
         }
     }
     
-    /// Search Player
-    func searchPlayer(text: String){
-        
-    }
     
         // MARK: - TableView Logics
         /// Decides tableviews number of rows
