@@ -1,14 +1,11 @@
-//
-//  HeaderForPlayerDetails.swift
-//  CricPulse
-//
-//  Created by Yeasir Arefin Tusher on 24/2/23.
-//
-
 import UIKit
 
 class HeaderForPlayerDetails: UITableViewHeaderFooterView {
-
     
-
+    @IBOutlet weak var format: UILabel!
+    @IBOutlet weak var backView: UIView!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        backView.round(10)
+    }
 }

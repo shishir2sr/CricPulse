@@ -4,7 +4,6 @@ import UIKit
 
 // MARK: - Uitext field delegate
 extension SearchPlayerViewController: UITextFieldDelegate{
-    
     func setupTextField(){
         searchBar.delegate = self
         searchBar.round(5)
@@ -40,7 +39,7 @@ extension SearchPlayerViewController: UITextFieldDelegate{
         Task{await self.searchPlayerViewModel.getPlayers()}
         textField.text = ""
     }
-    
+    // Should change
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let text = (textField.text! as NSString).replacingCharacters(in: range, with: string)
         if text != ""{

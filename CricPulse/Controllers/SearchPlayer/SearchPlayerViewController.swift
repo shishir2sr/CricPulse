@@ -11,9 +11,7 @@ class SearchPlayerViewController: UIViewController {
     @IBOutlet weak var playersTableView: UITableView!
     @IBOutlet weak var searchBar: UITextField!
     
-    
-    
-    
+    // MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
