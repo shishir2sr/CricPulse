@@ -6,6 +6,7 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -66,20 +67,138 @@
             </objects>
             <point key="canvasLocation" x="1052.6717557251909" y="851.4084507042254"/>
         </scene>
-        <!--View Controller-->
+        <!--Player Details View Controller-->
         <scene sceneID="RC0-DB-tcs">
             <objects>
-                <viewController id="0rI-Dq-brd" sceneMemberID="viewController">
+                <viewController id="0rI-Dq-brd" customClass="PlayerDetailsViewController" customModule="CricPulse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YpA-3H-kEK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7cX-AA-Shh">
+                                <rect key="frame" x="0.0" y="210" width="375" height="457"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nbi-Db-A4B">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fg0-8c-kri">
+                                        <rect key="frame" x="147.5" y="6.5" width="80" height="77.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="lIB-IM-UTX"/>
+                                            <constraint firstAttribute="width" constant="80" id="x7T-uR-hv1"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shakib Al Hasan (All Rounder)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3l-Xq-wdN">
+                                        <rect key="frame" x="80.5" y="95" width="214" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bangladesh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06J-mt-fan">
+                                        <rect key="frame" x="157" y="117" width="61" height="13.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7uJ-83-hRY">
+                                        <rect key="frame" x="10" y="150.5" width="355" height="27"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9ZB-7h-CcW">
+                                                <rect key="frame" x="0.0" y="0.0" width="113" height="27"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Batting Style" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mR8-uL-0tX">
+                                                        <rect key="frame" x="21.5" y="0.0" width="70.5" height="13.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right Hand" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osO-P1-Gqk">
+                                                        <rect key="frame" x="26" y="13.5" width="61" height="13.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NMl-0J-B1b">
+                                                <rect key="frame" x="121" y="0.0" width="113" height="27"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYR-Bj-HNZ">
+                                                        <rect key="frame" x="22" y="0.0" width="69.5" height="13.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19th January 1980" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fec-SD-6eq">
+                                                        <rect key="frame" x="5.5" y="13.5" width="102" height="13.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yli-Wl-hjh">
+                                                <rect key="frame" x="242" y="0.0" width="113" height="27"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bowling Style" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6H-Q9-CyM">
+                                                        <rect key="frame" x="19.5" y="0.0" width="74.5" height="13.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right Hand" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dof-7o-5B3">
+                                                        <rect key="frame" x="26" y="13.5" width="61" height="13.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="SecondaryBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="fg0-8c-kri" firstAttribute="top" secondItem="Nbi-Db-A4B" secondAttribute="top" constant="5" id="1Gw-s0-zCm"/>
+                                    <constraint firstItem="u3l-Xq-wdN" firstAttribute="centerX" secondItem="Nbi-Db-A4B" secondAttribute="centerX" id="3DQ-VK-okv"/>
+                                    <constraint firstItem="fg0-8c-kri" firstAttribute="centerX" secondItem="Nbi-Db-A4B" secondAttribute="centerX" id="4TB-C6-gEs"/>
+                                    <constraint firstItem="7uJ-83-hRY" firstAttribute="top" secondItem="06J-mt-fan" secondAttribute="bottom" constant="20" id="L5T-K1-nPp"/>
+                                    <constraint firstAttribute="trailing" secondItem="7uJ-83-hRY" secondAttribute="trailing" constant="10" id="MlH-mu-pyT"/>
+                                    <constraint firstItem="u3l-Xq-wdN" firstAttribute="top" secondItem="fg0-8c-kri" secondAttribute="bottom" constant="10" id="Uxe-AW-H9d"/>
+                                    <constraint firstItem="06J-mt-fan" firstAttribute="centerX" secondItem="Nbi-Db-A4B" secondAttribute="centerX" id="gRB-if-fMr"/>
+                                    <constraint firstItem="7uJ-83-hRY" firstAttribute="leading" secondItem="Nbi-Db-A4B" secondAttribute="leading" constant="10" id="mje-jE-k0X"/>
+                                    <constraint firstAttribute="height" constant="200" id="pOd-qX-V8n"/>
+                                    <constraint firstItem="06J-mt-fan" firstAttribute="top" secondItem="u3l-Xq-wdN" secondAttribute="bottom" constant="5" id="tW2-VE-QuE"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="WHD-X4-btB"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="PrimaryBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Nbi-Db-A4B" firstAttribute="leading" secondItem="WHD-X4-btB" secondAttribute="leading" id="7uz-G7-5UD"/>
+                            <constraint firstItem="7cX-AA-Shh" firstAttribute="top" secondItem="Nbi-Db-A4B" secondAttribute="bottom" constant="10" id="Vgq-eJ-aId"/>
+                            <constraint firstItem="7cX-AA-Shh" firstAttribute="trailing" secondItem="WHD-X4-btB" secondAttribute="trailing" id="cPP-EE-h44"/>
+                            <constraint firstItem="Nbi-Db-A4B" firstAttribute="top" secondItem="WHD-X4-btB" secondAttribute="top" id="k3C-bu-DKc"/>
+                            <constraint firstItem="7cX-AA-Shh" firstAttribute="bottom" secondItem="WHD-X4-btB" secondAttribute="bottom" id="lQN-H2-Ega"/>
+                            <constraint firstItem="7cX-AA-Shh" firstAttribute="leading" secondItem="WHD-X4-btB" secondAttribute="leading" id="ldg-Ue-aUu"/>
+                            <constraint firstItem="WHD-X4-btB" firstAttribute="trailing" secondItem="Nbi-Db-A4B" secondAttribute="trailing" id="xQj-eX-E73"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backView" destination="Nbi-Db-A4B" id="1vr-3E-Bjj"/>
+                        <outlet property="battingStyle" destination="osO-P1-Gqk" id="hrz-IA-hbk"/>
+                        <outlet property="birthDate" destination="fec-SD-6eq" id="QyJ-Pz-cik"/>
+                        <outlet property="bowlingStyle" destination="Dof-7o-5B3" id="r9K-sA-71u"/>
+                        <outlet property="countryName" destination="06J-mt-fan" id="YfX-0N-V6O"/>
+                        <outlet property="playerDetailsTableView" destination="7cX-AA-Shh" id="nCg-PU-7V5"/>
+                        <outlet property="playerImage" destination="fg0-8c-kri" id="175-vy-1me"/>
+                        <outlet property="playerName" destination="u3l-Xq-wdN" id="h0f-G5-nrw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hqj-5Q-0Yo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1828" y="851"/>
+            <point key="canvasLocation" x="1828" y="850.52473763118451"/>
         </scene>
         <!--Players-->
         <scene sceneID="8nK-tc-0kF">
@@ -109,6 +228,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="person" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <namedColor name="PrimaryBackgroundColor">
             <color red="0.90980392156862744" green="0.9137254901960784" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
