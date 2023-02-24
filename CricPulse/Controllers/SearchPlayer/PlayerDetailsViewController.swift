@@ -23,7 +23,8 @@ class PlayerDetailsViewController: UIViewController {
     }
     
     func setupView(){
-        
+        playerImage.addBorder(color: UIColor.white, width: 1)
+        playerImage.round(40)
     }
 
 }

@@ -38,7 +38,7 @@ extension SearchPlayerViewController: UITableViewDelegate, UITableViewDataSource
     }
     // tableview height
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        90
+        85
     }
     
 }

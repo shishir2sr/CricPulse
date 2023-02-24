@@ -69,7 +69,7 @@ class ScoreBoardViewController: UIViewController {
         teamOneBackgroundVIew.addGestureRecognizer(tapGestureOne)
     }
     
-    // View One tapped
+    // Tam Two Navigation
     @objc func viewOneTapped(){
         
         buttonGuestureAnimation(for: teamOneBackgroundVIew)
@@ -85,7 +85,7 @@ class ScoreBoardViewController: UIViewController {
         navigationController?.pushViewController(viewController!, animated: true)
     }
     
-    // Team two button tap
+    // Team One navigation
     @objc func viewTwoTapped(){
         print("button 2 pressed")
         buttonGuestureAnimation(for: teamTwoBackgroundVIew)
