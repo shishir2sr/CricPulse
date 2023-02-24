@@ -79,7 +79,9 @@
                             <constraint firstItem="PCU-Ve-TBg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zbp-wW-GMD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="CricPulse" largeTitleDisplayMode="always" id="8Q9-1s-SKV"/>
+                    <navigationItem key="navigationItem" title="CricPulse" id="8Q9-1s-SKV">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="sey-1Q-95J"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionViewHeightConstraint" destination="7yJ-SS-Gq0" id="gHh-de-cyC"/>
                         <outlet property="homeCollectionView" destination="AXn-XY-3o9" id="ZRs-DZ-nXE"/>
@@ -512,13 +514,14 @@
                         <color key="backgroundColor" name="SecondaryBackgroundColor"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="textShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
+                        <imageReference key="backIndicatorImage" image="arrow.backward" catalog="system" symbolScale="small"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -756,6 +759,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="95"/>
         <image name="arrow.up.right.square" catalog="system" width="128" height="114"/>
         <image name="bangladesh()" width="48" height="48"/>
         <image name="bell" catalog="system" width="125" height="128"/>
