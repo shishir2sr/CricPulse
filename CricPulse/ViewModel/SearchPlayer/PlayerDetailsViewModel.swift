@@ -3,27 +3,43 @@ import UIKit
 class PlayerDetailsViewModel{
     
     @Published var isLoading: Bool = false
-    @Published var player: PlayerDataClass? = nil
+    @Published var playerStats: PlayerStats? = nil
     
-    private let remotePlayerRepository : RemotePlayersRepository
+    private let remotePlayerRepository : ConcreatePlayerRepository
     
-    init(remotePlyerRepository: RemotePlayersRepository = RemotePlayersRepository()){
+    init(remotePlyerRepository: ConcreatePlayerRepository = ConcreatePlayerRepository()){
         self.remotePlayerRepository = remotePlyerRepository
     }
     
     // Get player
     func getPlayer(id: Int)async {
         isLoading = true
-        let data: Result<PlayerDataClass,CustomError> = await remotePlayerRepository.getPlayerById(id: id)
+        let data: Result<PlayerStats,CustomError> = await remotePlayerRepository.getPlayerById(id: id)
         isLoading = false
         switch data{
         case .success(let data):
-            player = data
+            playerStats = data
+            print(playerStats)
         case .failure(let error):
             print(error)
         }
     }
     
+//    func getPlayerById(id: Int) async {
+//        let url = EndPoint.shared.getPlayer(ID: id)
+//        print("Playerbyid URL: ", url!)
+//        
+//        let data: Result<Player,CustomError> = await ApiClient.shared.fetchData(url: url)
+//         
+//        switch data{
+//        case .success(let result):
+//            print(result.data?.fullname)
+//        
+//        case .failure(let err):
+//            print(err.localizedDescription)
+//        }
+//        
+//    }
     
     // MARK: - TableView Logics
     /// Decides tableviews number of rows

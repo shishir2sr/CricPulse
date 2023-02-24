@@ -3,12 +3,12 @@ import UIKit
 
 class SearchPlayerViewModel{
     // Repository
-    private let remotePlayerRepository : RemotePlayersRepository
+    private let remotePlayerRepository : ConcreatePlayerRepository
     // variables
     @Published var isLoading: Bool = false
     @Published var playersData:[CDPlayer] = []
     
-    init(remotePlyerRepository: RemotePlayersRepository = RemotePlayersRepository()){
+    init(remotePlyerRepository: ConcreatePlayerRepository = ConcreatePlayerRepository()){
         self.remotePlayerRepository = remotePlyerRepository
     }
     

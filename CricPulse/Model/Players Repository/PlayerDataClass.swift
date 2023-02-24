@@ -22,7 +22,7 @@ struct PlayerDataClass: Codable{
     let bowlingstyle: String?
     let position: Position?
     let updated_at: Date?
-    let lineup: LineupLineup?
+    let lineup: LineUp?
     let career: [Career]?
     let country: Country?
 }
@@ -32,7 +32,6 @@ struct Country: Codable{
     let id: Int?
     let name: String?
     let image_path:String?
-    let updated_at: Data?
 }
 
 // MARK: Players positions
@@ -43,7 +42,7 @@ struct Position: Codable {
 }
 
 // MARK: Lineup2
-struct LineupLineup: Codable {
+struct LineUp: Codable {
     let team_id: Int?
 }
 

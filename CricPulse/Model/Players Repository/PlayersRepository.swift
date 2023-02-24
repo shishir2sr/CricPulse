@@ -1,14 +1,14 @@
 import Foundation
+// MARK: - Player Repository
 
 protocol PlayerRepository {
     func getPlayers() async -> Result<[CDPlayer],CustomError>
-    func getPlayerById(id: Int) async -> Result<PlayerDataClass, CustomError>
+    func getPlayerById(id: Int) async -> Result<PlayerStats, CustomError>
     
 }
 
-
 // MARK: - Player Repository
-class RemotePlayersRepository: PlayerRepository{
+class ConcreatePlayerRepository: PlayerRepository{
     
     func getPlayers() async -> Result<[CDPlayer], CustomError> {
         // Check if coredata has data
@@ -18,8 +18,6 @@ class RemotePlayersRepository: PlayerRepository{
         if playersFromCoreData.count > 0 {
             return .success(playersFromCoreData)
         } else {
-            
-            
             let url = EndPoint.shared.getPlayers(with: [.fields(object: "players", parameters: "fullname,id,image_path")])
             let result: Result<Players, CustomError> = await ApiClient.shared.fetchData(url: url)
             
@@ -36,20 +34,21 @@ class RemotePlayersRepository: PlayerRepository{
         }
     }
     
-    /// Get player by id
-    func getPlayerById(id: Int) async -> Result<PlayerDataClass, CustomError> {
+    // MARK: - Get player by id
+    func getPlayerById(id: Int) async -> Result<PlayerStats, CustomError> {
         let url = EndPoint.shared.getPlayer(ID: id,queryParameters: [.include("career")])
         print("Playerbyid URL: ", url!)
-        let data: Result<PlayerDataClass,CustomError> = await ApiClient.shared.fetchData(url: url)
-        return data
+        let data: Result<Player,CustomError> = await ApiClient.shared.fetchData(url: url)
+
+        switch data{
+        case .success(let result):
+            guard let player = result.data else{return .failure(.invalidData)}
+            let playerStats = PlayerStatGenerator.generatePlayersStat(player: player)
+            return .success(playerStats)
+        case .failure(let err):
+            return .failure(err)
+        }
+
     }
 }
 
-
-
-
-/**
- let url = EndPoint.shared.getPlayers(with: [.fields(object: "players", parameters: "fullname,id,image_path")])
- let data: Result<Players,CustomError> = await ApiClient.shared.fetchData(url: url)
- return data
- */
