@@ -36,7 +36,7 @@ class EndPoint {
     }
 
     // Create Single Player URL
-    func getPlayer(ID playerID: Int, with queryParameters: [QueryParameter] = []) -> URL? {
+    func getPlayer(ID playerID: Int, queryParameters: [QueryParameter] = []) -> URL? {
         let endpoint = "/players/\(playerID)"
         return createURL(endpoint: endpoint, queryParameters: queryParameters)
     }
