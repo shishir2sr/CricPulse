@@ -26,6 +26,9 @@
                                     <segment title="ODI"/>
                                 </segments>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="segmentControll:" destination="9ze-Ix-RNx" eventType="valueChanged" id="olS-R6-a2y"/>
+                                </connections>
                             </segmentedControl>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Mrf-LG-HyW">
                                 <rect key="frame" x="121.5" y="85" width="243.5" height="30"/>

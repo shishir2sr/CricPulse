@@ -28,5 +28,17 @@ class FixtureViewController: UIViewController {
         
     }
     
-
+    @IBAction func segmentControll(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex{
+            case 0:
+                debugPrint("fdf")
+            case 1:
+                debugPrint("second segment")
+            case 2:
+                debugPrint("Third segment")
+            default:
+                break
+        }
+    }
+    
 }

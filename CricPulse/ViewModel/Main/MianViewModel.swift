@@ -38,7 +38,6 @@ class MainViewModel{
         case .success(let score):
             self.dataSource = score.data
             mapData()
-            debugPrint(score.data[0].note!)
         case .failure(let err):
             debugPrint(err.localizedDescription) // TODO: Do something to the UI
         }

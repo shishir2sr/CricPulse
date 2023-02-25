@@ -8,7 +8,6 @@ extension FixtureViewController: UITableViewDelegate, UITableViewDataSource{
         self.tableView.register(FinishedMatchScoreCardTVModel.register(), forCellReuseIdentifier: FinishedMatchScoreCardTVModel.identifier)
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         5
     }
