@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vWC-Bo-rvQ">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -14,27 +14,78 @@
             <objects>
                 <viewController id="9ze-Ix-RNx" customClass="FixtureViewController" customModule="CricPulse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wYN-Nu-OGc">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GnG-EU-isW">
-                                <rect key="frame" x="10" y="103" width="373" height="32"/>
+                                <rect key="frame" x="10" y="44" width="355" height="32"/>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
                                 </segments>
                             </segmentedControl>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="ekh-8g-rwQ">
-                                <rect key="frame" x="-25" y="183" width="393" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="ekh-8g-rwQ">
+                                <rect key="frame" x="165" y="112" width="200" height="34.5"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="SpK-1Q-wD3"/>
+                                </constraints>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="694263600">
+                                    <!--2023-01-01 11:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="725713200">
+                                    <!--2023-12-31 11:00:00 +0000-->
+                                </date>
                             </datePicker>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="YHO-oU-Ijf">
+                                <rect key="frame" x="165" y="156.5" width="200" height="34.5"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="0Qp-EM-Fnd"/>
+                                </constraints>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="694263600">
+                                    <!--2023-01-01 11:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="725713200">
+                                    <!--2023-12-31 11:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rm1-Fe-vyu">
+                                <rect key="frame" x="20" y="122" width="31" height="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvl-NU-3DO">
+                                <rect key="frame" x="20" y="166.5" width="14.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Date Between" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REW-lv-N4p">
+                                <rect key="frame" x="10" y="85" width="355" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LaD-mn-8pi"/>
                         <color key="backgroundColor" name="PrimaryBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="rm1-Fe-vyu" firstAttribute="centerY" secondItem="ekh-8g-rwQ" secondAttribute="centerY" id="9Xh-C0-qTr"/>
+                            <constraint firstItem="Yvl-NU-3DO" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" constant="20" id="BVA-dm-SX3"/>
                             <constraint firstItem="GnG-EU-isW" firstAttribute="top" secondItem="LaD-mn-8pi" secondAttribute="top" id="Fed-cN-JvJ"/>
+                            <constraint firstItem="REW-lv-N4p" firstAttribute="top" secondItem="GnG-EU-isW" secondAttribute="bottom" constant="10" id="G66-fa-MXf"/>
+                            <constraint firstItem="LaD-mn-8pi" firstAttribute="trailing" secondItem="YHO-oU-Ijf" secondAttribute="trailing" constant="10" id="JPP-hj-0Ha"/>
+                            <constraint firstItem="LaD-mn-8pi" firstAttribute="trailing" secondItem="ekh-8g-rwQ" secondAttribute="trailing" constant="10" id="NhJ-X9-cm7"/>
                             <constraint firstItem="LaD-mn-8pi" firstAttribute="trailing" secondItem="GnG-EU-isW" secondAttribute="trailing" constant="10" id="RIt-Bi-lUa"/>
+                            <constraint firstItem="Yvl-NU-3DO" firstAttribute="centerY" secondItem="YHO-oU-Ijf" secondAttribute="centerY" id="RQD-Hc-4q5"/>
                             <constraint firstItem="GnG-EU-isW" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" constant="10" id="THi-Bl-y9O"/>
+                            <constraint firstItem="REW-lv-N4p" firstAttribute="centerX" secondItem="wYN-Nu-OGc" secondAttribute="centerX" id="Wov-y0-DKm"/>
+                            <constraint firstItem="ekh-8g-rwQ" firstAttribute="top" secondItem="REW-lv-N4p" secondAttribute="bottom" constant="10" id="dTN-SI-Tmz"/>
+                            <constraint firstItem="rm1-Fe-vyu" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" constant="20" id="lat-t1-Tid"/>
+                            <constraint firstItem="YHO-oU-Ijf" firstAttribute="top" secondItem="ekh-8g-rwQ" secondAttribute="bottom" constant="10" id="wI5-rl-2lp"/>
+                            <constraint firstItem="REW-lv-N4p" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" constant="10" id="zw4-vh-ofk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Schedule" id="ZFd-xZ-kir"/>
@@ -44,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vdd-82-64h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="229.7709923664122" y="780.98591549295782"/>
+            <point key="canvasLocation" x="229.59999999999999" y="780.35982008995506"/>
         </scene>
         <!--Schedule-->
         <scene sceneID="rqk-mC-ZFh">
@@ -57,7 +108,7 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="N0Z-jG-YS8">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

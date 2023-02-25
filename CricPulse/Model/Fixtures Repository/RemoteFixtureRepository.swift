@@ -5,7 +5,7 @@ class RemoteFixtureRepository: FixtureRepository{
     // MARK: Get fixtures
     func getFixtures() async -> Result<Fixtures, CustomError>{
         let includeString = "localteam,visitorteam,league,venue,runs.team"
-        let url = EndPoint.shared.getFixtures(with: [.include(includeString),.sort("-updated_at"), .fileter(name: "type", values: "T20,T20I,Test,ODI"),])
+        let url = EndPoint.shared.getFixtures(with: [.include(includeString),.sort("-updated_at"), .fileter(name: "type", values: "T20,T20I,Test,ODI,T10"),])
         // get data
         let data: Result<Fixtures,CustomError> = await ApiClient.shared.fetchData(url: url)
         return data 
