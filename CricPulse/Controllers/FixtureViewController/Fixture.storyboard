@@ -28,7 +28,7 @@
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </segmentedControl>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="ekh-8g-rwQ">
-                                <rect key="frame" x="10" y="112" width="112" height="25"/>
+                                <rect key="frame" x="10" y="112" width="112.5" height="25"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="ZEV-cZ-6JJ"/>
@@ -65,8 +65,8 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3WM-b2-6ZH">
-                                <rect key="frame" x="0.0" y="201" width="375" height="417"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3WM-b2-6ZH">
+                                <rect key="frame" x="10" y="178.5" width="355" height="439.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1NA-wQ-8jm">
@@ -87,19 +87,20 @@
                         <color key="backgroundColor" name="PrimaryBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ekh-8g-rwQ" firstAttribute="top" secondItem="REW-lv-N4p" secondAttribute="bottom" constant="10" id="1N7-jo-lyC"/>
+                            <constraint firstItem="3WM-b2-6ZH" firstAttribute="bottom" secondItem="LaD-mn-8pi" secondAttribute="bottom" id="4XS-l4-NX4"/>
                             <constraint firstItem="GnG-EU-isW" firstAttribute="top" secondItem="LaD-mn-8pi" secondAttribute="top" id="Fed-cN-JvJ"/>
                             <constraint firstItem="REW-lv-N4p" firstAttribute="top" secondItem="GnG-EU-isW" secondAttribute="bottom" constant="10" id="G66-fa-MXf"/>
-                            <constraint firstItem="3WM-b2-6ZH" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" id="H17-gb-VUA"/>
+                            <constraint firstAttribute="trailing" secondItem="3WM-b2-6ZH" secondAttribute="trailing" constant="10" id="Gbx-BK-l5k"/>
                             <constraint firstItem="ekh-8g-rwQ" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" constant="10" id="O7R-Jo-NH5"/>
                             <constraint firstItem="LaD-mn-8pi" firstAttribute="trailing" secondItem="GnG-EU-isW" secondAttribute="trailing" constant="10" id="RIt-Bi-lUa"/>
                             <constraint firstItem="Yvl-NU-3DO" firstAttribute="centerY" secondItem="ekh-8g-rwQ" secondAttribute="centerY" id="RvO-Hu-Sv3"/>
                             <constraint firstItem="GnG-EU-isW" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" constant="10" id="THi-Bl-y9O"/>
-                            <constraint firstItem="LaD-mn-8pi" firstAttribute="bottom" secondItem="3WM-b2-6ZH" secondAttribute="bottom" id="VBa-IM-6vf"/>
-                            <constraint firstItem="LaD-mn-8pi" firstAttribute="trailing" secondItem="3WM-b2-6ZH" secondAttribute="trailing" id="VrT-4O-Xic"/>
                             <constraint firstItem="REW-lv-N4p" firstAttribute="centerX" secondItem="wYN-Nu-OGc" secondAttribute="centerX" id="Wov-y0-DKm"/>
                             <constraint firstItem="ekh-8g-rwQ" firstAttribute="width" secondItem="wYN-Nu-OGc" secondAttribute="width" multiplier="0.3" id="XXT-zV-lxW"/>
+                            <constraint firstItem="3WM-b2-6ZH" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" constant="10" id="cL4-gk-C7O"/>
                             <constraint firstItem="YHO-oU-Ijf" firstAttribute="width" secondItem="wYN-Nu-OGc" secondAttribute="width" multiplier="0.3" id="d40-sF-Oqf"/>
                             <constraint firstItem="1NA-wQ-8jm" firstAttribute="top" secondItem="Yvl-NU-3DO" secondAttribute="bottom" constant="8" id="eLk-Zk-vjH"/>
+                            <constraint firstItem="3WM-b2-6ZH" firstAttribute="top" secondItem="1NA-wQ-8jm" secondAttribute="bottom" constant="10" id="fgz-Sm-MKq"/>
                             <constraint firstItem="Yvl-NU-3DO" firstAttribute="centerX" secondItem="wYN-Nu-OGc" secondAttribute="centerX" id="jeQ-OL-jGO"/>
                             <constraint firstItem="1NA-wQ-8jm" firstAttribute="centerX" secondItem="wYN-Nu-OGc" secondAttribute="centerX" id="qBy-cC-Xp6"/>
                             <constraint firstItem="LaD-mn-8pi" firstAttribute="trailing" secondItem="YHO-oU-Ijf" secondAttribute="trailing" constant="10" id="sws-W3-Ywo"/>
