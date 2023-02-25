@@ -28,7 +28,10 @@ class MainViewModel{
     
     // Get Fixtures
     func getFixtures()async {
-        let data: Result<Fixtures,CustomError> = await remoteFixtureRepository.getFixtures()
+        let includeString = "localteam,visitorteam,league,venue,runs.team"
+        let url = EndPoint.shared.getFixtures(with: [.include(includeString),.sort("-updated_at"), .fileter(name: "type", values: "T20,T20I,Test,ODI,T10"),])
+        
+        let data: Result<Fixtures,CustomError> = await remoteFixtureRepository.getFixtures(url: url)
         handleResponse(data: data)
     }
     
