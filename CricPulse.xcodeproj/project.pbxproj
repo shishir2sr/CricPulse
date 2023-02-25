@@ -264,6 +264,13 @@
 			path = "Players Repository";
 			sourceTree = "<group>";
 		};
+		38AEAAD129A9C276008E5877 /* FixtureViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FixtureViewController;
+			sourceTree = "<group>";
+		};
 		38C010A429A22C40004AECAC /* MatchDetailsView */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,6 +355,7 @@
 		8901ABAE2994A7A2000F8315 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				38AEAAD129A9C276008E5877 /* FixtureViewController */,
 				89E3733D29A622FE00F9AFFE /* SearchPlayer */,
 				38F618C829A094F5005F04C7 /* MatchDetailsVC */,
 				8901ABAD2994A779000F8315 /* MainViewController */,
