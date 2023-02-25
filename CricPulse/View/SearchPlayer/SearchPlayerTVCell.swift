@@ -10,7 +10,7 @@ class SearchPlayerTVCell: UITableViewCell {
         super.awakeFromNib()
         backView.round(10)
         playerImage.round(30)
-        backView.addShadow(opecity: 0.6, size: 2, radius: 4, color: UIColor.darkGray)
+        backView.addShadow(opecity: 0.6, size: 1, radius: 2, color: UIColor.gray)
         playerImage.addBorder(color: UIColor.systemGray3, width: 3)
     }
     
