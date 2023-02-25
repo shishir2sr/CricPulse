@@ -30,7 +30,7 @@ class PlayerDetailsViewModel{
     func numberOfRows(in section: Int )-> Int{
         if section == 0{
             return 5
-        }else{
+        }else {
             return 5
         }
     }
