@@ -24,12 +24,12 @@ class FinishedMatchScoreCardTVModel{
             // LocalTeam Data
             self.localTeamName = scorecard.localteam?.code ?? "Unknown"
             self.localTeamFlagUrl = scorecard.localteam?.image_path ?? ""
-            self.localTeamScore =  "..."
+            self.localTeamScore =  ""
             
             // Visitor Team Data
             self.visitorTeamName = scorecard.visitorteam?.code ?? "Unknown"
             self.visitorTeamFlagUrl = scorecard.visitorteam?.image_path ?? "Unknown"
-            self.visitorTeamScore = "..."
+            self.visitorTeamScore = ""
             
         }else{
             let team1 = scorecard.runs?[0].team

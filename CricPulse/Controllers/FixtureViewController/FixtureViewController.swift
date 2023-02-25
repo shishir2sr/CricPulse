@@ -64,7 +64,8 @@ class FixtureViewController: UIViewController {
         let fromDateString = viewModel.formatDate(date: fromDate.date)
         let toDateString = viewModel.formatDate(date: toDate.date)
         let url = EndPoint.shared.getFixtures(with: [.include("localteam,visitorteam,league,venue,runs.team"),
-             .filter(name: "type", values: "\(leagueName)"),
+            .filter(name: "type", values: "\(leagueName)"),
+            .sort("-updated_at"),
             .filter(name: "starts_between", values: "\(fromDateString),\(toDateString)")
         ])
         return url
