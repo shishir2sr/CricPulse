@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38483C6729AA12D300D14667 /* FixtureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38483C6629AA12D300D14667 /* FixtureViewModel.swift */; };
 		384BBB6D2997CCF100F8C8EF /* ScoreCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384BBB6B2997CCF100F8C8EF /* ScoreCardCollectionViewCell.swift */; };
 		384BBB6E2997CCF100F8C8EF /* ScoreCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 384BBB6C2997CCF100F8C8EF /* ScoreCardCollectionViewCell.xib */; };
 		384BBB702997CD3A00F8C8EF /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384BBB6F2997CD3A00F8C8EF /* AppConstants.swift */; };
@@ -94,6 +95,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38483C6629AA12D300D14667 /* FixtureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureViewModel.swift; sourceTree = "<group>"; };
 		384BBB6B2997CCF100F8C8EF /* ScoreCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		384BBB6C2997CCF100F8C8EF /* ScoreCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreCardCollectionViewCell.xib; sourceTree = "<group>"; };
 		384BBB6F2997CD3A00F8C8EF /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
@@ -193,6 +195,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38483C6529AA12B800D14667 /* FixtureViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				38483C6629AA12D300D14667 /* FixtureViewModel.swift */,
+			);
+			path = FixtureViewModel;
+			sourceTree = "<group>";
+		};
 		384BBB6A2997CCC300F8C8EF /* ScoreCard */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,6 +442,7 @@
 		8901ABB72994A8FF000F8315 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				38483C6529AA12B800D14667 /* FixtureViewModel */,
 				89E3734529A6272F00F9AFFE /* SearchPlayer */,
 				38EC96FF29A2293800705D28 /* MatchDetailsViewModels */,
 				89D5D74E299CA16F00C87209 /* Main */,
@@ -622,6 +633,7 @@
 				8992C89B29A3343A0071B9EB /* HeaderForBattersCell.swift in Sources */,
 				89E3734429A626BF00F9AFFE /* SearchPlayerVC+TV.swift in Sources */,
 				89D5D758299CE7DC00C87209 /* ApiClient.swift in Sources */,
+				38483C6729AA12D300D14667 /* FixtureViewModel.swift in Sources */,
 				89D5D75A299CEBD600C87209 /* EndPoint.swift in Sources */,
 				38C010A929A23117004AECAC /* DetailedScoreTViewCell.swift in Sources */,
 				89E3734229A625F700F9AFFE /* SearchPlayerViewController.swift in Sources */,

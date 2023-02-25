@@ -49,9 +49,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="YHO-oU-Ijf">
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHO-oU-Ijf">
                                         <rect key="frame" x="162.5" y="0.0" width="81" height="30"/>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="730548366.59906495">
+                                            <!--2024-02-25 10:06:06 +0000-->
+                                        </date>
                                         <date key="minimumDate" timeIntervalSinceReferenceDate="694263600">
                                             <!--2023-01-01 11:00:00 +0000-->
                                         </date>
