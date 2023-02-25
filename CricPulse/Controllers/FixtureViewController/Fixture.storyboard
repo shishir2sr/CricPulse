@@ -20,9 +20,12 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GnG-EU-isW">
                                 <rect key="frame" x="10" y="44" width="355" height="32"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="T20"/>
+                                    <segment title="T20I"/>
+                                    <segment title="T10"/>
+                                    <segment title="ODI"/>
                                 </segments>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </segmentedControl>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="ekh-8g-rwQ">
                                 <rect key="frame" x="165" y="112" width="200" height="34.5"/>
@@ -68,6 +71,10 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3WM-b2-6ZH">
+                                <rect key="frame" x="0.0" y="201" width="375" height="417"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LaD-mn-8pi"/>
                         <color key="backgroundColor" name="PrimaryBackgroundColor"/>
@@ -76,21 +83,28 @@
                             <constraint firstItem="Yvl-NU-3DO" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" constant="20" id="BVA-dm-SX3"/>
                             <constraint firstItem="GnG-EU-isW" firstAttribute="top" secondItem="LaD-mn-8pi" secondAttribute="top" id="Fed-cN-JvJ"/>
                             <constraint firstItem="REW-lv-N4p" firstAttribute="top" secondItem="GnG-EU-isW" secondAttribute="bottom" constant="10" id="G66-fa-MXf"/>
+                            <constraint firstItem="3WM-b2-6ZH" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" id="H17-gb-VUA"/>
                             <constraint firstItem="LaD-mn-8pi" firstAttribute="trailing" secondItem="YHO-oU-Ijf" secondAttribute="trailing" constant="10" id="JPP-hj-0Ha"/>
                             <constraint firstItem="LaD-mn-8pi" firstAttribute="trailing" secondItem="ekh-8g-rwQ" secondAttribute="trailing" constant="10" id="NhJ-X9-cm7"/>
                             <constraint firstItem="LaD-mn-8pi" firstAttribute="trailing" secondItem="GnG-EU-isW" secondAttribute="trailing" constant="10" id="RIt-Bi-lUa"/>
                             <constraint firstItem="Yvl-NU-3DO" firstAttribute="centerY" secondItem="YHO-oU-Ijf" secondAttribute="centerY" id="RQD-Hc-4q5"/>
                             <constraint firstItem="GnG-EU-isW" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" constant="10" id="THi-Bl-y9O"/>
+                            <constraint firstItem="LaD-mn-8pi" firstAttribute="bottom" secondItem="3WM-b2-6ZH" secondAttribute="bottom" id="VBa-IM-6vf"/>
+                            <constraint firstItem="LaD-mn-8pi" firstAttribute="trailing" secondItem="3WM-b2-6ZH" secondAttribute="trailing" id="VrT-4O-Xic"/>
                             <constraint firstItem="REW-lv-N4p" firstAttribute="centerX" secondItem="wYN-Nu-OGc" secondAttribute="centerX" id="Wov-y0-DKm"/>
                             <constraint firstItem="ekh-8g-rwQ" firstAttribute="top" secondItem="REW-lv-N4p" secondAttribute="bottom" constant="10" id="dTN-SI-Tmz"/>
                             <constraint firstItem="rm1-Fe-vyu" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" constant="20" id="lat-t1-Tid"/>
+                            <constraint firstItem="3WM-b2-6ZH" firstAttribute="top" secondItem="YHO-oU-Ijf" secondAttribute="bottom" constant="10" id="mJH-on-8H1"/>
                             <constraint firstItem="YHO-oU-Ijf" firstAttribute="top" secondItem="ekh-8g-rwQ" secondAttribute="bottom" constant="10" id="wI5-rl-2lp"/>
                             <constraint firstItem="REW-lv-N4p" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" constant="10" id="zw4-vh-ofk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Schedule" id="ZFd-xZ-kir"/>
                     <connections>
+                        <outlet property="fromDate" destination="ekh-8g-rwQ" id="qmh-ER-ani"/>
                         <outlet property="segmentControl" destination="GnG-EU-isW" id="In9-Cw-nZz"/>
+                        <outlet property="tableView" destination="3WM-b2-6ZH" id="crp-dw-6or"/>
+                        <outlet property="toDate" destination="YHO-oU-Ijf" id="NrM-KL-e5V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vdd-82-64h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
