@@ -4,32 +4,53 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Fixtures-->
+        <!--Schedule-->
         <scene sceneID="fDE-IR-qyg">
             <objects>
-                <viewController id="9ze-Ix-RNx" sceneMemberID="viewController">
+                <viewController id="9ze-Ix-RNx" customClass="FixtureViewController" customModule="CricPulse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wYN-Nu-OGc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GnG-EU-isW">
+                                <rect key="frame" x="10" y="103" width="373" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="ekh-8g-rwQ">
+                                <rect key="frame" x="-25" y="183" width="393" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </datePicker>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="LaD-mn-8pi"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="PrimaryBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GnG-EU-isW" firstAttribute="top" secondItem="LaD-mn-8pi" secondAttribute="top" id="Fed-cN-JvJ"/>
+                            <constraint firstItem="LaD-mn-8pi" firstAttribute="trailing" secondItem="GnG-EU-isW" secondAttribute="trailing" constant="10" id="RIt-Bi-lUa"/>
+                            <constraint firstItem="GnG-EU-isW" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" constant="10" id="THi-Bl-y9O"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Fixtures" id="ZFd-xZ-kir"/>
+                    <navigationItem key="navigationItem" title="Schedule" id="ZFd-xZ-kir"/>
+                    <connections>
+                        <outlet property="segmentControl" destination="GnG-EU-isW" id="In9-Cw-nZz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vdd-82-64h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="229.7709923664122" y="780.98591549295782"/>
         </scene>
-        <!--Fixtures-->
+        <!--Schedule-->
         <scene sceneID="rqk-mC-ZFh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vWC-Bo-rvQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Fixtures" id="CDT-4p-P4g">
+                    <tabBarItem key="tabBarItem" title="Schedule" id="CDT-4p-P4g">
                         <imageReference key="image" image="calendar" catalog="system" symbolScale="large"/>
                         <color key="badgeColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
@@ -51,8 +72,8 @@
     </scenes>
     <resources>
         <image name="calendar" catalog="system" width="128" height="107"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="PrimaryBackgroundColor">
+            <color red="0.90980392156862744" green="0.9137254901960784" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

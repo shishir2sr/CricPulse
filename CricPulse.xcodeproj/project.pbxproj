@@ -27,6 +27,7 @@
 		38A65B9929A4C8670048D9D9 /* BowlingDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B9829A4C8670048D9D9 /* BowlingDataClass.swift */; };
 		38A65B9B29A4E6010048D9D9 /* DetailedMatchAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B9A29A4E6010048D9D9 /* DetailedMatchAdapter.swift */; };
 		38AEAAD329A9C3EE008E5877 /* Fixture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38AEAAD229A9C3EE008E5877 /* Fixture.storyboard */; };
+		38AEAAD529A9CA89008E5877 /* FixtureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AEAAD429A9CA89008E5877 /* FixtureViewController.swift */; };
 		38C010A929A23117004AECAC /* DetailedScoreTViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C010A729A23117004AECAC /* DetailedScoreTViewCell.swift */; };
 		38C010AA29A23117004AECAC /* DetailedScoreTViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C010A829A23117004AECAC /* DetailedScoreTViewCell.xib */; };
 		38C010AC29A2420F004AECAC /* DetailedScoreVC+TBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C010AB29A2420F004AECAC /* DetailedScoreVC+TBView.swift */; };
@@ -112,6 +113,7 @@
 		38A65B9829A4C8670048D9D9 /* BowlingDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingDataClass.swift; sourceTree = "<group>"; };
 		38A65B9A29A4E6010048D9D9 /* DetailedMatchAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedMatchAdapter.swift; sourceTree = "<group>"; };
 		38AEAAD229A9C3EE008E5877 /* Fixture.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Fixture.storyboard; sourceTree = "<group>"; };
+		38AEAAD429A9CA89008E5877 /* FixtureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureViewController.swift; sourceTree = "<group>"; };
 		38C010A729A23117004AECAC /* DetailedScoreTViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedScoreTViewCell.swift; sourceTree = "<group>"; };
 		38C010A829A23117004AECAC /* DetailedScoreTViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedScoreTViewCell.xib; sourceTree = "<group>"; };
 		38C010AB29A2420F004AECAC /* DetailedScoreVC+TBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailedScoreVC+TBView.swift"; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				38AEAAD229A9C3EE008E5877 /* Fixture.storyboard */,
+				38AEAAD429A9CA89008E5877 /* FixtureViewController.swift */,
 			);
 			path = FixtureViewController;
 			sourceTree = "<group>";
@@ -638,6 +641,7 @@
 				89D108AD29A8741D00BB5793 /* HeaderForPlayerDetails.swift in Sources */,
 				38F618C5299E84C8005F04C7 /* LeagueDataClass.swift in Sources */,
 				89D108A929A8697500BB5793 /* PlayerDetailsViewModel.swift in Sources */,
+				38AEAAD529A9CA89008E5877 /* FixtureViewController.swift in Sources */,
 				38C010AE29A243D6004AECAC /* DetailedScoreViewModel.swift in Sources */,
 				38F618CA29A09535005F04C7 /* MatchDetailsViewController.swift in Sources */,
 				38A65B8C29A45F9A0048D9D9 /* RemoteFixtureRepository.swift in Sources */,
