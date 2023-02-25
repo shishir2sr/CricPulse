@@ -63,12 +63,13 @@ class PlayerStatGenerator {
         battingScoreInnings = battingData.reduce(0) { $0 + ($1.innings ?? 0) }
         scoreRuns = battingData.reduce(0) { $0 + ($1.runs_scored ?? 0) }
         ballsFaced = battingData.reduce(0.0) { $0 + Double($1.balls_faced ?? 0.0) }
+        
+        
         wickets = bowlingData.reduce(0) { $0 + ($1.wickets ?? 0) }
         runs = bowlingData.reduce(0) { $0 + ($1.runs ?? 0) }
         overs = bowlingData.reduce(0.0) { $0 + ($1.overs ?? 0) }
-        bowlingInnings = bowlingData.reduce(0) { $0 + ($1.innigs ?? 0) }
+        bowlingInnings = bowlingData.reduce(0) { $0 + ($1.innings ?? 0) }
         bowlingScoreMatches = bowlingData.reduce(0) { $0 + ($1.matches ?? 0) }
-        
         strikeRate = ballsFaced > 0 ? Double(scoreRuns) / ballsFaced * 100 : 0.0
         economyRate = overs > 0 ? Double(runs) / overs : 0.0
         avg = wickets > 0 ? Double(runs) / Double(wickets) : 0.0
@@ -78,7 +79,7 @@ class PlayerStatGenerator {
             bowling: BowlingTwo(
                 matches: bowlingScoreMatches,
                 overs: overs,
-                innigs: bowlingInnings,
+                innings: bowlingInnings,
                 econ_rate: economyRate,
                 runs: runs,
                 wickets: wickets
