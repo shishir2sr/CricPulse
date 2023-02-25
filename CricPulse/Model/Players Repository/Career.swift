@@ -7,12 +7,11 @@ struct Career: Codable{
     let bowling: BowlingTwo?
     let batting: BattingTwo?
 }
-
 // MARK: Bowling
 struct BowlingTwo: Codable{
     let matches: Int?
     let overs: Double?
-    let innigs: Int?
+    let innings: Int?
     let econ_rate: Double?
     let runs: Int?
     let wickets: Int?

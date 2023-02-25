@@ -3,22 +3,22 @@ import UIKit
 class PlayerDetailsViewModel{
     
     @Published var isLoading: Bool = false
-    @Published var player: PlayerDataClass? = nil
+    @Published var playerStats: PlayerStats? = nil
     
-    private let remotePlayerRepository : RemotePlayersRepository
+    private let remotePlayerRepository : ConcreatePlayerRepository
     
-    init(remotePlyerRepository: RemotePlayersRepository = RemotePlayersRepository()){
+    init(remotePlyerRepository: ConcreatePlayerRepository = ConcreatePlayerRepository()){
         self.remotePlayerRepository = remotePlyerRepository
     }
     
     // Get player
     func getPlayer(id: Int)async {
         isLoading = true
-        let data: Result<PlayerDataClass,CustomError> = await remotePlayerRepository.getPlayerById(id: id)
+        let data: Result<PlayerStats,CustomError> = await remotePlayerRepository.getPlayerById(id: id)
         isLoading = false
         switch data{
         case .success(let data):
-            player = data
+            playerStats = data
         case .failure(let error):
             print(error)
         }
@@ -30,7 +30,7 @@ class PlayerDetailsViewModel{
     func numberOfRows(in section: Int )-> Int{
         if section == 0{
             return 5
-        }else{
+        }else {
             return 5
         }
     }

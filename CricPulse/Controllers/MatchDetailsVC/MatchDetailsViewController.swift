@@ -11,7 +11,7 @@ class MatchDetailsViewController: UIViewController {
     var matchDetailsData: MatchDetailsData?
     private var cancellables = Set<AnyCancellable>()
     
-   
+    
     
     // MARK: - Outlets
     // View Outlets
@@ -71,19 +71,13 @@ class MatchDetailsViewController: UIViewController {
     
     // View Did load configuration
     func configViewDidLoad(){
-        // Ui changer
         setupView()
-        
-        // Get data
-        guard let fixtureId = fixtureId else{ return }
-        Task{
-            await viewModel.getFixture(id: fixtureId)
-        }
-        // Binder Setup
         setupBinders()
+        guard let fixtureId = fixtureId else{ return }
+        Task{await viewModel.getFixture(id: fixtureId)}
+        
     }
     
-    // binder
     func setupBinders(){
         viewModel.$matchDetailsData.sink {[weak self] matchDetailsData in
             guard let self = self else{return}
@@ -101,14 +95,14 @@ class MatchDetailsViewController: UIViewController {
         matchStatus.text = matchDetailsData?.matchStatus?.statusText
         
         teamOneFlag.sd_setImage(with: URL(string: matchDetailsData?.teamOneFlagUrl ?? ""), placeholderImage: UIImage(systemName: "photo"))
-       
+        
         teamOneCode.text = matchDetailsData?.teamOneCode
         teamOneScore.text = viewModel.getTeamOneScore()
         teamOneWInPercentage.text = matchDetailsData?.teamOneWinPercentage
         
         
         teamTwoFlag.sd_setImage(with: URL(string: matchDetailsData?.teamTwoFlagUrl ?? ""), placeholderImage: UIImage(systemName: "photo"))
-       
+        
         teamTwoCode.text = matchDetailsData?.teamTwoCode
         teamTwoScore.text = viewModel.getTeamTwoScore()
         teamTwoWinPercentage.text = matchDetailsData?.teamTwoWinPercentage
@@ -150,7 +144,7 @@ extension MatchDetailsViewController{
     @IBAction func segmentControl(_ sender: UISegmentedControl) {
         let index = sender.selectedSegmentIndex
         if index == 0{
-        debugPrint("Info Page")
+            debugPrint("Info Page")
             containerViewOne.isHidden = false
             containerViewTwo.isHidden = true
             containerViewThree.isHidden = true
@@ -159,7 +153,7 @@ extension MatchDetailsViewController{
             containerViewTwo.isHidden = false
             containerViewThree.isHidden = true
         }else{
-           debugPrint("Squad Page")
+            debugPrint("Squad Page")
             containerViewOne.isHidden = true
             containerViewTwo.isHidden = true
             containerViewThree.isHidden = false

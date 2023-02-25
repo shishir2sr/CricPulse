@@ -1,6 +1,5 @@
 import Foundation
 
-/**
 // MARK: - MatchType Enums
 enum CareerType: String {
     case t20 = "T20"
@@ -18,7 +17,6 @@ struct PlayerStats: Codable {
     let position: Position?
     let battingStyle: String?
     let bowlingStyle: String?
-    let lineUp: LineupLineup?
     let country: Country?
     let t20Stats: Career?
     let t20iStats: Career?
@@ -26,45 +24,16 @@ struct PlayerStats: Codable {
     let odiStats: Career?
 }
 
+// MARK: - Player Stat generator
 class PlayerStatGenerator {
-    
     static func generatePlayersStat(player: PlayerDataClass) -> PlayerStats{
-        let playerCareer = player.career ?? []
-        let t20 = calculateCareerData(careerData: playerCareer, type: .t20)
-        let t20i = calculateCareerData(careerData: playerCareer, type: .t20i)
-        let test = calculateCareerData(careerData: playerCareer, type: .test)
-        let odi = calculateCareerData(careerData: playerCareer, type: .odi)
+        let playersCareer = player.career ?? []
+        let t20 = calculateCareerData(careerData: playersCareer, type: .t20)
+        let t20i = calculateCareerData(careerData: playersCareer, type: .t20i)
+        let test = calculateCareerData(careerData: playersCareer, type: .test)
+        let odi = calculateCareerData(careerData: playersCareer, type: .odi)
         
-        let careerStats = PlayerStats(
-            id: player.id, name: player.fullname, playerImage: player.image_path, birthDate: player.dateofbirth, position: player.position, battingStyle: player.bowlingstyle, bowlingStyle: player.bowlingstyle,lineUp: player.lineup,country: player.country,
-            
-            t20Stats: t20,
-            t20iStats: t20i,
-            testStats: test,
-            odiStats: odi
-        )
-        
-        return playerCareerModel
-    }
-    
-    
-    static func calculateCareerData(careerData: [Career], type: CareerType) -> Career{
-        
-        
-        return Career(from: <#Decoder#>)
-    }
-    
-}
-
-*/
-
-
-/**
-class PlayerStatGenerator {
-    
-    static func generatePlayersStat(player: PlayerDataClass) -> PlayerStats{
-        let playerCareer = player.career ?? []
-        let playerCareerModel = PlayerStats(
+        return PlayerStats(
             id: player.id,
             name: player.fullname,
             playerImage: player.image_path,
@@ -72,96 +41,59 @@ class PlayerStatGenerator {
             position: player.position,
             battingStyle: player.bowlingstyle,
             bowlingStyle: player.bowlingstyle,
-            lineUp: player.lineup,
             country: player.country,
-            
-            t20Career: analyzeCareerData(careerData: playerCareer, type: "T20"),
-            odiCareer: analyzeCareerData(careerData: playerCareer, type: "ODI"),
-            testCareer: analyzeCareerData(careerData: playerCareer, type: "Test/5day"),
-            t20iCareer: analyzeCareerData(careerData: playerCareer, type: "T20I")
+            t20Stats: t20,
+            t20iStats: t20i,
+            testStats: test,
+            odiStats: odi
         )
-        
-        return playerCareerModel
     }
     
-    static func analyzeCareerData(careerData: [Career], type: String) -> Career {
-        var matchesBating = 0
-        var inningsBating = 0
-        var runs_scored = 0
-        var strike_rate = 0.0
-        var balls_faced = 0.0
-        var average = 0.0
-        var matchesBowling = 0
-        var inningsBowling = 0
-        var overs = 0.0
-        var econ_rate = 0.0
-        var runs = 0
-        var wickets = 0
+    // MARK: - Career data calculation
+    static func calculateCareerData(careerData: [Career], type: CareerType) -> Career{
         
-        for career in careerData {
-            if career.type == type {
-                if career.batting != nil {
-                    matchesBating += career.batting?.matches ?? 0
-                    inningsBating += career.batting?.innings ?? 0
-                    runs_scored += career.batting?.runs_scored ?? 0
-                    balls_faced += career.batting?.balls_faced ?? 0.0
-                }
-                
-                if career.bowling != nil {
-                    matchesBowling += career.bowling?.matches ?? 0
-                    inningsBowling += career.bowling?.innigs ?? 0
-                    overs += career.bowling?.overs ?? 0.0
-                    runs += career.bowling?.runs ?? 0
-                    wickets += career.bowling?.wickets ?? 0
-                }
-            }
-        }
+        var (battingTotalMatches, battingScoreInnings, scoreRuns, ballsFaced, strikeRate, wickets, runs, economyRate, overs, bowlingInnings, bowlingScoreMatches, avg) = (0, 0, 0, 0.0, 0.0, 0, 0, 0.0, 0.0, 0, 0, 0.0)
         
-        //calculate Strike Rate and Average
-        strike_rate = (Double(runs_scored) / balls_faced) * 100
-        average = Double(runs_scored) / Double(inningsBating)
-        //calculate Economy Rate
-        econ_rate = Double(runs) / overs
+        let battingData = careerData.filter { $0.type == type.rawValue}
+            .compactMap { $0.batting }
+        let bowlingData = careerData.filter { $0.type == type.rawValue }
+            .compactMap { $0.bowling }
         
-        let careerModel = Career(
-            type: type,
+        battingTotalMatches = battingData.reduce(0) { $0 + ($1.matches ?? 0) }
+        battingScoreInnings = battingData.reduce(0) { $0 + ($1.innings ?? 0) }
+        scoreRuns = battingData.reduce(0) { $0 + ($1.runs_scored ?? 0) }
+        ballsFaced = battingData.reduce(0.0) { $0 + Double($1.balls_faced ?? 0.0) }
+        
+        
+        wickets = bowlingData.reduce(0) { $0 + ($1.wickets ?? 0) }
+        runs = bowlingData.reduce(0) { $0 + ($1.runs ?? 0) }
+        overs = bowlingData.reduce(0.0) { $0 + ($1.overs ?? 0) }
+        bowlingInnings = bowlingData.reduce(0) { $0 + ($1.innings ?? 0) }
+        bowlingScoreMatches = bowlingData.reduce(0) { $0 + ($1.matches ?? 0) }
+        strikeRate = ballsFaced > 0 ? Double(scoreRuns) / ballsFaced * 100 : 0.0
+        economyRate = overs > 0 ? Double(runs) / overs : 0.0
+        avg = wickets > 0 ? Double(runs) / Double(wickets) : 0.0
+        
+        return Career(
+            type: type.rawValue,
             bowling: BowlingTwo(
-                matches: matchesBowling,
+                matches: bowlingScoreMatches,
                 overs: overs,
-                innigs: inningsBowling,
-                econ_rate: econ_rate,
+                innings: bowlingInnings,
+                econ_rate: economyRate,
                 runs: runs,
                 wickets: wickets
             ),
             batting: BattingTwo(
-                matches: matchesBating,
-                innings: inningsBating,
-                runs_scored: runs_scored,
-                strike_rate: strike_rate,
-                balls_faced: balls_faced,
-                average: average
+                matches: battingTotalMatches,
+                innings: battingScoreInnings,
+                runs_scored: scoreRuns,
+                strike_rate: strikeRate,
+                balls_faced: ballsFaced,
+                average: avg
             )
         )
-        
-        return careerModel
     }
 }
 
 
-// MARK: - Player Stat model
-struct PlayerStats: Codable {
-    let id: Int?
-    let name: String?
-    let playerImage: String?
-    let birthDate: String?
-    let position: Position?
-    let battingStyle: String?
-    let bowlingStyle: String?
-    let lineUp: LineupLineup?
-    let country: Country?
-    let t20Career: Career?
-    let odiCareer: Career?
-    let testCareer: Career?
-    let t20iCareer: Career?
-}
- */
