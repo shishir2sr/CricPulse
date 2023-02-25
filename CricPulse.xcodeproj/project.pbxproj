@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38483C6729AA12D300D14667 /* FixtureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38483C6629AA12D300D14667 /* FixtureViewModel.swift */; };
 		384BBB6D2997CCF100F8C8EF /* ScoreCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384BBB6B2997CCF100F8C8EF /* ScoreCardCollectionViewCell.swift */; };
 		384BBB6E2997CCF100F8C8EF /* ScoreCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 384BBB6C2997CCF100F8C8EF /* ScoreCardCollectionViewCell.xib */; };
 		384BBB702997CD3A00F8C8EF /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384BBB6F2997CD3A00F8C8EF /* AppConstants.swift */; };
@@ -26,6 +27,9 @@
 		38A65B9729A47C920048D9D9 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B9629A47C920048D9D9 /* Dummy.swift */; };
 		38A65B9929A4C8670048D9D9 /* BowlingDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B9829A4C8670048D9D9 /* BowlingDataClass.swift */; };
 		38A65B9B29A4E6010048D9D9 /* DetailedMatchAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B9A29A4E6010048D9D9 /* DetailedMatchAdapter.swift */; };
+		38AEAAD329A9C3EE008E5877 /* Fixture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38AEAAD229A9C3EE008E5877 /* Fixture.storyboard */; };
+		38AEAAD529A9CA89008E5877 /* FixtureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AEAAD429A9CA89008E5877 /* FixtureViewController.swift */; };
+		38AEAAD729A9D9D1008E5877 /* FixtureVC+TV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AEAAD629A9D9D1008E5877 /* FixtureVC+TV.swift */; };
 		38C010A929A23117004AECAC /* DetailedScoreTViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C010A729A23117004AECAC /* DetailedScoreTViewCell.swift */; };
 		38C010AA29A23117004AECAC /* DetailedScoreTViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C010A829A23117004AECAC /* DetailedScoreTViewCell.xib */; };
 		38C010AC29A2420F004AECAC /* DetailedScoreVC+TBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C010AB29A2420F004AECAC /* DetailedScoreVC+TBView.swift */; };
@@ -91,6 +95,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38483C6629AA12D300D14667 /* FixtureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureViewModel.swift; sourceTree = "<group>"; };
 		384BBB6B2997CCF100F8C8EF /* ScoreCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		384BBB6C2997CCF100F8C8EF /* ScoreCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreCardCollectionViewCell.xib; sourceTree = "<group>"; };
 		384BBB6F2997CD3A00F8C8EF /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
@@ -110,6 +115,9 @@
 		38A65B9629A47C920048D9D9 /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
 		38A65B9829A4C8670048D9D9 /* BowlingDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingDataClass.swift; sourceTree = "<group>"; };
 		38A65B9A29A4E6010048D9D9 /* DetailedMatchAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedMatchAdapter.swift; sourceTree = "<group>"; };
+		38AEAAD229A9C3EE008E5877 /* Fixture.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Fixture.storyboard; sourceTree = "<group>"; };
+		38AEAAD429A9CA89008E5877 /* FixtureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureViewController.swift; sourceTree = "<group>"; };
+		38AEAAD629A9D9D1008E5877 /* FixtureVC+TV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FixtureVC+TV.swift"; sourceTree = "<group>"; };
 		38C010A729A23117004AECAC /* DetailedScoreTViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedScoreTViewCell.swift; sourceTree = "<group>"; };
 		38C010A829A23117004AECAC /* DetailedScoreTViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedScoreTViewCell.xib; sourceTree = "<group>"; };
 		38C010AB29A2420F004AECAC /* DetailedScoreVC+TBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailedScoreVC+TBView.swift"; sourceTree = "<group>"; };
@@ -187,6 +195,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38483C6529AA12B800D14667 /* FixtureViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				38483C6629AA12D300D14667 /* FixtureViewModel.swift */,
+			);
+			path = FixtureViewModel;
+			sourceTree = "<group>";
+		};
 		384BBB6A2997CCC300F8C8EF /* ScoreCard */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +278,16 @@
 				89D108B229A8ADF100BB5793 /* PlayerStatGenerator.swift */,
 			);
 			path = "Players Repository";
+			sourceTree = "<group>";
+		};
+		38AEAAD129A9C276008E5877 /* FixtureViewController */ = {
+			isa = PBXGroup;
+			children = (
+				38AEAAD229A9C3EE008E5877 /* Fixture.storyboard */,
+				38AEAAD429A9CA89008E5877 /* FixtureViewController.swift */,
+				38AEAAD629A9D9D1008E5877 /* FixtureVC+TV.swift */,
+			);
+			path = FixtureViewController;
 			sourceTree = "<group>";
 		};
 		38C010A429A22C40004AECAC /* MatchDetailsView */ = {
@@ -348,6 +374,7 @@
 		8901ABAE2994A7A2000F8315 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				38AEAAD129A9C276008E5877 /* FixtureViewController */,
 				89E3733D29A622FE00F9AFFE /* SearchPlayer */,
 				38F618C829A094F5005F04C7 /* MatchDetailsVC */,
 				8901ABAD2994A779000F8315 /* MainViewController */,
@@ -415,6 +442,7 @@
 		8901ABB72994A8FF000F8315 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				38483C6529AA12B800D14667 /* FixtureViewModel */,
 				89E3734529A6272F00F9AFFE /* SearchPlayer */,
 				38EC96FF29A2293800705D28 /* MatchDetailsViewModels */,
 				89D5D74E299CA16F00C87209 /* Main */,
@@ -547,6 +575,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38AEAAD329A9C3EE008E5877 /* Fixture.storyboard in Resources */,
 				8901ABA629949D98000F8315 /* LaunchScreen.storyboard in Resources */,
 				384BBB6E2997CCF100F8C8EF /* ScoreCardCollectionViewCell.xib in Resources */,
 				89D108AB29A873D000BB5793 /* HeaderForPlayerDetails.xib in Resources */,
@@ -574,6 +603,7 @@
 			files = (
 				89B56F3D29A71FA8008FDDAD /* CDPlayer+CoreDataClass.swift in Sources */,
 				89D5D750299CAE6F00C87209 /* NetworkConstants.swift in Sources */,
+				38AEAAD729A9D9D1008E5877 /* FixtureVC+TV.swift in Sources */,
 				89D5D752299CD63800C87209 /* FixtureDataClass.swift in Sources */,
 				38A65B9529A47C520048D9D9 /* BattingsDataClass.swift in Sources */,
 				89B56F3529A71731008FDDAD /* CoreDataStack.swift in Sources */,
@@ -603,6 +633,7 @@
 				8992C89B29A3343A0071B9EB /* HeaderForBattersCell.swift in Sources */,
 				89E3734429A626BF00F9AFFE /* SearchPlayerVC+TV.swift in Sources */,
 				89D5D758299CE7DC00C87209 /* ApiClient.swift in Sources */,
+				38483C6729AA12D300D14667 /* FixtureViewModel.swift in Sources */,
 				89D5D75A299CEBD600C87209 /* EndPoint.swift in Sources */,
 				38C010A929A23117004AECAC /* DetailedScoreTViewCell.swift in Sources */,
 				89E3734229A625F700F9AFFE /* SearchPlayerViewController.swift in Sources */,
@@ -626,6 +657,7 @@
 				89D108AD29A8741D00BB5793 /* HeaderForPlayerDetails.swift in Sources */,
 				38F618C5299E84C8005F04C7 /* LeagueDataClass.swift in Sources */,
 				89D108A929A8697500BB5793 /* PlayerDetailsViewModel.swift in Sources */,
+				38AEAAD529A9CA89008E5877 /* FixtureViewController.swift in Sources */,
 				38C010AE29A243D6004AECAC /* DetailedScoreViewModel.swift in Sources */,
 				38F618CA29A09535005F04C7 /* MatchDetailsViewController.swift in Sources */,
 				38A65B8C29A45F9A0048D9D9 /* RemoteFixtureRepository.swift in Sources */,

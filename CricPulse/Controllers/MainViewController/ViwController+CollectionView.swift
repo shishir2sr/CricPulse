@@ -9,7 +9,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
         homeCollectionView.dataSource = self
         homeCollectionView.delegate = self
         homeCollectionView.backgroundColor = .clear
-        homeCollectionView.addShadow(opecity: 0.8, size: 2, radius: 4, color: UIColor.darkGray)
+        homeCollectionView.addShadow(opecity: 0.8, size: 1, radius: 2, color: UIColor.darkGray)
         registerCells()
         collectionViewFlowLayoutSetup()
     }
@@ -51,9 +51,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.matchDetailsVCStoryboardID)  as? MatchDetailsViewController
-        
         viewController?.fixtureId = self.collectionViewData[indexPath.row].id
-        
         navigationController?.pushViewController(viewController!, animated: true)
     }
     

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vWC-Bo-rvQ">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Schedule-->
+        <scene sceneID="fDE-IR-qyg">
+            <objects>
+                <viewController id="9ze-Ix-RNx" customClass="FixtureViewController" customModule="CricPulse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wYN-Nu-OGc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GnG-EU-isW">
+                                <rect key="frame" x="10" y="44" width="355" height="32"/>
+                                <segments>
+                                    <segment title="T20"/>
+                                    <segment title="T20I"/>
+                                    <segment title="T10"/>
+                                    <segment title="ODI"/>
+                                </segments>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="segmentControll:" destination="9ze-Ix-RNx" eventType="valueChanged" id="olS-R6-a2y"/>
+                                </connections>
+                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Mrf-LG-HyW">
+                                <rect key="frame" x="121.5" y="85" width="243.5" height="30"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="ekh-8g-rwQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="81" height="30"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <date key="minimumDate" timeIntervalSinceReferenceDate="694263600">
+                                            <!--2023-01-01 11:00:00 +0000-->
+                                        </date>
+                                        <date key="maximumDate" timeIntervalSinceReferenceDate="725713200">
+                                            <!--2023-12-31 11:00:00 +0000-->
+                                        </date>
+                                    </datePicker>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1JB-Ee-W1F">
+                                        <rect key="frame" x="81" y="0.0" width="81.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHO-oU-Ijf">
+                                        <rect key="frame" x="162.5" y="0.0" width="81" height="30"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="730548366.59906495">
+                                            <!--2024-02-25 10:06:06 +0000-->
+                                        </date>
+                                        <date key="minimumDate" timeIntervalSinceReferenceDate="694263600">
+                                            <!--2023-01-01 11:00:00 +0000-->
+                                        </date>
+                                        <date key="maximumDate" timeIntervalSinceReferenceDate="725713200">
+                                            <!--2023-12-31 11:00:00 +0000-->
+                                        </date>
+                                    </datePicker>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7lf-tT-x9x"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3WM-b2-6ZH">
+                                <rect key="frame" x="5" y="163.5" width="365" height="503.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEs-ON-u8Y">
+                                <rect key="frame" x="20" y="93" width="75.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1NA-wQ-8jm">
+                                <rect key="frame" x="94" y="125" width="187.5" height="28.5"/>
+                                <color key="backgroundColor" name="SecondaryBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Filter">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" name="SecondaryBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="filterButtonAction:" destination="9ze-Ix-RNx" eventType="touchUpInside" id="Kag-TR-cZq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LaD-mn-8pi"/>
+                        <color key="backgroundColor" name="PrimaryBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zEs-ON-u8Y" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" constant="20" id="1T7-7o-qd5"/>
+                            <constraint firstAttribute="bottom" secondItem="3WM-b2-6ZH" secondAttribute="bottom" id="5CG-fN-oGQ"/>
+                            <constraint firstItem="3WM-b2-6ZH" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" constant="5" id="8tM-3v-3Xs"/>
+                            <constraint firstItem="Mrf-LG-HyW" firstAttribute="width" secondItem="wYN-Nu-OGc" secondAttribute="width" multiplier="0.65" id="9Ml-MC-mFa"/>
+                            <constraint firstItem="1NA-wQ-8jm" firstAttribute="top" secondItem="Mrf-LG-HyW" secondAttribute="bottom" constant="10" id="9v1-nr-lP8"/>
+                            <constraint firstItem="LaD-mn-8pi" firstAttribute="trailing" secondItem="Mrf-LG-HyW" secondAttribute="trailing" constant="10" id="D4n-6K-6mp"/>
+                            <constraint firstItem="GnG-EU-isW" firstAttribute="top" secondItem="LaD-mn-8pi" secondAttribute="top" id="Fed-cN-JvJ"/>
+                            <constraint firstItem="zEs-ON-u8Y" firstAttribute="centerY" secondItem="ekh-8g-rwQ" secondAttribute="centerY" id="PbM-rU-tqM"/>
+                            <constraint firstItem="LaD-mn-8pi" firstAttribute="trailing" secondItem="GnG-EU-isW" secondAttribute="trailing" constant="10" id="RIt-Bi-lUa"/>
+                            <constraint firstItem="GnG-EU-isW" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" constant="10" id="THi-Bl-y9O"/>
+                            <constraint firstItem="3WM-b2-6ZH" firstAttribute="top" secondItem="1NA-wQ-8jm" secondAttribute="bottom" constant="10" id="TgZ-3m-nAd"/>
+                            <constraint firstItem="1NA-wQ-8jm" firstAttribute="width" secondItem="wYN-Nu-OGc" secondAttribute="width" multiplier="0.5" id="VxQ-yk-1EL"/>
+                            <constraint firstItem="1NA-wQ-8jm" firstAttribute="centerX" secondItem="wYN-Nu-OGc" secondAttribute="centerX" id="bQ8-6c-Eeh"/>
+                            <constraint firstItem="LaD-mn-8pi" firstAttribute="trailing" secondItem="3WM-b2-6ZH" secondAttribute="trailing" constant="5" id="k2Z-WY-hWz"/>
+                            <constraint firstItem="Mrf-LG-HyW" firstAttribute="top" secondItem="GnG-EU-isW" secondAttribute="bottom" constant="10" id="zej-cT-bJF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Schedule" id="ZFd-xZ-kir"/>
+                    <connections>
+                        <outlet property="filterButtonOutlet" destination="1NA-wQ-8jm" id="DBD-uV-xJ1"/>
+                        <outlet property="fromDate" destination="ekh-8g-rwQ" id="qmh-ER-ani"/>
+                        <outlet property="segmentControl" destination="GnG-EU-isW" id="In9-Cw-nZz"/>
+                        <outlet property="tableView" destination="3WM-b2-6ZH" id="crp-dw-6or"/>
+                        <outlet property="toDate" destination="YHO-oU-Ijf" id="NrM-KL-e5V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vdd-82-64h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="229.59999999999999" y="780.35982008995506"/>
+        </scene>
+        <!--Schedule-->
+        <scene sceneID="rqk-mC-ZFh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vWC-Bo-rvQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Schedule" id="CDT-4p-P4g">
+                        <imageReference key="image" image="calendar" catalog="system" symbolScale="large"/>
+                        <color key="badgeColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="N0Z-jG-YS8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9ze-Ix-RNx" kind="relationship" relationship="rootViewController" id="Cda-d8-MA5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lzc-HE-qX8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-696.94656488549617" y="780.98591549295782"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="calendar" catalog="system" width="128" height="107"/>
+        <namedColor name="PrimaryBackgroundColor">
+            <color red="0.95686274509803926" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SecondaryBackgroundColor">
+            <color red="0.090196078431372548" green="0.12941176470588237" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

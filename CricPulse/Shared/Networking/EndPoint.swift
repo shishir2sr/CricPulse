@@ -12,7 +12,7 @@ class EndPoint {
         case sort(String)
         case include(String)
         case fields(object: String, parameters: String)
-        case fileter(name: String, values: String)
+        case filter(name: String, values: String)
 
         var queryItem: URLQueryItem {
             switch self {
@@ -22,7 +22,7 @@ class EndPoint {
                 return URLQueryItem(name: "include", value: value)
             case .fields(let object, let value):
                 return URLQueryItem(name: "fields[\(object)]", value: value)
-            case .fileter(let name, let values):
+            case .filter(let name, let values):
                 return URLQueryItem(name: "filter[\(name)]", value: values)
             }
         }
