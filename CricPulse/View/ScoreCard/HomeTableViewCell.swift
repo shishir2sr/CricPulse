@@ -1,6 +1,7 @@
 import UIKit
 
 class HomeTableViewCell: UITableViewCell {
+    var timer: Timer?
     // View Outlets
     @IBOutlet weak var homeTVCBackView: UIView!
     @IBOutlet weak var scoreCardBackView: UIView!
@@ -29,6 +30,13 @@ class HomeTableViewCell: UITableViewCell {
         matchType.round(5)
     }
     
+    // MARK: Prepare for reuse
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        timer?.invalidate()
+        timer = nil
+    }
+    
     // Setup cells
     func setupCell(viewModel: FinishedMatchScoreCardTVModel){
         tournamentName.text = viewModel.tournamentName
@@ -42,6 +50,15 @@ class HomeTableViewCell: UITableViewCell {
         matchResult.text = viewModel.matchUpdateText
         teamOneFlag.sd_setImage(with: URL(string: viewModel.localTeamFlagUrl), placeholderImage: UIImage(systemName: "photo"))
         teamTwoFlag.sd_setImage(with: URL(string: viewModel.visitorTeamFlagUrl), placeholderImage: UIImage(systemName: "photo"))
+        
+        if viewModel.tournamentStatus == .ns{
+            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+                guard let self = self  else {return}
+                DispatchQueue.main.async {
+                    self.matchResult.text = viewModel.remainingTime()
+                }
+            }
+        }
         
     }
     

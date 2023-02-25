@@ -16,6 +16,7 @@ class FinishedMatchScoreCardTVModel{
     let visitorTeamFlagUrl: String
     let startingDate: Date
     let manOfTheMatch: String
+    let tournamentStatus: Status
     
     
     init(scorecard: FixtureDataClass) {
@@ -47,12 +48,13 @@ class FinishedMatchScoreCardTVModel{
         }
         
         self.tournamentName = scorecard.league?.name ?? "Unknown"
-        self.matchNo = scorecard.round ?? "--"
+        self.matchNo = scorecard.round ?? " "
         self.matchUpdateText = scorecard.note ?? "Please wait..."
         self.startingDate = scorecard.starting_at ?? Date()
         self.manOfTheMatch = "" // TODO: Man of the match
-        self.gameType = scorecard.type ?? "--"
+        self.gameType = scorecard.type ?? " "
         self.tournamentId = scorecard.id
+        self.tournamentStatus = scorecard.status ?? .ns
         
     }
     
@@ -65,5 +67,15 @@ class FinishedMatchScoreCardTVModel{
     static func register() -> UINib {
 //        UINib(nibName: "HomeTVCell", bundle: nil)
         UINib(nibName: Constants.homeTableCellXibName, bundle: nil)
+    }
+    
+    func remainingTime() -> String {
+        let now = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.day, .hour, .minute, .second], from: now, to: startingDate)
+        guard let days = components.day, let hours = components.hour, let minutes = components.minute, let seconds = components.second else {
+            return ""
+        }
+        return String(format: "\(days) days, \(hours) hours, \(minutes), \(seconds) seconds to toss")
     }
 }
