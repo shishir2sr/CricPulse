@@ -82,5 +82,18 @@ extension SquadListViewController: UITableViewDataSource, UITableViewDelegate{
         80
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0{
+            let player = teamOneSquadList[indexPath.row]
+            let sourceStoryboard = UIStoryboard(name: "SearchPlayer", bundle: nil)
+            let viewController = sourceStoryboard.instantiateViewController(withIdentifier: Constants.playerDetailsViewControllerID)  as? PlayerDetailsViewController
+            
+            guard let viewController = viewController else {return}
+            guard let playerId = player.id else {return}
+            viewController.playerId = Int(playerId)
+            navigationController?.pushViewController(viewController, animated: true)
+        }
+    }
+    
 }
 

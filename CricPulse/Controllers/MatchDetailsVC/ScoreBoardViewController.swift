@@ -44,12 +44,12 @@ class ScoreBoardViewController: UIViewController {
     func setupData(){
         self.teamOneName.text = matchDetailsVM?.teamOneName
         self.teamOneFlag.sd_setImage(with: URL(string: matchDetailsVM?.teamOneFlagUrl ?? ""), placeholderImage: UIImage(systemName: "photo"))
-        let tOneScore = "\(matchDetailsVM?.teamOneScore?.score ?? 0)"
+        let tOneScore = "\(matchDetailsVM?.teamOneScore?.score ?? 0)/\(matchDetailsVM?.teamOneScore?.wickets ?? 0)(\(matchDetailsVM?.teamOneScore?.overs ?? 0.0))"
         self.teamOneScore.text = tOneScore
         
         self.teamTwoName.text = matchDetailsVM?.teamTwoName
         self.teamTwoFlag.sd_setImage(with: URL(string: matchDetailsVM?.teamTwoFlagUrl ?? ""), placeholderImage: UIImage(systemName: "photo"))
-        let tTwoScore = "\(matchDetailsVM?.teamTwoScore?.score ?? 0)"
+        let tTwoScore = "\(matchDetailsVM?.teamTwoScore?.score ?? 0)/\(matchDetailsVM?.teamTwoScore?.wickets ?? 0)(\(matchDetailsVM?.teamTwoScore?.overs ?? 0.0))"
         self.teamTwoScore.text = tTwoScore
     }
     
