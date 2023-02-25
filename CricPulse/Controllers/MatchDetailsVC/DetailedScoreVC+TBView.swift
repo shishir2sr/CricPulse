@@ -79,7 +79,7 @@ extension DetailedScoreViewController: UITableViewDelegate, UITableViewDataSourc
     
     // Row Height
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        65
+        55
     }
     
     // MARK: Header

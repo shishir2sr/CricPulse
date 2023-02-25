@@ -41,7 +41,7 @@ extension MatchInfoViewController: UITableViewDelegate, UITableViewDataSource{
     
     // Height for tableview
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        300
+        500
     }
     
     

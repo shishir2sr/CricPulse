@@ -7,7 +7,7 @@ class HeaderForSquadList: UITableViewHeaderFooterView {
     @IBOutlet weak var backView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        backView.round(15)
+        backView.round(5)
 
     }
     
