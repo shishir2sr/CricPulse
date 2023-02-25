@@ -1,4 +1,5 @@
 import UIKit
+import Combine
 class FixtureViewController: UIViewController {
     
     // Outlets
@@ -10,22 +11,28 @@ class FixtureViewController: UIViewController {
     
     // ViewModel
     let viewModel = FixtureViewModel()
+    var fixtureData:[FinishedMatchScoreCardTVModel] = []
+    private var cancellables = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         setupView()
         setupBinder()
-
     }
     
     // MARK: - View
     func setupView(){
         filterButtonOutlet.round(5)
+        let url = getUrl(for: "T20")
+        Task{ await viewModel.getFixtures(for: url)}
     }
     
     func setupBinder(){
-        
+        viewModel.$fixtureData.sink { fixtures in
+            self.fixtureData = fixtures
+            self.reloadTablerView()
+        }.store(in: &cancellables)
     }
     
     @IBAction func filterButtonAction(_ sender: UIButton) {
@@ -36,18 +43,17 @@ class FixtureViewController: UIViewController {
         switch sender.selectedSegmentIndex{
             case 0:
             let url = getUrl(for: "T20")
-            print(url)
+            Task{ await viewModel.getFixtures(for: url)}
+            
             case 1:
             let url = getUrl(for: "T20I")
-            print(url)
-            
+            Task{ await viewModel.getFixtures(for: url)}
             case 2:
             let url = getUrl(for: "T10")
-            print(url)
-            
+            Task{ await viewModel.getFixtures(for: url)}
           case 3:
             let url = getUrl(for: "ODI")
-            print(url)
+            Task{ await viewModel.getFixtures(for: url)}
                 debugPrint("Third segment")
             default:
                 break

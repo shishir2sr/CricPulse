@@ -8,14 +8,20 @@ extension FixtureViewController: UITableViewDelegate, UITableViewDataSource{
         self.tableView.register(FinishedMatchScoreCardTVModel.register(), forCellReuseIdentifier: FinishedMatchScoreCardTVModel.identifier)
     }
     
+    func reloadTablerView(){
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        viewModel.numberOfRows(in: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell  = tableView.dequeueReusableCell(withIdentifier: FinishedMatchScoreCardTVModel.identifier, for: indexPath) as? HomeTableViewCell
         guard let cell = cell else{return UITableViewCell()}
-        
+        cell.setupCell(viewModel: fixtureData[indexPath.row])
         cell.addShadow(opecity: 0.8, size: 1, radius: 2, color: UIColor.gray)
         cell.selectionStyle = .none
         return cell
