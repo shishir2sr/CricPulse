@@ -30,6 +30,13 @@ extension FixtureViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
        145
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: Constants.matchDetailsVCStoryboardID)  as? MatchDetailsViewController
+        
+        viewController?.fixtureId = fixtureData[indexPath.row].tournamentId
+        navigationController?.pushViewController(viewController!, animated: true)
+    }
     
     
 }
