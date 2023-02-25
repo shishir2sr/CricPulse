@@ -14,6 +14,9 @@ class FixtureViewController: UIViewController {
     var fixtureData:[FinishedMatchScoreCardTVModel] = []
     private var cancellables = Set<AnyCancellable>()
     
+    var url: URL?
+    var leagueName: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -24,7 +27,8 @@ class FixtureViewController: UIViewController {
     // MARK: - View
     func setupView(){
         filterButtonOutlet.round(5)
-        let url = getUrl(for: "T20")
+        url = getUrl(for: "T20")
+        leagueName = "T20"
         Task{ await viewModel.getFixtures(for: url)}
     }
     
@@ -36,25 +40,29 @@ class FixtureViewController: UIViewController {
     }
     
     @IBAction func filterButtonAction(_ sender: UIButton) {
-        
+        url = getUrl(for: leagueName)
+        Task{ await viewModel.getFixtures(for: url)}
     }
     
     @IBAction func segmentControll(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex{
             case 0:
-            let url = getUrl(for: "T20")
+            url = getUrl(for: "T20")
+            leagueName = "T20"
             Task{ await viewModel.getFixtures(for: url)}
-            
             case 1:
-            let url = getUrl(for: "T20I")
+            url = getUrl(for: "T20I")
+            leagueName = "T20I"
             Task{ await viewModel.getFixtures(for: url)}
             case 2:
-            let url = getUrl(for: "T10")
+            url = getUrl(for: "T10")
+            leagueName = "T10"
             Task{ await viewModel.getFixtures(for: url)}
           case 3:
-            let url = getUrl(for: "ODI")
+            url = getUrl(for: "ODI")
+            leagueName = "ODI"
             Task{ await viewModel.getFixtures(for: url)}
-                debugPrint("Third segment")
+            debugPrint("Third segment")
             default:
                 break
         }
