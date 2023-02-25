@@ -28,6 +28,7 @@
 		38A65B9B29A4E6010048D9D9 /* DetailedMatchAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A65B9A29A4E6010048D9D9 /* DetailedMatchAdapter.swift */; };
 		38AEAAD329A9C3EE008E5877 /* Fixture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38AEAAD229A9C3EE008E5877 /* Fixture.storyboard */; };
 		38AEAAD529A9CA89008E5877 /* FixtureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AEAAD429A9CA89008E5877 /* FixtureViewController.swift */; };
+		38AEAAD729A9D9D1008E5877 /* FixtureVC+TV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AEAAD629A9D9D1008E5877 /* FixtureVC+TV.swift */; };
 		38C010A929A23117004AECAC /* DetailedScoreTViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C010A729A23117004AECAC /* DetailedScoreTViewCell.swift */; };
 		38C010AA29A23117004AECAC /* DetailedScoreTViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C010A829A23117004AECAC /* DetailedScoreTViewCell.xib */; };
 		38C010AC29A2420F004AECAC /* DetailedScoreVC+TBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C010AB29A2420F004AECAC /* DetailedScoreVC+TBView.swift */; };
@@ -114,6 +115,7 @@
 		38A65B9A29A4E6010048D9D9 /* DetailedMatchAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedMatchAdapter.swift; sourceTree = "<group>"; };
 		38AEAAD229A9C3EE008E5877 /* Fixture.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Fixture.storyboard; sourceTree = "<group>"; };
 		38AEAAD429A9CA89008E5877 /* FixtureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureViewController.swift; sourceTree = "<group>"; };
+		38AEAAD629A9D9D1008E5877 /* FixtureVC+TV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FixtureVC+TV.swift"; sourceTree = "<group>"; };
 		38C010A729A23117004AECAC /* DetailedScoreTViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedScoreTViewCell.swift; sourceTree = "<group>"; };
 		38C010A829A23117004AECAC /* DetailedScoreTViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailedScoreTViewCell.xib; sourceTree = "<group>"; };
 		38C010AB29A2420F004AECAC /* DetailedScoreVC+TBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailedScoreVC+TBView.swift"; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 			children = (
 				38AEAAD229A9C3EE008E5877 /* Fixture.storyboard */,
 				38AEAAD429A9CA89008E5877 /* FixtureViewController.swift */,
+				38AEAAD629A9D9D1008E5877 /* FixtureVC+TV.swift */,
 			);
 			path = FixtureViewController;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 			files = (
 				89B56F3D29A71FA8008FDDAD /* CDPlayer+CoreDataClass.swift in Sources */,
 				89D5D750299CAE6F00C87209 /* NetworkConstants.swift in Sources */,
+				38AEAAD729A9D9D1008E5877 /* FixtureVC+TV.swift in Sources */,
 				89D5D752299CD63800C87209 /* FixtureDataClass.swift in Sources */,
 				38A65B9529A47C520048D9D9 /* BattingsDataClass.swift in Sources */,
 				89B56F3529A71731008FDDAD /* CoreDataStack.swift in Sources */,

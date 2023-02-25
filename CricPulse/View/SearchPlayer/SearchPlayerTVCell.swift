@@ -10,8 +10,8 @@ class SearchPlayerTVCell: UITableViewCell {
         super.awakeFromNib()
         backView.round(10)
         playerImage.round(30)
-        backView.addShadow(opecity: 0.8, size: 2, radius: 4, color: UIColor.darkGray)
-        playerImage.addBorder(color: UIColor.gray, width: 3)
+        backView.addShadow(opecity: 0.6, size: 2, radius: 4, color: UIColor.darkGray)
+        playerImage.addBorder(color: UIColor.systemGray3, width: 3)
     }
     
     /// Populate tableview cell

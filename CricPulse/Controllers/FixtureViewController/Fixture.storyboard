@@ -28,10 +28,10 @@
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </segmentedControl>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="ekh-8g-rwQ">
-                                <rect key="frame" x="165" y="112" width="200" height="34.5"/>
+                                <rect key="frame" x="10" y="112" width="112" height="25"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="SpK-1Q-wD3"/>
+                                    <constraint firstAttribute="height" constant="25" id="ZEV-cZ-6JJ"/>
                                 </constraints>
                                 <date key="minimumDate" timeIntervalSinceReferenceDate="694263600">
                                     <!--2023-01-01 11:00:00 +0000-->
@@ -41,10 +41,10 @@
                                 </date>
                             </datePicker>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="YHO-oU-Ijf">
-                                <rect key="frame" x="165" y="156.5" width="200" height="34.5"/>
+                                <rect key="frame" x="252.5" y="112" width="112.5" height="25"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="0Qp-EM-Fnd"/>
+                                    <constraint firstAttribute="height" constant="25" id="jVl-XD-n6o"/>
                                 </constraints>
                                 <date key="minimumDate" timeIntervalSinceReferenceDate="694263600">
                                     <!--2023-01-01 11:00:00 +0000-->
@@ -53,54 +53,63 @@
                                     <!--2023-12-31 11:00:00 +0000-->
                                 </date>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rm1-Fe-vyu">
-                                <rect key="frame" x="20" y="122" width="31" height="15"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvl-NU-3DO">
-                                <rect key="frame" x="20" y="166.5" width="14.5" height="14.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <rect key="frame" x="180.5" y="117.5" width="14" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Date Between" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REW-lv-N4p">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REW-lv-N4p">
                                 <rect key="frame" x="10" y="85" width="355" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3WM-b2-6ZH">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3WM-b2-6ZH">
                                 <rect key="frame" x="0.0" y="201" width="375" height="417"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1NA-wQ-8jm">
+                                <rect key="frame" x="161" y="140" width="53" height="28.5"/>
+                                <color key="backgroundColor" name="SecondaryBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Filter">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" name="SecondaryBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="filterButtonAction:" destination="9ze-Ix-RNx" eventType="touchUpInside" id="Kag-TR-cZq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LaD-mn-8pi"/>
                         <color key="backgroundColor" name="PrimaryBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="rm1-Fe-vyu" firstAttribute="centerY" secondItem="ekh-8g-rwQ" secondAttribute="centerY" id="9Xh-C0-qTr"/>
-                            <constraint firstItem="Yvl-NU-3DO" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" constant="20" id="BVA-dm-SX3"/>
+                            <constraint firstItem="ekh-8g-rwQ" firstAttribute="top" secondItem="REW-lv-N4p" secondAttribute="bottom" constant="10" id="1N7-jo-lyC"/>
                             <constraint firstItem="GnG-EU-isW" firstAttribute="top" secondItem="LaD-mn-8pi" secondAttribute="top" id="Fed-cN-JvJ"/>
                             <constraint firstItem="REW-lv-N4p" firstAttribute="top" secondItem="GnG-EU-isW" secondAttribute="bottom" constant="10" id="G66-fa-MXf"/>
                             <constraint firstItem="3WM-b2-6ZH" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" id="H17-gb-VUA"/>
-                            <constraint firstItem="LaD-mn-8pi" firstAttribute="trailing" secondItem="YHO-oU-Ijf" secondAttribute="trailing" constant="10" id="JPP-hj-0Ha"/>
-                            <constraint firstItem="LaD-mn-8pi" firstAttribute="trailing" secondItem="ekh-8g-rwQ" secondAttribute="trailing" constant="10" id="NhJ-X9-cm7"/>
+                            <constraint firstItem="ekh-8g-rwQ" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" constant="10" id="O7R-Jo-NH5"/>
                             <constraint firstItem="LaD-mn-8pi" firstAttribute="trailing" secondItem="GnG-EU-isW" secondAttribute="trailing" constant="10" id="RIt-Bi-lUa"/>
-                            <constraint firstItem="Yvl-NU-3DO" firstAttribute="centerY" secondItem="YHO-oU-Ijf" secondAttribute="centerY" id="RQD-Hc-4q5"/>
+                            <constraint firstItem="Yvl-NU-3DO" firstAttribute="centerY" secondItem="ekh-8g-rwQ" secondAttribute="centerY" id="RvO-Hu-Sv3"/>
                             <constraint firstItem="GnG-EU-isW" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" constant="10" id="THi-Bl-y9O"/>
                             <constraint firstItem="LaD-mn-8pi" firstAttribute="bottom" secondItem="3WM-b2-6ZH" secondAttribute="bottom" id="VBa-IM-6vf"/>
                             <constraint firstItem="LaD-mn-8pi" firstAttribute="trailing" secondItem="3WM-b2-6ZH" secondAttribute="trailing" id="VrT-4O-Xic"/>
                             <constraint firstItem="REW-lv-N4p" firstAttribute="centerX" secondItem="wYN-Nu-OGc" secondAttribute="centerX" id="Wov-y0-DKm"/>
-                            <constraint firstItem="ekh-8g-rwQ" firstAttribute="top" secondItem="REW-lv-N4p" secondAttribute="bottom" constant="10" id="dTN-SI-Tmz"/>
-                            <constraint firstItem="rm1-Fe-vyu" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" constant="20" id="lat-t1-Tid"/>
-                            <constraint firstItem="3WM-b2-6ZH" firstAttribute="top" secondItem="YHO-oU-Ijf" secondAttribute="bottom" constant="10" id="mJH-on-8H1"/>
-                            <constraint firstItem="YHO-oU-Ijf" firstAttribute="top" secondItem="ekh-8g-rwQ" secondAttribute="bottom" constant="10" id="wI5-rl-2lp"/>
+                            <constraint firstItem="ekh-8g-rwQ" firstAttribute="width" secondItem="wYN-Nu-OGc" secondAttribute="width" multiplier="0.3" id="XXT-zV-lxW"/>
+                            <constraint firstItem="YHO-oU-Ijf" firstAttribute="width" secondItem="wYN-Nu-OGc" secondAttribute="width" multiplier="0.3" id="d40-sF-Oqf"/>
+                            <constraint firstItem="1NA-wQ-8jm" firstAttribute="top" secondItem="Yvl-NU-3DO" secondAttribute="bottom" constant="8" id="eLk-Zk-vjH"/>
+                            <constraint firstItem="Yvl-NU-3DO" firstAttribute="centerX" secondItem="wYN-Nu-OGc" secondAttribute="centerX" id="jeQ-OL-jGO"/>
+                            <constraint firstItem="1NA-wQ-8jm" firstAttribute="centerX" secondItem="wYN-Nu-OGc" secondAttribute="centerX" id="qBy-cC-Xp6"/>
+                            <constraint firstItem="LaD-mn-8pi" firstAttribute="trailing" secondItem="YHO-oU-Ijf" secondAttribute="trailing" constant="10" id="sws-W3-Ywo"/>
+                            <constraint firstItem="YHO-oU-Ijf" firstAttribute="top" secondItem="REW-lv-N4p" secondAttribute="bottom" constant="10" id="wj9-I8-lVF"/>
                             <constraint firstItem="REW-lv-N4p" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" constant="10" id="zw4-vh-ofk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Schedule" id="ZFd-xZ-kir"/>
                     <connections>
+                        <outlet property="filterButtonOutlet" destination="1NA-wQ-8jm" id="DBD-uV-xJ1"/>
                         <outlet property="fromDate" destination="ekh-8g-rwQ" id="qmh-ER-ani"/>
                         <outlet property="segmentControl" destination="GnG-EU-isW" id="In9-Cw-nZz"/>
                         <outlet property="tableView" destination="3WM-b2-6ZH" id="crp-dw-6or"/>
@@ -139,6 +148,9 @@
         <image name="calendar" catalog="system" width="128" height="107"/>
         <namedColor name="PrimaryBackgroundColor">
             <color red="0.90980392156862744" green="0.9137254901960784" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SecondaryBackgroundColor">
+            <color red="0.090196078431372548" green="0.12941176470588237" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
