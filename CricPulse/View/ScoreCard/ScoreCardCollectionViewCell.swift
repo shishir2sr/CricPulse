@@ -85,7 +85,7 @@ class ScoreCardCollectionViewCell: UICollectionViewCell {
     // Upcoming match setup
     fileprivate func upcomingMatchSetup(_ viewModel: ScoreCardCVModel) {
         if viewModel.matchStatus == .ns{
-            notificationButtonOutlet.isHidden = false
+            notificationButtonOutlet.isHidden = true
             notificationButtonOutlet.isUserInteractionEnabled = true
             scoreOneStack.isHidden = true
             upcomingMatchDate.isHidden = false

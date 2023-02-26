@@ -5,6 +5,8 @@ import SDWebImage
 class MatchDetailsViewController: UIViewController {
     var fixtureId : Int?
     var timer: Timer?
+    let notificationCenter = UNUserNotificationCenter.current()
+    
     
     // MARK: ViewModel
     let viewModel = MatchDetailsViewModel.shared
@@ -75,6 +77,7 @@ class MatchDetailsViewController: UIViewController {
         setupBinders()
         guard let fixtureId = fixtureId else{ return }
         Task{await viewModel.getFixture(id: fixtureId)}
+       
         
     }
     
@@ -87,6 +90,84 @@ class MatchDetailsViewController: UIViewController {
             }
         }.store(in: &cancellables)
     }
+    
+    fileprivate func grantPermission(_ self: MatchDetailsViewController) {
+        let ac = UIAlertController(title: "Enable Notifications?", message: "To use this feature you must enable notifications in settings", preferredStyle: .alert)
+        
+        let goToSettings = UIAlertAction(title: "Settings", style: .default)
+        { (_) in
+            guard let setttingsURL = URL(string: UIApplication.openSettingsURLString)
+            else
+            {
+                return
+            }
+            
+            if(UIApplication.shared.canOpenURL(setttingsURL))
+            {
+                UIApplication.shared.open(setttingsURL) { (_) in}
+            }
+        }
+        ac.addAction(goToSettings)
+        ac.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (_) in}))
+        self.present(ac, animated: true)
+    }
+    
+    @IBAction func alertActionButton(_ sender: UIButton) {
+        notificationCenter.getNotificationSettings { (settings) in
+            
+            DispatchQueue.main.async
+            { [weak self] in
+                guard let self = self else {return}
+                
+                let teamOneName = self.matchDetailsData?.teamOneName ?? "Team One"
+                let teamTwoName = self.matchDetailsData?.teamTwoName ?? "Team Two"
+                
+                let title = (self.matchDetailsData?.teamOneCode ?? "Team 1") + "vs" + (self.matchDetailsData?.teamTwoCode ?? "Team 2")
+                let message = "The cricket match between \(teamOneName) and \(teamTwoName) is about to begin! Get ready for some thrilling action"
+                
+                let date = self.matchDetailsData?.matchDate
+                
+                if(settings.authorizationStatus == .authorized)
+                {
+                    let content = UNMutableNotificationContent()
+                    content.title = title
+                    content.body = message
+                    let dateComp = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date ?? Date().addingTimeInterval(60*15*(-1)))
+                    
+                    let trigger = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: false)
+                    let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                    
+                    self.notificationCenter.add(request) { (error) in
+                        if(error != nil)
+                        {
+                            print("Error " + error.debugDescription)
+                            return
+                        }
+                    }
+                    
+                    let ac = UIAlertController(title: "Notification Scheduled", message: "Before 15 minutes of the game being start", preferredStyle: .alert)
+                    
+                    ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in}))
+                    self.present(ac, animated: true)
+                    
+                }
+                else
+                
+                {
+                    self.grantPermission(self)
+                }
+            }
+        }
+    }
+    
+    
+    func formattedDate(date: Date) -> String
+    {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d MMM y HH:mm"
+        return formatter.string(from: date)
+    }
+    
     
     // MARK: - Match Details Data Setup
     func dataSetup(){
