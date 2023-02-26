@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var navigationViewHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
     // MARK: ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,14 +43,27 @@ class ViewController: UIViewController {
     
     // Conmbine variables
     func setupBinders(){
-        mainViewModel.$scoreCardForCV.sink { scores in
+        mainViewModel.$scoreCardForCV.sink {[weak self] scores in
+            guard let self  = self else {return}
             self.collectionViewData = scores
             self.reloadCollectionView()
         }.store(in: &cancellables)
         
-        mainViewModel.$scoreCardForTV.sink { scores in
+        mainViewModel.$scoreCardForTV.sink {[weak self] scores in
+            guard let self  = self else {return}
             self.tableViewData = scores
             self.reloadTableView()
+        }.store(in: &cancellables)
+        
+        mainViewModel.$isLoading.sink {[weak self] isLoading in
+            guard let self  = self else {return}
+            DispatchQueue.main.async {
+                if isLoading{
+                    self.loadingIndicator.startAnimating()
+                }else{
+                    self.loadingIndicator.stopAnimating()
+                }
+            }
         }.store(in: &cancellables)
     }
 }

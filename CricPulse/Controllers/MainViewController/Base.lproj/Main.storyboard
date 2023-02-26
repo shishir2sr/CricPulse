@@ -59,6 +59,10 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="LDm-91-R9c">
+                                <rect key="frame" x="141.5" y="265.5" width="37" height="37"/>
+                                <color key="color" name="SecondaryBackgroundColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="PrimaryBackgroundColor"/>
@@ -66,10 +70,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AXn-XY-3o9" secondAttribute="trailing" id="927-mm-sHE"/>
                             <constraint firstItem="gyU-GK-hvn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="G4S-Mh-qv8"/>
                             <constraint firstAttribute="bottom" secondItem="PCU-Ve-TBg" secondAttribute="bottom" id="Hfp-Bm-wkc"/>
+                            <constraint firstItem="LDm-91-R9c" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NgN-vy-yEp"/>
                             <constraint firstItem="A1X-lb-ucW" firstAttribute="top" secondItem="AXn-XY-3o9" secondAttribute="bottom" constant="10" id="RpY-7g-zvb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A1X-lb-ucW" secondAttribute="trailing" constant="10" id="VLc-Wy-PRT"/>
                             <constraint firstItem="PCU-Ve-TBg" firstAttribute="top" secondItem="A1X-lb-ucW" secondAttribute="bottom" constant="10" id="Y9f-bG-pfJ"/>
                             <constraint firstItem="AXn-XY-3o9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="btn-mi-lAa"/>
+                            <constraint firstItem="LDm-91-R9c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cBP-co-Wdt"/>
                             <constraint firstItem="gyU-GK-hvn" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.15" constant="0.14999999999999999" id="lEx-WU-RxU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PCU-Ve-TBg" secondAttribute="trailing" id="lNv-RT-4Yx"/>
                             <constraint firstItem="gyU-GK-hvn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tFp-TQ-aS9"/>
@@ -86,13 +92,14 @@
                         <outlet property="collectionViewHeightConstraint" destination="7yJ-SS-Gq0" id="gHh-de-cyC"/>
                         <outlet property="homeCollectionView" destination="AXn-XY-3o9" id="ZRs-DZ-nXE"/>
                         <outlet property="homeTableView" destination="PCU-Ve-TBg" id="apE-s0-ob5"/>
+                        <outlet property="loadingIndicator" destination="LDm-91-R9c" id="Zwn-7N-u9d"/>
                         <outlet property="navigationBarView" destination="gyU-GK-hvn" id="Z9B-Ow-f52"/>
                         <outlet property="navigationViewHeightConstraint" destination="lEx-WU-RxU" id="e0n-Hb-mCb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2052" y="-28.335832083958024"/>
+            <point key="canvasLocation" x="2051.25" y="-28.52112676056338"/>
         </scene>
         <!--Scoreboard-->
         <scene sceneID="5ku-EW-F3l">
