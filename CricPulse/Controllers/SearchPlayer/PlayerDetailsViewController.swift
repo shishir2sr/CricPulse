@@ -7,16 +7,15 @@ class PlayerDetailsViewController: UIViewController {
     var playerId:Int? = nil
     private var cancellables = Set<AnyCancellable>()
     var playersStat: PlayerStats? = nil
-    
-    // ViewModel
     let viewModel = PlayerDetailsViewModel()
     
     // views
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var backViewHeight: NSLayoutConstraint!
     @IBOutlet weak var playerImageHeight: NSLayoutConstraint!
-    // tableview
     @IBOutlet weak var playerDetailsTableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     // Outlets
     @IBOutlet weak var playerImage: UIImageView!
     @IBOutlet weak var playerName: UILabel!
@@ -53,6 +52,18 @@ class PlayerDetailsViewController: UIViewController {
             }
             self.realoadTableData()
         }.store(in: &cancellables)
+        
+        viewModel.$isLoading.sink {[weak self] isLoading in
+            guard let self  = self else {return}
+            DispatchQueue.main.async {
+                if isLoading{
+                    self.activityIndicator.startAnimating()
+                }else{
+                    self.activityIndicator.stopAnimating()
+                }
+            }
+        }.store(in: &cancellables)
+        
     }
     
     func dataSetup(){

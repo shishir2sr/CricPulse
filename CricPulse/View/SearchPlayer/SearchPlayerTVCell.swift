@@ -8,9 +8,9 @@ class SearchPlayerTVCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        backView.round(10)
+        backView.round(5)
         playerImage.round(30)
-        backView.addShadow(opecity: 0.6, size: 1, radius: 2, color: UIColor.gray)
+        backView.addShadow(opecity: 0.1, size: 0.5, radius: 1, color: UIColor.gray)
         playerImage.addBorder(color: UIColor.systemGray3, width: 3)
     }
     

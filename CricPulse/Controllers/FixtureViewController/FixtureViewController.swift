@@ -8,6 +8,7 @@ class FixtureViewController: UIViewController {
     @IBOutlet weak var toDate: UIDatePicker!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var filterButtonOutlet: UIButton!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     // ViewModel
     let viewModel = FixtureViewModel()
@@ -36,6 +37,17 @@ class FixtureViewController: UIViewController {
         viewModel.$fixtureData.sink { fixtures in
             self.fixtureData = fixtures
             self.reloadTablerView()
+        }.store(in: &cancellables)
+        
+        viewModel.$isLoading.sink {[weak self] isLoading in
+            guard let self  = self else {return}
+            DispatchQueue.main.async {
+                if isLoading{
+                    self.loadingIndicator.startAnimating()
+                }else{
+                    self.loadingIndicator.stopAnimating()
+                }
+            }
         }.store(in: &cancellables)
     }
     

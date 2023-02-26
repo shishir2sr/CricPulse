@@ -90,17 +90,23 @@
                                     <action selector="filterButtonAction:" destination="9ze-Ix-RNx" eventType="touchUpInside" id="Kag-TR-cZq"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="HvD-oO-cRt">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" name="SecondaryBackgroundColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LaD-mn-8pi"/>
                         <color key="backgroundColor" name="PrimaryBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="zEs-ON-u8Y" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" constant="20" id="1T7-7o-qd5"/>
+                            <constraint firstItem="HvD-oO-cRt" firstAttribute="centerX" secondItem="wYN-Nu-OGc" secondAttribute="centerX" id="1tz-gH-3hI"/>
                             <constraint firstAttribute="bottom" secondItem="3WM-b2-6ZH" secondAttribute="bottom" id="5CG-fN-oGQ"/>
                             <constraint firstItem="3WM-b2-6ZH" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" constant="5" id="8tM-3v-3Xs"/>
                             <constraint firstItem="Mrf-LG-HyW" firstAttribute="width" secondItem="wYN-Nu-OGc" secondAttribute="width" multiplier="0.65" id="9Ml-MC-mFa"/>
                             <constraint firstItem="1NA-wQ-8jm" firstAttribute="top" secondItem="Mrf-LG-HyW" secondAttribute="bottom" constant="10" id="9v1-nr-lP8"/>
                             <constraint firstItem="LaD-mn-8pi" firstAttribute="trailing" secondItem="Mrf-LG-HyW" secondAttribute="trailing" constant="10" id="D4n-6K-6mp"/>
                             <constraint firstItem="GnG-EU-isW" firstAttribute="top" secondItem="LaD-mn-8pi" secondAttribute="top" constant="10" id="Fed-cN-JvJ"/>
+                            <constraint firstItem="HvD-oO-cRt" firstAttribute="centerY" secondItem="wYN-Nu-OGc" secondAttribute="centerY" id="Kgn-xG-d7P"/>
                             <constraint firstItem="zEs-ON-u8Y" firstAttribute="centerY" secondItem="ekh-8g-rwQ" secondAttribute="centerY" id="PbM-rU-tqM"/>
                             <constraint firstItem="LaD-mn-8pi" firstAttribute="trailing" secondItem="GnG-EU-isW" secondAttribute="trailing" constant="10" id="RIt-Bi-lUa"/>
                             <constraint firstItem="GnG-EU-isW" firstAttribute="leading" secondItem="LaD-mn-8pi" secondAttribute="leading" constant="10" id="THi-Bl-y9O"/>
@@ -115,6 +121,7 @@
                     <connections>
                         <outlet property="filterButtonOutlet" destination="1NA-wQ-8jm" id="DBD-uV-xJ1"/>
                         <outlet property="fromDate" destination="ekh-8g-rwQ" id="qmh-ER-ani"/>
+                        <outlet property="loadingIndicator" destination="HvD-oO-cRt" id="Bo5-Vl-IWT"/>
                         <outlet property="segmentControl" destination="GnG-EU-isW" id="In9-Cw-nZz"/>
                         <outlet property="tableView" destination="3WM-b2-6ZH" id="crp-dw-6or"/>
                         <outlet property="toDate" destination="YHO-oU-Ijf" id="NrM-KL-e5V"/>

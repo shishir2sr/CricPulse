@@ -26,7 +26,9 @@ class FixtureViewModel{
     
     func getFixtures(for url: URL?)async {
         guard let url = url else{return}
+        isLoading = true
         let data: Result<Fixtures,CustomError> = await remoteFixtureRepository.getFixtures(url: url)
+        isLoading = false
         switch data {
         case .success(let fixtures):
             self.dataSource = fixtures.data
