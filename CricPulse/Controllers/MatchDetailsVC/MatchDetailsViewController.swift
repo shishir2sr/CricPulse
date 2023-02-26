@@ -228,9 +228,6 @@ class MatchDetailsViewController: UIViewController {
         stadiumName.text = viewModel.getStadiumInfo()
         matchStatusView.backgroundColor = viewModel.getMatchStatusColor()
         note.text = matchDetailsData?.matchNote
-        
-        
-        
         setupScoreViews()
         
     }

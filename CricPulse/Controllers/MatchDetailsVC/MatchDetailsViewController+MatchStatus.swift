@@ -41,6 +41,7 @@ extension MatchDetailsViewController{
         scoreStack.isHidden = true
         matchDate.isHidden = false
         note.text = viewModel.remainingTime()
+        winPercenTageStackView.isHidden = true
         manOfTheMatchStackView.isHidden = true
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
             guard let self = self  else {return}
@@ -55,6 +56,7 @@ extension MatchDetailsViewController{
         alertButtonOutlet.isUserInteractionEnabled = false
         scoreStack.isHidden = true
         matchDate.isHidden = true
+       
         matchDate.text = ""
         note.text = matchDetailsData?.matchNote
         manOfTheMatchStackView.isHidden = true
@@ -89,6 +91,6 @@ extension MatchDetailsViewController{
         scoreStack.isHidden = false
         matchDate.isHidden = true
         manOfTheMatchStackView.isHidden = true
-        winPercenTageStackView.isHidden = false
+        winPercenTageStackView.isHidden = true
     }
 }

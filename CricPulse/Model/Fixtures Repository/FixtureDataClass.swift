@@ -56,8 +56,13 @@ enum Status: String, Codable {
     case postp = "Postp."
     case the1StInnings = "1st Innings"
     case the2NdInnings = "2nd Innings"
-    case innigsBreak = "Innigs Break"
+    case innigsBreak = "Innings Break"
+    case teaBreak = "Tea Break"
     case int = "Int."
+    case launch = "Lunch"
+    case dinner = "Dinner"
+    case delayed = "Delayed"
+    case canceled = "Cancl."
     
     var statusText: String{
         switch self{
@@ -72,14 +77,22 @@ enum Status: String, Codable {
         case .the2NdInnings:
             return "Live"
         case .innigsBreak:
-            return "Innigs Break"
-            //        default:
-            //            return "Unknown"
+            return "Live"
         case .postp:
             return "Postponded"
             
         case .int:
             return "Live"
+        case .teaBreak:
+            return "Live"
+        case .launch:
+            return "Live"
+        case .dinner:
+            return "Live"
+        case .delayed:
+            return "Live"
+        case .canceled:
+            return "Canceled"
         }
     }
 }
