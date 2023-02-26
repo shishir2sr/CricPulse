@@ -8,6 +8,7 @@ class FixtureViewController: UIViewController {
     @IBOutlet weak var toDate: UIDatePicker!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var filterButtonOutlet: UIButton!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     // ViewModel
     let viewModel = FixtureViewModel()
@@ -37,7 +38,38 @@ class FixtureViewController: UIViewController {
             self.fixtureData = fixtures
             self.reloadTablerView()
         }.store(in: &cancellables)
+        
+        viewModel.$isLoading.sink {[weak self] isLoading in
+            guard let self  = self else {return}
+            DispatchQueue.main.async {
+                if isLoading{
+                    
+                    self.loadingIndicator.startAnimating()
+                }else{
+                    self.loadingIndicator.stopAnimating()
+                    
+                }
+            }
+        }.store(in: &cancellables)
+        
+        viewModel.$errorHandler.sink {[weak self] err in
+            guard let self = self else{return}
+            guard let err = err else{return}
+            let errorPopup = ErrorPopupBuilder()
+                .setTitle("Error!")
+                .setMessage(err.localizedDescription)
+                
+                .addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in
+                    Task{await self.viewModel.getFixtures(for: self.url)}
+                }))
+                .build()
+            DispatchQueue.main.async {
+                errorPopup?.show()
+            }
+            
+        }.store(in: &cancellables)
     }
+    
     
     @IBAction func filterButtonAction(_ sender: UIButton) {
         url = getUrl(for: leagueName)

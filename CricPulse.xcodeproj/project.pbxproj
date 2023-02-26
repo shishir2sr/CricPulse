@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		384705C729AB4FD200573751 /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384705C629AB4FD200573751 /* AlertBuilder.swift */; };
 		38483C6729AA12D300D14667 /* FixtureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38483C6629AA12D300D14667 /* FixtureViewModel.swift */; };
 		384BBB6D2997CCF100F8C8EF /* ScoreCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384BBB6B2997CCF100F8C8EF /* ScoreCardCollectionViewCell.swift */; };
 		384BBB6E2997CCF100F8C8EF /* ScoreCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 384BBB6C2997CCF100F8C8EF /* ScoreCardCollectionViewCell.xib */; };
@@ -95,6 +96,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		384705C629AB4FD200573751 /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
 		38483C6629AA12D300D14667 /* FixtureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureViewModel.swift; sourceTree = "<group>"; };
 		384BBB6B2997CCF100F8C8EF /* ScoreCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		384BBB6C2997CCF100F8C8EF /* ScoreCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreCardCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -415,9 +417,10 @@
 		8901ABB42994A8B4000F8315 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				89B56F3329A7171B008FDDAD /* CoreData */,
+				384705C629AB4FD200573751 /* AlertBuilder.swift */,
 				8901AB9629949D97000F8315 /* AppDelegate.swift */,
 				8901AB9829949D97000F8315 /* SceneDelegate.swift */,
+				89B56F3329A7171B008FDDAD /* CoreData */,
 				384BBB752997D02200F8C8EF /* Constants */,
 				384BBB722997CE6C00F8C8EF /* AppExtensions */,
 				8901ABB22994A899000F8315 /* Networking */,
@@ -655,6 +658,7 @@
 				89DD46702999D6FD00F1E700 /* ViwController+CollectionView.swift in Sources */,
 				89D5D749299C789100C87209 /* MainViewController+Tableview.swift in Sources */,
 				89D108AD29A8741D00BB5793 /* HeaderForPlayerDetails.swift in Sources */,
+				384705C729AB4FD200573751 /* AlertBuilder.swift in Sources */,
 				38F618C5299E84C8005F04C7 /* LeagueDataClass.swift in Sources */,
 				89D108A929A8697500BB5793 /* PlayerDetailsViewModel.swift in Sources */,
 				38AEAAD529A9CA89008E5877 /* FixtureViewController.swift in Sources */,

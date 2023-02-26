@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 extension ViewController{
-    // TableView stup
+    // TableView setup
     func setupTableView(){
         homeTableView.dataSource = self
         homeTableView.delegate = self

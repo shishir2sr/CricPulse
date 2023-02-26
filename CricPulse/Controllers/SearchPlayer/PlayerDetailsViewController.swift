@@ -7,16 +7,15 @@ class PlayerDetailsViewController: UIViewController {
     var playerId:Int? = nil
     private var cancellables = Set<AnyCancellable>()
     var playersStat: PlayerStats? = nil
-    
-    // ViewModel
     let viewModel = PlayerDetailsViewModel()
     
     // views
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var backViewHeight: NSLayoutConstraint!
     @IBOutlet weak var playerImageHeight: NSLayoutConstraint!
-    // tableview
     @IBOutlet weak var playerDetailsTableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     // Outlets
     @IBOutlet weak var playerImage: UIImageView!
     @IBOutlet weak var playerName: UILabel!
@@ -53,6 +52,36 @@ class PlayerDetailsViewController: UIViewController {
             }
             self.realoadTableData()
         }.store(in: &cancellables)
+        
+        viewModel.$isLoading.sink {[weak self] isLoading in
+            guard let self  = self else {return}
+            DispatchQueue.main.async {
+                if isLoading{
+                    self.activityIndicator.startAnimating()
+                }else{
+                    self.activityIndicator.stopAnimating()
+                }
+            }
+        }.store(in: &cancellables)
+        
+        viewModel.$errorHandler.sink { [weak self] err in
+            guard let self = self else {return}
+            guard let err = err else{return}
+            let errorPopup = ErrorPopupBuilder()
+                .setTitle("Error!")
+                .setMessage(err.localizedDescription)
+                
+                .addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in
+                    guard let playerId = self.playerId else{return}
+                    Task{ await self.viewModel.getPlayer(id: playerId)} // retry the function
+                }))
+                .build()
+            
+            DispatchQueue.main.async {
+                errorPopup?.show()
+            }
+        }.store(in: &cancellables)
+        
     }
     
     func dataSetup(){

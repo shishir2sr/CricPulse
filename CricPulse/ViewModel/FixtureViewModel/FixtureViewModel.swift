@@ -6,6 +6,7 @@ class FixtureViewModel{
     var dataSource: [FixtureDataClass] = []
     @Published var isLoading: Bool = false
     @Published var fixtureData: [FinishedMatchScoreCardTVModel] = []
+    @Published var errorHandler: CustomError?
   
     init(remoteFixtureRepository: RemoteFixtureRepository = RemoteFixtureRepository()) {
         self.remoteFixtureRepository = remoteFixtureRepository
@@ -26,15 +27,17 @@ class FixtureViewModel{
     
     func getFixtures(for url: URL?)async {
         guard let url = url else{return}
+        isLoading = true
         let data: Result<Fixtures,CustomError> = await remoteFixtureRepository.getFixtures(url: url)
+        isLoading = false
         switch data {
         case .success(let fixtures):
             self.dataSource = fixtures.data
             self.mapData()
         case .failure(let failure):
             print(failure.localizedDescription)
-            print(failure)
-            // TODO: UI change
+            debugPrint(failure.localizedDescription)
+            self.errorHandler = failure
         }
     }
     

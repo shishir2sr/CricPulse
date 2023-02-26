@@ -8,6 +8,7 @@ class MainViewModel{
     @Published var isLoading: Bool = false
     @Published var scoreCardForCV:[ScoreCardCVModel] = []
     @Published var scoreCardForTV:[FinishedMatchScoreCardTVModel] = []
+    @Published var errorHandler : CustomError?
     
     // Variables
     var dataSource: [FixtureDataClass] = []
@@ -30,8 +31,9 @@ class MainViewModel{
     func getFixtures()async {
         let includeString = "localteam,visitorteam,league,venue,runs.team"
         let url = EndPoint.shared.getFixtures(with: [.include(includeString),.sort("-updated_at"), .filter(name: "type", values: "T20,T20I,Test,ODI,T10"),])
-        
+        self.isLoading = true
         let data: Result<Fixtures,CustomError> = await remoteFixtureRepository.getFixtures(url: url)
+        self.isLoading = false
         handleResponse(data: data)
     }
     
@@ -42,6 +44,7 @@ class MainViewModel{
             self.dataSource = score.data
             mapData()
         case .failure(let err):
+            self.errorHandler = err
             debugPrint(err.localizedDescription) // TODO: Do something to the UI
         }
     }

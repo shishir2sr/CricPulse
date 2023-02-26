@@ -5,6 +5,7 @@ import SDWebImage
 class MatchDetailsViewController: UIViewController {
     var fixtureId : Int?
     var timer: Timer?
+    let notificationCenter = UNUserNotificationCenter.current()
     
     // MARK: ViewModel
     let viewModel = MatchDetailsViewModel.shared
@@ -20,6 +21,7 @@ class MatchDetailsViewController: UIViewController {
     @IBOutlet weak var matchStatusView: UIView!
     @IBOutlet weak var noteView: UIView!
     @IBOutlet weak var scoreView: UIView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     // Label outlets
     @IBOutlet weak var stadiumName: UILabel!
@@ -75,7 +77,6 @@ class MatchDetailsViewController: UIViewController {
         setupBinders()
         guard let fixtureId = fixtureId else{ return }
         Task{await viewModel.getFixture(id: fixtureId)}
-        
     }
     
     func setupBinders(){
@@ -86,7 +87,119 @@ class MatchDetailsViewController: UIViewController {
                 self.dataSetup()
             }
         }.store(in: &cancellables)
+        
+        viewModel.$isLoading.sink {[weak self] isLoading in
+            guard let self  = self else {return}
+            DispatchQueue.main.async {
+                if isLoading{
+                    self.loadingIndicator.startAnimating()
+                }else{
+                    self.loadingIndicator.stopAnimating()
+                }
+            }
+        }.store(in: &cancellables)
+        
+        viewModel.$errorHandler.sink {[weak self] err in
+            guard let self = self else {return}
+            guard let err = err else{return}
+            
+            let errorPopup = ErrorPopupBuilder()
+                .setTitle("Error!")
+                .setMessage(err.localizedDescription)
+                .addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in
+                    Task{guard let fixtureId = self.fixtureId else{return}
+                        await self.viewModel.getFixture(id: fixtureId)}}))
+                .build()
+            DispatchQueue.main.async {
+                errorPopup?.show()
+            }
+            
+            
+        }.store(in: &cancellables)
     }
+    
+    
+    
+    // MARK: - Alert control
+    @IBAction func alertActionButton(_ sender: UIButton) {
+        notificationCenter.getNotificationSettings { (settings) in
+            
+            DispatchQueue.main.async
+            { [weak self] in
+                guard let self = self else {return}
+                
+                let teamOneName = self.matchDetailsData?.teamOneName ?? "Team One"
+                let teamTwoName = self.matchDetailsData?.teamTwoName ?? "Team Two"
+                
+                let title = (self.matchDetailsData?.teamOneCode ?? "Team 1") + "vs" + (self.matchDetailsData?.teamTwoCode ?? "Team 2")
+                let message = "The cricket match between \(teamOneName) and \(teamTwoName) is about to begin! Get ready for some thrilling action"
+                
+                let date = self.matchDetailsData?.matchDate
+                
+                if(settings.authorizationStatus == .authorized)
+                {
+                    let content = UNMutableNotificationContent()
+                    content.title = title
+                    content.body = message
+                    let dateComp = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date ?? Date().addingTimeInterval(60*15*(-1)))
+                    
+                    let trigger = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: false)
+                    let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                    
+                    self.notificationCenter.add(request) { (error) in
+                        if(error != nil)
+                        {
+                            print("Error " + error.debugDescription)
+                            return
+                        }
+                    }
+                    
+                    let ac = UIAlertController(title: "Notification Scheduled", message: "Before 15 minutes of the game being start", preferredStyle: .alert)
+                    
+                    ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in}))
+                    self.present(ac, animated: true)
+                    
+                    if let fixtureId = self.fixtureId{
+                        UserDefaults.standard.set(true, forKey: "\(fixtureId)")
+                        self.alertButtonOutlet.imageView?.image = UIImage(systemName: "bell.slash.circle")
+                        self.alertButtonOutlet.backgroundColor = .darkGray
+                    }
+                }
+                else
+                
+                {
+                    self.grantPermission(self)
+                }
+            }
+        }
+    }
+    
+    fileprivate func grantPermission(_ self: MatchDetailsViewController) {
+        let ac = UIAlertController(title: "Enable Notifications?", message: "To use this feature you must enable notifications in settings", preferredStyle: .alert)
+        
+        let goToSettings = UIAlertAction(title: "Settings", style: .default)
+        { (_) in
+            guard let setttingsURL = URL(string: UIApplication.openSettingsURLString)
+            else{return}
+            
+            if(UIApplication.shared.canOpenURL(setttingsURL))
+            {
+                UIApplication.shared.open(setttingsURL) { (_) in}
+            }
+        }
+        ac.addAction(goToSettings)
+        ac.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (_) in}))
+        self.present(ac, animated: true)
+    }
+    
+    
+    func formattedDate(date: Date) -> String
+    {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d MMM y HH:mm"
+        return formatter.string(from: date)
+    }
+    
     
     // MARK: - Match Details Data Setup
     func dataSetup(){
@@ -129,6 +242,7 @@ extension MatchDetailsViewController{
     fileprivate func setupView() {
         backView.round(10)
         backView.addShadow(opecity: 0.6, size: 1, radius: 1, color: UIColor.gray)
+        backView.layer.masksToBounds = false
         matchType.addBorder(color: .systemGreen, width: 1)
         matchType.round(5)
         matchStatusView.round(5)
@@ -138,6 +252,16 @@ extension MatchDetailsViewController{
         containerViewOne.isHidden = false
         containerViewTwo.isHidden = true
         containerViewThree.isHidden = true
+        
+        if let fixtureId = fixtureId {
+            let alertEnabled = UserDefaults.standard.bool(forKey: "\(fixtureId)")
+            if alertEnabled{
+                alertButtonOutlet.imageView?.image = UIImage(systemName: "bell.slash.circle")
+                self.alertButtonOutlet.round(4)
+            }else{
+                self.alertButtonOutlet.round(4)
+            }
+        }
     }
     
     // MARK: Segment control

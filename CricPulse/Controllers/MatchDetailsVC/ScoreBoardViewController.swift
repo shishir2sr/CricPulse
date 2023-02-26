@@ -55,13 +55,15 @@ class ScoreBoardViewController: UIViewController {
     
     // MARK: Stup view
      func setupView() {
-        teamOneBackgroundVIew.addBorder(color: .systemGray4, width: 1)
+         teamOneBackgroundVIew.addBorder(color: .systemGray3, width: 0.5)
         teamOneBackgroundVIew.round(10)
-        teamOneBackgroundVIew.addShadow(opecity: 0.8, size: 2, radius: 4, color: UIColor.darkGray)
-        
-        teamTwoBackgroundVIew.addBorder(color: .systemGray4, width: 1)
+        teamOneBackgroundVIew.addShadow(opecity: 0.6, size: 1, radius: 1, color: UIColor.gray)
+         teamOneBackgroundVIew.layer.masksToBounds = false
+         teamTwoBackgroundVIew.addBorder(color: .systemGray3, width: 0.5)
         teamTwoBackgroundVIew.round(10)
-        
+        teamTwoBackgroundVIew.addShadow(opecity: 0.5, size: 1, radius: 1, color: UIColor.gray)
+         teamTwoBackgroundVIew.layer.masksToBounds = false
+         
         let tapGestureTwo = UITapGestureRecognizer(target: self, action: #selector(viewTwoTapped))
         teamTwoBackgroundVIew.addGestureRecognizer(tapGestureTwo)
         
