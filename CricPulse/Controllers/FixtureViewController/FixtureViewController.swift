@@ -43,9 +43,11 @@ class FixtureViewController: UIViewController {
             guard let self  = self else {return}
             DispatchQueue.main.async {
                 if isLoading{
+                    UIApplication.shared.beginIgnoringInteractionEvents()
                     self.loadingIndicator.startAnimating()
                 }else{
                     self.loadingIndicator.stopAnimating()
+                    UIApplication.shared.endIgnoringInteractionEvents()
                 }
             }
         }.store(in: &cancellables)
