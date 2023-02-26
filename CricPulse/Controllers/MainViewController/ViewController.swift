@@ -10,7 +10,7 @@ class ViewController: UIViewController {
     
     // ViewModel
     let mainViewModel = MainViewModel(fixtureRepository: RemoteFixtureRepository())
-
+    
     // Outlets
     @IBOutlet weak var homeCollectionView: UICollectionView!
     @IBOutlet weak var homeTableView: UITableView!
@@ -31,13 +31,13 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)]
-
+        
         setupCollectionView()
         setupTableView()
         setupBinders()
         // TODO: Change according to use case
         Task{
-           await mainViewModel.getFixtures()
+            await mainViewModel.getFixtures()
         }
     }
     
@@ -65,5 +65,19 @@ class ViewController: UIViewController {
                 }
             }
         }.store(in: &cancellables)
+        
+        mainViewModel.$errorHandler.sink { [weak self] err in
+            guard let self = self else {return}
+            let errorPopup = ErrorPopupBuilder()
+                .setTitle("Error!")
+                .setMessage(err?.localizedDescription ?? "Unknown error")
+                .addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                .addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in
+                    Task{ await self.mainViewModel.getFixtures()} // retry the function
+                }))
+                .build()
+            errorPopup?.show()
+        }.store(in: &cancellables)
+        
     }
 }

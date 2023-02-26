@@ -8,6 +8,7 @@ class MainViewModel{
     @Published var isLoading: Bool = false
     @Published var scoreCardForCV:[ScoreCardCVModel] = []
     @Published var scoreCardForTV:[FinishedMatchScoreCardTVModel] = []
+    @Published var errorHandler : CustomError?
     
     // Variables
     var dataSource: [FixtureDataClass] = []
@@ -43,6 +44,7 @@ class MainViewModel{
             self.dataSource = score.data
             mapData()
         case .failure(let err):
+            self.errorHandler = err
             debugPrint(err.localizedDescription) // TODO: Do something to the UI
         }
     }
