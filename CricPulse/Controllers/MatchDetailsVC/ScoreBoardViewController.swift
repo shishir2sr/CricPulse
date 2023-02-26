@@ -58,11 +58,12 @@ class ScoreBoardViewController: UIViewController {
          teamOneBackgroundVIew.addBorder(color: .systemGray3, width: 0.5)
         teamOneBackgroundVIew.round(10)
         teamOneBackgroundVIew.addShadow(opecity: 0.6, size: 1, radius: 1, color: UIColor.gray)
-        
+         teamOneBackgroundVIew.layer.masksToBounds = false
          teamTwoBackgroundVIew.addBorder(color: .systemGray3, width: 0.5)
         teamTwoBackgroundVIew.round(10)
         teamTwoBackgroundVIew.addShadow(opecity: 0.5, size: 1, radius: 1, color: UIColor.gray)
-        
+         teamTwoBackgroundVIew.layer.masksToBounds = false
+         
         let tapGestureTwo = UITapGestureRecognizer(target: self, action: #selector(viewTwoTapped))
         teamTwoBackgroundVIew.addGestureRecognizer(tapGestureTwo)
         

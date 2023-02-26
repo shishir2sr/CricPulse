@@ -73,18 +73,6 @@ class MatchDetailsViewController: UIViewController {
     
     // View Did load configuration
     func configViewDidLoad(){
-        
-        // Alert button
-        if let fixtureId = fixtureId {
-            let alertEnabled = UserDefaults.standard.bool(forKey: "\(fixtureId)")
-            if alertEnabled{
-                alertButtonOutlet.imageView?.image = UIImage(systemName: "bell.slash.circle")
-                self.alertButtonOutlet.round(4)
-            }else{
-                self.alertButtonOutlet.round(4)
-            }
-        }
-        
         setupView()
         setupBinders()
         guard let fixtureId = fixtureId else{ return }
@@ -257,7 +245,7 @@ extension MatchDetailsViewController{
     fileprivate func setupView() {
         backView.round(10)
         backView.addShadow(opecity: 0.6, size: 1, radius: 1, color: UIColor.gray)
-        backView.layer.masksToBounds = true
+        backView.layer.masksToBounds = false
         matchType.addBorder(color: .systemGreen, width: 1)
         matchType.round(5)
         matchStatusView.round(5)
@@ -267,6 +255,16 @@ extension MatchDetailsViewController{
         containerViewOne.isHidden = false
         containerViewTwo.isHidden = true
         containerViewThree.isHidden = true
+        
+        if let fixtureId = fixtureId {
+            let alertEnabled = UserDefaults.standard.bool(forKey: "\(fixtureId)")
+            if alertEnabled{
+                alertButtonOutlet.imageView?.image = UIImage(systemName: "bell.slash.circle")
+                self.alertButtonOutlet.round(4)
+            }else{
+                self.alertButtonOutlet.round(4)
+            }
+        }
     }
     
     // MARK: Segment control
