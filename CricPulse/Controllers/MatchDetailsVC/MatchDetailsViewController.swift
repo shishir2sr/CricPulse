@@ -7,7 +7,6 @@ class MatchDetailsViewController: UIViewController {
     var timer: Timer?
     let notificationCenter = UNUserNotificationCenter.current()
     
-    
     // MARK: ViewModel
     let viewModel = MatchDetailsViewModel.shared
     var matchDetailsData: MatchDetailsData?
@@ -74,12 +73,20 @@ class MatchDetailsViewController: UIViewController {
     
     // View Did load configuration
     func configViewDidLoad(){
+        if let fixtureId = fixtureId {
+            let alertEnabled = UserDefaults.standard.bool(forKey: "\(fixtureId)")
+            if alertEnabled{
+                alertButtonOutlet.imageView?.image = UIImage(systemName: "bell.slash.circle")
+                self.alertButtonOutlet.round(4)
+            }else{
+                   self.alertButtonOutlet.round(4)
+            }
+        }
+        
         setupView()
         setupBinders()
         guard let fixtureId = fixtureId else{ return }
         Task{await viewModel.getFixture(id: fixtureId)}
-       
-        
     }
     
     func setupBinders(){
@@ -124,6 +131,7 @@ class MatchDetailsViewController: UIViewController {
         self.present(ac, animated: true)
     }
     
+    // MARK: - Alert control
     @IBAction func alertActionButton(_ sender: UIButton) {
         notificationCenter.getNotificationSettings { (settings) in
             
@@ -162,6 +170,11 @@ class MatchDetailsViewController: UIViewController {
                     ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in}))
                     self.present(ac, animated: true)
                     
+                    if let fixtureId = self.fixtureId{
+                        UserDefaults.standard.set(true, forKey: "\(fixtureId)")
+                        self.alertButtonOutlet.imageView?.image = UIImage(systemName: "bell.slash.circle")
+                        self.alertButtonOutlet.backgroundColor = .darkGray
+                    }
                 }
                 else
                 

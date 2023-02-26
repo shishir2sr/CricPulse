@@ -126,7 +126,7 @@
                                         <rect key="frame" x="10" y="33" width="280" height="40"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jO0-W4-FY3" userLabel="StackView Match+Stadium">
-                                                <rect key="frame" x="0.0" y="0.0" width="222.5" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="222" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="RkG-bn-Uzv" userLabel="MatchInfoStackView">
                                                         <rect key="frame" x="0.0" y="0.0" width="161.5" height="20"/>
@@ -180,10 +180,10 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckZ-ZC-Jb5">
-                                                <rect key="frame" x="230.5" y="0.0" width="49.5" height="40"/>
+                                                <rect key="frame" x="230" y="0.0" width="50" height="40"/>
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="gray" image="bell" catalog="system"/>
+                                                <buttonConfiguration key="configuration" style="gray" image="bell.circle" catalog="system"/>
                                                 <connections>
                                                     <action selector="alertActionButton:" destination="V21-tI-aVt" eventType="touchUpInside" id="uNZ-9B-nRF"/>
                                                 </connections>
@@ -790,7 +790,7 @@
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
         <image name="arrow.up.right.square" catalog="system" width="128" height="114"/>
         <image name="bangladesh()" width="48" height="48"/>
-        <image name="bell" catalog="system" width="125" height="128"/>
+        <image name="bell.circle" catalog="system" width="128" height="123"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="india()" width="48" height="48"/>
         <image name="map-marker" width="64" height="64"/>
