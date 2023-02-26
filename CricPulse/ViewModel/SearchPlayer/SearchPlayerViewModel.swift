@@ -7,6 +7,7 @@ class SearchPlayerViewModel{
     // variables
     @Published var isLoading: Bool = false
     @Published var playersData:[CDPlayer] = []
+    @Published var errorHandler: CustomError?
     
     init(remotePlyerRepository: ConcreatePlayerRepository = ConcreatePlayerRepository()){
         self.remotePlayerRepository = remotePlyerRepository
@@ -22,9 +23,9 @@ class SearchPlayerViewModel{
             playersData = data
         case .failure(let error):
             print(error)
+            self.errorHandler = error
         }
     }
-    
     
         // MARK: - TableView Logics
         /// Decides tableviews number of rows

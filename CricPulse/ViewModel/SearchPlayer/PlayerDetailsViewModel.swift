@@ -4,6 +4,7 @@ class PlayerDetailsViewModel{
     
     @Published var isLoading: Bool = false
     @Published var playerStats: PlayerStats? = nil
+    @Published var errorHandler: CustomError?
     
     private let remotePlayerRepository : ConcreatePlayerRepository
     
@@ -20,7 +21,8 @@ class PlayerDetailsViewModel{
         case .success(let data):
             playerStats = data
         case .failure(let error):
-            print(error)
+            debugPrint(error)
+            self.errorHandler = error
         }
     }
     

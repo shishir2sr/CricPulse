@@ -68,9 +68,10 @@ class ViewController: UIViewController {
         
         mainViewModel.$errorHandler.sink { [weak self] err in
             guard let self = self else {return}
+            guard let err = err else{return}
             let errorPopup = ErrorPopupBuilder()
                 .setTitle("Error!")
-                .setMessage(err?.localizedDescription ?? "Unknown error")
+                .setMessage(err.localizedDescription)
                 .addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 .addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in
                     Task{ await self.mainViewModel.getFixtures()} // retry the function
@@ -78,6 +79,5 @@ class ViewController: UIViewController {
                 .build()
             errorPopup?.show()
         }.store(in: &cancellables)
-        
     }
 }

@@ -79,7 +79,7 @@ class MatchDetailsViewController: UIViewController {
                 alertButtonOutlet.imageView?.image = UIImage(systemName: "bell.slash.circle")
                 self.alertButtonOutlet.round(4)
             }else{
-                   self.alertButtonOutlet.round(4)
+                self.alertButtonOutlet.round(4)
             }
         }
         
@@ -108,6 +108,25 @@ class MatchDetailsViewController: UIViewController {
                 }
             }
         }.store(in: &cancellables)
+        
+        viewModel.$errorHandler.sink {[weak self] err in
+            guard let self = self else {return}
+            guard let err = err else{return}
+            
+            let errorPopup = ErrorPopupBuilder()
+                .setTitle("Error!")
+                .setMessage(err.localizedDescription)
+                .addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                .addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in
+                    Task{
+                        guard let fixtureId = self.fixtureId else{return}
+                        await self.viewModel.getFixture(id: fixtureId)
+                    }
+                })
+                )
+                .build()
+            errorPopup?.show()
+        }.store(in: &cancellables)
     }
     
     fileprivate func grantPermission(_ self: MatchDetailsViewController) {
@@ -116,10 +135,7 @@ class MatchDetailsViewController: UIViewController {
         let goToSettings = UIAlertAction(title: "Settings", style: .default)
         { (_) in
             guard let setttingsURL = URL(string: UIApplication.openSettingsURLString)
-            else
-            {
-                return
-            }
+            else{return}
             
             if(UIApplication.shared.canOpenURL(setttingsURL))
             {

@@ -64,6 +64,24 @@ class PlayerDetailsViewController: UIViewController {
             }
         }.store(in: &cancellables)
         
+        viewModel.$errorHandler.sink { [weak self] err in
+            guard let self = self else {return}
+            guard let err = err else{return}
+            let errorPopup = ErrorPopupBuilder()
+                .setTitle("Error!")
+                .setMessage(err.localizedDescription)
+                .addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                .addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in
+                    guard let playerId = self.playerId else{return}
+                    Task{ await self.viewModel.getPlayer(id: playerId)} // retry the function
+                }))
+                .build()
+            
+            DispatchQueue.main.async {
+                errorPopup?.show()
+            }
+        }.store(in: &cancellables)
+        
     }
     
     func dataSetup(){

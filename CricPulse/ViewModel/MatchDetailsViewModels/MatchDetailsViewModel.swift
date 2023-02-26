@@ -8,6 +8,7 @@ class MatchDetailsViewModel{
     static var shared = MatchDetailsViewModel()
     @Published var matchDetailsData: MatchDetailsData?
     @Published var isLoading = false
+    @Published var errorHandler: CustomError?
     
     // MARK: Init ViewModel
     init(remoteFixtureRepository: RemoteFixtureRepository = RemoteFixtureRepository()) {
@@ -25,6 +26,7 @@ class MatchDetailsViewModel{
         case .failure(let error):
             print(error)
             print(error.localizedDescription)
+            self.errorHandler = error
         }
     }
     
