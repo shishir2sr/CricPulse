@@ -10,20 +10,10 @@ class UrlBuilder {
     }
     
     class Builder {
-        private var baseURL: String = ""
-        private var apiToken: String = ""
+        private var baseURL: String = "https://cricket.sportmonks.com/api/v2.0"
+        private var apiToken: String = NetworkConstants.shared.apiKey
         private var endpoint: String = ""
         private var queryParameters: [URLQueryItem] = []
-        
-        func setBaseURL(_ baseURL: String) -> Builder {
-            self.baseURL = baseURL
-            return self
-        }
-        
-        func setApiToken(_ apiToken: String) -> Builder {
-            self.apiToken = apiToken
-            return self
-        }
         
         func setEndpoint(_ endpoint: String) -> Builder {
             self.endpoint = endpoint
