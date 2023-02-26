@@ -3,7 +3,6 @@ import Foundation
 import UIKit
 
 class DetailedScoreViewModel{
-    
     // number of items
     func numberOfRows(in section: Int) -> Int {
         if section == 0{
@@ -13,8 +12,6 @@ class DetailedScoreViewModel{
         }
     }
 }
-
-
 
 
 // MARK: - TableView options

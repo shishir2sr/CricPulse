@@ -416,6 +416,10 @@
                                     <segue destination="0zL-hH-dvY" kind="embed" id="ACf-M9-wZ6"/>
                                 </connections>
                             </containerView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="2Ub-gp-KGA">
+                                <rect key="frame" x="141.5" y="265.5" width="37" height="37"/>
+                                <color key="color" name="SecondaryBackgroundColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hgK-aI-9HW"/>
                         <color key="backgroundColor" name="PrimaryBackgroundColor"/>
@@ -425,6 +429,7 @@
                             <constraint firstItem="hgK-aI-9HW" firstAttribute="trailing" secondItem="zu9-2z-2Oi" secondAttribute="trailing" constant="10" id="9Fx-IM-huf"/>
                             <constraint firstItem="B3o-jP-djA" firstAttribute="leading" secondItem="hgK-aI-9HW" secondAttribute="leading" constant="10" id="Bhw-ex-ahA"/>
                             <constraint firstAttribute="bottom" secondItem="haD-Ib-64a" secondAttribute="bottom" id="Cca-VH-ZRA"/>
+                            <constraint firstItem="2Ub-gp-KGA" firstAttribute="centerX" secondItem="kwB-4V-mbH" secondAttribute="centerX" id="DUD-ac-Mzi"/>
                             <constraint firstItem="ut9-Jk-sND" firstAttribute="trailing" secondItem="hgK-aI-9HW" secondAttribute="trailing" id="Dlq-YN-ebM"/>
                             <constraint firstItem="ut9-Jk-sND" firstAttribute="top" secondItem="hgK-aI-9HW" secondAttribute="top" id="EOQ-Qv-Ghp"/>
                             <constraint firstItem="zu9-2z-2Oi" firstAttribute="leading" secondItem="hgK-aI-9HW" secondAttribute="leading" constant="10" id="FkW-J3-zhr"/>
@@ -440,6 +445,7 @@
                             <constraint firstItem="sxB-86-rW8" firstAttribute="top" secondItem="B3o-jP-djA" secondAttribute="bottom" constant="10" id="jqG-56-NbC"/>
                             <constraint firstItem="gaG-f2-w4G" firstAttribute="top" secondItem="B3o-jP-djA" secondAttribute="bottom" constant="10" id="kSU-YV-w3K"/>
                             <constraint firstItem="gaG-f2-w4G" firstAttribute="leading" secondItem="hgK-aI-9HW" secondAttribute="leading" id="lfc-GN-v3v"/>
+                            <constraint firstItem="2Ub-gp-KGA" firstAttribute="centerY" secondItem="kwB-4V-mbH" secondAttribute="centerY" id="m3a-xr-c6D"/>
                             <constraint firstItem="hgK-aI-9HW" firstAttribute="trailing" secondItem="haD-Ib-64a" secondAttribute="trailing" id="qkR-JK-CGa"/>
                             <constraint firstItem="B3o-jP-djA" firstAttribute="top" secondItem="zu9-2z-2Oi" secondAttribute="bottom" constant="10" id="vlB-C9-aQ5"/>
                         </constraints>
@@ -450,6 +456,7 @@
                         <outlet property="containerViewOne" destination="sxB-86-rW8" id="qQn-tQ-FA8"/>
                         <outlet property="containerViewThree" destination="gaG-f2-w4G" id="wHY-FA-GRL"/>
                         <outlet property="containerViewTwo" destination="haD-Ib-64a" id="en8-52-5fN"/>
+                        <outlet property="loadingIndicator" destination="2Ub-gp-KGA" id="Ilt-34-ntp"/>
                         <outlet property="manMatchName" destination="abR-Po-q6V" id="iqU-30-fhb"/>
                         <outlet property="manOfTheMatchImage" destination="FGu-P5-qMz" id="aG5-Z7-zOl"/>
                         <outlet property="manOfTheMatchStackView" destination="8JX-qA-pEG" id="uR1-e7-fyU"/>

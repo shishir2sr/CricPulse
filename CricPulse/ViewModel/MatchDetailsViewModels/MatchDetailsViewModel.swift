@@ -5,10 +5,9 @@ class MatchDetailsViewModel{
     
     // Repository
     private let remoteFixtureRepository : RemoteFixtureRepository
-    
     static var shared = MatchDetailsViewModel()
-    
     @Published var matchDetailsData: MatchDetailsData?
+    @Published var isLoading = false
     
     // MARK: Init ViewModel
     init(remoteFixtureRepository: RemoteFixtureRepository = RemoteFixtureRepository()) {
@@ -17,7 +16,9 @@ class MatchDetailsViewModel{
     
     // get fixtures by id
     func getFixture(id: Int)async {
+        self.isLoading = true
         let data: Result<Fixture,CustomError> = await remoteFixtureRepository.getFixtureById(id: id)
+        self.isLoading = false
         switch data{
         case .success(let data):
             matchDetailsData = MatchDetailsDataGenerator.matchDetailsGenerator(data.data)

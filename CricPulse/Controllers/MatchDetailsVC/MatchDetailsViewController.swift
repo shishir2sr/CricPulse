@@ -22,6 +22,7 @@ class MatchDetailsViewController: UIViewController {
     @IBOutlet weak var matchStatusView: UIView!
     @IBOutlet weak var noteView: UIView!
     @IBOutlet weak var scoreView: UIView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     // Label outlets
     @IBOutlet weak var stadiumName: UILabel!
@@ -87,6 +88,17 @@ class MatchDetailsViewController: UIViewController {
             DispatchQueue.main.async {
                 self.matchDetailsData = matchDetailsData
                 self.dataSetup()
+            }
+        }.store(in: &cancellables)
+        
+        viewModel.$isLoading.sink {[weak self] isLoading in
+            guard let self  = self else {return}
+            DispatchQueue.main.async {
+                if isLoading{
+                    self.loadingIndicator.startAnimating()
+                }else{
+                    self.loadingIndicator.stopAnimating()
+                }
             }
         }.store(in: &cancellables)
     }
