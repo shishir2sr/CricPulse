@@ -199,11 +199,11 @@
             </objects>
             <point key="canvasLocation" x="1828" y="850.52473763118451"/>
         </scene>
-        <!--Brows Players-->
+        <!--Players-->
         <scene sceneID="8nK-tc-0kF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P3X-K7-e9K" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Brows Players" image="figure.cricket" catalog="system" id="ysp-KJ-A3G"/>
+                    <tabBarItem key="tabBarItem" title="Players" image="figure.cricket" catalog="system" id="ysp-KJ-A3G"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="arrow.backward" catalog="system" id="akl-Uo-cFM">
