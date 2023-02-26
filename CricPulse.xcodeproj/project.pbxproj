@@ -408,8 +408,8 @@
 			children = (
 				89D5D757299CE7DC00C87209 /* ApiClient.swift */,
 				89D5D759299CEBD600C87209 /* EndPoint.swift */,
-				89C9A49F299DC8CC0054F2CF /* CustomError.swift */,
 				38A65B8629A458410048D9D9 /* UrlBuilder.swift */,
+				89C9A49F299DC8CC0054F2CF /* CustomError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";

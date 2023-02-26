@@ -74,4 +74,13 @@ class MainViewModel{
             return FinishedMatchScoreCardTVModel(scorecard: scorecard)
         }
     }
+    
+    // Build fixture url
+    func buildFixtureUrl(){
+        let builder = UrlBuilder.Builder()
+            .setEndpoint("/fixtures")
+            .addQueryParameter("sort", "name")
+            .addQueryParameter("include", "team")
+        let url = builder.build()
+    }
 }
