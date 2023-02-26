@@ -52,7 +52,6 @@ class SearchPlayerViewController: UIViewController {
             let errorPopup = ErrorPopupBuilder()
                 .setTitle("Error!")
                 .setMessage(err.localizedDescription)
-                .addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 .addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in
                     Task{ await self.searchPlayerViewModel.getPlayers()} // retry the function
                 }))

@@ -70,7 +70,7 @@ class PlayerDetailsViewController: UIViewController {
             let errorPopup = ErrorPopupBuilder()
                 .setTitle("Error!")
                 .setMessage(err.localizedDescription)
-                .addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                
                 .addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in
                     guard let playerId = self.playerId else{return}
                     Task{ await self.viewModel.getPlayer(id: playerId)} // retry the function

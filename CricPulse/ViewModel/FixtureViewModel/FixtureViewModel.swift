@@ -6,6 +6,7 @@ class FixtureViewModel{
     var dataSource: [FixtureDataClass] = []
     @Published var isLoading: Bool = false
     @Published var fixtureData: [FinishedMatchScoreCardTVModel] = []
+    @Published var errorHandler: CustomError?
   
     init(remoteFixtureRepository: RemoteFixtureRepository = RemoteFixtureRepository()) {
         self.remoteFixtureRepository = remoteFixtureRepository
@@ -35,8 +36,8 @@ class FixtureViewModel{
             self.mapData()
         case .failure(let failure):
             print(failure.localizedDescription)
-            print(failure)
-            // TODO: UI change
+            debugPrint(failure.localizedDescription)
+            self.errorHandler = failure
         }
     }
     

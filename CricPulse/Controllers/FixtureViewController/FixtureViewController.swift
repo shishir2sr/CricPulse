@@ -43,15 +43,33 @@ class FixtureViewController: UIViewController {
             guard let self  = self else {return}
             DispatchQueue.main.async {
                 if isLoading{
-                    UIApplication.shared.beginIgnoringInteractionEvents()
+                    
                     self.loadingIndicator.startAnimating()
                 }else{
                     self.loadingIndicator.stopAnimating()
-                    UIApplication.shared.endIgnoringInteractionEvents()
+                    
                 }
             }
         }.store(in: &cancellables)
+        
+        viewModel.$errorHandler.sink {[weak self] err in
+            guard let self = self else{return}
+            guard let err = err else{return}
+            let errorPopup = ErrorPopupBuilder()
+                .setTitle("Error!")
+                .setMessage(err.localizedDescription)
+                
+                .addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in
+                    Task{await self.viewModel.getFixtures(for: self.url)}
+                }))
+                .build()
+            DispatchQueue.main.async {
+                errorPopup?.show()
+            }
+            
+        }.store(in: &cancellables)
     }
+    
     
     @IBAction func filterButtonAction(_ sender: UIButton) {
         url = getUrl(for: leagueName)

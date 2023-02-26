@@ -73,6 +73,8 @@ class MatchDetailsViewController: UIViewController {
     
     // View Did load configuration
     func configViewDidLoad(){
+        
+        // Alert button
         if let fixtureId = fixtureId {
             let alertEnabled = UserDefaults.standard.bool(forKey: "\(fixtureId)")
             if alertEnabled{
@@ -116,36 +118,19 @@ class MatchDetailsViewController: UIViewController {
             let errorPopup = ErrorPopupBuilder()
                 .setTitle("Error!")
                 .setMessage(err.localizedDescription)
-                .addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 .addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in
-                    Task{
-                        guard let fixtureId = self.fixtureId else{return}
-                        await self.viewModel.getFixture(id: fixtureId)
-                    }
-                })
-                )
+                    Task{guard let fixtureId = self.fixtureId else{return}
+                        await self.viewModel.getFixture(id: fixtureId)}}))
                 .build()
-            errorPopup?.show()
+            DispatchQueue.main.async {
+                errorPopup?.show()
+            }
+            
+            
         }.store(in: &cancellables)
     }
     
-    fileprivate func grantPermission(_ self: MatchDetailsViewController) {
-        let ac = UIAlertController(title: "Enable Notifications?", message: "To use this feature you must enable notifications in settings", preferredStyle: .alert)
-        
-        let goToSettings = UIAlertAction(title: "Settings", style: .default)
-        { (_) in
-            guard let setttingsURL = URL(string: UIApplication.openSettingsURLString)
-            else{return}
-            
-            if(UIApplication.shared.canOpenURL(setttingsURL))
-            {
-                UIApplication.shared.open(setttingsURL) { (_) in}
-            }
-        }
-        ac.addAction(goToSettings)
-        ac.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (_) in}))
-        self.present(ac, animated: true)
-    }
+    
     
     // MARK: - Alert control
     @IBAction func alertActionButton(_ sender: UIButton) {
@@ -201,6 +186,24 @@ class MatchDetailsViewController: UIViewController {
         }
     }
     
+    fileprivate func grantPermission(_ self: MatchDetailsViewController) {
+        let ac = UIAlertController(title: "Enable Notifications?", message: "To use this feature you must enable notifications in settings", preferredStyle: .alert)
+        
+        let goToSettings = UIAlertAction(title: "Settings", style: .default)
+        { (_) in
+            guard let setttingsURL = URL(string: UIApplication.openSettingsURLString)
+            else{return}
+            
+            if(UIApplication.shared.canOpenURL(setttingsURL))
+            {
+                UIApplication.shared.open(setttingsURL) { (_) in}
+            }
+        }
+        ac.addAction(goToSettings)
+        ac.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (_) in}))
+        self.present(ac, animated: true)
+    }
+    
     
     func formattedDate(date: Date) -> String
     {
@@ -237,6 +240,9 @@ class MatchDetailsViewController: UIViewController {
         stadiumName.text = viewModel.getStadiumInfo()
         matchStatusView.backgroundColor = viewModel.getMatchStatusColor()
         note.text = matchDetailsData?.matchNote
+        
+        
+        
         setupScoreViews()
         
     }
@@ -251,6 +257,7 @@ extension MatchDetailsViewController{
     fileprivate func setupView() {
         backView.round(10)
         backView.addShadow(opecity: 0.6, size: 1, radius: 1, color: UIColor.gray)
+        backView.layer.masksToBounds = true
         matchType.addBorder(color: .systemGreen, width: 1)
         matchType.round(5)
         matchStatusView.round(5)
