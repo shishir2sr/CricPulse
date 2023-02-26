@@ -19,17 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="acD-gS-quh">
-                                <rect key="frame" x="0.0" y="126" width="375" height="492"/>
+                                <rect key="frame" x="0.0" y="98" width="375" height="520"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find your favorite player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6k-9M-hOJ">
-                                <rect key="frame" x="10" y="54" width="355" height="18"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Player" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nu0-g1-f0w">
-                                <rect key="frame" x="20" y="82" width="335" height="34"/>
+                                <rect key="frame" x="20" y="54" width="335" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -42,15 +36,12 @@
                         <color key="backgroundColor" name="PrimaryBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ZYh-km-ySd" firstAttribute="centerY" secondItem="mJP-Dp-3KM" secondAttribute="centerY" id="5Yl-Kr-5ZR"/>
-                            <constraint firstItem="Ixe-72-jfT" firstAttribute="trailing" secondItem="c6k-9M-hOJ" secondAttribute="trailing" constant="10" id="5bR-mB-Wem"/>
                             <constraint firstItem="acD-gS-quh" firstAttribute="trailing" secondItem="Ixe-72-jfT" secondAttribute="trailing" id="7ZD-wV-NQN"/>
                             <constraint firstItem="acD-gS-quh" firstAttribute="top" secondItem="Nu0-g1-f0w" secondAttribute="bottom" constant="10" id="7hx-sr-UqM"/>
                             <constraint firstItem="acD-gS-quh" firstAttribute="leading" secondItem="Ixe-72-jfT" secondAttribute="leading" id="HIO-Fb-30g"/>
-                            <constraint firstItem="c6k-9M-hOJ" firstAttribute="top" secondItem="Ixe-72-jfT" secondAttribute="top" constant="10" id="O89-ol-bpZ"/>
                             <constraint firstItem="Nu0-g1-f0w" firstAttribute="leading" secondItem="Ixe-72-jfT" secondAttribute="leading" constant="20" id="ROQ-5K-gRz"/>
                             <constraint firstItem="Ixe-72-jfT" firstAttribute="trailing" secondItem="Nu0-g1-f0w" secondAttribute="trailing" constant="20" id="TX7-eP-WOW"/>
-                            <constraint firstItem="c6k-9M-hOJ" firstAttribute="leading" secondItem="Ixe-72-jfT" secondAttribute="leading" constant="10" id="ut5-uf-4qS"/>
-                            <constraint firstItem="Nu0-g1-f0w" firstAttribute="top" secondItem="c6k-9M-hOJ" secondAttribute="bottom" constant="10" id="xPT-48-W3m"/>
+                            <constraint firstItem="Nu0-g1-f0w" firstAttribute="top" secondItem="Ixe-72-jfT" secondAttribute="top" constant="10" id="mhe-pO-Dau"/>
                             <constraint firstItem="ZYh-km-ySd" firstAttribute="centerX" secondItem="mJP-Dp-3KM" secondAttribute="centerX" id="yBR-7Z-3od"/>
                             <constraint firstItem="acD-gS-quh" firstAttribute="bottom" secondItem="Ixe-72-jfT" secondAttribute="bottom" id="zOr-B9-JWk"/>
                         </constraints>
@@ -208,10 +199,12 @@
                     <tabBarItem key="tabBarItem" title="Brows Players" image="figure.cricket" catalog="system" id="ysp-KJ-A3G"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="akl-Uo-cFM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="arrow.backward" catalog="system" id="akl-Uo-cFM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="SecondaryBackgroundColor"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" name="SecondaryBackgroundColor"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -227,10 +220,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="95"/>
         <image name="figure.cricket" catalog="system" width="89" height="128"/>
         <image name="shakib" width="568" height="568"/>
         <namedColor name="PrimaryBackgroundColor">
-            <color red="0.90980392156862744" green="0.9137254901960784" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.95686274509803926" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SecondaryBackgroundColor">
             <color red="0.090196078431372548" green="0.12941176470588237" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

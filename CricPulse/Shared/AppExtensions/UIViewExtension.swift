@@ -19,7 +19,7 @@ extension UIView {
         layer.shadowOpacity = opecity
         layer.shadowOffset = CGSize(width: size, height: size)
         layer.shadowRadius = radius
-        layer.masksToBounds = true
+        layer.masksToBounds = false
     }
 }
 

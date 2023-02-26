@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TuB-70-9nK">
-                        <rect key="frame" x="10" y="10" width="400" height="80"/>
+                        <rect key="frame" x="10" y="10" width="400" height="75"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="iKt-cw-cpa">
                                 <rect key="frame" x="10" y="11" width="60" height="58.666666666666671"/>
@@ -39,7 +39,7 @@
                             <constraint firstItem="so5-4h-68z" firstAttribute="centerY" secondItem="iKt-cw-cpa" secondAttribute="centerY" id="Xa8-g7-4K9"/>
                             <constraint firstItem="so5-4h-68z" firstAttribute="leading" secondItem="iKt-cw-cpa" secondAttribute="trailing" constant="10" id="Xza-iJ-A9I"/>
                             <constraint firstItem="iKt-cw-cpa" firstAttribute="leading" secondItem="TuB-70-9nK" secondAttribute="leading" constant="10" id="ghn-Ey-Qby"/>
-                            <constraint firstAttribute="height" constant="80" id="r7H-Sx-feJ"/>
+                            <constraint firstAttribute="height" constant="75" id="r7H-Sx-feJ"/>
                             <constraint firstItem="iKt-cw-cpa" firstAttribute="top" secondItem="TuB-70-9nK" secondAttribute="top" constant="10" id="zVM-UB-0bx"/>
                         </constraints>
                     </view>

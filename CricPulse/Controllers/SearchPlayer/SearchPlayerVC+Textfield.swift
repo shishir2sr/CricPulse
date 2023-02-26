@@ -7,7 +7,7 @@ extension SearchPlayerViewController: UITextFieldDelegate{
     func setupTextField(){
         searchBar.delegate = self
         searchBar.round(5)
-        searchBar.addShadow(opecity: 0.8, size: 5, radius: 2, color: UIColor.darkGray)
+        searchBar.addShadow(opecity: 0.5, size: 1, radius: 2, color: UIColor.gray)
     }
     
     // Return
