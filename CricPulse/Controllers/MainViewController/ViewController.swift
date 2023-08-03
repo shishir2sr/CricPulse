@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     fileprivate func ConfigureViewDidLoad(){
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .heavy)]
         
         setupCollectionView()
         setupTableView()
